@@ -1,5 +1,10 @@
 # MAV-LandingPage
 
+[GitHub Repository: EasonLyon/MAV-LandingPage](https://github.com/EasonLyon/MAV-LandingPage)
+
+**Access the live site on GitHub Pages:**
+[https://easonlyon.github.io/MAV-LandingPage/](https://easonlyon.github.io/MAV-LandingPage/)
+
 This repository contains HTML landing pages and a Python script to generate an `index.html` listing all HTML files in the project. This is useful for hosting on GitHub Pages.
 
 ## Usage
