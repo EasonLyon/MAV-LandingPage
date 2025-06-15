@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Elite Class - Vince Tan</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            color: #333;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .header {
+            background-color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px; /* Adjusted padding for fixed header */
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+        .logo span {
+            color: #007bff;
+        }
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap; /* Allow nav items to wrap on smaller screens */
+            justify-content: center; /* Center nav items when wrapped */
+        }
+        .nav ul li {
+            margin-left: 15px; /* Reduced margin */
+            margin-right: 15px;
+        }
+        .nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-size: 0.9em;
+        }
+        .nav ul li a:hover {
+            color: #007bff;
+        }
+
+        .hero {
+            background: linear-gradient(to right, #e6e9f0 0%, #eef1f5 100%);
+            padding: 140px 20px 80px; /* Increased top padding for fixed header */
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 700;
+        }
+        .hero h1 span {
+            color: #007bff;
+        }
+        .hero p.subtitle { /* Differentiated subtitle class */
+            font-size: 1.1em;
+            color: #555;
+            max-width: 700px; /* Wider max-width for longer subtitle */
+            margin: 0 auto 30px auto;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 500;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .hero .subtext {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 15px;
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 600;
+        }
+        .section-subtitle {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .challenges-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .challenge-card {
+            background-color: #fff1f3; /* Light pink */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: calc(33.333% - 27px); /* Adjusted for gap */
+            min-width: 280px;
+            text-align: center;
+        }
+        .challenge-card.yellow {
+            background-color: #fff9e6; /* Light yellow */
+        }
+        .challenge-card img { /* Placeholder for icons */
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            background-color: #fde2e2; /* Icon background placeholder */
+            border-radius: 50%;
+            display: inline-block;
+            line-height: 50px; /* For text icon */
+            font-weight: bold; /* For text icon */
+        }
+        .challenge-card.yellow img {
+            background-color: #fff0c2; /* Icon background placeholder */
+        }
+
+        .challenge-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .challenge-card p {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .intro-section {
+            background-color: #f8f9fa;
+        }
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+        .intro-text {
+            flex: 1;
+        }
+        .intro-text .section-title, .intro-text .section-subtitle {
+            text-align: left;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .intro-features { padding-left: 0; } /* Reset padding for ul */
+        .intro-features li {
+            list-style: none;
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            color: #333;
+        }
+        .intro-features li::before {
+            content: '✔';
+            color: #28a745;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .intro-features h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.1em;
+        }
+        .intro-features p {
+            font-size: 0.95em;
+            color: #555;
+            margin: 0;
+        }
+        .intro-image {
+            flex: 1;
+            max-width: 50%;
+            width: 100%;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg,#6a11cb 0%,#2575fc 100%);
+            color: white;
+            font-size: 2em;
+            border-radius: 16px;
+            text-align: center;
+        }
+        .intro-image span {
+            aria-label: "Expert Elite Class";
+            display: block;
+            width: 100%;
+        }
+
+        .benefits-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .benefit-item {
+            text-align: center;
+            width: calc(25% - 15px);
+            min-width: 200px;
+        }
+        .benefit-item .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .benefit-item.blue .icon-circle { background-color: #e7f3ff; color: #007bff; }
+        .benefit-item.green .icon-circle { background-color: #e6ffed; color: #28a745; }
+        .benefit-item.purple .icon-circle { background-color: #f3e7ff; color: #6f42c1; }
+        .benefit-item.red .icon-circle { background-color: #ffe7e7; color: #dc3545; }
+
+        .benefit-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .benefit-item p {
+            font-size: 0.95em;
+            color: #555;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .features-section { background-color: #fff; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .feature-item .icon {
+            font-size: 1.8em;
+            color: #007bff;
+            margin-top: 3px;
+        }
+        .feature-item h3 {
+            font-size: 1.2em;
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+        .feature-item p {
+            font-size: 0.95em;
+            color: #555;
+            margin: 0;
+        }
+        .more-features {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .more-features h4 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .more-features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px 20px;
+            list-style: none;
+            padding: 0;
+        }
+        .more-features-list li {
+            font-size: 0.95em;
+            color: #333;
+            padding-left: 20px;
+            position: relative;
+        }
+        .more-features-list li::before {
+            content: '✔';
+            color: #28a745;
+            position: absolute;
+            left: 0;
+        }
+
+        .how-it-works-section { background-color: #f8f9fa; }
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin-top: 50px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .step-item {
+            flex: 1;
+            text-align: center;
+            min-width: 200px;
+            padding: 20px;
+            position: relative; /* For connector */
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0 auto 15px auto;
+            border: 3px solid #fff; /* White border to lift it */
+            box-shadow: 0 0 0 3px #007bff; /* Blue outer ring */
+        }
+        .step-item h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .step-item p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .step-item .time-badge {
+            display: inline-block;
+            background-color: #e7f3ff;
+            color: #007bff;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+        /* Connector line (simplified) */
+        .steps-connector {
+            position: absolute;
+            top: 40px; /* Adjust based on step-number size */
+            left: calc(12.5% + 20px); /* (100% / (2 * num_items)) + half_item_width */
+            right: calc(12.5% + 20px);
+            height: 2px;
+            background-color: #cce5ff;
+            z-index: -1;
+            display: none; /* Hide for simplicity, can be complex with JS for responsiveness */
+        }
+        @media (min-width: 992px) { /* Show connector on larger screens */
+            /* .steps-connector { display: block; } Simplified: removing complex connector CSS */
+            .step-item:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                top: 20px; 
+                left: calc(50% + 20px); 
+                width: calc(100% - 0px); /* Adjusted for simpler connection */
+                height: 2px;
+                background-color: #cce5ff;
+                z-index: -2; 
+            }
+             .step-item:last-child::after { display: none; }
+        }
+
+
+        .cta-banner {
+            background-color: #e7f3ff;
+            padding: 40px 20px;
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+        .cta-banner h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .cta-banner p {
+            font-size: 1.05em;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .testimonials-section { background-color: #fff; }
+        .testimonials-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .testimonial-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: calc(33.333% - 27px);
+            min-width: 280px;
+            text-align: left;
+        }
+        .testimonial-card .stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .testimonial-card .quote {
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .testimonial-author-info h4 {
+            font-size: 1em;
+            margin: 0 0 3px 0;
+            color: #333;
+        }
+        .testimonial-author-info p {
+            font-size: 0.9em;
+            color: #777;
+            margin: 0;
+        }
+
+        .customer-stats-banner {
+            background-color: #007bff;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px; /* Spacing from testimonials */
+        }
+        .customer-stats-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+        .customer-stats-content > div {
+             min-width: 200px; /* Ensure items don't get too squished */
+             margin: 10px;
+        }
+        .customer-stats-banner h2.main-title { /* Explicitly target main-title */
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            flex-basis: 100%; 
+            text-align: center; /* Centered main title */
+        }
+        .customer-stats-banner .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .customer-stats-banner .stat-label {
+            font-size: 1em;
+        }
+
+        .company-logos-section { background-color: #f8f9fa; }
+        .company-logos-grid {
+            display: flex;
+            justify-content: center; /* Center logos */
+            align-items: center;
+            gap: 40px; /* Increased gap */
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .company-logo {
+            background-color: #e9ecef; /* Light grey background for placeholders */
+            color: #6c757d; /* Dark grey text for placeholders */
+            padding: 15px 25px; /* Padding inside the logo box */
+            border-radius: 4px; /* Slightly rounded corners */
+            font-size: 1.1em; /* Adjusted font for text */
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px; /* Minimum width for text */
+            height: 60px; /* Fixed height */
+            text-align: center;
+        }
+        .company-logos-section .section-subtitle {
+             margin-bottom: 10px; /* Reduced bottom margin for subtitle */
+        }
+        .company-logos-section .fine-print {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 20px;
+        }
+
+
+        .pricing-section { background-color: #fff; }
+        .pricing-grid {
+            display: flex;
+            justify-content: center; /* Center plans */
+            gap: 30px;
+            margin-top: 40px;
+            align-items: stretch; /* Make cards same height */
+            flex-wrap: wrap;
+        }
+        .pricing-plan {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            width: calc(33.333% - 20px);
+            min-width: 300px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative; /* For "Most Popular" badge */
+        }
+        .pricing-plan.popular {
+            border: 2px solid #007bff;
+            box-shadow: 0 8px 25px rgba(0,123,255,0.15);
+        }
+        .popular-badge {
+            position: absolute;
+            top: -15px; /* Position badge outside */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #007bff;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+        .pricing-plan h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+        .pricing-plan .price {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .pricing-plan .price-period {
+            font-size: 0.9em;
+            color: #777;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .pricing-plan .plan-description {
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+            margin-bottom: 25px;
+            min-height: 40px; /* Ensure consistent spacing */
+        }
+        .pricing-plan ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            flex-grow: 1; /* Allow ul to take available space */
+        }
+        .pricing-plan ul li {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            color: #333;
+            padding-left: 25px;
+            position: relative;
+        }
+        .pricing-plan ul li::before {
+            content: '✔';
+            color: #28a745;
+            position: absolute;
+            left: 0;
+        }
+        .pricing-plan .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: auto; /* Push button to bottom */
+        }
+        .pricing-plan .btn.dark {
+            background-color: #343a40;
+            color: white;
+        }
+        .pricing-plan .btn.dark:hover {
+            background-color: #23272b;
+        }
+        .pricing-footer-text {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .pricing-footer-text a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .pricing-footer-text a:hover { text-decoration: underline; }
+        .guarantees {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .guarantees span { margin: 0 10px; }
+        .guarantees span::before { content: '✓ '; color: #28a745; }
+
+
+        .cta-form-section {
+            background-color: #0056b3; /* Darker blue for better contrast with white text */
+            padding: 80px 20px;
+            color: white;
+        }
+        .cta-form-section .section-title, .cta-form-section .section-subtitle {
+            color: white;
+        }
+        .cta-form-container {
+            max-width: 600px; /* Wider for questions */
+            margin: 40px auto 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .cta-form-container h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .cta-form-container .qualifying-questions {
+            color: #333; 
+            margin-bottom: 25px;
+        }
+        .cta-form-container .qualifying-questions p {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        .cta-form-container .qualifying-questions strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+        .cta-form-container .qualifying-questions small {
+            font-size: 0.85em;
+            color: #555;
+            display: block;
+        }
+         .cta-form-container .qualifying-questions .final-prompt {
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 1em;
+        }
+
+        .cta-form-container label {
+            display: block;
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .cta-form-container input[type="text"],
+        .cta-form-container input[type="email"],
+        .cta-form-container input[type="tel"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        .cta-form-container .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+        }
+        .cta-form-container .form-subtext {
+            font-size: 0.85em;
+            color: #777;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .cta-form-container .form-subtext::before {
+             content: '✓ '; color: #28a745;
+        }
+
+        .footer-info-banner {
+            background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+            color: #fff;
+            padding: 30px 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        }
+        .footer-info-grid {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 40px;
+        }
+        .footer-info-item {
+            background: rgba(255,255,255,0.10);
+            border-radius: 12px;
+            padding: 30px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+            flex: 1;
+        }
+        .footer-info-item h4 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .footer-info-item p {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .faq-section { background-color: #f8f9fa; }
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background-color: white;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+        .faq-question {
+            padding: 15px 20px;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '▼'; /* Down arrow */
+            font-size: 0.8em;
+            transition: transform 0.2s;
+        }
+        .faq-answer {
+            padding: 0 20px 15px 20px;
+            font-size: 0.95em;
+            color: #555;
+            display: none; /* Hidden by default */
+            border-top: 1px solid #e0e0e0;
+            margin-top: 10px;
+        }
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg); /* Up arrow */
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-section .section-subtitle a {
+            color: #007bff;
+            text-decoration: none;
+        }
+         .faq-section .section-subtitle a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #212529; /* Dark footer */
+            color: #adb5bd; /* Light grey text */
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .footer .logo { color: #fff; }
+        .footer .logo span { color: #0d6efd; } /* Brighter blue for contrast */
+        .footer-text {
+            font-size: 0.95em;
+            margin: 15px auto 25px auto;
+            max-width: 700px;
+        }
+        .disclaimer {
+            font-size: 0.8em;
+            color: #888;
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+            text-align: left; /* Keep disclaimer text aligned left */
+            line-height: 1.5;
+        }
+        .copyright {
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .header .container { flex-direction: column; align-items: center; }
+            .nav ul { margin-top: 10px; justify-content: center; }
+            .nav ul li { margin: 5px 10px; }
+            .hero { padding-top: 180px; } /* More padding if header is taller */
+            .intro-content { flex-direction: column; }
+            .intro-image { max-width: 80%; margin-top: 30px; }
+            .steps-container { flex-direction: column; align-items: center; }
+            .step-item { width: 80%; max-width: 400px; }
+            .step-item:not(:last-child)::after { display: none; } /* Hide connectors on mobile stack */
+            .customer-stats-content .main-title { text-align: center; }
+        }
+        @media (max-width: 767px) {
+            .hero h1 { font-size: 2.2em; }
+            .hero p.subtitle { font-size: 1em; }
+            .section-title { font-size: 1.8em; }
+            .challenges-grid, .benefits-grid, .testimonials-grid, .pricing-grid { flex-direction: column; align-items: center; }
+            .challenge-card, .benefit-item, .testimonial-card, .pricing-plan { width: 90%; max-width: 400px; margin-bottom: 20px; }
+            .customer-stats-content > div { flex-basis: 100%; }
+            .company-logos-grid { gap: 20px; }
+            .company-logo { padding: 10px 15px; font-size: 1em; height: 50px; min-width: 100px; }
+            .cta-form-container { padding: 30px 20px;}
+            .footer-info-grid { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">Expert Elite <span>Class</span></div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#problem">Problem</a></li>
+                    <li><a href="#solution-intro">Solution</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#logos">Trusted</a></li>
+                    <li><a href="#pricing">Program</a></li>
+                    <li><a href="#cta-form">Get Started</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>Unlock Your Expert Potential: Turn Your Knowledge into a Thriving <span>Coaching, Speaking, or Training Business</span> with Vince Tan's Proven System.</h1>
+            <p class="subtitle">Stop dreaming and start building. The Expert Elite Class gives you the step-by-step blueprint, insider marketing, and supportive community to monetize your expertise and create lasting impact.</p>
+            <a href="#solution-intro" class="btn">Discover the Blueprint</a>
+            <p class="subtext">Take the first step towards transforming your expertise into a thriving business.</p>
+        </div>
+    </section>
+
+    <section class="section" id="problem">
+        <div class="container">
+            <h2 class="section-title">Feeling Stuck? You Have the Expertise, But...</h2>
+            <p class="section-subtitle">Many aspiring coaches, speakers, and trainers face common hurdles that prevent them from successfully monetizing their knowledge and making the impact they desire.</p>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <span style="font-size:2em;" aria-label="Overwhelm">🤯</span>
+                    <h3>Overwhelm & Lack of Clarity</h3>
+                    <p>"I have years of experience, but I'm overwhelmed and have no idea how to package it into a coaching/speaking offer people would pay for."</p>
+                </div>
+                <div class="challenge-card yellow">
+                    <span style="font-size:2em;" aria-label="Marketing">💡</span>
+                    <h3>Marketing & Sales Difficulties</h3>
+                    <p>"Marketing myself feels inauthentic or 'salesy,' and I struggle to find clients or build an audience online."</p>
+                </div>
+                <div class="challenge-card">
+                    <span style="font-size:2em;" aria-label="Confidence">😨</span>
+                    <h3>Imposter Syndrome & Fear</h3>
+                    <p>"I'm terrified of public speaking or putting myself out there as an 'expert' – what if I'm not qualified enough?"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section intro-section" id="solution-intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2 class="section-title">Your All-In-One Solution: The Expert Elite Class by Vince Tan</h2>
+                    <p class="section-subtitle">The Expert Elite Class is a comprehensive workshop and program meticulously designed by Vince Tan for experienced professionals like you who aspire to become impactful Coaches, Speakers, and Trainers.</p>
+                    <ul class="intro-features">
+                        <li>
+                            <h4>Proven Step-by-Step System</h4>
+                            <p>Not just theory; a practical, actionable path to transform your professional knowledge into a thriving, legacy-building business.</p>
+                        </li>
+                        <li>
+                            <h4>Insider Marketing & Business Frameworks</h4>
+                            <p>Learn strategies used by Vince Tan to build multiple million-dollar businesses and generate massive online launch results.</p>
+                        </li>
+                        <li>
+                            <h4>Global Mastermind Community</h4>
+                            <p>Gain support, accountability, and network with purpose-driven professionals worldwide, all committed to mutual success.</p>
+                        </li>
+                         <li>
+                            <h4>Direct Expert Guidance</h4>
+                            <p>Benefit from Vince Tan's extensive experience as an international speaker and trainer in over 20 cities.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="intro-image" style="width:100%;height:350px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6a11cb 0%,#2575fc 100%);color:white;font-size:2em;border-radius:16px;text-align:center;">
+                    <span aria-label="Expert Elite Class" style="display:block;width:100%;">🎓 Expert Elite Class<br>Overview</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="benefits">
+        <div class="container">
+            <h2 class="section-title">From Expert to Impactful Entrepreneur: Build the Business & Life You’ve Always Dreamed Of</h2>
+            <p class="section-subtitle">Unlock your full potential with the Expert Elite Class and achieve these transformative results.</p>
+            <div class="benefits-grid">
+                <div class="benefit-item blue">
+                    <div class="icon-circle">💰</div>
+                    <h3>Monetize Profitably</h3>
+                    <p>Turn your skills and knowledge into a reliable, scalable income stream with our proven 'Expert-to-Impactful-Entrepreneur' system.</p>
+                </div>
+                <div class="benefit-item green">
+                    <div class="icon-circle">🗺️</div>
+                    <h3>Clear Roadmap</h3>
+                    <p>Eliminate confusion with a step-by-step plan for business building, audience growth, and pitch mastery, saving time and costly mistakes.</p>
+                </div>
+                <div class="benefit-item purple">
+                    <div class="icon-circle">🚀</div>
+                    <h3>Master Marketing & Sales</h3>
+                    <p>Discover "insider marketing techniques" to attract ideal clients and confidently sell your services without feeling inauthentic.</p>
+                </div>
+                <div class="benefit-item red">
+                    <div class="icon-circle">🤝</div>
+                    <h3>Thriving Community</h3>
+                    <p>Get ongoing support, accountability, and networking opportunities within a global mastermind of purpose-driven professionals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section features-section" id="features">
+        <div class="container">
+            <h2 class="section-title">Your Complete Toolkit for Expert Business Success</h2>
+            <p class="section-subtitle">Every component of the Expert Elite Class is designed to equip you for success in the competitive expert industry.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon">📚</div>
+                    <div>
+                        <h3>Core Curriculum Modules</h3>
+                        <p>Comprehensive training on Niche Definition, Signature Program/Talk Creation, Core Marketing Message, and Online Presence Setup.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🛠️</div>
+                    <div>
+                        <h3>Business Frameworks & Tools ($10k+ Value)</h3>
+                        <p>Access "Done-For-You" Funnel Templates, Pricing Strategy Calculator, Client Onboarding Checklist, and Content Calendar Template.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📢</div>
+                    <div>
+                        <h3>Marketing & Sales Training</h3>
+                        <p>Master Vince Tan's Persuasion Pitch Formula, Social Media Audience Growth Blueprint, Webinar Sales Mastery, and Joint Venture Partnership Guide.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎤</div>
+                    <div>
+                        <h3>Skill Development</h3>
+                        <p>Boost your Public Speaking Confidence, learn Group Coaching Facilitation Skills, and master Online Presentation Tech Setup.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="more-features">
+                <h4>Plus, You Get Access To:</h4>
+                <ul class="more-features-list">
+                    <li>Private Global Mastermind Forum</li>
+                    <li>Monthly Live Q&A with Vince Tan/Coaches</li>
+                    <li>Peer Accountability Pods</li>
+                    <li>Library of Past Training Recordings</li>
+                    <li>Recommended Tech & Tools List</li>
+                    <li>Guest Expert Session Archive</li>
+                    <li>Online Portal with Lifetime Access</li>
+                    <li>Clear Learning Path with Progress Tracking</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section how-it-works-section" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Your 4-Step Journey to Expert Entrepreneurship</h2>
+            <p class="section-subtitle">Follow Vince Tan's proven 'Expert-to-Impactful-Entrepreneur' system to rapidly launch and scale your business.</p>
+            <div class="steps-container">
+                <!-- <div class="steps-connector"></div> -->
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>IGNITE Your Foundation</h3>
+                    <p>Define your unique niche, craft your irresistible signature offer, and establish your core messaging. We'll help you package your expertise effectively.</p>
+                    <span class="time-badge">Phase 1</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>BUILD Your Systems</h3>
+                    <p>Implement proven business-building frameworks and insider marketing strategies. Set up your online presence and learn to attract your ideal audience.</p>
+                    <span class="time-badge">Phase 2</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>LAUNCH Your Impact</h3>
+                    <p>Master your pitch, confidently present your value, and start enrolling clients or booking speaking engagements using powerful techniques.</p>
+                    <span class="time-badge">Phase 3</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>GROW Your Legacy</h3>
+                    <p>Scale your business, leverage the mastermind community for ongoing support and collaboration, and create the lasting impact you desire.</p>
+                    <span class="time-badge">Phase 4</span>
+                </div>
+            </div>
+            <div class="cta-banner">
+                <h2>Ready To Transform Your Expertise?</h2>
+                <p>Join the Expert Elite Class and get the system, support, and strategies to build a thriving business.</p>
+                <a href="#pricing" class="btn">See Program Details & Enroll</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Proof: Real Results, Real Experts</h2>
+            <p class="section-subtitle">Don't just take our word for it. Hear from professionals who have transformed their careers with the Expert Elite Class.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"I didn't think it was possible to do it online. Vince taught me how to do webinar and workshops online... 1st month alone we did over RM100K."</p>
+                    <div class="testimonial-author">
+                        <span style="font-size:2em;" aria-label="Achiever Student">🎓</span>
+                        <div class="testimonial-author-info">
+                            <h4>Achiever Student</h4>
+                            <p>Expert Elite Class Graduate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Vince Tan has built 3 companies from scratch into million-dollar businesses and generated almost $1 million in 7 days from 4 product launches online. His system is proven!"</p>
+                    <div class="testimonial-author">
+                        <span style="font-size:2em;" aria-label="Vince Tan">🧑‍💼</span>
+                        <div class="testimonial-author-info">
+                            <h4>About Vince Tan's Track Record</h4>
+                            <p>International Speaker & Trainer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"The mastermind community is invaluable. Having access to peers and expert guidance has accelerated my growth significantly and helped overcome challenges faster."</p>
+                    <div class="testimonial-author">
+                        <span style="font-size:2em;" aria-label="Community Member">🤝</span>
+                        <div class="testimonial-author-info">
+                            <h4>Connected Member</h4>
+                            <p>Expert Elite Mastermind</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="customer-stats-banner">
+        <div class="container customer-stats-content">
+            <h2 class="main-title">Join a Community of Successful Experts</h2>
+            <div>
+                <div class="stat-value" data-target="100000" data-prefix="RM" data-suffix="+" id="stat1">RM0+</div>
+                <div class="stat-label">Student 1st Month Results*</div>
+            </div>
+            <div>
+                <div class="stat-value" data-target="1000000" data-prefix="$" data-suffix="/7 Days" id="stat2">$0/7 Days</div>
+                <div class="stat-label">Vince Tan's Launch Record</div>
+            </div>
+            <div>
+                <div class="stat-value" data-target="20" data-suffix="+ Countries" id="stat3">0+ Countries</div>
+                <div class="stat-label">Vince Tan's Global Training Reach</div>
+            </div>
+            <script>
+                function animateCountUp(el, target, prefix = '', suffix = '', duration = 1800) {
+                    let start = 0;
+                    let startTime = null;
+                    target = parseInt(target, 10);
+                    function step(timestamp) {
+                        if (!startTime) startTime = timestamp;
+                        let progress = Math.min((timestamp - startTime) / duration, 1);
+                        let value = Math.floor(progress * (target - start) + start);
+                        // Format with commas for thousands
+                        let formatted = value.toLocaleString();
+                        el.textContent = prefix + formatted + suffix;
+                        if (progress < 1) {
+                            requestAnimationFrame(step);
+                        } else {
+                            el.textContent = prefix + target.toLocaleString() + suffix;
+                        }
+                    }
+                    requestAnimationFrame(step);
+                }
+                window.addEventListener('DOMContentLoaded', function() {
+                    const stats = [
+                        { id: 'stat1', prefix: 'RM', suffix: '+', target: 100000 },
+                        { id: 'stat2', prefix: '$', suffix: '/7 Days', target: 1000000 },
+                        { id: 'stat3', prefix: '', suffix: '+ Countries', target: 20 }
+                    ];
+                    stats.forEach(stat => {
+                        const el = document.getElementById(stat.id);
+                        if (el) {
+                            animateCountUp(el, stat.target, stat.prefix, stat.suffix);
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </section>
+
+    <section class="section company-logos-section" id="logos">
+        <div class="container">
+            <h2 class="section-title">Leveraging Proven Global Best Practices</h2>
+            <p class="section-subtitle">Learn systems and strategies inspired by successful experts and business methodologies from around the world.</p>
+            <div class="company-logos-grid" style="background: linear-gradient(90deg, #e7f3ff 0%, #f3e7ff 100%); border-radius: 8px; padding: 25px 0;">
+                <div class="company-logo" style="font-size:1.2em; background-color: #e7f3ff;">🚀 Proven Systems</div>
+                <div class="company-logo" style="font-size:1.2em; background-color: #e6ffed;">🌏 Global Insights</div>
+                <div class="company-logo" style="font-size:1.2em; background-color: #f3e7ff;">🎯 Expert Strategies</div>
+                <div class="company-logo" style="font-size:1.2em; background-color: #fff9e6;">⚡ Actionable Tactics</div>
+                <div class="company-logo" style="font-size:1.2em; background-color: #ffe7e7;">🤝 Community Support</div>
+            </div>
+             <p class="fine-print">Inspired by strategies from leading experts in over 20+ countries.</p>
+        </div>
+    </section>
+
+    <section class="section pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Get a Glimpse of Your Expert Future: Free 1-Hour Preview Class!</h2>
+            <p class="section-subtitle">Experience the power of the Expert Elite Class system in a complimentary 1-hour live briefing (Worth $200 USD). Discover the core strategies you'll learn to transform your expertise into a thriving business. Secure your spot now!</p>
+            <div class="free-preview-offer" style="text-align: center; background-color: #e7f3ff; padding: 40px; border-radius: 8px; margin-top: 30px;">
+                <h3 style="font-size: 1.8em; color: #007bff; margin-bottom: 15px;">FREE 1-Hour "Expert Ignition" Preview Class</h3>
+                <p style="font-size: 1.1em; color: #333; margin-bottom: 10px;"><strong>Value: $200 USD - Yours Absolutely Free!</strong></p>
+                <p style="font-size: 1em; color: #555; max-width: 600px; margin: 0 auto 25px auto;">
+                    In this exclusive live briefing, Vince Tan will reveal key components of the Expert Elite Class. You'll learn:
+                </p>
+                <ul style="list-style: none; padding: 0; max-width: 450px; margin: 0 auto 25px auto; text-align: left;">
+                    <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><span style="position: absolute; left: 0; color: #28a745;">✔</span> How to clearly define your niche and craft an irresistible offer.</li>
+                    <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><span style="position: absolute; left: 0; color: #28a745;">✔</span> An overview of insider marketing strategies to attract premium clients.</li>
+                    <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><span style="position: absolute; left: 0; color: #28a745;">✔</span> The first steps to building a scalable expert business.</li>
+                </ul>
+                <p style="font-size: 1em; color: #555; max-width: 600px; margin: 0 auto 25px auto;">
+                    This preview is your chance to understand the full potential of the complete Expert Ignition System™ (valued at over $10,000 in tools & frameworks, with program investment starting from $1,997).
+                </p>
+                <a href="#cta-form" class="btn" style="font-size: 1.1em; padding: 15px 30px;">Secure Your Free $200 Preview Spot!</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-form-section" id="cta-form">
+        <div class="container">
+            <h2 class="section-title" style="text-align:center;">Claim Your FREE 1-Hour "Expert Ignition" Preview Class Now!</h2>
+            <p class="section-subtitle">Spaces are limited for this live briefing (Worth $200 USD). Fill in your details below to secure your complimentary spot and take the first step towards unlocking your expert potential.</p>
+            <div class="cta-form-container">
+                <h3>Secure Your Free $200 Preview Class Spot</h3>
+                <form>
+                    <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number (e.g. +60123456789)" required pattern="^\+(60|65)\d{8,}$" title="Please enter a valid Malaysian (+60) or Singaporean (+65) phone number with at least 8 digits after the country code">
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$" title="Please enter a valid email address">
+                    <button type="submit" class="btn">Yes, Secure My Free Preview Class! (Worth $200)</button>
+                    <p class="form-subtext">✓ Limited Spots Available ✓ Get $200 Value FREE ✓ No Obligation</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-info-banner" style="background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%); color: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.10);">
+        <div class="container">
+            <div class="footer-info-grid" style="gap: 40px; justify-content: center; align-items: stretch;">
+                <div class="footer-info-item" style="background: rgba(255,255,255,0.10); border-radius: 12px; padding: 30px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center;">
+                    <h4 style="font-size: 2em; margin-bottom: 10px; letter-spacing: 1px;">Proven</h4>
+                    <p style="font-size: 1.1em; font-weight: 500;">System</p>
+                </div>
+                <div class="footer-info-item" style="background: rgba(255,255,255,0.10); border-radius: 12px; padding: 30px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center;">
+                    <h4 style="font-size: 2em; margin-bottom: 10px; letter-spacing: 1px;">Global</h4>
+                    <p style="font-size: 1.1em; font-weight: 500;">Community</p>
+                </div>
+                <div class="footer-info-item" style="background: rgba(255,255,255,0.10); border-radius: 12px; padding: 30px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center;">
+                    <h4 style="font-size: 2em; margin-bottom: 10px; letter-spacing: 1px;">Expert</h4>
+                    <p style="font-size: 1.1em; font-weight: 500;">Guidance</p>
+                </div>
+                <div class="footer-info-item" style="background: rgba(255,255,255,0.10); border-radius: 12px; padding: 30px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center;">
+                    <h4 style="font-size: 2em; margin-bottom: 10px; letter-spacing: 1px;">Tangible</h4>
+                    <p style="font-size: 1.1em; font-weight: 500;">Results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions about Expert Elite Class</h2>
+            <p class="section-subtitle">Everything you need to know about transforming your expertise. Can't find the answer? <a href="#cta-form">Contact us</a>.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Who is the Expert Elite Class for?</div>
+                    <div class="faq-answer">
+                        <p>It's designed for experienced professionals, executives, entrepreneurs, or specialists who want to monetize their existing knowledge by becoming impactful coaches, speakers, or trainers. If you have valuable expertise and are ready to build a business around it, this is for you.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">I'm already successful in my career. How can this program help me?</div>
+                    <div class="faq-answer">
+                        <p>Many successful professionals (like "Experienced Executive Emily" in our persona) join because they seek more fulfillment, autonomy, or want to build a legacy. This program provides the specific business-building system for the expert industry, which is different from general corporate skills.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">What if I have no experience in marketing or sales?</div>
+                    <div class="faq-answer">
+                        <p>That's exactly why this program was created! We provide "insider marketing techniques," "audience-growth strategies," and "pitch mastery" in a step-by-step manner. You'll learn everything you need to attract clients and grow your expert business.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How is this different from other online courses?</div>
+                    <div class="faq-answer">
+                        <p>Expert Elite Class offers a comprehensive, proven system by Vince Tan (not just generic information), includes a high-value suite of tools ($10,000+ value), and provides access to a supportive global mastermind community. It's a holistic approach to building your entire expert business, not just one skill.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">What kind of results can I expect?</div>
+                    <div class="faq-answer">
+                        <p>While results depend on individual effort and application, the program is designed to help you launch and scale a profitable coaching, speaking, or training business. Testimonials show students generating significant revenue (e.g., RM100k in the first month) and building successful expert careers.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">Is there direct support from Vince Tan?</div>
+                    <div class="faq-answer">
+                        <p>The program includes access to a mastermind community and may include live Q&A sessions with Vince Tan or certified coaches, providing opportunities for guidance and support. Higher tiers like the Elite Accelerator offer more direct access opportunities.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">How much time commitment is required?</div>
+                    <div class="faq-answer">
+                        <p>The core modules are designed to be actionable. Building any successful business requires dedication and consistent effort. We recommend setting aside dedicated time each week to work through the materials and implement the strategies.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">What if I'm afraid of public speaking?</div>
+                    <div class="faq-answer">
+                        <p>Many of our students start with this concern. The program includes specific modules on "Public Speaking Confidence Booster" and "Pitch Mastery" within a supportive environment to help you overcome these fears and communicate your value effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="logo">Expert Elite <span>Class</span></div>
+            <p class="footer-text">Transform your professional expertise into a profitable and impactful coaching, speaking, or training business with Vince Tan's proven system.</p>
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> Earning potential is entirely dependent on the person using our product, ideas and techniques. We do not purport this as a "get rich scheme." Your level of success in attaining the results claimed in our materials depends on the time you devote to the program, ideas and techniques mentioned, your finances, knowledge and various skills. Since these factors differ according to individuals, we cannot guarantee your success or income level. We cannot guarantee that you will make any money at all. Nor are we responsible for any of your actions. This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
+            </div>
+            <p class="copyright">© 2025 Expert Elite Class. All rights reserved. [Privacy Policy | Terms of Service]</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const currentlyActive = document.querySelector('.faq-item.active');
+                if (currentlyActive && currentlyActive !== item) {
+                    currentlyActive.classList.remove('active');
+                    // currentlyActive.querySelector('.faq-answer').style.display = 'none'; // Ensure it closes
+                }
+                item.classList.toggle('active');
+                // const answer = item.querySelector('.faq-answer');
+                // answer.style.display = item.classList.contains('active') ? 'block' : 'none';
+            });
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = document.querySelector('.header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+         // Smooth scrolling for hero button
+        const heroBtn = document.querySelector('.hero .btn');
+        if (heroBtn && heroBtn.getAttribute('href').startsWith('#')) {
+            heroBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                 if (targetElement) {
+                    const headerOffset = document.querySelector('.header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
