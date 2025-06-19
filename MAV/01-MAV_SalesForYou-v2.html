@@ -91,12 +91,17 @@
         }
 
         .testimonial-card {
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            position: relative;
+            background-color: #1f2937; /* Opaque bg-gray-800 */
         }
 
-        .testimonial-card::before {
+        .testimonial-card blockquote {
+            position: relative;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            padding: 1rem; /* Added padding */
+        }
+
+        .testimonial-card blockquote::before {
             content: '';
             position: absolute;
             top: 0; right: 0; bottom: 0; left: 0;
@@ -317,49 +322,49 @@
                 <!-- Original Testimonials (Hidden) -->
                 <div id="original-testimonials" class="hidden">
                     <!-- Testimonial 1 -->
-                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md p-8 rounded-xl">
                         <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
-                        <blockquote class="text-lg italic">
+                        <blockquote class="text-lg italic rounded-lg">
                             "I was about to give up on Facebook ads. I'd spent over $5,000 with two different agencies and got nothing. I signed up for Sales For You because I needed to see real results. In the first 60 days, they not only got us 4X the leads, but the AI chatbot qualified them so well that our closing rate doubled. It completely changed our business."
                         </blockquote>
                         <cite class="block mt-4 font-bold text-lg not-italic text-white">- Sarah K., Founder of a Small E-commerce Brand</cite>
                     </div>
                     <!-- Testimonial 2 -->
-                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md p-8 rounded-xl">
                         <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
-                        <blockquote class="text-lg italic">
+                        <blockquote class="text-lg italic rounded-lg">
                             "Our lead quality has gone through the roof. The AI chatbot filters out the tire-kickers and we only speak to people who are ready to buy. Our sales team is happier and more efficient."
                         </blockquote>
                         <cite class="block mt-4 font-bold text-lg not-italic text-white">- Mark R., Sales Director, SaaS Company</cite>
                     </div>
                     <!-- Testimonial 3 -->
-                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md p-8 rounded-xl">
                         <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
-                        <blockquote class="text-lg italic">
+                        <blockquote class="text-lg italic rounded-lg">
                             "As a coach, my time is my most valuable asset. Sales For You automated my lead generation, so I can focus on coaching, not chasing leads. I've doubled my client base in 3 months."
                         </blockquote>
                         <cite class="block mt-4 font-bold text-lg not-italic text-white">- Jessica L., Business Coach</cite>
                     </div>
                     <!-- Testimonial 4 -->
-                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md p-8 rounded-xl">
                         <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
-                        <blockquote class="text-lg italic">
+                        <blockquote class="text-lg italic rounded-lg">
                             "We were skeptical about AI, but this system is a game-changer. It's like having a top-performing salesperson on duty 24/7. The ROI was almost immediate."
                         </blockquote>
                         <cite class="block mt-4 font-bold text-lg not-italic text-white">- David Chen, CEO, Real Estate Agency</cite>
                     </div>
                     <!-- Testimonial 5 -->
-                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md p-8 rounded-xl">
                         <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
-                        <blockquote class="text-lg italic">
+                        <blockquote class="text-lg italic rounded-lg">
                             "The setup was seamless, and the team was incredibly supportive. They delivered on their promise. We saw a 200% increase in qualified appointments in the first two months."
                         </blockquote>
                         <cite class="block mt-4 font-bold text-lg not-italic text-white">- Emily W., Founder, Marketing Agency</cite>
                     </div>
                     <!-- Testimonial 6 -->
-                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md p-8 rounded-xl">
                         <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
-                        <blockquote class="text-lg italic">
+                        <blockquote class="text-lg italic rounded-lg">
                             "I finally have a predictable stream of leads for my consulting practice. No more feast or famine. This service is the real deal for any service-based business."
                         </blockquote>
                         <cite class="block mt-4 font-bold text-lg not-italic text-white">- Michael P., Financial Consultant</cite>
@@ -723,7 +728,7 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: true,
-                    aspectRatio: window.innerWidth < 1024 ? 1 : 2/3,
+                    aspectRatio: 1,
                     scales: {
                         y: {
                             beginAtZero: true,
