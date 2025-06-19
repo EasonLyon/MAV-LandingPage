@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales For You - AI-Powered Sales Acceleration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Custom scrollbar for a cleaner look (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #094067;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #073352;
+        }
+        .highlight-text {
+            background: linear-gradient(to right, #3da9fc, #ef4565);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--color-highlight), var(--color-tertiary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .nav-link {
+            @apply px-4 py-2 text-paragraph hover:text-highlight transition-colors duration-300;
+        }
+        .nav-link-active {
+            @apply text-highlight font-semibold;
+        }
+        .btn {
+            @apply px-6 py-3 rounded-lg font-semibold shadow-md transition-all duration-300 ease-in-out;
+        }
+        .btn-primary {
+            @apply bg-button text-button-text hover:bg-opacity-80 focus:ring-4 focus:ring-highlight focus:ring-opacity-50;
+        }
+        .btn-secondary {
+            @apply bg-transparent border-2 border-button text-button hover:bg-button hover:text-button-text;
+        }
+        .section-padding {
+            padding-top: 4rem; /* 64px */
+            padding-bottom: 4rem; /* 64px */
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding-top: 6rem; /* 96px */
+                padding-bottom: 6rem; /* 96px */
+            }
+        }
+        .faq-question.active + .faq-answer {
+            max-height: 500px; /* Adjust as needed */
+            opacity: 1;
+        }
+        .faq-answer {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-page-bg font-sans text-paragraph antialiased">
+
+    <!-- Navigation Bar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-page-bg/80 backdrop-blur-md shadow-sm transition-transform duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="text-2xl font-bold text-headline">
+                    Sales <span class="text-highlight">For You</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="#hero" class="nav-link nav-link-active">Sales For You</a>
+                    <a href="#problem" class="nav-link">Problem</a>
+                    <a href="#solution" class="nav-link">Solution</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <a href="#cta" class="btn btn-primary text-sm">Sign Up</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-headline focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-page-bg shadow-lg">
+            <a href="#hero" class="block nav-link text-center border-t border-gray-200">Sales For You</a>
+            <a href="#problem" class="block nav-link text-center border-t border-gray-200">Problem</a>
+            <a href="#solution" class="block nav-link text-center border-t border-gray-200">Solution</a>
+            <a href="#how-it-works" class="block nav-link text-center border-t border-gray-200">How It Works</a>
+            <a href="#pricing" class="block nav-link text-center border-t border-gray-200">Pricing</a>
+            <a href="#faq" class="block nav-link text-center border-t border-gray-200">FAQ</a>
+            <a href="#cta" class="block w-full text-center py-3 bg-button text-button-text mt-2 hover:bg-opacity-80">Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section-padding bg-gradient-to-br from-page-bg to-secondary/10 min-h-screen flex items-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-headline leading-tight">
+                        Stop Burning Ad Money. <br class="hidden sm:block"> Get <span id="typed-hero" class="highlight-text"></span>
+                    </h1>
+                    <p class="mt-6 text-lg sm:text-xl text-paragraph max-w-xl">
+                        Sales For You combines expert Meta Ad targeting with AI-powered conversion, turning your ad spend into predictable sales growth.
+                    </p>
+                    <div class="mt-10">
+                        <a href="#cta" class="btn btn-primary text-lg">Get Your Free Strategy Call</a>
+                    </div>
+                </div>
+                <div data-aos="fade-left" data-aos-delay="200" data-tilt data-tilt-max="5" data-tilt-speed="200" data-tilt-perspective="1000">
+                    <!-- 
+                        IMAGE PROMPT:
+                        Image Description: A split-scene or before-and-after. Left side: A frustrated small business owner (Sarah Persona, 40s, looking stressed but relatable) at a messy desk late at night, a laptop screen showing a confusing, red-lined failing ad dashboard. A small, symbolic pile of smoldering digital "cash" icons is next to the laptop. Right side: The same owner now looks relieved and astonished, desk is tidier. The laptop screen transformed, now showing a clean, upward-trending green graph of sales and qualified leads. The "Sales For You" logo subtly watermarked or appearing as a helpful interface element. The smoldering cash icons are extinguished, maybe replaced by growing plant shoots or coin stacks.
+                        Visual Style: High Contrast, with a slight cinematic feel. The "before" side is dimly lit, cool tones; "after" side is brighter, warmer, more optimistic.
+                        Composition Details:
+                          Layout: Diagonal split or clear left-to-right transformation.
+                          Focal Point: The owner's facial expression changing from frustration to relief, and the contrasting dashboards.
+                          Image Ratio: 16:9 or 3:2, suitable for a hero section.
+                        Color Instructions:
+                          Palette: Before: Muted blues, grays, with red for dashboard warnings. After: Brighter, optimistic greens, blues (from Light Theme - #3da9fc), with gold/yellow accents for success. The Light Theme colors #094067 (headline), #5f6c7b (paragraph), #3da9fc (button/highlight), #ef4565 (accent) should inspire the overall mood.
+                          Mood: Transition from despair/confusion to hope/clarity/success.
+                    -->
+                    <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jy3y1qfvf0t8d9e8a6yvz64e%2F1750331420_img_1.webp?st=2025-06-19T09%3A46%3A01Z&se=2025-06-25T10%3A46%3A01Z&sks=b&skt=2025-06-19T09%3A46%3A01Z&ske=2025-06-25T10%3A46%3A01Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=5My7XZOAUauNMC8V3FHtofBlAQEsIcFh%2BRgdY%2FquYGk%3D&az=oaivgprodscus">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="section-padding">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-headline mb-4" data-aos="fade-up">
+                Tired of <span class="highlight-text">Burning Ad Money</span> With No Results?
+            </h2>
+            <p class="text-lg text-paragraph max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+                You're not alone. Many businesses feel the frustration of pouring resources into digital ads that just don't deliver.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-tilt>
+                    <div class="flex justify-center items-center mb-4 text-highlight">
+                        <i data-lucide="flame" class="h-12 w-12"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-headline mb-2">Wasted Ad Spend</h3>
+                    <p class="text-paragraph">Pouring money into ad campaigns that don't convert into actual customers.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100" data-tilt>
+                    <div class="flex justify-center items-center mb-4 text-highlight">
+                        <i data-lucide="filter-x" class="h-12 w-12"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-headline mb-2">Low-Quality Leads</h3>
+                    <p class="text-paragraph">Struggling to find leads that are genuinely interested and ready to buy.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200" data-tilt>
+                    <div class="flex justify-center items-center mb-4 text-highlight">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 17v2a1 1 0 001 1h16a1 1 0 001-1v-2M8 17V9a1 1 0 011-1h2a1 1 0 011 1v8m4 0V5a1 1 0 011-1h2a1 1 0 011 1v12" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-headline mb-2">No Clear ROI</h3>
+                    <p class="text-paragraph">Lacking a clear understanding of your return on ad spend, making it hard to justify.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300" data-tilt>
+                    <div class="flex justify-center items-center mb-4 text-highlight">
+                         <i data-lucide="brain-cog" class="h-12 w-12"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-headline mb-2">Marketing Overwhelm</h3>
+                    <p class="text-paragraph">Feeling overwhelmed by the complexity of digital marketing and ever-changing platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="section-padding bg-secondary/10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-headline" data-aos="fade-up">
+                    The Solution: Your <span class="highlight-text">AI-Powered Sales Engine</span>
+                </h2>
+                <p class="mt-4 text-lg text-paragraph max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Achieve <strong class="text-headline">Predictable Sales Growth</strong> in <strong class="text-headline">as little as 90 Days</strong> using our <strong class="text-headline">Integrated AI Sales System</strong>, which uniquely <strong class="text-headline">combines strategic Meta Ads with 24/7 AI Chatbot Conversion</strong>. We're so confident, we guarantee <strong class="text-headline">you'll see qualified leads or we refine your strategy free of charge</strong>.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-headline mb-4">How Sales For You Delivers Results:</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-highlight mr-3 shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-headline">Integrated Meta Ad Management & AI Chatbot Strategy</h4>
+                                <p class="text-paragraph text-sm">Your ad budget isn't wasted on dead-end clicks; traffic is seamlessly directed to optimized experiences designed to convert and qualify leads instantly using AI.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-highlight mr-3 shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-headline">Strategic Foundation First</h4>
+                                <p class="text-paragraph text-sm">We start by identifying true market demand and highlighting your unique selling propositions (USP) before a single ad is launched.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-highlight mr-3 shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-headline">Tangible ROI & Measurable Growth</h4>
+                                <p class="text-paragraph text-sm">Stop guessing and start seeing a tangible return on your ad spend with more qualified inquiries and actual sales, not just vanity metrics.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <div class="bg-white p-6 rounded-xl shadow-xl">
+                        <canvas id="resultsChart"></canvas>
+                        <p class="text-center text-sm text-paragraph mt-4">Typical improvement in lead quality and cost per acquisition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section-padding">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-headline" data-aos="fade-up">
+                    Get Started in <span class="highlight-text">4 Simple Steps</span>
+                </h2>
+                <p class="mt-4 text-lg text-paragraph max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Our process is designed for clarity and impact, moving you towards automated sales growth efficiently.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center" data-aos="zoom-in-up" data-tilt>
+                    <div class="flex justify-center items-center mb-6 text-highlight">
+                        <i data-lucide="compass" class="h-16 w-16"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-headline mb-3">1. Discovery & Strategy</h3>
+                    <p class="text-paragraph">We dive deep to uncover your market demand, ideal customer, and unique selling points (USP).</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center" data-aos="zoom-in-up" data-aos-delay="100" data-tilt>
+                    <div class="flex justify-center items-center mb-6 text-highlight">
+                        <i data-lucide="megaphone" class="h-16 w-16"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-headline mb-3">2. Offer & Ad Crafting</h3>
+                    <p class="text-paragraph">We design irresistible offers and compelling, high-converting Meta ad campaigns.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center" data-aos="zoom-in-up" data-aos-delay="200" data-tilt>
+                    <div class="flex justify-center items-center mb-6 text-highlight">
+                        <i data-lucide="bot" class="h-16 w-16"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-headline mb-3">3. AI Chatbot Implementation</h3>
+                    <p class="text-paragraph">Your 24/7 AI sales assistant goes live to capture, qualify, and nurture leads automatically.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center" data-aos="zoom-in-up" data-aos-delay="300" data-tilt>
+                    <div class="flex justify-center items-center mb-6 text-highlight">
+                        <i data-lucide="trending-up" class="h-16 w-16"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-headline mb-3">4. Launch & Optimize</h3>
+                    <p class="text-paragraph">We manage, analyze, and continuously optimize for sustainable sales improvement.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center" data-aos="fade-up">
+                <div class="rounded-xl shadow-lg mx-auto mb-8 w-full max-w-3xl flex items-center justify-center" style="height: 300px; background: linear-gradient(90deg, #3da9fc 0%, #ef4565 100%); color: #fff; font-size: 2em; font-weight: 600; letter-spacing: 1px;">
+                    <span>Our Seamless Sales Process</span>
+                </div>
+                <a href="#cta" class="btn btn-primary text-lg">Unlock Your Sales Potential</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial / Social Proof Section -->
+    <section id="social-proof" class="section-padding bg-secondary/10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-headline" data-aos="fade-up">
+                    Don't Just Take Our Word For It
+                </h2>
+                <p class="mt-4 text-lg text-paragraph max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Hear from businesses like yours who've transformed their sales with our AI-powered system.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300" data-aos="fade-right" data-tilt>
+                    <p class="text-paragraph italic mb-6">"I was pouring money into ads and getting nowhere. Sales For You changed everything. Their AI chatbot is like having an extra employee! I signed up because I needed real sales, not just promises. Now, my qualified leads have <strong class='text-highlight font-semibold'>tripled</strong>, and I can finally focus on creating beautiful arrangements!"</p>
+                    <div class="flex items-center">
+                        <i data-lucide="user-circle-2" class="h-12 w-12 text-secondary mr-4"></i>
+                        <div>
+                            <p class="font-semibold text-headline">Sarah M., Owner</p>
+                            <p class="text-sm text-paragraph">Bloom & Grow Florist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300" data-aos="fade-left" data-aos-delay="100" data-tilt>
+                    <p class="text-paragraph italic mb-6">"Our sales team was swamped with unqualified leads. Sales For You implemented a smart AI system that filters and qualifies prospects. We chose them for their integrated approach to Meta Ads and AI. Our sales conversion rate has <strong class='text-highlight font-semibold'>increased by 40%</strong>, and the team is hitting targets consistently."</p>
+                    <div class="flex items-center">
+                         <i data-lucide="user-circle-2" class="h-12 w-12 text-secondary mr-4"></i>
+                        <div>
+                            <p class="font-semibold text-headline">Raj P., Marketing Manager</p>
+                            <p class="text-sm text-paragraph">Innovatech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-headline mb-6">Trusted by growing businesses across industries.</h3>
+                <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
+                    <div class="flex items-center text-paragraph" data-aos="zoom-in" data-aos-delay="0"><i data-lucide="store" class="h-10 w-10 mr-2 text-highlight"></i> E-commerce Shops</div>
+                    <div class="flex items-center text-paragraph" data-aos="zoom-in" data-aos-delay="100"><i data-lucide="briefcase" class="h-10 w-10 mr-2 text-highlight"></i> Service Providers</div>
+                    <div class="flex items-center text-paragraph" data-aos="zoom-in" data-aos-delay="200"><i data-lucide="laptop" class="h-10 w-10 mr-2 text-highlight"></i> SaaS Companies</div>
+                    <div class="flex items-center text-paragraph" data-aos="zoom-in" data-aos-delay="300"><i data-lucide="graduation-cap" class="h-10 w-10 mr-2 text-highlight"></i> Consultants & Coaches</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section-padding">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-headline mb-4" data-aos="fade-up">
+                Ready to <span class="highlight-text">Accelerate Your Sales?</span>
+            </h2>
+            <p class="text-lg text-paragraph max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+                We offer tailored packages designed to meet your unique business needs and goals. Our most popular "AI Sales Accelerator Pro" package includes:
+            </p>
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-2xl mb-10" data-aos="zoom-in" data-aos-delay="200" data-tilt>
+                <h3 class="text-2xl font-bold text-headline mb-6">AI Sales Accelerator Pro</h3>
+                <ul class="text-left space-y-3 text-paragraph mb-8">
+                    <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-green-500 mr-2"></i>Detailed Promotional Offer Design & Copy</li>
+                    <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-green-500 mr-2"></i>Advanced Meta Ad Management (Multiple Campaigns, A/B Testing)</li>
+                    <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-green-500 mr-2"></i>Advanced AI Chatbot (Lead Qualification, Nurturing Sequences)</li>
+                    <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-green-500 mr-2"></i>Basic CRM Integration Support</li>
+                    <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-green-500 mr-2"></i>Monthly Strategy & Comprehensive Reporting Call</li>
+                </ul>
+                <p class="text-paragraph mb-6">To provide you with the best strategy and pricing for your specific needs, let's talk!</p>
+                <a href="#cta" class="btn btn-primary text-lg w-full sm:w-auto">Book Your FREE Strategy Call (A $499 Value)</a>
+            </div>
+            <p class="text-sm text-slate-400" data-aos="fade-up">Other packages including "AI Sales Foundation" and "AI Sales Dominator" (Custom) are also available.</p>
+        </div>
+    </section>
+
+    <!-- Call to Action (CTA) Section -->
+    <section id="cta" class="section-padding bg-gradient-to-br from-headline to-highlight">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+                    Stop <span style="color: #ef4565;">Burning Money.</span> Start Earning with AI-Powered Sales.
+                </h2>
+                <p class="text-lg text-secondary mb-8 max-w-2xl mx-auto">
+                    Take the first step towards predictable revenue. Book your FREE, no-obligation strategy call today. Let's discuss how Sales For You can transform your ad spend.
+                </p>
+                <div class="bg-page-bg p-8 sm:p-12 rounded-xl shadow-2xl max-w-xl mx-auto">
+                    <h3 class="text-2xl font-semibold text-headline mb-6">Schedule Your Free Call</h3>
+                    <!-- Mockup Form -->
+                    <form class="space-y-4" style="max-width: 400px; margin: 0 auto;">
+                        <input type="text" name="name" placeholder="Your Full Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-highlight focus:outline-none">
+                        <input type="email" name="email" placeholder="Your Email Address" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-highlight focus:outline-none">
+                        <input type="tel" name="phone" placeholder="Your Phone Number (with country code)" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-highlight focus:outline-none">
+                        <button type="submit" class="btn btn-primary w-full">Book My Free Call</button>
+                    </form>
+                    <p class="mt-6 text-sm text-paragraph">Or, if you prefer, <button id="emailUsBtn" class="text-highlight font-semibold hover:underline">email us directly</button>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-headline" data-aos="fade-up">
+                    Frequently Asked Questions
+                </h2>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-item bg-white shadow-md rounded-lg overflow-hidden">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6 text-lg font-semibold text-headline hover:bg-gray-50 transition-colors">
+                        What exactly is "Sales For You"?
+                        <i data-lucide="chevron-down" class="faq-arrow h-5 w-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-6 border-t border-gray-200">
+                        <p class="text-paragraph">It's an all-in-one service combining expert Meta Ad management with AI-powered chatbot strategies to turn your ad spend into measurable sales growth. We handle everything from market analysis to lead nurturing.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white shadow-md rounded-lg overflow-hidden">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6 text-lg font-semibold text-headline hover:bg-gray-50 transition-colors">
+                        I've wasted money on ads before. How are you different?
+                        <i data-lucide="chevron-down" class="faq-arrow h-5 w-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-6 border-t border-gray-200">
+                        <p class="text-paragraph">We focus on an integrated system. Ads drive traffic to smart AI chatbots that qualify leads 24/7, ensuring your sales team talks to genuinely interested prospects. Plus, we start with strategy – understanding your market and USP.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white shadow-md rounded-lg overflow-hidden">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6 text-lg font-semibold text-headline hover:bg-gray-50 transition-colors">
+                        Is this for small businesses like mine? I'm not tech-savvy.
+                        <i data-lucide="chevron-down" class="faq-arrow h-5 w-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-6 border-t border-gray-200">
+                        <p class="text-paragraph">Absolutely! "Sales For You" is designed to be "done-for-you." We handle all the technical setup and management of ads and AI. You get the results without the headache.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white shadow-md rounded-lg overflow-hidden">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6 text-lg font-semibold text-headline hover:bg-gray-50 transition-colors">
+                        What kind of results can I expect?
+                        <i data-lucide="chevron-down" class="faq-arrow h-5 w-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-6 border-t border-gray-200">
+                        <p class="text-paragraph">While results vary, our clients typically see a significant increase in qualified leads, improved sales conversion rates, and a better ROI on their ad spend. We focus on measurable growth. (During your free strategy call, we can discuss potential based on your business).</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white shadow-md rounded-lg overflow-hidden">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6 text-lg font-semibold text-headline hover:bg-gray-50 transition-colors">
+                        How much does it cost?
+                        <i data-lucide="chevron-down" class="faq-arrow h-5 w-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-6 border-t border-gray-200">
+                        <p class="text-paragraph">We offer tailored packages, with our "AI Sales Accelerator Pro" being the most popular. Pricing depends on your specific needs and goals. Book a free strategy call for a custom quote.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white shadow-md rounded-lg overflow-hidden">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6 text-lg font-semibold text-headline hover:bg-gray-50 transition-colors">
+                        What's involved in getting started?
+                        <i data-lucide="chevron-down" class="faq-arrow h-5 w-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-6 border-t border-gray-200">
+                        <p class="text-paragraph">It starts with a free strategy call to understand your business. If we're a good fit, we'll move to discovery, strategy, then implementation of your ads and AI chatbot.</p>
+                    </div>
+                </div>
+                 <div class="faq-item bg-white shadow-md rounded-lg overflow-hidden">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-6 text-lg font-semibold text-headline hover:bg-gray-50 transition-colors">
+                        Do I need to sign a long-term contract?
+                        <i data-lucide="chevron-down" class="faq-arrow h-5 w-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer p-6 border-t border-gray-200">
+                        <p class="text-paragraph">We offer flexible agreements. Our goal is to provide ongoing value that makes you want to continue working with us. We'll discuss terms during your strategy call.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-gray-100 dark:bg-neutral-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-paragraph">
+            <div class="mb-4">
+                <p class="font-semibold text-headline">Disclaimer:</p>
+                <p class="text-xs max-w-3xl mx-auto">
+                    Earning potential is entirely dependent on the person using our product, ideas and techniques. We do not purport this as a "get rich scheme." Your level of success in attaining the results claimed in our materials depends on the time you devote to the program, ideas and techniques mentioned, your finances, knowledge and various skills. Since these factors differ according to individuals, we cannot guarantee your success or income level. We cannot guarantee that you will make any money at all. Nor are we responsible for any of your actions. This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
+                </p>
+            </div>
+            <p class="text-sm">© 2025 Developed by My Ads Vantage (MAV) – AI Marketing that Sells For You.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind CSS Custom Configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'page-bg': '#fffffe',      // Light Theme Background
+                        'headline': '#094067',      // Light Theme Headline
+                        'paragraph': '#5f6c7b',     // Light Theme Paragraph
+                        'button': '#3da9fc',        // Light Theme Button
+                        'button-text': '#fffffe',   // Light Theme Button Text
+                        'highlight': '#3da9fc',      // Light Theme Highlight
+                        'secondary': '#90b4ce',      // Light Theme Secondary
+                        'tertiary': '#ef4565'       // Light Theme Tertiary/Accent
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
+            // Initialize AOS (Animate on Scroll)
+            AOS.init({
+                duration: 800,
+                once: true, // whether animation should happen only once - while scrolling down
+                offset: 50, // offset (in px) from the original trigger point
+            });
+
+            // Initialize Typed.js for Hero Section Headline
+            if (document.getElementById('typed-hero')) {
+                new Typed('#typed-hero', {
+                    strings: ['Real Sales.', 'Predictable Growth.', 'Automated Lead Gen.'],
+                    typeSpeed: 70,
+                    backSpeed: 40,
+                    loop: true,
+                    smartBackspace: true,
+                });
+            }
+            
+            // Initialize Vanilla-Tilt.js
+            VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+                max: 10,       // Max tilt rotation (degrees)
+                perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
+                scale: 1.02,    // 2 = 200%, 1.5 = 150%, etc..
+                speed: 300,    // Speed of the enter/exit transition
+                glare: true,   // If glare is enabled
+                "max-glare": 0.1 // From 0 - 1.
+            });
+
+            // Chart.js for Solution Section
+            const ctx = document.getElementById('resultsChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Before Sales For You', 'After Sales For You'],
+                        datasets: [{
+                            label: 'Qualified Leads',
+                            data: [30, 120],
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)', // highlight color with opacity
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }, {
+                            label: 'Cost Per Acquisition ($)',
+                            data: [150, 60],
+                            backgroundColor: 'rgba(239, 69, 101, 0.6)', // tertiary color with opacity
+                            borderColor: 'rgba(239, 69, 101, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: 'rgba(0,0,0,0.05)'
+                                },
+                                ticks: {
+                                  color: '#5f6c7b' // paragraph color
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                },
+                                ticks: {
+                                  color: '#5f6c7b' // paragraph color
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#094067' // headline color
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Sticky Navigation Bar Hide/Show on Scroll
+            let lastScrollTop = 0;
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop && scrollTop > navbar.offsetHeight) {
+                    // Scroll Down
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scroll Up
+                    navbar.style.transform = 'translateY(0)';
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+            });
+
+            // Smooth Scrolling for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Calculate offset for sticky navbar
+                        const navbarHeight = document.getElementById('navbar').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                             document.querySelector('#mobile-menu-button i').setAttribute('data-lucide', 'menu');
+                             lucide.createIcons();
+                        }
+                    }
+                });
+            });
+
+            // Hamburger Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = mobileMenuButton.querySelector('i');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.setAttribute('data-lucide', 'menu');
+                } else {
+                    menuIcon.setAttribute('data-lucide', 'x');
+                }
+                lucide.createIcons(); // Re-render icons
+            });
+
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const currentlyActive = document.querySelector('.faq-question.active');
+                    const arrowIcon = question.querySelector('.faq-arrow');
+                    
+                    // If there's an active question and it's not the one being clicked
+                    if (currentlyActive && currentlyActive !== question) {
+                        currentlyActive.classList.remove('active');
+                        currentlyActive.querySelector('.faq-arrow').style.transform = 'rotate(0deg)';
+                    }
+
+                    question.classList.toggle('active');
+                    if (question.classList.contains('active')) {
+                        arrowIcon.style.transform = 'rotate(180deg)';
+                    } else {
+                        arrowIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            // SweetAlert2 for Email Us button
+            const emailUsBtn = document.getElementById('emailUsBtn');
+            if (emailUsBtn) {
+                emailUsBtn.addEventListener('click', () => {
+                    Swal.fire({
+                        title: 'Contact Us',
+                        html: 'Please email us at <a href="mailto:hello@myadsvantage.com" style="color: #3da9fc;">hello@myadsvantage.com</a> for any inquiries.',
+                        icon: 'info',
+                        confirmButtonText: 'Got it!',
+                        confirmButtonColor: '#3da9fc'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

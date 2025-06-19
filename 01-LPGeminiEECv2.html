@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Elite Class - Launch Your 7-Figure Expert Business</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0e17;
+            color: #a7a9be;
+        }
+        .text-headline { color: #fffffe; }
+        .text-paragraph { color: #a7a9be; }
+        .bg-button { background-color: #ff8906; }
+        .text-button { color: #fffffe; }
+        .text-highlight-gradient {
+            background-image: linear-gradient(to right, #ff8906, #e53170);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .border-secondary { border-color: #f25f4c; }
+        .text-accent { color: #e53170; }
+        .bg-card { background-color: #1a1829; } /* Slightly lighter than main bg for cards */
+
+        /* Sticky Nav Hide/Show */
+        .nav-hidden { transform: translateY(-100%); transition: transform 0.3s ease-in-out; }
+        .nav-visible { transform: translateY(0); transition: transform 0.3s ease-in-out; }
+
+        /* FAQ Accordion */
+        .faq-question { cursor: pointer; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .faq-answer.open { max-height: 500px; /* Adjust as needed */ transition: max-height 0.5s ease-in; }
+        .faq-arrow { transition: transform 0.3s ease-out; }
+        .faq-arrow.open { transform: rotate(180deg); }
+
+        /* Typewriter cursor */
+        .typed-cursor {
+            opacity: 1;
+            animation: typedjsBlink 0.7s infinite;
+            -webkit-animation: typedjsBlink 0.7s infinite;
+            animation: typedjsBlink 0.7s infinite;
+        }
+        @keyframes typedjsBlink {
+            50% { opacity: 0.0; }
+        }
+        @-webkit-keyframes typedjsBlink {
+            0% { opacity: 1; }
+            50% { opacity: 0.0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <header id="navbar" class="bg-[#0f0e17]/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-transform duration-300 nav-visible">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-headline hover:text-[#ff8906] transition-colors">
+                Expert <span class="text-highlight-gradient">Elite Class</span>
+            </a>
+            <div class="hidden lg:flex space-x-4 items-center">
+                <a href="#problem" class="text-paragraph hover:text-[#ff8906] transition-colors">The Problem</a>
+                <a href="#solution" class="text-paragraph hover:text-[#ff8906] transition-colors">The Solution</a>
+                <a href="#how-it-works" class="text-paragraph hover:text-[#ff8906] transition-colors">How It Works</a>
+                <a href="#pricing" class="text-paragraph hover:text-[#ff8906] transition-colors">The Value</a>
+                <a href="#faq" class="text-paragraph hover:text-[#ff8906] transition-colors">FAQ</a>
+                <a href="#cta" class="bg-button text-button px-6 py-2 rounded-md hover:opacity-90 transition-opacity font-semibold">
+                    Sign Up FREE
+                </a>
+            </div>
+            <div class="lg:hidden">
+                <button id="mobile-menu-button" class="text-headline focus:outline-none">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#1a1829] absolute w-full">
+            <a href="#problem" class="block text-paragraph text-center py-2 hover:bg-[#ff8906] hover:text-button transition-colors">The Problem</a>
+            <a href="#solution" class="block text-paragraph text-center py-2 hover:bg-[#ff8906] hover:text-button transition-colors">The Solution</a>
+            <a href="#how-it-works" class="block text-paragraph text-center py-2 hover:bg-[#ff8906] hover:text-button transition-colors">How It Works</a>
+            <a href="#pricing" class="block text-paragraph text-center py-2 hover:bg-[#ff8906] hover:text-button transition-colors">The Value</a>
+            <a href="#faq" class="block text-paragraph text-center py-2 hover:bg-[#ff8906] hover:text-button transition-colors">FAQ</a>
+            <a href="#cta" class="block bg-button text-button text-center py-3 mt-2 font-semibold hover:opacity-90 transition-opacity">
+                Sign Up FREE
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-24 bg-gradient-to-br from-[#0f0e17] via-[#1c1a2e] to-[#0f0e17]">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-headline mb-6" data-aos="fade-up">
+                <span id="hero-typewriter"></span>
+            </h1>
+            <p class="text-lg sm:text-xl text-paragraph max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
+                Tired of being stuck with your expertise? Let <strong class="text-highlight-gradient">Vince Tan</strong> show you the step-by-step path to your <strong class="text-highlight-gradient">first 3 clients in 30 days.</strong> Claim your <strong class="text-highlight-gradient">FREE (RM799 Value)</strong> Zoom Strategy Session now!
+            </p>
+            <div data-aos="fade-up" data-aos-delay="400">
+                <a href="#cta" class="bg-button text-button text-xl font-semibold px-10 py-4 rounded-lg hover:opacity-90 transition-opacity transform hover:scale-105 inline-block">
+                    Claim Your FREE Strategy Session
+                </a>
+            </div>
+            <div class="mt-12" data-aos="zoom-in-up" data-aos-delay="600">
+                <!-- IMAGE PROMPT:
+                Image Description: A confident, successful expert (Vince Tan archetype or relatable persona like "Corporate Changemaker Chloe" or "Expert Entrepreneur Ethan") looking directly at the viewer with a slight smile, exuding authority and approachability. Background is a modern, slightly blurred office or a dynamic abstract representing growth and ideas. The expert could be holding a tablet displaying a growth chart or a blueprint.
+                Visual Style: High Contrast + Intense Eye Contact
+                Composition Details:
+                  Layout: Centered, medium shot (waist up).
+                  Focal Point: The expert's eyes and confident expression.
+                  Image Ratio: 16:9 or 3:2 for web hero.
+                Color Instructions:
+                  Palette: Dark Theme Accents (using #ff8906 and #e53170 for subtle highlights in the background or on the tablet screen, with overall dark, rich tones). Colors enhance mood of professionalism, success, and trust.
+                -->
+                <img src="https://via.placeholder.com/800x450.png/0f0e17/fffffe?text=Dynamic+Expert+Image" alt="Expert Elite Class Hero Image" class="w-full max-w-3xl mx-auto rounded-lg shadow-2xl" data-tilt>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="py-16 sm:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-headline text-center mb-12 sm:mb-16" data-aos="fade-up">
+                Feeling <span class="text-highlight-gradient">Stuck, Invisible,</span> or <span class="text-highlight-gradient">Overwhelmed</span> as an Expert?
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-card p-6 rounded-lg shadow-xl" data-aos="fade-up" data-tilt>
+                    <div class="flex items-center text-[#ff8906] mb-4">
+                        <i data-lucide="library" class="h-10 w-10 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-headline">Information Overload</h3>
+                    </div>
+                    <p class="text-paragraph">Drowning in courses and 'expert' advice but still getting <strong class="text-highlight-gradient">nowhere</strong> with your business launch? You're not alone.</p>
+                </div>
+                <div class="bg-card p-6 rounded-lg shadow-xl" data-aos="fade-up" data-aos-delay="100" data-tilt>
+                    <div class="flex items-center text-[#ff8906] mb-4">
+                        <i data-lucide="lightbulb-off" class="h-10 w-10 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-headline">Monetization Mystery</h3>
+                    </div>
+                    <p class="text-paragraph">Possess <strong class="text-highlight-gradient">valuable expertise</strong> but struggle to turn it into a consistent, <strong class="text-highlight-gradient">premium income stream</strong>?</p>
+                </div>
+                <div class="bg-card p-6 rounded-lg shadow-xl" data-aos="fade-up" data-aos-delay="200" data-tilt>
+                    <div class="flex items-center text-[#ff8906] mb-4">
+                        <i data-lucide="eye-off" class="h-10 w-10 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-headline">Client Acquisition Fear</h3>
+                    </div>
+                    <p class="text-paragraph">Feel <strong class="text-highlight-gradient">invisible</strong> and <strong class="text-highlight-gradient">terrified</strong> about finding those crucial first paying clients to validate your business?</p>
+                </div>
+                <div class="bg-card p-6 rounded-lg shadow-xl" data-aos="fade-up" data-aos-delay="300" data-tilt>
+                    <div class="flex items-center text-[#ff8906] mb-4">
+                        <i data-lucide="map-x" class="h-10 w-10 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-headline">No Clear Path</h3>
+                    </div>
+                    <p class="text-paragraph">Dream of launching your expert business but lack the <strong class="text-highlight-gradient">exact steps</strong> and a proven roadmap to guide you?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-16 sm:py-24 bg-[#1a1829]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-headline" data-aos="fade-up">Your Shortcut to a Thriving Expert Business</h2>
+                <p class="mt-4 text-xl text-paragraph max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Achieve <strong class="text-highlight-gradient">Your First 3 Paying Clients</strong> in <strong class="text-highlight-gradient">Just 30 Days</strong> using <strong class="text-highlight-gradient">Vince Tan's Proven 7-Figure Expert Blueprint.</strong> This uniquely combines a <strong class="text-highlight-gradient">Step-by-Step Launch System</strong> with <strong class="text-highlight-gradient">Direct Coaching.</strong> Kickstart your journey with a <strong class="text-highlight-gradient">FREE 2.5hr Strategy Session (RM799 Value)!</strong>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-headline mb-6">The Expert Elite Class Advantage:</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-[#ff8906] mr-3 mt-1 shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-headline">Vince Tan's 7-Figure Blueprint</h4>
+                                <p class="text-paragraph">Access the exact strategies Vince used to build multiple million-dollar businesses. Not theory, but real-world, battle-tested methods.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-[#ff8906] mr-3 mt-1 shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-headline">30-Day Rapid Launch Roadmap</h4>
+                                <p class="text-paragraph">A clear, actionable, day-by-day plan to get your expert business launched and profitable, fast.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-[#ff8906] mr-3 mt-1 shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-headline">Direct Coaching & Support</h4>
+                                <p class="text-paragraph">Get unstuck and stay motivated with group coaching calls and a supportive community led by Vince and his team.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-[#ff8906] mr-3 mt-1 shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-headline">Done-For-You Templates</h4>
+                                <p class="text-paragraph">Save countless hours with ready-to-use templates for offers, marketing, sales, and client management.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left" data-aos-delay="200" class="mt-10 md:mt-0">
+                    <!-- IMAGE PROMPT:
+                    Image Description: A dynamic, abstract visual representing transformation and growth. Could be interconnected nodes forming a clear path, or a stylized graph showing rapid upward trajectory from 'Stuck' to 'Launched & Profitable'. Subtle blueprint lines could be in the background.
+                    Visual Style: Surreal Combination with a tech/modern feel.
+                    Composition Details:
+                      Layout: Balanced, perhaps with a clear directional flow from left (complexity/problem) to right (clarity/solution).
+                      Focal Point: The point of transformation or the peak of the growth graph.
+                      Image Ratio: 1:1 or 4:3.
+                    Color Instructions:
+                      Palette: Dark Theme with #ff8906 and #e53170 as key colors for the path/graph elements, creating high contrast against the #0f0e17 background. Colors signify energy, progress, and achievement.
+                    -->
+                    <img src="https://via.placeholder.com/500x400.png/1a1829/ff8906?text=Results+Visualization" alt="Expert Elite Class Results" class="w-full rounded-lg shadow-2xl" data-tilt>
+                    <div class="mt-6 text-center">
+                        <canvas id="resultsChart" class="max-w-md mx-auto"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 sm:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-headline text-center mb-12 sm:mb-16" data-aos="fade-up">
+                Your Path from <span class="text-highlight-gradient">Expert to Elite</span>: 3 Simple Steps
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+                <div class="bg-card p-8 rounded-lg shadow-xl text-center" data-aos="fade-up" data-tilt>
+                    <div class="mb-6">
+                        <i data-lucide="calendar-check" class="h-16 w-16 text-[#ff8906] mx-auto"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-headline mb-3">Step 1: Claim Your FREE Strategy Session</h3>
+                    <p class="text-paragraph">Book your complimentary <strong class="text-highlight-gradient">2.5-hour Zoom call with Vince Tan (RM799 Value)</strong>. Get personalized insights and discover how the Expert Elite Class can revolutionize your business.</p>
+                </div>
+                <div class="bg-card p-8 rounded-lg shadow-xl text-center" data-aos="fade-up" data-aos-delay="150" data-tilt>
+                    <div class="mb-6">
+                        <i data-lucide="key-round" class="h-16 w-16 text-[#ff8906] mx-auto"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-headline mb-3">Step 2: Unlock the 7-Figure Blueprint</h3>
+                    <p class="text-paragraph">Join the Expert Elite Class and get immediate access to Vince's <strong class="text-highlight-gradient">step-by-step</strong> modules, proven templates, and invaluable coaching support.</p>
+                </div>
+                <div class="bg-card p-8 rounded-lg shadow-xl text-center" data-aos="fade-up" data-aos-delay="300" data-tilt>
+                    <div class="mb-6">
+                        <i data-lucide="rocket" class="h-16 w-16 text-[#ff8906] mx-auto"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-headline mb-3">Step 3: Launch & Land Clients in 30 Days</h3>
+                    <p class="text-paragraph">Follow the proven 30-day roadmap, implement the powerful strategies, and confidently secure your <strong class="text-highlight-gradient">first 3 paying clients.</strong></p>
+                </div>
+            </div>
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#cta" class="bg-button text-button text-lg font-semibold px-10 py-3 rounded-lg hover:opacity-90 transition-opacity transform hover:scale-105 inline-block">
+                    Book Your FREE Session Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial / Social Proof Section -->
+    <section id="testimonials" class="py-16 sm:py-24 bg-[#1a1829]">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-headline text-center mb-12" data-aos="fade-up">
+                Hear From Experts <span class="text-highlight-gradient">Like You</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-card p-8 rounded-lg shadow-xl" data-aos="fade-right" data-tilt>
+                    <p class="text-paragraph italic mb-6 text-lg">"I was drowning in corporate stress and uncertain how to use my skills. The Expert Elite Class gave me the <strong class="text-highlight-gradient">EXACT steps.</strong> In 30 days, I launched my coaching business and got my <strong class="text-highlight-gradient">first 2 clients!</strong> The blueprint and Vince's coaching were game-changers. I finally feel free and purposeful."</p>
+                    <p class="text-headline font-semibold">Sarah L.</p>
+                    <p class="text-sm text-paragraph">Former Marketing Manager, Now Thriving Coach</p>
+                </div>
+                <div class="bg-card p-8 rounded-lg shadow-xl" data-aos="fade-left" data-tilt>
+                    <p class="text-paragraph italic mb-6 text-lg">"I had years of expertise but was severely undercharging. Vince's <strong class="text-highlight-gradient">7-Figure Blueprint</strong> in the EEC helped me package my knowledge into a premium offer. I landed a client at <strong class="text-highlight-gradient">3x my old rate within weeks!</strong> This program is pure gold for any serious expert."</p>
+                    <p class="text-headline font-semibold">David K.</p>
+                    <p class="text-sm text-paragraph">Business Consultant, Premium Earner</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-16" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-headline mb-6">Trusted by innovators in <span class="text-highlight-gradient">50+ countries</span></h3>
+                <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
+                    <!-- Placeholder logos - replace with actual SVGs or relevant images if available -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png" alt="Apple Logo" class="h-10 sm:h-12 text-paragraph opacity-70" style="filter: grayscale(100%) brightness(150%);">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon.logo.svg" alt="Amazon Logo" class="h-10 sm:h-12 text-paragraph opacity-70" style="filter: grayscale(100%) brightness(150%);">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="h-10 sm:h-12 text-paragraph opacity-70" style="filter: grayscale(100%) brightness(150%);">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Microsoft_logo_%282012%29.svg" alt="Microsoft Logo" class="h-10 sm:h-12 text-paragraph opacity-70" style="filter: grayscale(100%) brightness(150%);">
+                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png" alt="Netflix Logo" class="h-8 sm:h-10 text-paragraph opacity-70" style="filter: grayscale(100%) brightness(150%);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section (Value Proposition) -->
+    <section id="pricing" class="py-16 sm:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-headline mb-6" data-aos="fade-up">
+                What If You Could Access a <span class="text-highlight-gradient">7-Figure Blueprint</span> Today?
+            </h2>
+            <p class="text-xl text-paragraph max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
+                The Expert Elite Class, complete with Vince Tan's entire <strong class="text-highlight-gradient">7-Figure Launch Blueprint</strong>, step-by-step modules, proven templates, and direct coaching, is valued at over <strong class="text-highlight-gradient">RM10,000</strong>.
+            </p>
+            <p class="text-xl text-paragraph max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
+                But today, you have an exclusive opportunity: Get a personalized <strong class="text-highlight-gradient">2.5-hour Market Strategy Session with Vince Tan absolutely FREE</strong> (an RM799 value)! In this session, you'll uncover the exact path to your first 3 clients and learn how you can join the Expert Elite Class through a special, one-time offer.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <a href="#cta" class="bg-button text-button text-xl font-semibold px-10 py-4 rounded-lg hover:opacity-90 transition-opacity transform hover:scale-105 inline-block">
+                    Yes! I Want My FREE (RM799 Value) Session!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action (CTA) Section -->
+    <section id="cta" class="py-16 sm:py-24 bg-gradient-to-br from-[#1a1829] via-[#2d2a45] to-[#1a1829]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-headline mb-6" data-aos="zoom-in-out">
+                Ready to Stop Guessing & Start <span class="text-highlight-gradient">Earning?</span>
+            </h2>
+            <p class="text-xl sm:text-2xl text-paragraph max-w-3xl mx-auto mb-10" data-aos="zoom-in-out" data-aos-delay="100">
+                Claim Your <strong class="text-highlight-gradient">FREE (RM799 Value) 2.5hr Zoom Strategy Session</strong> with Vince Tan! Limited Spots Available. Discover the blueprint to launch your expert business and get your <strong class="text-highlight-gradient">first 3 clients in just 30 days.</strong> No obligation, pure value.
+            </p>
+            <div class="max-w-xl mx-auto bg-card p-8 sm:p-10 rounded-lg shadow-2xl" data-aos="flip-up" data-aos-delay="200">
+                <h3 class="text-2xl font-semibold text-headline mb-6">Secure Your Spot Now!</h3>
+                <!-- Tally form to be embedded here for Zoom Session Sign-Up -->
+                <div class="aspect-w-1 aspect-h-1 sm:aspect-h-[0.8]">
+                     <div class="text-paragraph py-10 border-2 border-dashed border-gray-600 rounded-lg flex items-center justify-center">
+                        <p class="text-lg">Tally form to be embedded here.</p>
+                    </div>
+                </div>
+                <p class="text-sm text-paragraph mt-4">By signing up, you agree to our terms and privacy policy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 sm:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-bold text-headline text-center mb-12 sm:mb-16" data-aos="fade-up">
+                Frequently Asked <span class="text-highlight-gradient">Questions</span>
+            </h2>
+            <div class="max-w-3xl mx-auto space-y-6" data-aos="fade-up">
+                <div class="faq-item bg-card rounded-lg shadow-lg overflow-hidden">
+                    <div class="faq-question p-6 flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-headline">What exactly is the Expert Elite Class?</h3>
+                        <i data-lucide="chevron-down" class="faq-arrow h-6 w-6 text-[#ff8906] transform"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-paragraph">It's a comprehensive coaching system by Vince Tan, providing his proven 7-figure blueprint, step-by-step modules, templates, and coaching support to help you launch your coaching, speaking, or training business and secure your first 3 clients in 30 days.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-card rounded-lg shadow-lg overflow-hidden">
+                    <div class="faq-question p-6 flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-headline">Who is this FREE Zoom Strategy Session for?</h3>
+                        <i data-lucide="chevron-down" class="faq-arrow h-6 w-6 text-[#ff8906]"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-paragraph">It's for professionals, experts, consultants, speakers, or trainers who want to monetize their expertise, launch a successful expert business, and are looking for a clear, proven path to get results quickly. If you're feeling stuck, invisible, or overwhelmed, this session is for you.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-card rounded-lg shadow-lg overflow-hidden">
+                    <div class="faq-question p-6 flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-headline">What will I get from the FREE 2.5-hour Zoom Strategy Session?</h3>
+                        <i data-lucide="chevron-down" class="faq-arrow h-6 w-6 text-[#ff8906]"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-paragraph">You'll get personalized insights into your market, understand the core strategies from Vince Tan's 7-figure blueprint, and a clear vision of how to launch your business and get your first clients. It's a high-value session worth RM799, offered free for a limited time.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-card rounded-lg shadow-lg overflow-hidden">
+                    <div class="faq-question p-6 flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-headline">Is there any obligation to buy anything after the free session?</h3>
+                        <i data-lucide="chevron-down" class="faq-arrow h-6 w-6 text-[#ff8906]"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-paragraph">Absolutely not. The 2.5-hour Zoom Strategy Session is designed to provide immense value to you. At the end, Vince will share details about the Expert Elite Class, and if it's a fit for you, you'll have an opportunity to join at an exclusive price.</p>
+                    </div>
+                </div>
+                 <div class="faq-item bg-card rounded-lg shadow-lg overflow-hidden">
+                    <div class="faq-question p-6 flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-headline">How is Vince Tan qualified to teach this?</h3>
+                        <i data-lucide="chevron-down" class="faq-arrow h-6 w-6 text-[#ff8906]"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-paragraph">Vince Tan has 23 years of experience in digital marketing and has built multiple 7-figure businesses from scratch. The Expert Elite Class shares the exact blueprints he used for his successes.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-card rounded-lg shadow-lg overflow-hidden">
+                    <div class="faq-question p-6 flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-headline">How realistic is "3 clients in 30 days"?</h3>
+                        <i data-lucide="chevron-down" class="faq-arrow h-6 w-6 text-[#ff8906]"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-paragraph">It's ambitious but achievable if you diligently follow the proven roadmap and implement the action steps. The system is designed for rapid results, and the coaching support helps you stay on track.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-gray-700">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-sm text-paragraph mb-4">
+                <p><strong>Disclaimer:</strong> Earning potential is entirely dependent on the person using our product, ideas and techniques. We do not purport this as a "get rich scheme." Your level of success in attaining the results claimed in our materials depends on the time you devote to the program, ideas and techniques mentioned, your finances, knowledge and various skills. Since these factors differ according to individuals, we cannot guarantee your success or income level. We cannot guarantee that you will make any money at all. Nor are we responsible for any of your actions. This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+            </div>
+            <p class="text-sm text-paragraph">© 2025 Developed by My Ads Vantage (MAV) – AI Marketing that Sells For You.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+
+        // Initialize Typed.js for Hero Section
+        if (document.getElementById('hero-typewriter')) {
+            new Typed('#hero-typewriter', {
+                strings: [
+                    "Stop Guessing. Start <span class='text-highlight-gradient'>Launching.</span>",
+                    "Your <span class='text-highlight-gradient'>7-Figure Expert Blueprint</span> Awaits.",
+                    "Unlock Your <span class='text-highlight-gradient'>Expert Empire.</span>"
+                ],
+                typeSpeed: 50,
+                backSpeed: 25,
+                backDelay: 2000,
+                loop: true,
+                smartBackspace: true,
+                cursorChar: '_',
+            });
+        }
+        
+        // Initialize Vanilla Tilt for elements with data-tilt
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2
+        });
+
+        // Sticky Navigation Hide/Show on Scroll
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > navbar.offsetHeight) {
+                // Scroll Down
+                navbar.classList.remove('nav-visible');
+                navbar.classList.add('nav-hidden');
+            } else {
+                // Scroll Up
+                navbar.classList.remove('nav-hidden');
+                navbar.classList.add('nav-visible');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenuIcon.setAttribute('data-lucide', 'menu');
+            } else {
+                mobileMenuIcon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons(); // Re-render icon
+        });
+        
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+        
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const arrow = item.querySelector('.faq-arrow');
+
+            question.addEventListener('click', () => {
+                const isOpen = answer.classList.contains('open');
+                
+                // Close all other open answers
+                document.querySelectorAll('.faq-answer.open').forEach(openAnswer => {
+                    if (openAnswer !== answer) {
+                        openAnswer.classList.remove('open');
+                        openAnswer.style.maxHeight = null;
+                        const otherArrow = openAnswer.previousElementSibling.querySelector('.faq-arrow');
+                        if(otherArrow) otherArrow.classList.remove('open');
+                    }
+                });
+
+                // Toggle current answer
+                answer.classList.toggle('open');
+                arrow.classList.toggle('open');
+                if (answer.classList.contains('open')) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+
+        // Chart.js Example in Solution Section
+        const ctxResults = document.getElementById('resultsChart');
+        if (ctxResults) {
+            new Chart(ctxResults, {
+                type: 'bar', // or 'line', 'radar'
+                data: {
+                    labels: ['Confusion', 'Stagnation', 'EEC: Clarity', 'EEC: 3+ Clients', 'EEC: Growth'],
+                    datasets: [{
+                        label: 'Expert Business Journey',
+                        data: [20, 30, 80, 90, 95], // Example data
+                        backgroundColor: [
+                            'rgba(242, 95, 76, 0.6)', // Secondary color for problems
+                            'rgba(242, 95, 76, 0.7)', // Secondary color for problems
+                            'rgba(255, 137, 6, 0.6)', // Highlight color for solutions
+                            'rgba(255, 137, 6, 0.7)', // Highlight color for solutions
+                            'rgba(229, 49, 112, 0.7)'  // Tertiary color for growth
+                        ],
+                        borderColor: [
+                            '#f25f4c',
+                            '#f25f4c',
+                            '#ff8906',
+                            '#ff8906',
+                            '#e53170'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: 'rgba(167, 169, 190, 0.2)'},
+                            ticks: { color: '#a7a9be' }
+                        },
+                        x: {
+                           grid: { display: false },
+                           ticks: { color: '#a7a9be' }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#a7a9be'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
