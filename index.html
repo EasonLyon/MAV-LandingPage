@@ -4,27 +4,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body { font-family: Arial, sans-serif; background: #f8f9fa; margin: 0; padding: 0; }
-.container { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 32px; }
+.container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 32px; }
 h1 { color: #2c3e50; text-align: center; }
+.folder-section { margin-bottom: 36px; }
+.folder-title { font-size: 1.3em; color: #007bff; margin-bottom: 10px; margin-top: 30px; border-left: 4px solid #007bff; padding-left: 12px; }
 ul { list-style: none; padding: 0; }
-li { margin: 16px 0; }
+li { margin: 12px 0; }
 a { color: #007bff; text-decoration: none; font-size: 1.1em; }
 a:hover { text-decoration: underline; }
+.file-list { background: #f4f8fb; border-radius: 6px; padding: 16px 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
 </style>
 </head>
 <body>
 <div class="container">
 <h1>HTML File Index</h1>
-<ul>
+<div class="folder-section">
+<div class="folder-title">MAV</div>
+<ul class="file-list">
+<li><a href="MAV/01-MAV_SalesForYou-v2.html">01-MAV_SalesForYou-v2.html</a></li>
+<li><a href="MAV/01-MAV_SalesForYou.html">01-MAV_SalesForYou.html</a></li>
+</ul></div>
+<div class="folder-section">
+<div class="folder-title">Root</div>
+<ul class="file-list">
 <li><a href="00-LPChatGPT.html">00-LPChatGPT.html</a></li>
 <li><a href="00-LPClaude.html">00-LPClaude.html</a></li>
 <li><a href="00-LPTemplate.html">00-LPTemplate.html</a></li>
 <li><a href="01-LPGeminiEEC.html">01-LPGeminiEEC.html</a></li>
+<li><a href="01-LPGeminiEECv2.html">01-LPGeminiEECv2.html</a></li>
 <li><a href="01-LP_VinceEEC.html">01-LP_VinceEEC.html</a></li>
 <li><a href="test.html">test.html</a></li>
-<li><a href="node_modules/dropzone/src/preview-template.html">node_modules/dropzone/src/preview-template.html</a></li>
-<li><a href="Template/01-BlackTheme.html">Template/01-BlackTheme.html</a></li>
-</ul>
+</ul></div>
+<div class="folder-section">
+<div class="folder-title">Template</div>
+<ul class="file-list">
+<li><a href="Template/01-BlackTheme.html">01-BlackTheme.html</a></li>
+</ul></div>
+<div class="folder-section">
+<div class="folder-title">node_modules\dropzone\src</div>
+<ul class="file-list">
+<li><a href="node_modules/dropzone/src/preview-template.html">preview-template.html</a></li>
+</ul></div>
 </div>
 </body>
 </html>
