@@ -75,6 +75,37 @@
             transition: transform 0.3s ease-in-out;
         }
 
+        /* Custom scrollbar for testimonials */
+        .testimonial-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .testimonial-container::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+        .testimonial-container::-webkit-scrollbar-thumb {
+            background: var(--highlight-color);
+            border-radius: 4px;
+        }
+        .testimonial-container::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        .testimonial-card {
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -2px; 
+            border-radius: inherit; 
+            background: linear-gradient(90deg, var(--highlight-color), var(--secondary-color));
+        }
+
     </style>
 </head>
 <body class="antialiased">
@@ -125,7 +156,7 @@
             <div class="container mx-auto px-6 text-center">
                 <div class="max-w-4xl mx-auto">
                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4" data-aos="fade-up">
-                        Stop Wasting Money on Ads. Start Getting <span id="typed-headline" class="gradient-text"></span>
+                        Stop Wasting Money on Ads. Start Getting<br><span id="typed-headline" class="gradient-text"></span>
                     </h1>
                     <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
                         We combine expert Meta Ad management with a 24/7 AI Sales Agent to turn your ad spend into predictable revenue. <span class="font-bold text-white">No more guessing, just results.</span>
@@ -136,7 +167,7 @@
                 </div>
                 <div class="mt-12" data-aos="fade-up" data-aos-delay="600" data-tilt>
                     <!-- AI Image Prompt in HTML comment -->
-                    <img src="https://placehold.co/1200x600/0f0e17/a7a9be?text=Your+Growth+Dashboard" 
+                    <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jy4hwt27f5wvdt8h6nf90f54%2F1750352244_img_1.webp?st=2025-06-19T15%3A27%3A50Z&se=2025-06-25T16%3A27%3A50Z&sks=b&skt=2025-06-19T15%3A27%3A50Z&ske=2025-06-25T16%3A27%3A50Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=IrfgwujJwtsq3H9XbDjSe6KlV4f3vvxwrRFXQyt1MKc%3D&az=oaivgprodscus" 
                          alt="Dashboard showing business growth"
                          class="w-full max-w-5xl mx-auto rounded-xl shadow-2xl shadow-[#ff8906]/10 border border-gray-700">
                     <!-- 
@@ -159,25 +190,25 @@
                     <div class="bg-gray-800/50 p-8 rounded-xl border border-gray-700" data-aos="fade-up" data-tilt>
                         <i data-lucide="dollar-sign" class="w-12 h-12 text-[#ff8906] mb-4"></i>
                         <h3 class="text-xl font-bold mb-2">Wasted Ad Spend</h3>
-                        <p>Pouring money into Facebook ads with campaigns that get clicks but never convert, leaving you with nothing but a lighter wallet.</p>
+                        <p>You've poured <span class="font-bold text-white">$5,000+</span> into ads for clicks, but <span class="gradient-text font-bold">zero actual sales</span>. It's a crushing feeling to watch your cash vanish with nothing to show for it.</p>
                     </div>
                     <!-- Pain Point 2 -->
                     <div class="bg-gray-800/50 p-8 rounded-xl border border-gray-700" data-aos="fade-up" data-aos-delay="100" data-tilt>
                         <i data-lucide="users" class="w-12 h-12 text-[#ff8906] mb-4"></i>
                         <h3 class="text-xl font-bold mb-2">Useless "Leads"</h3>
-                        <p>Your follower count is up, but your sales are flat. You're getting vanity metrics instead of actual, paying customers.</p>
+                        <p>You're drowning in vanity metrics. <span class="font-bold text-white">Hundreds of likes</span>, but your revenue <span class="gradient-text font-bold">doesn't budge</span>, leaving you with false hope as your business stagnates.</p>
                     </div>
                     <!-- Pain Point 3 -->
                     <div class="bg-gray-800/50 p-8 rounded-xl border border-gray-700" data-aos="fade-up" data-aos-delay="200" data-tilt>
                         <i data-lucide="clock" class="w-12 h-12 text-[#ff8906] mb-4"></i>
                         <h3 class="text-xl font-bold mb-2">No Time or Expertise</h3>
-                        <p>You're an expert in your field, not a digital marketing wizard. You don't have time to keep up with algorithms and complex strategies.</p>
+                        <p>You lose <span class="font-bold text-white">10-15 hours weekly</span> trying to be a marketer. It's time stolen from your real work, <span class="gradient-text font-bold">preventing you from serving clients</span> and growing your business.</p>
                     </div>
                     <!-- Pain Point 4 -->
                     <div class="bg-gray-800/50 p-8 rounded-xl border border-gray-700" data-aos="fade-up" data-aos-delay="300" data-tilt>
                          <i data-lucide="frown" class="w-12 h-12 text-[#ff8906] mb-4"></i>
                         <h3 class="text-xl font-bold mb-2">Frustrating Agencies</h3>
-                        <p>Hiring expensive "experts" who talk a good game but deliver disappointing results, leaving you feeling stuck and cynical.</p>
+                        <p>You've been burned by 'gurus' with <span class="font-bold text-white">long contracts</span> who deliver confusing reports and <span class="gradient-text font-bold">zero ROI</span>, leaving you cynical and stuck.</p>
                     </div>
                 </div>
             </div>
@@ -211,6 +242,7 @@
                     </div>
                     <div class="lg:w-1/2 w-full" data-aos="fade-left" data-aos-delay="200">
                         <canvas id="resultsChart"></canvas>
+                        <p class="text-center text-sm mt-4 text-gray-400">MAV solves the problem of wasted ad spend by turning website traffic into qualified leads around the clock.</p>
                     </div>
                  </div>
             </div>
@@ -264,26 +296,93 @@
         <!-- =========== Testimonial / Social Proof Section =========== -->
         <section id="social-proof" class="py-20 lg:py-32 bg-gray-900">
             <div class="container mx-auto px-6">
-                <!-- Testimonial -->
-                <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
-                    <i data-lucide="quote" class="w-12 h-12 text-[#ff8906] mx-auto mb-4"></i>
-                    <blockquote class="text-xl md:text-2xl italic">
-                        "I was about to give up on Facebook ads. I'd spent over $5,000 with two different agencies and got nothing. I signed up for Sales For You because I needed to see real results. In the first 60 days, they not only got us 4X the leads, but the AI chatbot qualified them so well that our closing rate doubled. It completely changed our business."
-                    </blockquote>
-                    <cite class="block mt-4 font-bold text-lg not-italic text-white">- Sarah K., Founder of a Small E-commerce Brand</cite>
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4" data-aos="fade-up">Don't Just Take Our Word For It</h2>
+                    <p class="text-lg" data-aos="fade-up" data-aos-delay="100">See how we've transformed businesses just like yours.</p>
+                </div>
+
+                <!-- Testimonial Carousel -->
+                <div class="relative" data-aos="fade-up">
+                    <div id="testimonial-carousel" class="testimonial-container flex overflow-x-hidden space-x-8 pb-8">
+                        <!-- Testimonials will be cloned and inserted here by JavaScript -->
+                    </div>
+                    <button id="testimonial-prev" class="absolute top-1/2 -left-4 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-white hover:bg-[#ff8906] transition-colors z-10">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button id="testimonial-next" class="absolute top-1/2 -right-4 -translate-y-1/2 bg-gray-800/50 p-2 rounded-full text-white hover:bg-[#ff8906] transition-colors z-10">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+                </div>
+
+                <!-- Original Testimonials (Hidden) -->
+                <div id="original-testimonials" class="hidden">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                        <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
+                        <blockquote class="text-lg italic">
+                            "I was about to give up on Facebook ads. I'd spent over $5,000 with two different agencies and got nothing. I signed up for Sales For You because I needed to see real results. In the first 60 days, they not only got us 4X the leads, but the AI chatbot qualified them so well that our closing rate doubled. It completely changed our business."
+                        </blockquote>
+                        <cite class="block mt-4 font-bold text-lg not-italic text-white">- Sarah K., Founder of a Small E-commerce Brand</cite>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                        <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
+                        <blockquote class="text-lg italic">
+                            "Our lead quality has gone through the roof. The AI chatbot filters out the tire-kickers and we only speak to people who are ready to buy. Our sales team is happier and more efficient."
+                        </blockquote>
+                        <cite class="block mt-4 font-bold text-lg not-italic text-white">- Mark R., Sales Director, SaaS Company</cite>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                        <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
+                        <blockquote class="text-lg italic">
+                            "As a coach, my time is my most valuable asset. Sales For You automated my lead generation, so I can focus on coaching, not chasing leads. I've doubled my client base in 3 months."
+                        </blockquote>
+                        <cite class="block mt-4 font-bold text-lg not-italic text-white">- Jessica L., Business Coach</cite>
+                    </div>
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                        <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
+                        <blockquote class="text-lg italic">
+                            "We were skeptical about AI, but this system is a game-changer. It's like having a top-performing salesperson on duty 24/7. The ROI was almost immediate."
+                        </blockquote>
+                        <cite class="block mt-4 font-bold text-lg not-italic text-white">- David Chen, CEO, Real Estate Agency</cite>
+                    </div>
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                        <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
+                        <blockquote class="text-lg italic">
+                            "The setup was seamless, and the team was incredibly supportive. They delivered on their promise. We saw a 200% increase in qualified appointments in the first two months."
+                        </blockquote>
+                        <cite class="block mt-4 font-bold text-lg not-italic text-white">- Emily W., Founder, Marketing Agency</cite>
+                    </div>
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-card flex-shrink-0 w-full max-w-md bg-gray-800/50 p-8 rounded-xl">
+                        <i data-lucide="quote" class="w-10 h-10 text-[#ff8906] mb-4"></i>
+                        <blockquote class="text-lg italic">
+                            "I finally have a predictable stream of leads for my consulting practice. No more feast or famine. This service is the real deal for any service-based business."
+                        </blockquote>
+                        <cite class="block mt-4 font-bold text-lg not-italic text-white">- Michael P., Financial Consultant</cite>
+                    </div>
                 </div>
                 
                 <!-- Logo Cloud -->
                 <div class="mt-20" data-aos="fade-up">
                     <h4 class="text-center text-lg font-semibold mb-2">Trusted by innovators in 50+ countries</h4>
                     <p class="text-center text-sm mb-8">The top industrial successful companies constantly learning to transform more people lives</p>
-                    <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-60">
+                    <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-70">
                          <!-- AI Image Prompt in HTML comment for each logo -->
-                        <img src="https://placehold.co/120x40/0f0e17/a7a9be?text=InnovateCo" alt="InnovateCo logo" class="h-8"> <!-- Prompt: A sleek, modern, minimalist logo for a tech company called 'InnovateCo' -->
-                        <img src="https://placehold.co/120x40/0f0e17/a7a9be?text=QuantumLeap" alt="QuantumLeap logo" class="h-8"> <!-- Prompt: A dynamic logo for 'QuantumLeap' suggesting forward movement and technology -->
-                        <img src="https://placehold.co/120x40/0f0e17/a7a9be?text=ApexGlobal" alt="ApexGlobal logo" class="h-8"> <!-- Prompt: A professional, strong logo for 'ApexGlobal', maybe incorporating a mountain peak -->
-                        <img src="https://placehold.co/120x40/0f0e17/a7a9be?text=Synergy Inc" alt="Synergy Inc logo" class="h-8"> <!-- Prompt: A clean, corporate logo for 'Synergy Inc' that suggests partnership -->
-                        <img src="https://placehold.co/120x40/0f0e17/a7a9be?text=NextGen" alt="NextGen logo" class="h-8"> <!-- Prompt: A futuristic, sleek logo for a company called 'NextGen' -->
+                        <img src="https://placehold.co/150x50/0f0e17/a7a9be?text=InnovateCo" alt="InnovateCo logo" class="h-10">
+                        <img src="https://placehold.co/150x50/0f0e17/a7a9be?text=QuantumLeap" alt="QuantumLeap logo" class="h-10">
+                        <img src="https://placehold.co/150x50/0f0e17/a7a9be?text=ApexGlobal" alt="ApexGlobal logo" class="h-10">
+                        <img src="https://placehold.co/150x50/0f0e17/a7a9be?text=Synergy+Inc" alt="Synergy Inc logo" class="h-10">
+                        <img src="https://placehold.co/150x50/0f0e17/a7a9be?text=NextGen" alt="NextGen logo" class="h-10">
+                        <img src="https://logodownload.org/wp-content/uploads/2014/09/meta-logo-1-1.png" alt="Meta logo" class="h-10 filter grayscale brightness-200">
+                        <img src="https://logodownload.org/wp-content/uploads/2014/09/google-logo-1-1.png" alt="Google logo" class="h-12 filter grayscale brightness-200">
+                        <img src="https://logodownload.org/wp-content/uploads/2014/09/linkedin-logo-1-1.png" alt="LinkedIn logo" class="h-10 filter grayscale brightness-200">
+                        <img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-1-1.png" alt="Youtube logo" class="h-12 filter grayscale brightness-200">
+                        <img src="https://logodownload.org/wp-content/uploads/2019/08/tiktok-logo-1-1.png" alt="Tiktok logo" class="h-12 filter grayscale brightness-200">
+                        <img src="https://logodownload.org/wp-content/uploads/2023/09/xiaohongshu-logo-1.png" alt="小红书 logo" class="h-12 filter grayscale brightness-200">
                     </div>
                 </div>
             </div>
@@ -322,9 +421,25 @@
                         <h3 class="text-2xl font-bold text-white mb-4">Your Future Awaits</h3>
                         <p class="mb-6">Our team will be in touch shortly to schedule your call.</p>
                         <!-- Tally form to be embedded here -->
-                        <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center text-gray-400">
-                           <p>Contact Form Placeholder</p>
-                        </div>
+                        <form action="#" method="POST" class="space-y-6 text-left">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                                <input type="text" name="name" id="name" autocomplete="name" required class="mt-1 block w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-[#ff8906] focus:border-[#ff8906] text-white placeholder-gray-400">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                                <input type="email" name="email" id="email" autocomplete="email" required class="mt-1 block w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-[#ff8906] focus:border-[#ff8906] text-white placeholder-gray-400">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-300">Phone</label>
+                                <input type="tel" name="phone" id="phone" autocomplete="tel" required class="mt-1 block w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-[#ff8906] focus:border-[#ff8906] text-white placeholder-gray-400">
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-[#ff8906] text-white text-lg font-bold py-4 px-10 rounded-lg hover:bg-[#e67b05] transition-transform transform hover:scale-105">
+                                    Schedule My Free Blueprint Call
+                                </button>
+                            </div>
+                        </form>
                         <!-- End Tally form placeholder -->
                     </div>
                 </div>
@@ -344,7 +459,7 @@
                             <span class="text-lg font-semibold text-white">What exactly is "Sales For You"?</span>
                             <i data-lucide="plus" class="faq-icon w-6 h-6 text-gray-400 shrink-0"></i>
                         </button>
-                        <div class="faq-answer px-6 pb-6">
+                        <div class="faq-answer px-6 pb-1">
                             <p>It's a "Done-For-You" service that combines strategic Meta (Facebook/Instagram) advertising with a custom-built AI Sales Agent (chatbot). We don't just send you traffic; we build a complete system to capture, qualify, and convert that traffic into sales-ready leads for your business.</p>
                         </div>
                     </div>
@@ -354,7 +469,7 @@
                             <span class="text-lg font-semibold text-white">Who is this for?</span>
                             <i data-lucide="plus" class="faq-icon w-6 h-6 text-gray-400 shrink-0"></i>
                         </button>
-                        <div class="faq-answer px-6 pb-6">
+                        <div class="faq-answer px-6 pb-1">
                             <p>This is for small to medium-sized business owners, coaches, consultants, and service providers who are serious about growth but are tired of wasting money on ineffective marketing. If you want a predictable system for getting new clients and customers, this is for you.</p>
                         </div>
                     </div>
@@ -364,7 +479,7 @@
                             <span class="text-lg font-semibold text-white">How is this different from a regular marketing agency?</span>
                             <i data-lucide="plus" class="faq-icon w-6 h-6 text-gray-400 shrink-0"></i>
                         </button>
-                        <div class="faq-answer px-6 pb-6">
+                        <div class="faq-answer px-6 pb-1">
                             <p>Three main ways: 1) We integrate an AI chatbot to work 24/7, so leads are never missed. 2) We focus on tangible business outcomes (sales-qualified leads), not just vanity metrics like clicks or likes. 3) Our model is built on creating a sustainable, automated SYSTEM for you, not just running monthly campaigns.</p>
                         </div>
                     </div>
@@ -374,7 +489,7 @@
                             <span class="text-lg font-semibold text-white">What kind of results can I realistically expect?</span>
                             <i data-lucide="plus" class="faq-icon w-6 h-6 text-gray-400 shrink-0"></i>
                         </button>
-                        <div class="faq-answer px-6 pb-6">
+                        <div class="faq-answer px-6 pb-1">
                             <p>While results vary by industry and ad spend, our goal is to double your qualified leads within 90 days. Our "Big Promise" includes a guarantee: if we don't hit our agreed-upon targets in the first month, you don't pay our service fee for that month. We're committed to your success.</p>
                         </div>
                     </div>
@@ -384,7 +499,7 @@
                             <span class="text-lg font-semibold text-white">Is there a long-term contract?</span>
                             <i data-lucide="plus" class="faq-icon w-6 h-6 text-gray-400 shrink-0"></i>
                         </button>
-                        <div class="faq-answer px-6 pb-6">
+                        <div class="faq-answer px-6 pb-1">
                             <p>We believe in earning your business every month. We start with a 90-day pilot program to prove our value. After that, we operate on a flexible month-to-month basis. You can cancel anytime with 30 days' notice.</p>
                         </div>
                     </div>
@@ -394,7 +509,7 @@
                             <span class="text-lg font-semibold text-white">How much does it cost after the free consultation?</span>
                             <i data-lucide="plus" class="faq-icon w-6 h-6 text-gray-400 shrink-0"></i>
                         </button>
-                        <div class="faq-answer px-6 pb-6">
+                        <div class="faq-answer px-6 pb-1">
                             <p>Our pricing is tailored to your specific needs and goals, which we'll discuss during your free strategy session. We have packages designed for different business sizes and ad spend levels. Our focus is always on delivering a significant return on your investment.</p>
                         </div>
                     </div>
@@ -420,6 +535,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -513,9 +629,50 @@
                 });
             });
 
+            // 8. Testimonial Carousel Logic
+            const carousel = document.getElementById('testimonial-carousel');
+            const originalTestimonials = document.getElementById('original-testimonials');
+            const prevButton = document.getElementById('testimonial-prev');
+            const nextButton = document.getElementById('testimonial-next');
 
-            // 8. Chart.js for Solution Section
+            // Clone testimonials for seamless looping
+            carousel.innerHTML = originalTestimonials.innerHTML + originalTestimonials.innerHTML;
+
+            let scrollInterval;
+
+            const startScrolling = () => {
+                scrollInterval = setInterval(() => {
+                    carousel.scrollLeft += 1;
+                    if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
+                        carousel.scrollLeft = 0;
+                    }
+                }, 20); // Adjust speed here
+            };
+
+            const stopScrolling = () => {
+                clearInterval(scrollInterval);
+            };
+
+            carousel.addEventListener('mouseover', stopScrolling);
+            carousel.addEventListener('mouseout', startScrolling);
+            prevButton.addEventListener('mouseover', stopScrolling);
+            prevButton.addEventListener('mouseout', startScrolling);
+            nextButton.addEventListener('mouseover', stopScrolling);
+            nextButton.addEventListener('mouseout', startScrolling);
+
+            prevButton.addEventListener('click', () => {
+                carousel.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+
+            nextButton.addEventListener('click', () => {
+                carousel.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+
+            startScrolling();
+
+            // 9. Chart.js for Solution Section
             const ctx = document.getElementById('resultsChart').getContext('2d');
+            Chart.register(ChartDataLabels);
             
             // Gradient for chart bars
             const gradient = ctx.createLinearGradient(0, 0, 0, 400);
@@ -532,19 +689,41 @@
                         backgroundColor: 'rgba(167, 169, 190, 0.5)',
                         borderColor: 'rgba(167, 169, 190, 1)',
                         borderWidth: 1,
-                        borderRadius: 5
+                        borderRadius: 5,
+                        datalabels: {
+                            display: false
+                        }
                     }, {
                         label: 'After "Sales For You"',
                         data: [80, 80, 25],
                         backgroundColor: gradient,
                         borderColor: 'rgba(255, 137, 6, 1)',
                         borderWidth: 1,
-                        borderRadius: 5
+                        borderRadius: 5,
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'top',
+                            color: '#fffffe',
+                            font: {
+                                weight: 'bold'
+                            },
+                            formatter: (value, context) => {
+                                const beforeData = context.chart.data.datasets[0].data;
+                                const beforeValue = beforeData[context.dataIndex];
+                                if (beforeValue === 0) return '';
+                                const percentageChange = ((value - beforeValue) / beforeValue) * 100;
+                                if (percentageChange > 0) {
+                                    return `+${Math.round(percentageChange)}%`;
+                                }
+                                return `${Math.round(percentageChange)}%`;
+                            }
+                        }
                     }]
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: false,
+                    maintainAspectRatio: true,
+                    aspectRatio: window.innerWidth < 1024 ? 1 : 2/3,
                     scales: {
                         y: {
                             beginAtZero: true,
