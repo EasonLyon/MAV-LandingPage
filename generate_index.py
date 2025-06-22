@@ -27,11 +27,23 @@ def generate_index_html(root_dir, output_file="index.html"):
     folder_map = {}
     for dirpath, _, filenames in os.walk(root_dir):
         rel_dir = os.path.relpath(dirpath, root_dir)
-        if rel_dir == ".":
-            rel_dir = "Root"
-        html_files = [f for f in filenames if f.endswith(".html") and f != output_file]
+        is_root = rel_dir == "."
+        display_dir = "Root" if is_root else rel_dir
+
+        html_files = []
+        for f in filenames:
+            if not f.endswith(".html"):
+                continue
+            if is_root and f == output_file:
+                continue
+            html_files.append(f)
+
         if html_files:
-            folder_map[rel_dir] = [os.path.join(rel_dir if rel_dir != "Root" else "", f).replace("\\", "/") for f in html_files]
+            html_files.sort()
+            folder_map[display_dir] = [
+                os.path.join(rel_dir if not is_root else "", f).replace("\\", "/")
+                for f in html_files
+            ]
 
     for folder, files in sorted(folder_map.items()):
         html_content.append(f'<div class="folder-section">')
