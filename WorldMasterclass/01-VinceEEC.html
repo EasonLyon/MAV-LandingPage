@@ -131,6 +131,27 @@
         .testimonial-scroll-container::-webkit-scrollbar-thumb:hover {
             background: var(--accent-foreground);
         }
+
+        /* Auto light/dark mode based on user browser/system preference */
+        @media (prefers-color-scheme: dark) {
+            html {
+                /* Add dark class to enable dark mode variables */
+                color-scheme: dark;
+            }
+            body {
+                background-color: var(--background);
+                color: var(--foreground);
+            }
+        }
+        @media (prefers-color-scheme: light) {
+            html {
+                color-scheme: light;
+            }
+            body {
+                background-color: var(--background);
+                color: var(--foreground);
+            }
+        }
     </style>
     <script>
         tailwind.config = {
@@ -220,7 +241,7 @@
             <a href="#how-it-works" class="block py-2 px-4 text-sm text-foreground hover:bg-secondary dark:hover:bg-muted">How It Works</a>
             <a href="#pricing" class="block py-2 px-4 text-sm text-foreground hover:bg-secondary dark:hover:bg-muted">Pricing</a>
             <a href="#faq" class="block py-2 px-4 text-sm text-foreground hover:bg-secondary dark:hover:bg-muted">FAQ</a>
-            <a href="#cta" class="block py-2 px-4 text-sm bg-primary hover:bg-amber-600 text-primary-foreground text-center font-semibold rounded-b-md">Get Free Strategy</a>
+            <a href="#tally-open=3jX7k6&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave" class="block py-2 px-4 text-sm bg-primary hover:bg-amber-600 text-primary-foreground text-center font-semibold rounded-b-md">Get Free Strategy</a>
         </div>
     </nav>
 
@@ -231,10 +252,7 @@
                 Expert Elite Class: From Knowledge to Income
             </h1>
             <p class="text-2xl md:text-3xl font-semibold text-foreground mb-6" data-aos="fade-up" data-aos-delay="200">
-                Market Strategy Session with Vince Tan: Turn Your Expertise into a Thriving Business and <br class="hidden md:block"/><span id="hero-animated-words" class="text-primary dark:text-amber-400"></span>
-            </p>
-            <p class="max-w-3xl mx-auto text-lg md:text-xl text-secondary-foreground dark:text-muted-foreground mb-10" data-aos="fade-up" data-aos-delay="400">
-                This FREE 2.5-hour Live Market Strategy Session is your exclusive opportunity with 7-figure entrepreneur Vince Tan to craft a clear roadmap for launching your coaching, speaking, or training business, helping you attract your first 3 high-value clients in as little as 30 days.
+                30 Days Attract 5-Figure Sales For Your Coaching, Speaking, or Training Business. <br>Helping Your Business <span id="hero-animated-words" class="text-primary dark:text-amber-400"></span>
             </p>
             <a href="#tally-open=3jX7k6&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave" class="bg-primary hover:bg-amber-600 hover:text-primary-foreground text-primary-foreground font-bold py-4 px-10 rounded-lg text-lg transition-transform transform hover:scale-105 inline-block" data-aos="zoom-in">
                 Reserve My FREE Spot Now!
@@ -291,24 +309,6 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-foreground" data-aos="fade-up">
                 Your <span class="keyword-highlight">Shortcut</span> to a Crystal-Clear Expert Business Launch Plan
             </h2>
-            <ul class="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto space-y-4" data-aos="fade-up" data-aos-delay="100">
-                <li class="flex items-start gap-2"><span class="text-amber-500 text-xl">🎯</span> <span>Achieve <span class="keyword-highlight">crystal clarity</span> on your market position & initial launch steps in <span class="keyword-highlight">just 2.5 hours</span></span></li>
-                <li class="flex items-start gap-2"><span class="text-amber-500 text-xl">💡</span> <span>Join our <span class="keyword-highlight">Free Live Market Strategy Session with Vince Tan</span></span></li>
-                <li class="flex items-start gap-2"><span class="text-amber-500 text-xl">🤝</span> <span>Get <span class="keyword-highlight">direct access</span> to a 7-figure entrepreneur's strategic insights for <span class="keyword-highlight">your specific situation</span></span></li>
-                <li class="flex items-start gap-2"><span class="text-amber-500 text-xl">✅</span> <span>Walk away with <span class="keyword-highlight">at least 3 actionable strategies</span> you can implement immediately</span></li>
-            </ul>
-
-            <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
-                <div class="lg:w-1/2" data-aos="fade-right">
-                    <!-- AI Image Prompt: Vince Tan on a stage or in a high-quality studio setting, confidently presenting, with a backdrop subtly hinting at success symbols like upward graphs and a world map. He should look approachable and authoritative. Style: Photography. Composition: Center Focus, Focus: Vince Tan, Size: 16:9. Color: Amber Minimal (ambers, warm neutrals, touch of deep blue for trust), Mood: Authoritative, inspiring, trustworthy. -->
-                    <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jyd76nczfnm8qtzktevnv0h3%2F1750643059_img_1.webp?st=2025-06-23T00%3A01%3A49Z&se=2025-06-29T01%3A01%3A49Z&sks=b&skt=2025-06-23T00%3A01%3A49Z&ske=2025-06-29T01%3A01%3A49Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=GrDv2q4HMfq54YQ%2FiJHp%2Fb%2F7Bdmpmppc3hrTlk4muJI%3D&az=oaivgprodscus" alt="Vince Tan presenting" class="rounded-lg shadow-xl w-full object-cover">
-                </div>
-                <div class="lg:w-1/2" data-aos="fade-left">
-                    <div class="bg-card dark:bg-neutral-700 p-6 rounded-lg shadow-lg aspect-square">
-                        <canvas id="solutionChart"></canvas>
-                    </div>
-                </div>
-            </div>
 
             <h3 class="text-2xl md:text-3xl font-semibold text-center mb-10 text-foreground" data-aos="fade-up">What You'll Gain from this <span class="keyword-highlight">FREE Session</span></h3>
             <div class="grid md:grid-cols-2 gap-8 mb-16">
