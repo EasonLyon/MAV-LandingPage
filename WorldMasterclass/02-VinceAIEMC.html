@@ -134,7 +134,7 @@
 <body class="bg-background text-foreground font-sans antialiased">
 
     <!-- Navigation Bar -->
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-transform duration-300 bg-background/80 backdrop-blur-sm border-b border-border/50">
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-transform duration-300 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo/Offer Name -->
@@ -192,7 +192,7 @@
         <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 text-center bg-secondary dark:bg-black">
             <div class="container mx-auto px-4">
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-4" data-aos="fade-up">
-                    The AI Masterclass That Helps You Launch Your Profitable AI Venture to <br> <span class="gradient-text" id="typed-headline"></span>
+                    The AI Masterclass That Helps You Launch Your Profitable AI Startup to<br><span class="gradient-text" id="typed-headline"></span>
                 </h1>
                 <p class="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground mb-8" data-aos="fade-up" data-aos-delay="200">
                     The AI Entrepreneurship Masterclass is your A-Z blueprint that helps aspiring founders and savvy entrepreneurs launch AI-powered businesses from scratch, so they can achieve 6-7 figure revenues even with zero initial capital.
@@ -201,16 +201,16 @@
                     Secure Your FREE Spot Now!
                 </a>
                 <div class="mt-12" data-aos="fade-up" data-aos-delay="600">
+                    <!-- 
+                        AI Image Prompt:
+                        description: "A diverse group of 3-4 aspiring entrepreneurs (Ambitious Alex & Pragmatic Priya types) collaboratively working on laptops and tablets in a modern, bright co-working space. Subtle, glowing AI-inspired neural network patterns overlaying the scene lightly. One person looking up with a confident 'aha!' moment. Focus on optimism and tech-driven collaboration."
+                        style: "High Contrast"
+                        composition: { "layout": "Rule of Thirds", "focus": "The person having the 'aha!' moment and their screen", "size": "16:9" }
+                        color: { "palette": "Amber Minimal theme colors (amber, black, white/light grays)", "mood": "Innovative, energetic, professional, optimistic." }
+                    -->
                     <img src="https://placehold.co/1200x675/171717/f59e0b?text=AI+Entrepreneurs+Collaborating" 
                          alt="AI Entrepreneurship Masterclass Visual" 
                          class="mx-auto rounded-lg shadow-2xl"
-                         <!-- 
-                            AI Image Prompt:
-                            description: "A diverse group of 3-4 aspiring entrepreneurs (Ambitious Alex & Pragmatic Priya types) collaboratively working on laptops and tablets in a modern, bright co-working space. Subtle, glowing AI-inspired neural network patterns overlaying the scene lightly. One person looking up with a confident 'aha!' moment. Focus on optimism and tech-driven collaboration."
-                            style: "High Contrast"
-                            composition: { "layout": "Rule of Thirds", "focus": "The person having the 'aha!' moment and their screen", "size": "16:9" }
-                            color: { "palette": "Amber Minimal theme colors (amber, black, white/light grays)", "mood": "Innovative, energetic, professional, optimistic." }
-                         -->
                     >
                 </div>
             </div>
@@ -257,44 +257,82 @@
                 </div>
 
                 <!-- Big Promise & Chart -->
-                <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-                    <div data-aos="fade-right">
-                        <h3 class="text-2xl font-bold mb-4">Our Big Promise to You:</h3>
-                        <div class="text-xl md:text-2xl text-muted-foreground leading-relaxed p-6 bg-accent/50 dark:bg-accent/10 border-l-4 border-primary rounded-r-lg">
-                            Get <span class="gradient-text font-bold">a validated, launch-ready AI business model</span> in just <span class="font-bold text-foreground">6 weeks</span> using our <span class="font-bold text-foreground">AI Lean Launchpad™ Framework</span>. You'll gain a massive unfair advantage, ready to execute on one of 6+ proven AI business blueprints.
+                <div class="flex flex-col items-center mb-20">
+                    <div data-aos="fade-up" class="w-full max-w-2xl mx-auto">
+                        <h3 class="text-2xl font-bold mb-8 text-left">Our Big Promise to You:</h3>
+                        <div class="flex flex-col gap-4">
+                            <!-- 1 -->
+                            <div class="bg-card border border-border rounded-lg p-4 shadow flex items-center gap-4">
+                                <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 border-2 border-primary">
+                                    <i data-lucide="check-circle" class="h-7 w-7 text-primary"></i>
+                                </div>
+                                <div class="text-lg text-muted-foreground font-medium">
+                                    Get <span class="gradient-text font-bold">a validated, launch-ready AI business model</span>
+                                    <span class="block text-sm text-foreground font-semibold">in just 6 weeks</span>
+                                </div>
+                            </div>
+                            <!-- 2 -->
+                            <div class="bg-card border border-border rounded-lg p-4 shadow flex items-center gap-4">
+                                <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 border-2 border-primary">
+                                    <i data-lucide="rocket" class="h-7 w-7 text-primary"></i>
+                                </div>
+                                <div class="text-lg text-muted-foreground font-medium">
+                                    Use <span class="font-bold text-foreground">our AI Lean Launchpad™ Framework</span> to launch your AI startup with <span class="font-bold text-foreground">zero initial capital</span>
+                                </div>
+                            </div>
+                            <!-- 3 -->
+                            <div class="bg-card border border-border rounded-lg p-4 shadow flex items-center gap-4">
+                                <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 border-2 border-primary">
+                                    <i data-lucide="star" class="h-7 w-7 text-primary"></i>
+                                </div>
+                                <div class="text-lg text-muted-foreground font-medium">
+                                    <span class="font-bold text-foreground">Combines VC-grade strategy</span> with practical AI tool implementation, offering <span class="font-bold text-foreground">6+ turnkey AI business blueprints</span>
+                                </div>
+                            </div>
+                            <!-- 4 -->
+                            <div class="bg-card border border-border rounded-lg p-4 shadow flex items-center gap-4">
+                                <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 border-2 border-primary">
+                                    <i data-lucide="shield-check" class="h-7 w-7 text-primary"></i>
+                                </div>
+                                <div class="text-lg text-muted-foreground font-medium">
+                                    <span class="font-bold text-foreground">Risk-free:</span> You'll have at least one of 6 proven AI business ideas ready to execute after the full program
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="w-full aspect-square max-w-md mx-auto" data-aos="fade-left">
+                    <div class="w-full max-w-md mt-12" data-aos="fade-up"></div>
                         <canvas id="solutionChart"></canvas>
                     </div>
                 </div>
 
                 <!-- Benefits Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-20 text-center">
-                    <div class="p-6 bg-card rounded-lg border border-border" data-tilt data-aos="zoom-in">
-                        <i data-lucide="rocket" class="h-10 w-10 text-primary mx-auto mb-4"></i>
-                        <h4 class="text-lg font-bold mb-2">Launch Fast</h4>
-                        <p class="text-sm text-muted-foreground">Go from idea to AI-powered MVP in weeks, not years.</p>
-                    </div>
-                    <div class="p-6 bg-card rounded-lg border border-border" data-tilt data-aos="zoom-in" data-aos-delay="100">
-                        <i data-lucide="target" class="h-10 w-10 text-primary mx-auto mb-4"></i>
-                        <h4 class="text-lg font-bold mb-2">Zero Capital Focus</h4>
-                        <p class="text-sm text-muted-foreground">Bootstrap using smart AI leverage, minimizing financial risk.</p>
-                    </div>
-                    <div class="p-6 bg-card rounded-lg border border-border" data-tilt data-aos="zoom-in" data-aos-delay="200">
-                        <i data-lucide="users" class="h-10 w-10 text-primary mx-auto mb-4"></i>
-                        <h4 class="text-lg font-bold mb-2">Investor-Ready Pitch</h4>
-                        <p class="text-sm text-muted-foreground">Craft compelling, data-driven pitches to attract funding.</p>
-                    </div>
-                    <div class="p-6 bg-card rounded-lg border border-border" data-tilt data-aos="zoom-in" data-aos-delay="300">
-                        <i data-lucide="brain" class="h-10 w-10 text-primary mx-auto mb-4"></i>
-                        <h4 class="text-lg font-bold mb-2">Hustler's AI Mindset</h4>
-                        <p class="text-sm text-muted-foreground">Develop the resilience and adaptability to thrive and lead.</p>
-                    </div>
-                    <div class="p-6 bg-card rounded-lg border border-border" data-tilt data-aos="zoom-in" data-aos-delay="400">
-                        <i data-lucide="network" class="h-10 w-10 text-primary mx-auto mb-4"></i>
-                        <h4 class="text-lg font-bold mb-2">Exclusive Community</h4>
-                        <p class="text-sm text-muted-foreground">Join a vibrant network for brainstorming and collaboration.</p>
+                <div class="px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-20 text-center">
+                        <div class="p-6 bg-card rounded-lg border border-border" data-tilt data-aos="zoom-in">
+                            <i data-lucide="rocket" class="h-10 w-10 text-primary mx-auto mb-4"></i>
+                            <h4 class="text-lg font-bold mb-2">Launch Fast</h4>
+                            <p class="text-sm text-muted-foreground">Go from idea to AI-powered MVP in weeks, not years.</p>
+                        </div>
+                        <div class="p-6 bg-card rounded-lg border border-border" data-tilt data-aos="zoom-in" data-aos-delay="100">
+                            <i data-lucide="target" class="h-10 w-10 text-primary mx-auto mb-4"></i>
+                            <h4 class="text-lg font-bold mb-2">Zero Capital Focus</h4>
+                            <p class="text-sm text-muted-foreground">Bootstrap using smart AI leverage, minimizing financial risk.</p>
+                        </div>
+                        <div class="p-6 bg-card rounded-lg border border-border" data-tilt data-aos="zoom-in" data-aos-delay="200">
+                            <i data-lucide="users" class="h-10 w-10 text-primary mx-auto mb-4"></i>
+                            <h4 class="text-lg font-bold mb-2">Investor-Ready Pitch</h4>
+                            <p class="text-sm text-muted-foreground">Craft compelling, data-driven pitches to attract funding.</p>
+                        </div>
+                        <div class="p-6 bg-card rounded-lg border border-border" data-tilt data-aos="zoom-in" data-aos-delay="300">
+                            <i data-lucide="brain" class="h-10 w-10 text-primary mx-auto mb-4"></i>
+                            <h4 class="text-lg font-bold mb-2">Hustler's AI Mindset</h4>
+                            <p class="text-sm text-muted-foreground">Develop the resilience and adaptability to thrive and lead.</p>
+                        </div>
+                        <div class="p-6 bg-card rounded-lg border border-border" data-tilt data-aos="zoom-in" data-aos-delay="400">
+                            <i data-lucide="network" class="h-10 w-10 text-primary mx-auto mb-4"></i>
+                            <h4 class="text-lg font-bold mb-2">Exclusive Community</h4>
+                            <p class="text-sm text-muted-foreground">Join a vibrant network for brainstorming and collaboration.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -306,41 +344,86 @@
                             <thead class="bg-muted">
                                 <tr>
                                     <th class="p-4 font-semibold">Feature</th>
-                                    <th class="p-4 font-semibold text-center text-primary-foreground bg-primary">Our Masterclass</th>
+                                    <th class="p-4 font-semibold text-center text-primary-foreground bg-primary">AI Masterclass</th>
                                     <th class="p-4 font-semibold text-center">Generic Online Courses</th>
                                     <th class="p-4 font-semibold text-center">DIY AI Learning</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-border">
                                 <tr class="hover:bg-muted/50">
-                                    <td class="p-4 font-medium">AI Business Blueprints</td>
-                                    <td class="p-4 text-center text-primary font-bold">✓ 6+ Turnkey Models</td>
-                                    <td class="p-4 text-center text-muted-foreground">Generic Skills</td>
-                                    <td class="p-4 text-center text-muted-foreground">None</td>
+                                    <td class="p-4 font-medium">Ready-to-Use AI Business Models</td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-primary font-bold">6+ Models</span>
+                                        <div><i data-lucide="star" class="h-5 w-5 text-primary inline-block"></i><i data-lucide="star" class="h-5 w-5 text-primary inline-block"></i><i data-lucide="star" class="h-5 w-5 text-primary inline-block"></i></div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-muted-foreground">1-2 Models</span>
+                                        <div><i data-lucide="star" class="h-5 w-5 text-muted-foreground inline-block"></i></div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-muted-foreground">0 Models</span>
+                                        <div><i data-lucide="x" class="h-5 w-5 text-muted-foreground inline-block"></i></div>
+                                    </td>
                                 </tr>
                                 <tr class="hover:bg-muted/50">
-                                    <td class="p-4 font-medium">Speed to Launch</td>
-                                    <td class="p-4 text-center text-primary font-bold">Weeks (AI Lean Launchpad™)</td>
-                                    <td class="p-4 text-center text-muted-foreground">Months or Unclear Path</td>
-                                    <td class="p-4 text-center text-muted-foreground">Variable / Slow</td>
+                                    <td class="p-4 font-medium">Time to Launch</td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-primary font-bold">2-6 Weeks</span>
+                                        <div><i data-lucide="zap" class="h-5 w-5 text-primary inline-block"></i><i data-lucide="zap" class="h-5 w-5 text-primary inline-block"></i><i data-lucide="zap" class="h-5 w-5 text-primary inline-block"></i></div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-muted-foreground">3-6 Months</span>
+                                        <div><i data-lucide="zap" class="h-5 w-5 text-muted-foreground inline-block"></i></div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-muted-foreground">6+ Months</span>
+                                        <div><i data-lucide="hourglass" class="h-5 w-5 text-muted-foreground inline-block"></i></div>
+                                    </td>
                                 </tr>
                                 <tr class="hover:bg-muted/50">
-                                    <td class="p-4 font-medium">Zero Capital Focus</td>
-                                    <td class="p-4 text-center text-primary font-bold">✓ Core Methodology</td>
-                                    <td class="p-4 text-center text-muted-foreground">Often Assumes Capital</td>
-                                    <td class="p-4 text-center text-muted-foreground">Costly Trial & Error</td>
-                                </tr>_
-                                <tr class="hover:bg-muted/50">
-                                    <td class="p-4 font-medium">Investor Readiness</td>
-                                    <td class="p-4 text-center text-primary font-bold">✓ VC Framework Included</td>
-                                    <td class="p-4 text-center text-muted-foreground">Limited or No Focus</td>
-                                    <td class="p-4 text-center text-muted-foreground">None</td>
+                                    <td class="p-4 font-medium">Startup Capital Required</td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-primary font-bold">$0-$500</span>
+                                        <div><i data-lucide="badge-dollar-sign" class="h-5 w-5 text-primary inline-block"></i></div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-muted-foreground">$1K-$5K</span>
+                                        <div><i data-lucide="badge-dollar-sign" class="h-5 w-5 text-muted-foreground inline-block"></i><i data-lucide="badge-dollar-sign" class="h-5 w-5 text-muted-foreground inline-block"></i></div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-muted-foreground">$5K-$10K+</span>
+                                        <div><i data-lucide="badge-dollar-sign" class="h-5 w-5 text-muted-foreground inline-block"></i><i data-lucide="badge-dollar-sign" class="h-5 w-5 text-muted-foreground inline-block"></i><i data-lucide="badge-dollar-sign" class="h-5 w-5 text-muted-foreground inline-block"></i></div>
+                                    </td>
                                 </tr>
-                                 <tr class="hover:bg-muted/50">
-                                    <td class="p-4 font-medium">Community & Expert Access</td>
-                                    <td class="p-4 text-center text-primary font-bold">✓ Vince Tan Led, Close-Knit</td>
-                                    <td class="p-4 text-center text-muted-foreground">Large, Impersonal</td>
-                                    <td class="p-4 text-center text-muted-foreground">Isolated</td>
+                                <tr class="hover:bg-muted/50">
+                                    <td class="p-4 font-medium">VC-Ready Pitch Materials</td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-primary font-bold">Yes (Complete Kit)</span>
+                                        <div><i data-lucide="check-circle" class="h-5 w-5 text-primary inline-block"></i></div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-muted-foreground">Partial</span>
+                                        <div><i data-lucide="help-circle" class="h-5 w-5 text-muted-foreground inline-block"></i></div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-muted-foreground">No</span>
+                                        <div><i data-lucide="x-circle" class="h-5 w-5 text-muted-foreground inline-block"></i></div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-muted/50">
+                                    <td class="p-4 font-medium">Expert Support Level</td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-primary font-bold">High (Direct Access)</span>
+                                        <div><i data-lucide="users" class="h-5 w-5 text-primary inline-block"></i><i data-lucide="users" class="h-5 w-5 text-primary inline-block"></i><i data-lucide="users" class="h-5 w-5 text-primary inline-block"></i></div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-muted-foreground">Medium</span>
+                                        <div><i data-lucide="users" class="h-5 w-5 text-muted-foreground inline-block"></i><i data-lucide="users" class="h-5 w-5 text-muted-foreground inline-block"></i></div>
+                                    </td>
+                                    <td class="p-4 text-center">
+                                        <span class="text-muted-foreground">None</span>
+                                        <div><i data-lucide="user-x" class="h-5 w-5 text-muted-foreground inline-block"></i></div>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -678,11 +761,13 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Main Script -->
     <script>
+        Chart.register(ChartDataLabels);
         document.addEventListener('DOMContentLoaded', () => {
 
             // 1. Initialize Libraries
