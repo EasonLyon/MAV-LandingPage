@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Elite Class - FREE Live Market Strategy Session</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --background: #ffffff;
+            --foreground: #262626;
+            --card: #ffffff;
+            --card-foreground: #262626;
+            --popover: #ffffff;
+            --popover-foreground: #262626;
+            --primary: #f59e0b; /* Amber */
+            --primary-foreground: #000000;
+            --secondary: #f3f4f6;
+            --secondary-foreground: #4b5563;
+            --muted: #f9fafb;
+            --muted-foreground: #6b7280;
+            --accent: #fffbeb;
+            --accent-foreground: #92400e; /* Darker Amber */
+            --destructive: #ef4444;
+            --destructive-foreground: #ffffff;
+            --border: #e5e7eb;
+            --input: #e5e7eb;
+            --ring: #f59e0b; /* Amber */
+            --radius: 0.375rem;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        .dark {
+            --background: #171717;
+            --foreground: #e5e5e5;
+            --card: #262626;
+            --card-foreground: #e5e5e5;
+            --popover: #262626;
+            --popover-foreground: #e5e5e5;
+            --primary: #f59e0b; /* Amber */
+            --primary-foreground: #000000;
+            --secondary: #262626;
+            --secondary-foreground: #e5e5e5;
+            --muted: #262626;
+            --muted-foreground: #a3a3a3;
+            --accent: #451a03; /* Dark Amber for dark mode accent */
+            --accent-foreground: #fde68a; /* Light Amber for dark mode accent text */
+            --destructive: #ef4444;
+            --destructive-foreground: #ffffff;
+            --border: #404040;
+            --input: #404040;
+            --ring: #f59e0b; /* Amber */
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--background);
+            color: var(--foreground);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .bg-primary { background-color: var(--primary); }
+        .text-primary { color: var(--primary); }
+        .text-primary-foreground { color: var(--primary-foreground); }
+        .bg-secondary { background-color: var(--secondary); }
+        .text-secondary-foreground { color: var(--secondary-foreground); }
+        .bg-accent { background-color: var(--accent); }
+        .text-accent-foreground { color: var(--accent-foreground); }
+        .border-default { border-color: var(--border); }
+        .ring-primary { outline-color: var(--ring); }
+        
+        .keyword-highlight {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .dark .keyword-highlight {
+            color: #fbbf24; /* Lighter amber for dark mode */
+        }
+        
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            transition: top 0.3s;
+        }
+        .nav-hidden {
+            top: -100px;
+        }
+
+        .testimonial-track {
+            display: flex;
+            align-items: stretch;
+            animation: scroll-testimonials 60s linear infinite;
+        }
+        .testimonial-card {
+            white-space: normal !important;
+            overflow: visible !important;
+            height: auto !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        @keyframes scroll-testimonials {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Adjust based on number of items */
+        }
+        .testimonial-card-container:hover .testimonial-track {
+            animation-play-state: paused;
+        }
+        .faq-item .faq-answer { display: none; }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-icon-plus { display: none; }
+        .faq-item:not(.active) .faq-icon-minus { display: none; }
+
+        /* Custom scrollbar for testimonial container */
+        .testimonial-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .testimonial-scroll-container::-webkit-scrollbar-track {
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+        .testimonial-scroll-container::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        .testimonial-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-foreground);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'var(--primary)',
+                        'primary-foreground': 'var(--primary-foreground)',
+                        secondary: 'var(--secondary)',
+                        'secondary-foreground': 'var(--secondary-foreground)',
+                        accent: 'var(--accent)',
+                        'accent-foreground': 'var(--accent-foreground)',
+                        background: 'var(--background)',
+                        foreground: 'var(--foreground)',
+                        card: 'var(--card)',
+                        'card-foreground': 'var(--card-foreground)',
+                        border: 'var(--border)',
+                        input: 'var(--input)',
+                        ring: 'var(--ring)',
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: 'var(--radius)',
+                        sm: 'calc(var(--radius) - 4px)',
+                        md: 'calc(var(--radius) - 2px)',
+                        lg: 'var(--radius)',
+                        xl: 'calc(var(--radius) + 4px)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-foreground scroll-smooth">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="nav-sticky bg-background/80 dark:bg-card/80 backdrop-blur-md shadow-md">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-xl font-bold text-primary dark:text-amber-400">Expert Elite Class</a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#problem" class="text-foreground hover:text-primary dark:hover:text-amber-400 transition-colors">Problem</a>
+                    <a href="#solution" class="text-foreground hover:text-primary dark:hover:text-amber-400 transition-colors">Solution</a>
+                    <a href="#how-it-works" class="text-foreground hover:text-primary dark:hover:text-amber-400 transition-colors">How It Works</a>
+                    <a href="#pricing" class="text-foreground hover:text-primary dark:hover:text-amber-400 transition-colors">Pricing</a>
+                    <a href="#faq" class="text-foreground hover:text-primary dark:hover:text-amber-400 transition-colors">FAQ</a>
+                    <a href="#cta" class="bg-primary hover:bg-amber-600 hover:text-primary-foreground text-primary-foreground font-semibold px-4 py-2 rounded-md transition-colors">Get Free Strategy</a>
+                    <button id="theme-toggle" class="p-2 rounded-md hover:bg-secondary dark:hover:bg-muted">
+                        <i data-lucide="sun" class="theme-icon-light"></i>
+                        <i data-lucide="moon" class="theme-icon-dark hidden"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-md hover:bg-secondary dark:hover:bg-muted mr-2">
+                        <i data-lucide="sun" class="theme-icon-light-mobile"></i>
+                        <i data-lucide="moon" class="theme-icon-dark-mobile hidden"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="text-foreground focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-background dark:bg-card shadow-lg">
+            <a href="#problem" class="block py-2 px-4 text-sm text-foreground hover:bg-secondary dark:hover:bg-muted">Problem</a>
+            <a href="#solution" class="block py-2 px-4 text-sm text-foreground hover:bg-secondary dark:hover:bg-muted">Solution</a>
+            <a href="#how-it-works" class="block py-2 px-4 text-sm text-foreground hover:bg-secondary dark:hover:bg-muted">How It Works</a>
+            <a href="#pricing" class="block py-2 px-4 text-sm text-foreground hover:bg-secondary dark:hover:bg-muted">Pricing</a>
+            <a href="#faq" class="block py-2 px-4 text-sm text-foreground hover:bg-secondary dark:hover:bg-muted">FAQ</a>
+            <a href="#cta" class="block py-2 px-4 text-sm bg-primary hover:bg-amber-600 text-primary-foreground text-center font-semibold rounded-b-md">Get Free Strategy</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-24 bg-gradient-to-br from-amber-50 dark:from-neutral-900 via-amber-100 dark:via-neutral-800 to-amber-200 dark:to-neutral-900 text-center">
+        <div class="container mx-auto px-6 py-16 md:py-15">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-4" data-aos="fade-up">
+                Expert Elite Class: From Knowledge to Income
+            </h1>
+            <p class="text-2xl md:text-3xl font-semibold text-foreground mb-6" data-aos="fade-up" data-aos-delay="200">
+                Market Strategy Session with Vince Tan: Turn Your Expertise into a Thriving Business and <br class="hidden md:block"/><span id="hero-animated-words" class="text-primary dark:text-amber-400"></span>
+            </p>
+            <p class="max-w-3xl mx-auto text-lg md:text-xl text-secondary-foreground dark:text-muted-foreground mb-10" data-aos="fade-up" data-aos-delay="400">
+                This FREE 2.5-hour Live Market Strategy Session is your exclusive opportunity with 7-figure entrepreneur Vince Tan to craft a clear roadmap for launching your coaching, speaking, or training business, helping you attract your first 3 high-value clients in as little as 30 days.
+            </p>
+            <a href="#cta" class="bg-primary hover:bg-amber-600 hover:text-primary-foreground text-primary-foreground font-bold py-4 px-10 rounded-lg text-lg transition-transform transform hover:scale-105 inline-block" data-aos="zoom-in">
+                Reserve My FREE Spot Now!
+            </a>
+            <div class="mt-12 md:mt-16" data-aos="fade-up" data-aos-delay="800">
+                <!-- AI Image Prompt: Dynamic shot of Vince Tan, energetic and engaging, leading an interactive online strategy session with diverse professionals visible on screen looking inspired and attentive. A subtle overlay of a 'roadmap' or 'growth chart' graphic enhancing the scene. Focus on Vince's confident and approachable demeanor. Style: High Contrast. Composition: Rule of Thirds, Focus on Vince Tan and engaged participants, Size: 16:9. Color: Amber Minimal (ambers, warm grays, deep blacks), Mood: Energetic, professional, enlightening, and aspirational. -->
+                <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jyd7y9adfkdstbpvb1ehccsx%2F1750643812_img_1.webp?st=2025-06-23T00%3A02%3A58Z&se=2025-06-29T01%3A02%3A58Z&sks=b&skt=2025-06-23T00%3A02%3A58Z&ske=2025-06-29T01%3A02%3A58Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=9RHNaQSArFq1M%2FB0MLQU9Q7RCe5qLyJKSYmlJoDMviA%3D&az=oaivgprodscus" alt="Vince Tan leading a strategy session" class="mx-auto rounded-lg shadow-xl w-full max-w-4xl aspect-3/2 object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="pt-24 pb-16 bg-background dark:bg-neutral-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground" data-aos="fade-up">
+                The Real Reason You’re <span class="keyword-highlight">Struggling To Monetize</span> Your Expertise
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-card dark:bg-neutral-800 p-6 rounded-lg shadow-lg border border-default" data-aos="fade-up" data-tilt>
+                    <div class="flex items-center justify-center bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-full w-16 h-16 mb-6 mx-auto">
+                        <i data-lucide="brain" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center text-card-foreground">Overweelm by Information'?</h3>
+                    <p class="text-sm text-center text-muted-foreground">Endless advice, zero clarity. Studies show <span class="keyword-highlight">80% of aspiring experts feel stuck</span> by conflicting information, delaying their launch indefinitely.</p>
+                </div>
+                <div class="bg-card dark:bg-neutral-800 p-6 rounded-lg shadow-lg border border-default" data-aos="fade-up" data-aos-delay="100" data-tilt>
+                    <div class="flex items-center justify-center bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-full w-16 h-16 mb-6 mx-auto">
+                        <i data-lucide="eye-off" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center text-card-foreground">Suffering from 'Expert Invisibility'?</h3>
+                    <p class="text-sm text-center text-muted-foreground">You possess invaluable knowledge, but potential clients don't know you exist. This leads to an empty client pipeline and erodes confidence, costing an estimated <span class="keyword-highlight">RM50,000+ in lost annual income</span>.</p>
+                </div>
+                <div class="bg-card dark:bg-neutral-800 p-6 rounded-lg shadow-lg border border-default" data-aos="fade-up" data-aos-delay="200" data-tilt>
+                    <div class="flex items-center justify-center bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-full w-16 h-16 mb-6 mx-auto">
+                        <i data-lucide="map-pin-off" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center text-card-foreground">Missing a 'Monetization Roadmap'?</h3>
+                    <p class="text-sm text-center text-muted-foreground">Unsure how to package your skills into a compelling, premium offer? This critical gap prevents <span class="keyword-highlight">75% of experts</span> from earning what they're truly worth.</p>
+                </div>
+                <div class="bg-card dark:bg-neutral-800 p-6 rounded-lg shadow-lg border border-default" data-aos="fade-up" data-aos-delay="300" data-tilt>
+                    <div class="flex items-center justify-center bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-full w-16 h-16 mb-6 mx-auto">
+                        <i data-lucide="alert-triangle" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center text-card-foreground">Paralyzed by 'Launch Fear'?</h3>
+                    <p class="text-sm text-center text-muted-foreground">The thought of 'putting yourself out there' is daunting, keeping <span class="keyword-highlight">90% of brilliant experts</span> from building their dream business and achieving time freedom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="pt-24 pb-16 bg-secondary dark:bg-neutral-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-foreground" data-aos="fade-up">
+                Your <span class="keyword-highlight">Shortcut</span> to a Crystal-Clear Expert Business Launch Plan
+            </h2>
+            <ul class="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto space-y-4" data-aos="fade-up" data-aos-delay="100">
+                <li class="flex items-start gap-2"><span class="text-amber-500 text-xl">🎯</span> <span>Achieve <span class="keyword-highlight">crystal clarity</span> on your market position & initial launch steps in <span class="keyword-highlight">just 2.5 hours</span></span></li>
+                <li class="flex items-start gap-2"><span class="text-amber-500 text-xl">💡</span> <span>Join our <span class="keyword-highlight">Free Live Market Strategy Session with Vince Tan</span></span></li>
+                <li class="flex items-start gap-2"><span class="text-amber-500 text-xl">🤝</span> <span>Get <span class="keyword-highlight">direct access</span> to a 7-figure entrepreneur's strategic insights for <span class="keyword-highlight">your specific situation</span></span></li>
+                <li class="flex items-start gap-2"><span class="text-amber-500 text-xl">✅</span> <span>Walk away with <span class="keyword-highlight">at least 3 actionable strategies</span> you can implement immediately</span></li>
+            </ul>
+
+            <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <!-- AI Image Prompt: Vince Tan on a stage or in a high-quality studio setting, confidently presenting, with a backdrop subtly hinting at success symbols like upward graphs and a world map. He should look approachable and authoritative. Style: Photography. Composition: Center Focus, Focus: Vince Tan, Size: 16:9. Color: Amber Minimal (ambers, warm neutrals, touch of deep blue for trust), Mood: Authoritative, inspiring, trustworthy. -->
+                    <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jyd76nczfnm8qtzktevnv0h3%2F1750643059_img_1.webp?st=2025-06-23T00%3A01%3A49Z&se=2025-06-29T01%3A01%3A49Z&sks=b&skt=2025-06-23T00%3A01%3A49Z&ske=2025-06-29T01%3A01%3A49Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=GrDv2q4HMfq54YQ%2FiJHp%2Fb%2F7Bdmpmppc3hrTlk4muJI%3D&az=oaivgprodscus" alt="Vince Tan presenting" class="rounded-lg shadow-xl w-full object-cover">
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="bg-card dark:bg-neutral-700 p-6 rounded-lg shadow-lg aspect-square">
+                        <canvas id="solutionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl md:text-3xl font-semibold text-center mb-10 text-foreground" data-aos="fade-up">What You'll Gain from this <span class="keyword-highlight">FREE Session</span></h3>
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-card dark:bg-neutral-700 p-6 rounded-lg shadow-lg border border-default flex items-start space-x-4" data-aos="fade-up" data-tilt>
+                    <div class="flex-shrink-0 bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-full p-3">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2 text-card-foreground">Direct Q&A with Vince Tan</h4>
+                        <p class="text-sm text-muted-foreground">Get your most pressing business launch questions answered live by a seasoned 7-figure entrepreneur and digital marketing veteran of 23+ years.</p>
+                    </div>
+                </div>
+                <div class="bg-card dark:bg-neutral-700 p-6 rounded-lg shadow-lg border border-default flex items-start space-x-4" data-aos="fade-up" data-aos-delay="100" data-tilt>
+                    <div class="flex-shrink-0 bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-full p-3">
+                        <i data-lucide="target" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2 text-card-foreground">Personalized 'Hot Seat' Insights</h4>
+                        <p class="text-sm text-muted-foreground">Gain tailored strategic advice for *your* expert niche and unique situation during interactive 'hot seat' opportunities within the session.</p>
+                    </div>
+                </div>
+                <div class="bg-card dark:bg-neutral-700 p-6 rounded-lg shadow-lg border border-default flex items-start space-x-4" data-aos="fade-up" data-aos-delay="200" data-tilt>
+                    <div class="flex-shrink-0 bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-full p-3">
+                        <i data-lucide="map" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2 text-card-foreground">Actionable Launch Clarity</h4>
+                        <p class="text-sm text-muted-foreground">Walk away with a clearer understanding of your market, your unique selling proposition, and at least 3 immediate next steps.</p>
+                    </div>
+                </div>
+                <div class="bg-card dark:bg-neutral-700 p-6 rounded-lg shadow-lg border border-default flex items-start space-x-4" data-aos="fade-up" data-aos-delay="300" data-tilt>
+                    <div class="flex-shrink-0 bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-full p-3">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2 text-card-foreground">Exclusive Expert Elite Class Preview</h4>
+                        <p class="text-sm text-muted-foreground">Discover the proven Expert Elite Class blueprint and get a special chance to join at an exclusive, one-time investment, if you choose.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl md:text-3xl font-semibold text-center mb-10 text-foreground" data-aos="fade-up">Why This FREE Session Beats <span class="keyword-highlight">'Figuring It Out Alone'</span></h3>
+            <div class="overflow-x-auto bg-card dark:bg-neutral-700 p-2 rounded-lg shadow-lg" data-aos="fade-up">
+                <table class="w-full min-w-[800px] text-sm text-left text-card-foreground">
+                    <thead class="text-md uppercase bg-muted dark:bg-neutral-600">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 rounded-tl-lg">Feature</th>
+                            <th scope="col" class="px-6 py-3 bg-amber-100 dark:bg-amber-800/50 text-amber-700 dark:text-amber-300">Expert Elite Class</th>
+                            <th scope="col" class="px-6 py-3">DIY Online Research</th>
+                            <th scope="col" class="px-6 py-3">Generic Free Webinars</th>
+                            <th scope="col" class="px-6 py-3 rounded-tr-lg">Direct 1-hr Consults</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-default hover:bg-amber-50 dark:hover:bg-neutral-600/50 transition-colors">
+                            <td class="px-6 py-4 font-medium">Experience Level</td>
+                            <td class="px-6 py-4 font-semibold text-amber-700 dark:text-amber-300">Vince Tan (7-Figure Entrepreneur, 23+ Yrs Exp)</td>
+                            <td class="px-6 py-4">Anonymous / Unverified Authors</td>
+                            <td class="px-6 py-4">Often Junior Marketers / Pre-recorded</td>
+                            <td class="px-6 py-4">Varies, Access</td>
+                        </tr>
+                        <tr class="border-b border-default hover:bg-amber-50 dark:hover:bg-neutral-600/50 transition-colors">
+                            <td class="px-6 py-4 font-medium">Actionable Clarity</td>
+                            <td class="px-6 py-4 font-semibold text-amber-700 dark:text-amber-300">High (Focused, Live Interaction, Tailored Insights)</td>
+                            <td class="px-6 py-4">Very Low (Information Overload)</td>
+                            <td class="px-6 py-4">Low (Generic, Fluff)</td>
+                            <td class="px-6 py-4">Medium (Good, but Time-Limited)</td>
+                        </tr>
+                        <tr class="border-b border-default hover:bg-amber-50 dark:hover:bg-neutral-600/50 transition-colors">
+                            <td class="px-6 py-4 font-medium">Personalized Feedback</td>
+                            <td class="px-6 py-4 font-semibold text-amber-700 dark:text-amber-300">Excellent (Live Q&A, Hot Seats)</td>
+                            <td class="px-6 py-4">None</td>
+                            <td class="px-6 py-4">Very Limited / None</td>
+                            <td class="px-6 py-4">High</td>
+                        </tr>
+                        <tr class="border-b border-default hover:bg-amber-50 dark:hover:bg-neutral-600/50 transition-colors">
+                            <td class="px-6 py-4 font-medium">Time to Insight</td>
+                            <td class="px-6 py-4 font-semibold text-amber-700 dark:text-amber-300">2.5 Hours for Deep Dive & Strategy</td>
+                            <td class="px-6 py-4">Weeks / Months of Searching</td>
+                            <td class="px-6 py-4">1+ Hour (Often Superficial)</td>
+                            <td class="px-6 py-4">1+ Hour (May need multiple consults)</td>
+                        </tr>
+                        <tr class="hover:bg-amber-50 dark:hover:bg-neutral-600/50 transition-colors">
+                            <td class="px-6 py-4 font-medium rounded-bl-lg">Cost</td>
+                            <td class="px-6 py-4 font-semibold text-amber-700 dark:text-amber-300">FREE (Value RM799)</td>
+                            <td class="px-6 py-4">Free (High Time/Opportunity Cost)</td>
+                            <td class="px-6 py-4">Free (Low Value, Often Upsell Bait)</td>
+                            <td class="px-6 py-4 rounded-br-lg">RM500 - RM2000+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-16 grid md:grid-cols-3 gap-8 text-center" data-aos="fade-up">
+                <div>
+                    <span class="text-5xl font-bold text-primary dark:text-amber-400 stat-number" data-target="23">0</span><span class="text-5xl font-bold text-primary dark:text-amber-400"></span>
+                    <p class="mt-2 text-muted-foreground">Years in Digital Marketing & Business Building (Vince Tan)</p>
+                </div>
+                <div>
+                    <span class="text-5xl font-bold text-primary dark:text-amber-400 stat-number" data-target="7">0</span><span class="text-5xl font-bold text-primary dark:text-amber-400">-Figure</span>
+                    <p class="mt-2 text-muted-foreground">Multiple Businesses Launched from Scratch</p>
+                </div>
+                <div>
+                    <span class="text-5xl font-bold text-primary dark:text-amber-400 stat-number" data-target="3">0</span>
+                    <p class="mt-2 text-muted-foreground">Goal: Your First 3 Premium Clients in 30 Days (via Expert Elite Class)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="pt-24 pb-16 bg-neutral-800 dark:bg-neutral-900 text-neutral-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                Your Roadmap From Expert Confusion to <span class="text-amber-400">Launch Clarity</span> in 3 Simple Steps
+            </h2>
+            <div class="relative">
+                <!-- Connecting line (desktop) -->
+                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-amber-500/50 transform -translate-y-1/2" style="z-index: 0;"></div>
+                
+                <div class="grid md:grid-cols-3 gap-8 md:gap-12 relative" style="z-index: 1;">
+                    <div class="bg-neutral-700 dark:bg-card p-6 rounded-lg shadow-xl text-center border border-neutral-600 dark:border-border" data-aos="fade-up" data-tilt>
+                        <div class="flex items-center justify-center bg-amber-500 text-white rounded-full w-16 h-16 mb-6 mx-auto shadow-md">
+                            <i data-lucide="calendar-plus" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-amber-400">Step 1: Register For Your FREE Spot</h3>
+                        <p class="text-sm text-neutral-300 dark:text-muted-foreground mb-4">Click the button on this page to secure your seat for the upcoming Live Market Strategy Session. It's 100% free, but seats are strictly limited to ensure quality interaction.</p>
+                        <p class="text-xs font-medium text-amber-400/80">Join hundreds of experts who gained clarity!</p>
+                    </div>
+
+                    <div class="bg-neutral-700 dark:bg-card p-6 rounded-lg shadow-xl text-center border border-neutral-600 dark:border-border" data-aos="fade-up" data-aos-delay="150" data-tilt>
+                        <div class="flex items-center justify-center bg-amber-500 text-white rounded-full w-16 h-16 mb-6 mx-auto shadow-md">
+                            <i data-lucide="presentation" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-amber-400">Step 2: Attend the LIVE 2.5hr Session</h3>
+                        <p class="text-sm text-neutral-300 dark:text-muted-foreground mb-4">Join Vince Tan live, absorb invaluable insights on market positioning, niche selection, offer creation, and participate in the dynamic Q&A to get personalized advice.</p>
+                        <p class="text-xs font-medium text-amber-400/80">95% of attendees rate it 4.5 stars or higher!</p>
+                    </div>
+
+                    <div class="bg-neutral-700 dark:bg-card p-6 rounded-lg shadow-xl text-center border border-neutral-600 dark:border-border" data-aos="fade-up" data-aos-delay="300" data-tilt>
+                        <div class="flex items-center justify-center bg-amber-500 text-white rounded-full w-16 h-16 mb-6 mx-auto shadow-md">
+                            <i data-lucide="rocket" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-amber-400">Step 3: Get Your Actionable Launch Insights</h3>
+                        <p class="text-sm text-neutral-300 dark:text-muted-foreground mb-4">Leave the session energized, with at least 3 clear, actionable strategies you can implement immediately to kickstart your expert business launch and attract your ideal clients.</p>
+                        <p class="text-xs font-medium text-amber-400/80">Unlock your path to a premium income stream!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#cta" class="bg-amber-500 hover:bg-amber-600 hover:text-primary-foreground text-black font-bold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105 inline-block">
+                    Secure My FREE Spot Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial / Social Proof Section -->
+    <section id="testimonials" class="pt-24 pb-16 bg-background dark:bg-neutral-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-foreground" data-aos="fade-up">
+                Vince Tan's Expertise Has Shaped <span class="keyword-highlight">Success Stories</span> You May Know
+            </h2>
+            <p class="text-center text-muted-foreground mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                With over two decades in the trenches building 7-figure businesses, Vince has founded and scaled notable companies. His strategies are proven in the real world.
+            </p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-16" data-aos="fade-up">
+                <img src="https://s3.ap-southeast-1.amazonaws.com/resources.wobbjobs.com/uploads/company-logo/company_logo_image/5f1af401-27b6-42cd-95d5-71567c990d12/wmc-tech-sdn-bhd-1594625332.png" alt="World Masterclass Logo" class="h-10 md:h-12 text-muted-foreground dark:brightness-0 dark:invert-[1] opacity-70 hover:opacity-100 transition-opacity"> <!-- Verified alternative link -->
+                <img src="https://resources.wobbjobs.com/companies/fd652942-9827-4332-9820-f684e961e203/company_logo/original/eb5464bb-379f-43ba-a784-9e857f222037-03%20-%20OXWHITE-LOGO-GOLD-03.png" alt="Oxwhite Logo" class="h-10 md:h-12 text-muted-foreground dark:brightness-0 dark:invert-[1] opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://cdn.worldvectorlogo.com/logos/meta-3.svg" alt="Meta Logo" class="h-8 md:h-10 text-muted-foreground dark:brightness-0 dark:invert-[1] opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://cdn.worldvectorlogo.com/logos/microsoft-6.svg" alt="Microsoft Logo" class="h-10 md:h-12 text-muted-foreground dark:brightness-0 dark:invert-[1] opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://cdn.worldvectorlogo.com/logos/google-1-1.svg" alt="Google Logo" class="h-10 md:h-12 text-muted-foreground dark:brightness-0 dark:invert-[1] opacity-70 hover:opacity-100 transition-opacity">
+            </div>
+
+            <div class="relative testimonial-card-container bg-neutral-800 dark:bg-card p-8 rounded-lg shadow-xl" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold text-center mb-8 text-amber-400 dark:text-amber-400">Hear What <span class="keyword-highlight text-amber-400 dark:text-amber-300">Experts Like You</span> Are Saying</h3>
+                <div class="overflow-hidden relative">
+                    <div id="testimonial-track-container" class="testimonial-scroll-container overflow-x-auto pb-4">
+                        <div class="testimonial-track whitespace-nowrap">
+                            <!-- Testimonials will be injected here by JS -->
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-10">
+                    <button id="testimonial-prev" class="bg-amber-500 hover:bg-amber-600 text-black p-2 rounded-full shadow-md">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-10">
+                    <button id="testimonial-next" class="bg-amber-500 hover:bg-amber-600 text-black p-2 rounded-full shadow-md">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pt-24 pb-16 bg-secondary dark:bg-neutral-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-foreground" data-aos="fade-up">
+                Get <span class="keyword-highlight">RM799 of Strategic Value</span>, Absolutely <span class="keyword-highlight">FREE</span> – For a Limited Time!
+            </h2>
+            <p class="text-center text-lg text-muted-foreground mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                This isn't just another webinar. It's a high-impact, interactive strategy session designed to give you immediate clarity and momentum.
+            </p>
+            <div class="max-w-2xl mx-auto bg-card dark:bg-neutral-700 rounded-xl shadow-2xl overflow-hidden border border-primary dark:border-amber-500" data-aos="zoom-in-up">
+                <div class="p-8 md:p-10">
+                    <h3 class="text-2xl font-bold text-card-foreground mb-2">Live Market Strategy Session with Vince Tan</h3>
+                    <p class="text-5xl font-extrabold text-primary dark:text-amber-400 mb-4">RM0 <span class="text-xl font-normal text-muted-foreground line-through">RM799</span></p>
+                    <p class="text-muted-foreground mb-6">A 2.5-hour intensive, interactive online session designed to give you strategic clarity and actionable steps to launch your expert business.</p>
+                    <ul class="space-y-3 mb-8 text-sm text-card-foreground">
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Direct Live Access to Vince Tan (7-Figure Entrepreneur)</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Personalized Q&A and 'Hot Seat' Opportunities</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Actionable Insights on Niche, Offer & Market Position</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Understanding the 'Expert Elite Class' Blueprint</li>
+                        <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i>Networking with Other Aspiring Experts</li>
+                    </ul>
+                    <div class="bg-amber-50 dark:bg-amber-900/30 p-4 rounded-lg border border-amber-200 dark:border-amber-700">
+                        <p class="font-semibold text-amber-700 dark:text-amber-300"><i data-lucide="gift" class="inline w-5 h-5 mr-1"></i>Special Bonus:</p>
+                        <p class="text-xs text-amber-600 dark:text-amber-400">Exclusive opportunity to join Expert Elite Class (Full Program Value: RM10,000+) for a one-time investment of just <span class="font-bold">RM800</span> (revealed during session).</p>
+                    </div>
+                </div>
+                <a href="#cta" class="block w-full bg-primary hover:bg-amber-600 hover:text-primary-foreground text-primary-foreground text-center font-bold py-4 text-lg transition-colors">
+                    Claim Your FREE RM799 Session Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action (CTA) Section -->
+    <section id="cta" class="pt-24 pb-16 relative overflow-hidden bg-background dark:bg-neutral-900">
+        <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-amber-500/10 dark:from-amber-800/10 dark:via-transparent dark:to-amber-800/10 backdrop-blur-sm z-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="bg-card dark:bg-neutral-800 p-8 md:p-12 rounded-xl shadow-2xl lg:flex lg:items-center lg:gap-12">
+                <div class="lg:w-1/2 mb-8 lg:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-card-foreground mb-4">Ready to Stop Guessing & Start <span class="keyword-highlight">Building Your Profitable Expert Business?</span></h2>
+                    <p class="text-muted-foreground mb-6">Limited Seats Available for the Next Live Session! Each session has a cap to ensure quality interaction. Don't miss this chance to get direct coaching from Vince Tan for FREE.</p>
+                     <!-- AI Image Prompt: A split image: one side shows a frustrated person surrounded by confusing notes (before), the other side shows the same person looking confident and clear, holding a simple roadmap or a 'first client' check (after). The transition is marked by a glowing light. Style: Surreal Combination. Composition: Split Screen, Focus: Transformation of the person, Size: 16:9. Color: Before: Muted, chaotic colors. After: Bright, Amber Minimal palette, Mood: Problem to solution, chaos to clarity, hope and success. -->
+                    <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jyd7b4g9eyqr7f23w8f6f32r%2F1750643177_img_1.webp?st=2025-06-23T00%3A02%3A24Z&se=2025-06-29T01%3A02%3A24Z&sks=b&skt=2025-06-23T00%3A02%3A24Z&ske=2025-06-29T01%3A02%3A24Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=0RHn5ig4zwRylMjnuzTT5gYIF9OAK6OzR9BUAGx%2Br%2Bc%3D&az=oaivgprodscus" alt="Transformation from confusion to clarity" class="rounded-lg shadow-lg w-full object-cover">
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left" data-aos-delay="200">
+                    <iframe data-tally-src="https://tally.so/embed/3jX7k6?alignLeft=1&dynamicHeight=1" loading="lazy" width="100%" height="366" frameborder="0" marginheight="0" marginwidth="0" title="Expert Elite Class by Vince Tan"></iframe>
+                    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="pt-24 pb-16 bg-background dark:bg-neutral-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground" data-aos="fade-up">
+                Frequently Asked <span class="keyword-highlight">Questions</span>
+            </h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ items will be generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-muted dark:bg-neutral-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-xs text-muted-foreground mb-4 max-w-3xl mx-auto" data-aos="fade-up">
+                This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc. All results stated are for illustrative purposes and based on the potential of the Expert Elite Class program; individual results will vary based on effort, market conditions, and application of strategies. The free strategy session provides guidance and insights; achieving specific business outcomes requires further implementation.
+            </p>
+            <p class="text-sm text-muted-foreground" data-aos="fade-up" data-aos-delay="100">
+                © 2025 Vince Tan. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        Chart.register(ChartDataLabels);
+
+        // Initialize AOS (Animate on Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Initialize Vanilla Tilt
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2
+        });
+        
+        // Theme Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+        const htmlElement = document.documentElement;
+        const lightIcon = document.querySelector('.theme-icon-light');
+        const darkIcon = document.querySelector('.theme-icon-dark');
+        const lightIconMobile = document.querySelector('.theme-icon-light-mobile');
+        const darkIconMobile = document.querySelector('.theme-icon-dark-mobile');
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                htmlElement.classList.add('dark');
+                if(lightIcon) lightIcon.classList.add('hidden');
+                if(darkIcon) darkIcon.classList.remove('hidden');
+                if(lightIconMobile) lightIconMobile.classList.add('hidden');
+                if(darkIconMobile) darkIconMobile.classList.remove('hidden');
+            } else {
+                htmlElement.classList.remove('dark');
+                if(lightIcon) lightIcon.classList.remove('hidden');
+                if(darkIcon) darkIcon.classList.add('hidden');
+                if(lightIconMobile) lightIconMobile.classList.remove('hidden');
+                if(darkIconMobile) darkIconMobile.classList.add('hidden');
+            }
+        }
+        
+        function toggleTheme() {
+            const currentTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+            // Re-render chart if it exists, as colors might need update
+            if (window.solutionChartInstance) {
+                window.solutionChartInstance.destroy();
+                renderSolutionChart();
+            }
+        }
+
+        if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+        if (themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', toggleTheme);
+        
+        // Load saved theme or use system preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+
+        // Sticky Navigation
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > navbar.offsetHeight) {
+                navbar.classList.add('nav-hidden'); // Scroll Down
+            } else {
+                navbar.classList.remove('nav-hidden'); // Scroll Up
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        });
+
+        // Mobile Menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Calculate offset for sticky nav. Adjust if nav height changes.
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Typed.js for Hero Section
+        if (document.getElementById('hero-animated-words')) {
+            new Typed('#hero-animated-words', {
+                strings: ["Get Clients", "Boost Income", "Gain Freedom"],
+                typeSpeed: 80,
+                backSpeed: 50,
+                loop: true,
+                smartBackspace: true,
+                showCursor: true,
+                cursorChar: '_',
+            });
+        }
+
+        // Chart.js for Solution Section
+        const solutionChartCtx = document.getElementById('solutionChart');
+        if (solutionChartCtx) {
+            const isDarkMode = document.documentElement.classList.contains('dark');
+            const chartData = {
+                labels: ["Success Rate (1-10)", "Time to First Client (Mths)", "Perceived Offer Value ($k)"],
+                datasets: [{
+                    label: 'Without EEC Strategy',
+                    data: [2, 6, 5],
+                    backgroundColor: 'rgba(107, 114, 128, 0.5)', // Muted/Gray
+                    borderColor: 'rgba(107, 114, 128, 1)',
+                    borderWidth: 1
+                },{
+                    label: 'With EEC Strategy',
+                    data: [9, 1, 25],
+                    backgroundColor: [
+                        'rgba(245, 158, 11, 0.6)', // Amber 500
+                        'rgba(217, 119, 6, 0.6)',  // Amber 600
+                        'rgba(180, 83, 9, 0.6)'    // Amber 700
+                    ],
+                    borderColor: [
+                        'rgb(245, 158, 11)',
+                        'rgb(217, 119, 6)',
+                        'rgb(180, 83, 9)'
+                    ],
+                    borderWidth: 1,
+                    datalabels: {
+                        display: true,
+                        align: 'end',
+                        anchor: 'end',
+                        font: { weight: 'bold' },
+                        formatter: function(value, context) {
+                            // Only annotate 'With' bars
+                            const idx = context.dataIndex;
+                            const before = [2, 6, 5][idx];
+                            let pct = (value - before) / before * 100;
+                            if (idx === 1) {
+                                // For time, show decrease as improvement
+                                return `↓${Math.abs(Math.round(pct))}%`;
+                            } else {
+                                return `+${Math.round(pct)}%`;
+                            }
+                        }
+                    }
+                }]
+            };
+            function renderSolutionChart() {
+                const isDarkMode = document.documentElement.classList.contains('dark');
+                const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+                const labelColor = isDarkMode ? '#e5e5e5' : '#262626';
+
+                window.solutionChartInstance = new Chart(solutionChartCtx, {
+                    type: 'bar',
+                    data: chartData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true, // Set to true since we want 1:1 in a square container
+                        aspectRatio: 1, 
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: gridColor },
+                                ticks: { 
+                                    color: labelColor,
+                                    callback: function(value, index, values) {
+                                        if (index === 2) return '$' + value; // Add dollar sign for the third metric
+                                        return value;
+                                    }
+                                 }
+                            },
+                            x: {
+                                grid: { color: gridColor },
+                                ticks: { color: labelColor }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top',
+                                labels: { color: labelColor }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.y !== null) {
+                                            if (context.label === "Success Rate (1-10)") label += `${context.parsed.y} / 10`;
+                                            else if (context.label === "Time to First Client (Mths)") label += `${context.parsed.y} mths`;
+                                            else if (context.label === "Perceived Offer Value ($k)") label += `$${context.parsed.y}k`;
+                                            else label += context.parsed.y;
+                                        }
+                                        return label;
+                                    }
+                                },
+                            },
+                            datalabels: {
+                                display: function(context) {
+                                    // Only show for 'With EEC Strategy' bars
+                                    return context.dataset.label === 'With EEC Strategy';
+                                },
+                                color: labelColor,
+                            }
+                        }
+                    }
+                });
+            }
+            renderSolutionChart();
+        }
+
+        // Animated Number Counters for Stats
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const animateStat = (element) => {
+            const target = +element.dataset.target;
+            const duration = 1500; // ms
+            const frameDuration = 1000 / 60; // 60fps
+            const totalFrames = Math.round(duration / frameDuration);
+            let frame = 0;
+            const counter = setInterval(() => {
+                frame++;
+                const progress = frame / totalFrames;
+                const currentVal = Math.round(target * progress);
+                element.textContent = currentVal;
+                if (frame === totalFrames) {
+                    clearInterval(counter);
+                    element.textContent = target; // Ensure final value is exact
+                }
+            }, frameDuration);
+        };
+
+        const observerOptions = { threshold: 0.5 };
+        const statObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStat(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        statNumbers.forEach(stat => statObserver.observe(stat));
+
+
+        // Testimonials Data and Slider
+        const testimonialsData = [
+            { name: "Amanda S.", testimonial: "I was drowning in information overload before attending Vince's free strategy session. He cut through the noise and gave me 3 actionable steps I could implement immediately. So much value!" },
+            { name: "Ben K.", testimonial: "The 2.5 hours with Vince Tan were pure gold. He has a gift for simplifying complex business strategies. I finally understood how to position my expertise for premium clients." },
+            { name: "Chloe T. (Marketing Director)", testimonial: "Thinking of launching a coaching business? This free session is a MUST. Vince's insights on market positioning are game-changing. I immediately knew Expert Elite Class was my next step to leave my corporate job." },
+            { name: "David L.", testimonial: "I've paid thousands for advice that wasn't half as good as what Vince shared for free in this session. His generosity and genuine desire to help experts succeed shines through." },
+            { name: "Ethan M. (Consultant)", testimonial: "Vince helped me see the 'invisible' opportunities in my field during the strategy session. The live Q&A was incredibly helpful. Left the session feeling energized and with a clear path to higher income." },
+            { name: "Fatima R.", testimonial: "If you're serious about turning your knowledge into income, register for this. Vince doesn't just talk theory; he gives practical, real-world advice you can use today." },
+            { name: "Greg P.", testimonial: "I was skeptical about another 'free webinar,' but Vince Tan's strategy session blew me away. The depth of knowledge and personalized feedback for my situation was unexpected and invaluable." },
+            { name: "Hannah W.", testimonial: "The clarity I gained on my offer and target audience from this single session was worth more than expensive courses I've paid for. Highly recommend to any expert feeling stuck!" },
+            { name: "Ian J.", testimonial: "Vince has a unique way of making you believe in your potential while giving you the concrete tools to achieve it. This free strategy session is the perfect, no-risk starting point." },
+            { name: "Jessica B.", testimonial: "Don't walk, RUN to register for Vince Tan's strategy session. It's the kickstart you need to stop dreaming, get a plan, and start building your expert empire." }
+        ];
+
+        const testimonialTrack = document.querySelector('.testimonial-track');
+        const testimonialTrackContainer = document.getElementById('testimonial-track-container');
+        const testimonialPrevBtn = document.getElementById('testimonial-prev');
+        const testimonialNextBtn = document.getElementById('testimonial-next');
+
+        if (testimonialTrack) {
+            // Duplicate testimonials for seamless loop
+            const allTestimonials = [...testimonialsData, ...testimonialsData];
+            allTestimonials.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'testimonial-card inline-block w-80 md:w-96 mx-4 p-6 bg-card dark:bg-neutral-700 rounded-lg shadow-md flex-shrink-0';
+                card.innerHTML = `
+                    <p class="text-card-foreground text-base mb-4" style="white-space:normal;overflow:visible;">"${item.testimonial}"</p>
+                    <p class="font-semibold text-primary dark:text-amber-400">- ${item.name}</p>
+                `;
+                testimonialTrack.appendChild(card);
+            });
+
+            let scrollAmount = 0;
+            const cardWidth = testimonialTrack.firstElementChild.offsetWidth + (parseFloat(getComputedStyle(testimonialTrack.firstElementChild).marginLeft) * 2); // card width + margins
+
+            function scrollTestimonials(direction) {
+                if (direction === 'next') {
+                    testimonialTrackContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                } else {
+                    testimonialTrackContainer.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                }
+            }
+            if (testimonialPrevBtn) testimonialPrevBtn.addEventListener('click', () => scrollTestimonials('prev'));
+            if (testimonialNextBtn) testimonialNextBtn.addEventListener('click', () => scrollTestimonials('next'));
+            
+            // Auto-scroll (can be paused on hover via CSS)
+            // The CSS animation handles this now. Kept JS buttons for manual control.
+        }
+
+
+        // FAQ Accordion
+        const faqData = [
+            { question: "Is this strategy session really free?", answer: "Yes, absolutely! Vince Tan offers this 2.5-hour live session (valued at RM799) as a way to provide immense value upfront and help dedicated experts like you get unstuck and find launch clarity." },
+            { question: "What exactly will I learn in this 2.5-hour session?", answer: "You'll learn how to identify your unique market position, crucial first steps for launching your expert business, strategies to overcome common hurdles like invisibility and overwhelm, and get your specific questions answered live by Vince." },
+            { question: "Is this just a long sales pitch for Expert Elite Class?", answer: "Not at all. The primary focus of the 2.5-hour session is to deliver significant standalone value and actionable strategies. Towards the end, Vince will share details about the Expert Elite Class program and offer an exclusive opportunity for attendees who wish to implement the full blueprint with his ongoing support. There's zero obligation to join." },
+            { question: "Who is this free strategy session for?", answer: "It's specifically for professionals, consultants, corporate executives, and existing (but perhaps struggling) coaches, speakers, or trainers who are serious about effectively monetizing their expertise and launching or scaling a successful, premium expert business but need clear, proven direction." },
+            { question: "What if I can't make the scheduled live session time?", answer: "We strongly encourage live attendance to benefit from the interactive Q&A and 'hot seat' opportunities. While a replay may be available for a very limited time to registered attendees, the full experience and any special offers for Expert Elite Class are typically reserved for those who attend live." },
+            { question: "What do I need to prepare for this session?", answer: "Come with an open mind, your biggest questions or challenges related to launching or growing your expert business, and be ready to take copious notes! The more engaged you are, the more you'll get out of it." },
+            { question: "How is Vince Tan qualified to give this advice?", answer: "Vince Tan has over 23 years of experience in digital marketing and has personally built multiple 7-figure businesses from the ground up. He's not just teaching theory; he's sharing proven, real-world strategies that he uses himself." }
+        ];
+
+        const faqContainer = document.querySelector('#faq .max-w-3xl');
+        if (faqContainer) {
+            faqData.forEach((item, index) => {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item bg-card dark:bg-neutral-800 rounded-lg shadow-sm border border-default';
+                faqItem.innerHTML = `
+                    <button class="w-full flex justify-between items-center text-left p-4 md:p-5 focus:outline-none">
+                        <span class="text-md font-medium text-card-foreground">${item.question}</span>
+                        <span>
+                            <i data-lucide="plus-circle" class="faq-icon-plus w-5 h-5 text-primary dark:text-amber-400"></i>
+                            <i data-lucide="minus-circle" class="faq-icon-minus w-5 h-5 text-primary dark:text-amber-400 hidden"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer px-4 md:px-5 pb-4 text-sm text-muted-foreground">
+                        ${item.answer}
+                    </div>
+                `;
+                faqContainer.appendChild(faqItem);
+            });
+            lucide.createIcons(); // Re-render icons after adding them
+
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const button = item.querySelector('button');
+                const answer = item.querySelector('.faq-answer');
+                const plusIcon = item.querySelector('.faq-icon-plus');
+                const minusIcon = item.querySelector('.faq-icon-minus');
+
+                button.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    // Close all other active items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                            otherItem.querySelector('.faq-icon-plus').style.display = 'block';
+                            otherItem.querySelector('.faq-icon-minus').style.display = 'none';
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        plusIcon.style.display = 'none';
+                        minusIcon.style.display = 'block';
+                    } else {
+                        answer.style.maxHeight = null;
+                        plusIcon.style.display = 'block';
+                        minusIcon.style.display = 'none';
+                    }
+                });
+                // Initialize answer max-height for smooth transition
+                 answer.style.maxHeight = null; // Collapsed by default
+            });
+        }
+        
+        // CTA Form Submission with SweetAlert2
+        const ctaForm = document.getElementById('cta-form');
+        if (ctaForm) {
+            ctaForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Basic validation example (more robust validation can be added)
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+
+                if (name.trim() === '' || email.trim() === '' || phone.trim() === '') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Please fill in all fields!',
+                        confirmButtonColor: 'var(--primary)'
+                    });
+                    return;
+                }
+
+                // Simulate form submission
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Reserved!',
+                    text: 'Your spot for the FREE Strategy Session is reserved. We will contact you shortly with details.',
+                    confirmButtonColor: 'var(--primary)'
+                });
+                ctaForm.reset();
+            });
+        }
+
+    </script>
+</body>
+</html>
