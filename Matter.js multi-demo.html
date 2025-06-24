@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Matter.js multi-demo playground</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: #111;
+            color: #eee;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        #toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: #222;
+            padding: 8px 12px;
+            display: flex;
+            gap: 8px;
+        }
+
+        #toolbar button {
+            padding: 6px 12px;
+            border: 1px solid #555;
+            background: #333;
+            color: #eee;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #toolbar button:hover {
+            background: #444;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        /* let Matter.js size it */
+    </style>
+</head>
+
+<body>
+
+    <!-- Simple toolbar to swap scenes -->
+    <div id="toolbar">
+        <button data-scene="stack">Stack</button>
+        <button data-scene="circles">Circles</button>
+        <button data-scene="pendulum">Pendulum</button>
+        <button data-scene="cradle">Newton&nbsp;Cradle</button>
+    </div>
+
+    <!-- Matter.js -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.20.0/build/matter.min.js"></script>
+    <script>
+        /* Aliases */
+        const { Engine, Render, Runner, Bodies, Composite, Composites, Constraint, Body, Events, Vector } = Matter;
+
+        /* Boilerplate engine / renderer (one per page) */
+        const engine = Engine.create();
+        engine.gravity.scale = 0.0012;                 // gentler for browser demos
+
+        const render = Render.create({
+            element: document.body,
+            engine: engine,
+            options: {
+                background: '#181818',
+                wireframes: false,
+                width: window.innerWidth,
+                height: window.innerHeight
+            }
+        });
+
+        Render.run(render);
+        const runner = Runner.create();
+        Runner.run(runner, engine);
+
+        /* Resize canvas with viewport */
+        window.addEventListener('resize', () => {
+            render.options.width = render.canvas.width = window.innerWidth;
+            render.options.height = render.canvas.height = window.innerHeight;
+            resetScene(activeScene);                      // rebuild current scene to fit new size
+        });
+
+        /* Convenience: clear everything except the static ground */
+        function resetWorld() {
+            const all = Composite.allBodies(engine.world);
+            all.forEach(b => Composite.remove(engine.world, b));
+        }
+
+        /* Static ground reused by every scene */
+        function makeGround() {
+            const ground = Bodies.rectangle(
+                window.innerWidth / 2,
+                window.innerHeight - 30,
+                window.innerWidth,
+                60,
+                { isStatic: true, render: { fillStyle: '#444' } }
+            );
+            Composite.add(engine.world, ground);
+        }
+
+        /* === Scene definitions === */
+        const scenes = {
+
+            stack() {
+                makeGround();
+                const columns = 6, rows = 10, boxSize = 40;
+                const stack = Composites.stack(
+                    window.innerWidth / 2 - columns * boxSize / 2,
+                    100,
+                    columns, rows, 0, 0,
+                    (x, y) => Bodies.rectangle(x, y, boxSize, boxSize, { restitution: 0.1 })
+                );
+                Composite.add(engine.world, stack);
+            },
+
+            circles() {
+                makeGround();
+                const cols = 12, rows = 6, r = 20;
+                const stack = Composites.stack(100, 100, cols, rows, 0, 0,
+                    (x, y) => Bodies.circle(x, y, r, { restitution: 0.9, friction: 0.001 }));
+                Composite.add(engine.world, stack);
+            },
+
+            pendulum() {
+                makeGround();
+                const origin = { x: window.innerWidth / 2, y: 100 };
+                const bob = Bodies.circle(origin.x + 200, origin.y + 200, 35, { density: 0.004 });
+                const rope = Constraint.create({
+                    pointA: origin,
+                    bodyB: bob,
+                    length: 250,
+                    stiffness: 1,
+                    render: { strokeStyle: '#aaa' }
+                });
+                Composite.add(engine.world, [bob, rope]);
+                // Kick it a bit
+                Body.setAngularVelocity(bob, 0.8);
+            },
+
+            cradle() {
+                makeGround();
+                const cradle = Composites.newtonsCradle(
+                    window.innerWidth / 2 - 180,        // x
+                    150,                              // y
+                    5,                                // number of balls
+                    30,                               // ball radius
+                    200                               // string length
+                );
+                Composite.add(engine.world, cradle);
+                // Pull first ball sideways to start
+                Body.translate(cradle.bodies[0], { x: -100, y: -100 });
+            }
+        };
+
+        /* === Scene switching === */
+        let activeScene = 'stack';
+
+        function resetScene(name) {
+            activeScene = name;
+            resetWorld();
+            scenes[name]();
+        }
+
+        document.querySelectorAll('#toolbar button').forEach(btn => {
+            btn.addEventListener('click', () => resetScene(btn.dataset.scene));
+        });
+
+        /* Kick off initial scene */
+        resetScene(activeScene);
+
+        /* Simple collision highlight (bonus) */
+        Events.on(engine, 'collisionStart', evt => {
+            evt.pairs.forEach(pair => {
+                pair.bodyA.render.strokeStyle = pair.bodyB.render.strokeStyle = '#ff4';
+                setTimeout(() => {              // fade back
+                    pair.bodyA.render.strokeStyle = pair.bodyB.render.strokeStyle = null;
+                }, 150);
+            });
+        });
+    </script>
+</body>
+
+</html>

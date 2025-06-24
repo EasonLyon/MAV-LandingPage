@@ -1,276 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Entrepreneur Masterclass - Start Your Business with AI in 90 Days</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script async src="https://tally.so/widgets/embed.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F0RZP7236"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-9F0RZP7236');
+        gtag('config', 'G-9F0RZP7236');
     </script>
 
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: { primary: "#FF5722", secondary: "#263238" },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#FF5722", secondary: "#263238" },
+                    borderRadius: {
+                        none: "0px",
+                        sm: "4px",
+                        DEFAULT: "8px",
+                        md: "12px",
+                        lg: "16px",
+                        xl: "20px",
+                        "2xl": "24px",
+                        "3xl": "32px",
+                        full: "9999px",
+                        button: "8px",
+                    },
+                },
             },
-          },
-        },
-      };
+        };
     </script>
     <style>
-      :where([class^="ri-"])::before { content: "\f3c2"; }
-      .particle-animation {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 0;
-      opacity: 0.3;
-      mix-blend-mode: normal;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      }
-      .stats-card {
-      backdrop-filter: blur(5px);
-      background-color: rgba(20, 24, 33, 0.7);
-      transition: transform 0.3s ease;
-      }
-      .stats-card:hover {
-      transform: translateY(-5px);
-      }
-      .highlighted-card {
-      background-color: rgba(255, 87, 34, 0.9);
-      }
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .particle-animation {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            opacity: 0.3;
+            mix-blend-mode: normal;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .stats-card {
+            backdrop-filter: blur(5px);
+            background-color: rgba(20, 24, 33, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlighted-card {
+            background-color: rgba(255, 87, 34, 0.9);
+        }
     </style>
-  </head>
-  <body
-    class="bg-gradient-to-br from-[#070B14] via-[#0A0E19] to-[#0C111F] text-white min-h-screen"
-  >
-    <header
-      id="mainHeader"
-      class="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex justify-between items-center bg-[#0A0F1A]/80 backdrop-blur-sm transition-transform duration-300"
-    >
-      <div class="flex items-center space-x-16">
-        <div class="flex items-center space-x-3">
-            <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/90 text-white text-3xl font-extrabold font-sans tracking-tight shadow-lg select-none leading-none border-4 border-white/10">
-                <span class="font-mono" style="letter-spacing: -0.05em;">AI</span>
-            </span>
-            <span class="text-xl font-semibold font-sans tracking-tight text-white select-none">
-                Entrepreneur Masterclass
-            </span>
+</head>
+
+<body class="bg-gradient-to-br from-[#070B14] via-[#0A0E19] to-[#0C111F] text-white min-h-screen">
+    <header id="mainHeader"
+        class="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex justify-between items-center bg-[#0A0F1A]/80 backdrop-blur-sm transition-transform duration-300">
+        <div class="flex items-center space-x-16">
+            <div class="flex items-center space-x-3">
+                <span
+                    class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/90 text-white text-3xl font-extrabold font-sans tracking-tight shadow-lg select-none leading-none border-4 border-white/10">
+                    <span class="font-mono" style="letter-spacing: -0.05em;">AI</span>
+                </span>
+                <span class="text-xl font-semibold font-sans tracking-tight text-white select-none">
+                    Entrepreneur Masterclass
+                </span>
+            </div>
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#hero" class="text-white hover:text-primary transition-colors">Home</a>
+                <a href="#problems" class="text-gray-400 hover:text-primary transition-colors">Challenges</a>
+                <a href="#services" class="text-gray-400 hover:text-primary transition-colors">Solutions</a>
+                <a href="#process" class="text-gray-400 hover:text-primary transition-colors">How It Works</a>
+                <a href="#success" class="text-gray-400 hover:text-primary transition-colors">Success Stories</a>
+                <a href="#pricing" class="text-gray-400 hover:text-primary transition-colors">Pricing</a>
+                <a href="#faq" class="text-gray-400 hover:text-primary transition-colors">FAQ</a>
+            </nav>
         </div>
-        <nav class="hidden lg:flex items-center space-x-8">
-          <a
-            href="#hero"
-            class="text-white hover:text-primary transition-colors"
-            >Home</a
-          >
-          <a
-            href="#problems"
-            class="text-gray-400 hover:text-primary transition-colors"
-            >Challenges</a
-          >
-          <a
-            href="#services"
-            class="text-gray-400 hover:text-primary transition-colors"
-            >Solutions</a
-          >
-          <a
-            href="#process"
-            class="text-gray-400 hover:text-primary transition-colors"
-            >How It Works</a
-          >
-          <a
-            href="#success"
-            class="text-gray-400 hover:text-primary transition-colors"
-            >Success Stories</a
-          >
-          <a
-            href="#pricing"
-            class="text-gray-400 hover:text-primary transition-colors"
-            >Pricing</a
-          >
-          <a
-            href="#faq"
-            class="text-gray-400 hover:text-primary transition-colors"
-            >FAQ</a
-          >
-        </nav>
-      </div>
-      <div class="flex items-center space-x-6">
-        <a
-          href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
-          class="hidden lg:block bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap transition-all text-center"
-          >Get Started</a
-        >
-        <div class="w-10 h-10 flex items-center justify-center lg:hidden">
-          <i class="ri-menu-line ri-lg"></i>
+        <div class="flex items-center space-x-6">
+            <a href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                class="hidden lg:block bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap transition-all text-center">Get
+                Started</a>
+            <div class="w-10 h-10 flex items-center justify-center lg:hidden">
+                <i class="ri-menu-line ri-lg"></i>
+            </div>
         </div>
-      </div>
     </header>
-    <div
-      id="mobileMenu"
-      class="fixed inset-0 bg-[#0A0F1A]/95 z-50 transform translate-x-full transition-transform duration-300 lg:hidden"
-    >
-      <div class="flex justify-end p-6">
-        <button id="closeMenu" class="text-gray-400 hover:text-white">
-          <i class="ri-close-line ri-2x"></i>
-        </button>
-      </div>
-      <nav class="flex flex-col items-center space-y-8 mt-12">
-        <a
-          href="#"
-          class="text-white text-xl hover:text-primary transition-colors"
-          >Home</a
-        >
-        <a
-          href="#"
-          class="text-gray-400 text-xl hover:text-primary transition-colors"
-          >Challenges</a
-        >
-        <a
-          href="#"
-          class="text-gray-400 text-xl hover:text-primary transition-colors"
-          >Solutions</a
-        >
-        <a
-          href="#"
-          class="text-gray-400 text-xl hover:text-primary transition-colors"
-          >How It Works</a
-        >
-        <a
-          href="#"
-          class="text-gray-400 text-xl hover:text-primary transition-colors"
-          >Community</a
-        >
-        <a
-          href="#"
-          class="text-gray-400 text-xl hover:text-primary transition-colors"
-          >Pricing</a
-        >
-        <a
-          href="#"
-          class="text-gray-400 text-xl hover:text-primary transition-colors"
-          >FAQ</a
-        >
-        <button
-          class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button whitespace-nowrap transition-all mt-4"
-        >
-          Get Started
-        </button>
-      </nav>
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-[#0A0F1A]/95 z-50 transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex justify-end p-6">
+            <button id="closeMenu" class="text-gray-400 hover:text-white">
+                <i class="ri-close-line ri-2x"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col items-center space-y-8 mt-12">
+            <a href="#" class="text-white text-xl hover:text-primary transition-colors">Home</a>
+            <a href="#" class="text-gray-400 text-xl hover:text-primary transition-colors">Challenges</a>
+            <a href="#" class="text-gray-400 text-xl hover:text-primary transition-colors">Solutions</a>
+            <a href="#" class="text-gray-400 text-xl hover:text-primary transition-colors">How It Works</a>
+            <a href="#" class="text-gray-400 text-xl hover:text-primary transition-colors">Community</a>
+            <a href="#" class="text-gray-400 text-xl hover:text-primary transition-colors">Pricing</a>
+            <a href="#" class="text-gray-400 text-xl hover:text-primary transition-colors">FAQ</a>
+            <button
+                class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button whitespace-nowrap transition-all mt-4">
+                Get Started
+            </button>
+        </nav>
     </div>
     <main class="relative min-h-[90vh]">
-      <!-- Particle Animation Background -->
-      <div
-        class="particle-animation"
-        style="background-image: url('https://readdy.ai/api/search-image?query=large%20scale%20abstract%20technology%20visualization%20with%20flowing%20orange%20and%20white%20particles%2C%20elegant%20curved%20patterns%20on%20deep%20blue%20background%2C%20ultra%20wide%20format%2C%20cinematic%20composition%2C%20modern%20minimalist%20tech%20aesthetic%2C%20high%20resolution%20digital%20art&width=1920&height=1080&seq=12345&orientation=landscape');"
-      ></div>
-      <!-- Hero Section -->
-    <section id="hero" class="relative z-10 px-4 sm:px-8 pt-32 pb-16 sm:pb-24 overflow-hidden">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 min-h-[60vh]">
-            <!-- Image Column: On top for mobile, on the right for desktop -->
-            <div class="w-full lg:w-1/2 lg:order-2 flex justify-center">
-              <img 
-                src="https://bflplaygroundstore.blob.core.windows.net/files/e5b9fb45-2b27-4732-a9b8-e0dc87c4f5e5/generations/ed8ac543-b43b-4ae2-8a03-c8a0b69f5bde/raw?sv=2025-05-05&se=2025-07-01T07%3A56%3A35Z&sr=b&sp=r&sig=wdKtDx9D9qu7hYNoZpXWD1UO%2Bmjz4PYG9DhTege7hHU%3D" 
-                alt="Vince Tan with AI background" 
-                class="rounded-2xl shadow-2xl w-full h-auto object-cover max-h-[300px] sm:max-h-[400px] lg:max-h-[600px] max-w-md lg:max-w-full"
-              >
-            </div>
-            <!-- Text Column: Below image for mobile, on the left for desktop -->
-            <div class="w-full lg:w-1/2 lg:order-1 text-center lg:text-left">
-              <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4 sm:mb-6">
-                Launch Your AI Business
-              </span>
-              <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white">
-                Start Your Business with AI in <span class="text-primary">90 Days</span><br />
-                <span class="text-2xl sm:text-3xl md:text-4xl text-white/90">
-                    (Even With $0) by Vince Tan
-                </span>
-              </h1>
-              <div class="bg-white/10 rounded-xl p-4 mb-6 max-w-lg mx-auto lg:mx-0 text-center">
-                <div class="text-2xl sm:text-3xl font-extrabold text-primary mb-2">Live Zoom Workshop</div>
-                <div id="miniWorkshopDate" class="text-xl sm:text-2xl text-white mb-1"></div>
-                <div id="miniWorkshopTime" class="text-xl sm:text-2xl text-white mb-1"></div>
-                <div class="text-xl sm:text-2xl text-gray-200 mb-1">Registration Closes In:</div>
-                <div id="miniCountdownTimer" class="flex gap-2 justify-center items-center text-xl sm:text-2xl font-bold"></div>
-              </div>
-              <script>
-                // Mini CTA timer logic (reuse main logic)
-                function getNextMondayDateMini() {
-                  const now = new Date();
-                  const malaysiaOffset = 8 * 60;
-                  const nowMalaysia = new Date(now.getTime() + (malaysiaOffset - now.getTimezoneOffset()) * 60000);
-                  let day = nowMalaysia.getDay();
-                  let daysToMonday = (8 - day) % 7;
-                  let eventDate = new Date(nowMalaysia);
-                  eventDate.setHours(20, 0, 0, 0);
-                  if (day === 1 && nowMalaysia < eventDate) {
-                  } else {
-                    eventDate.setDate(eventDate.getDate() + daysToMonday);
-                  }
-                  if ((eventDate - nowMalaysia) / 1000 < 86400) {
-                    eventDate.setDate(eventDate.getDate() + 7);
-                  }
-                  return eventDate;
-                }
-                function formatDateMalaysiaMini(date) {
-                  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                  return date.toLocaleDateString('en-MY', options);
-                }
-                function updateMiniWorkshop() {
-                  const eventDate = getNextMondayDateMini();
-                  const malaysiaOffset = 8 * 60;
-                  const eventDateMY = new Date(eventDate.getTime());
-                  document.getElementById('miniWorkshopDate').textContent =
-                    `Date: ${formatDateMalaysiaMini(eventDateMY)}`;
-                  document.getElementById('miniWorkshopTime').textContent =
-                    `Time: 8:00pm - 10:30pm (Malaysia Time)`;
-                  function updateMiniCountdown() {
-                    const now = new Date();
-                    const nowMY = new Date(now.getTime() + (malaysiaOffset - now.getTimezoneOffset()) * 60000);
-                    let diff = Math.floor((eventDate - nowMY) / 1000);
-                    if (diff < 0) diff = 0;
-                    const days = Math.floor(diff / 86400);
-                    const hours = Math.floor((diff % 86400) / 3600);
-                    const minutes = Math.floor((diff % 3600) / 60);
-                    const seconds = diff % 60;
-                    document.getElementById('miniCountdownTimer').innerHTML =
-                      `<div class="border border-primary rounded-lg px-3 py-2 bg-white/10 text-primary flex flex-col items-center min-w-[50px]">
+        <!-- Particle Animation Background -->
+        <div class="particle-animation"
+            style="background-image: url('https://readdy.ai/api/search-image?query=large%20scale%20abstract%20technology%20visualization%20with%20flowing%20orange%20and%20white%20particles%2C%20elegant%20curved%20patterns%20on%20deep%20blue%20background%2C%20ultra%20wide%20format%2C%20cinematic%20composition%2C%20modern%20minimalist%20tech%20aesthetic%2C%20high%20resolution%20digital%20art&width=1920&height=1080&seq=12345&orientation=landscape');">
+        </div>
+        <!-- Hero Section -->
+        <section id="hero" class="relative z-10 px-4 sm:px-8 pt-32 pb-16 sm:pb-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 min-h-[60vh]">
+                    <!-- Image Column: On top for mobile, on the right for desktop -->
+                    <div class="w-full lg:w-1/2 lg:order-2 flex justify-center">
+                        <img src="https://bflplaygroundstore.blob.core.windows.net/files/e5b9fb45-2b27-4732-a9b8-e0dc87c4f5e5/generations/ed8ac543-b43b-4ae2-8a03-c8a0b69f5bde/raw?sv=2025-05-05&se=2025-07-01T07%3A56%3A35Z&sr=b&sp=r&sig=wdKtDx9D9qu7hYNoZpXWD1UO%2Bmjz4PYG9DhTege7hHU%3D"
+                            alt="Vince Tan with AI background"
+                            class="rounded-2xl shadow-2xl w-full h-auto object-cover max-h-[300px] sm:max-h-[400px] lg:max-h-[600px] max-w-md lg:max-w-full">
+                    </div>
+                    <!-- Text Column: Below image for mobile, on the left for desktop -->
+                    <div class="w-full lg:w-1/2 lg:order-1 text-center lg:text-left">
+                        <span
+                            class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4 sm:mb-6">
+                            Launch Your AI Business
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white">
+                            Start Your Business with AI in <span class="text-primary">90 Days</span><br />
+                            <span class="text-2xl sm:text-3xl md:text-4xl text-white/90">
+                                (Even With $0) by Vince Tan
+                            </span>
+                        </h1>
+                        <div class="bg-white/10 rounded-xl p-4 mb-6 max-w-lg mx-auto lg:mx-0 text-center">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-primary mb-2">Live Zoom Workshop</div>
+                            <div id="miniWorkshopDate" class="text-xl sm:text-2xl text-white mb-1"></div>
+                            <div id="miniWorkshopTime" class="text-xl sm:text-2xl text-white mb-1"></div>
+                            <div class="text-xl sm:text-2xl text-gray-200 mb-1">Registration Closes In:</div>
+                            <div id="miniCountdownTimer"
+                                class="flex gap-2 justify-center items-center text-xl sm:text-2xl font-bold"></div>
+                        </div>
+                        <script>
+                            // Mini CTA timer logic (reuse main logic)
+                            function getNextMondayDateMini() {
+                                const now = new Date();
+                                const malaysiaOffset = 8 * 60;
+                                const nowMalaysia = new Date(now.getTime() + (malaysiaOffset - now.getTimezoneOffset()) * 60000);
+                                let day = nowMalaysia.getDay();
+                                let daysToMonday = (8 - day) % 7;
+                                let eventDate = new Date(nowMalaysia);
+                                eventDate.setHours(20, 0, 0, 0);
+                                if (day === 1 && nowMalaysia < eventDate) {
+                                } else {
+                                    eventDate.setDate(eventDate.getDate() + daysToMonday);
+                                }
+                                if ((eventDate - nowMalaysia) / 1000 < 86400) {
+                                    eventDate.setDate(eventDate.getDate() + 7);
+                                }
+                                return eventDate;
+                            }
+                            function formatDateMalaysiaMini(date) {
+                                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                                return date.toLocaleDateString('en-MY', options);
+                            }
+                            function updateMiniWorkshop() {
+                                const eventDate = getNextMondayDateMini();
+                                const malaysiaOffset = 8 * 60;
+                                const eventDateMY = new Date(eventDate.getTime());
+                                document.getElementById('miniWorkshopDate').textContent =
+                                    `Date: ${formatDateMalaysiaMini(eventDateMY)}`;
+                                document.getElementById('miniWorkshopTime').textContent =
+                                    `Time: 8:00pm - 10:30pm (Malaysia Time)`;
+                                function updateMiniCountdown() {
+                                    const now = new Date();
+                                    const nowMY = new Date(now.getTime() + (malaysiaOffset - now.getTimezoneOffset()) * 60000);
+                                    let diff = Math.floor((eventDate - nowMY) / 1000);
+                                    if (diff < 0) diff = 0;
+                                    const days = Math.floor(diff / 86400);
+                                    const hours = Math.floor((diff % 86400) / 3600);
+                                    const minutes = Math.floor((diff % 3600) / 60);
+                                    const seconds = diff % 60;
+                                    document.getElementById('miniCountdownTimer').innerHTML =
+                                        `<div class="border border-primary rounded-lg px-3 py-2 bg-white/10 text-primary flex flex-col items-center min-w-[50px]">
                           <span class="text-lg sm:text-xl">${days}</span>
                           <span class="text-sm text-gray-200 font-normal">Days</span>
                        </div>
@@ -286,604 +223,568 @@
                           <span class="text-lg sm:text-xl">${seconds}</span>
                           <span class="text-sm text-gray-200 font-normal">Seconds</span>
                        </div>`;
-                  }
-                  updateMiniCountdown();
-                  setInterval(updateMiniCountdown, 1000);
-                }
-                updateMiniWorkshop();
-              </script>
-            <div class="flex flex-col items-center gap-4 justify-center lg:justify-center"></div>
-                <a href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave" class="bg-primary hover:bg-primary/90 hover:text-white text-white font-semibold py-4 px-8 !rounded-button whitespace-nowrap transition-all hover:scale-105 text-lg flex items-center justify-center gap-2 w-full max-w-lg mx-auto lg:mx-0">
-                    Get Started Now <i class="ri-arrow-right-line ml-2"></i>
-                </a>
-                <div class="pt-6 w-full flex justify-center">
-                    <img src="https://assets.cdn.filesafe.space/gmpqLOOyAOkJv1WOL7uZ/media/d1d27106-528e-4875-bfdc-c6351fb787d5.png" alt="Guarantee Badge" class="max-w-xs w-full h-auto mx-auto" />
+                                }
+                                updateMiniCountdown();
+                                setInterval(updateMiniCountdown, 1000);
+                            }
+                            updateMiniWorkshop();
+                        </script>
+                        <div class="flex flex-col items-center gap-4 justify-center lg:justify-center"></div>
+                        <a href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                            class="bg-primary hover:bg-primary/90 hover:text-white text-white font-semibold py-4 px-8 !rounded-button whitespace-nowrap transition-all hover:scale-105 text-lg flex items-center justify-center gap-2 w-full max-w-lg mx-auto lg:mx-0">
+                            Get Started Now <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                        <div class="pt-6 w-full flex justify-center">
+                            <img src="https://assets.cdn.filesafe.space/gmpqLOOyAOkJv1WOL7uZ/media/d1d27106-528e-4875-bfdc-c6351fb787d5.png"
+                                alt="Guarantee Badge" class="max-w-xs w-full h-auto mx-auto" />
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
 
-        <!-- Stats Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-16 sm:mt-24">
-            <div class="stats-card rounded-xl p-6 text-center border border-white/10">
-              <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-4xl font-bold text-primary">6</span>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">
-                Proven Business Models
-              </h3>
-              <p class="text-sm text-gray-300">
-                Ready-to-copy blueprints for success
-              </p>
-            </div>
-            <div class="stats-card rounded-xl p-6 text-center border border-white/10">
-              <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="ri-code-line text-4xl text-primary"></i>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">No Coding Required</h3>
-              <p class="text-sm text-gray-300">
-                Zero technical skills needed
-              </p>
-            </div>
-            <div class="stats-card rounded-xl p-6 text-center border border-white/10">
-              <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-4xl font-bold text-primary">$0</span>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">Zero Investment</h3>
-              <p class="text-sm text-gray-300">
-                Start your business risk-free
-              </p>
-            </div>
-            <div class="stats-card highlighted-card rounded-xl p-6 text-center border border-primary/30">
-              <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-4xl font-bold text-white">30</span>
-              </div>
-              <h3 class="text-xl font-semibold mb-2 text-white">Days to First Sale</h3>
-              <p class="text-base text-white/90">
-                Quick path to revenue
-              </p>
-            </div>
-        </div>
-      </div>
-    </section>
-      <!-- The Problem Section -->
-      <section id="problems" class="relative z-10 px-4 sm:px-8 py-12 sm:py-24">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-8 sm:mb-16">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">
-              Why 9 Out of 10 People Never Start Their AI Business
-            </h2>
-            <p class="text-lg sm:text-xl text-gray-300">
-              We understand your challenges and we're here to help you overcome
-              them
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <div class="flex items-start gap-3 sm:gap-6 mb-4 sm:mb-6">
-                <div
-                  class="w-12 sm:w-16 h-12 sm:h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"
-                >
-                  <i
-                    class="ri-money-dollar-circle-line text-2xl sm:text-3xl text-primary"
-                  ></i>
-                </div>
-                <div>
-                  <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">
-                    Problem #1: "I Don't Have Money to Start"
-                  </h3>
-                  <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
-                    You don't need thousands to start. Our students begin with
-                    free AI tools and scale up as they earn. Start with $0 and
-                    reinvest your profits.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <div class="flex items-start gap-6 mb-6">
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-code-box-line text-3xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold mb-4">
-                    Problem #2: "AI is Too Complicated for Me"
-                  </h3>
-                  <p class="text-lg text-gray-300 leading-relaxed">
-                    No coding or technical skills needed. We break down complex
-                    AI concepts into simple, actionable steps anyone can follow.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <div class="flex items-start gap-6 mb-6">
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-compass-3-line text-3xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold mb-4">
-                    Problem #3: "I Don't Know Which Business to Start"
-                  </h3>
-                  <p class="text-lg text-gray-300 leading-relaxed">
-                    We provide 6 proven AI business models. Pick the one that
-                    matches your skills and goals. Each comes with step-by-step
-                    implementation guides.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <div class="flex items-start gap-6 mb-6">
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-time-line text-3xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold mb-4">
-                    Problem #4: "I'll Waste Months Learning the Wrong Things"
-                  </h3>
-                  <p class="text-lg text-gray-300 leading-relaxed">
-                    Follow our proven 90-day roadmap. Focus only on what works,
-                    skip what doesn't. Get your first client in 30 days or less.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Our Services Section -->
-      <section id="services" class="relative z-10 px-8 pb-24">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">What You'll Get</h2>
-            <p class="text-xl text-gray-300">
-              Everything you need to start your AI business journey (7-figure blueprint by Vince Tan)
-            </p>
-          </div>
-          <div class="grid grid-cols-1 gap-8 mb-24">
-            <!-- Business Models -->
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-            >
-              <div class="flex items-start gap-8">
-                <div
-                  class="w-20 h-20 flex-shrink-0 bg-primary/10 rounded-xl flex items-center justify-center"
-                >
-                  <i class="ri-layout-grid-line text-4xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold mb-4">
-                    6 "Copy & Paste" Business Models
-                  </h3>
-                  <p class="text-lg text-gray-300 mb-6">
-                    Choose from proven AI business models that are already
-                    making money for our students. Each model comes with:
-                  </p>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="flex items-start gap-3">
-                      <i class="ri-check-line text-primary mt-1"></i>
-                      <p class="text-gray-300">
-                        Step-by-step implementation guides
-                      </p>
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-16 sm:mt-24">
+                <div class="stats-card rounded-xl p-6 text-center border border-white/10">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-4xl font-bold text-primary">6</span>
                     </div>
-                    <div class="flex items-start gap-3">
-                      <i class="ri-check-line text-primary mt-1"></i>
-                      <p class="text-gray-300">Ready-to-use templates</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                      <i class="ri-check-line text-primary mt-1"></i>
-                      <p class="text-gray-300">Pricing strategies</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                      <i class="ri-check-line text-primary mt-1"></i>
-                      <p class="text-gray-300">Marketing materials</p>
-                    </div>
-                  </div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        Proven Business Models
+                    </h3>
+                    <p class="text-sm text-gray-300">
+                        Ready-to-copy blueprints for success
+                    </p>
                 </div>
-              </div>
+                <div class="stats-card rounded-xl p-6 text-center border border-white/10">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-code-line text-4xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">No Coding Required</h3>
+                    <p class="text-sm text-gray-300">
+                        Zero technical skills needed
+                    </p>
+                </div>
+                <div class="stats-card rounded-xl p-6 text-center border border-white/10">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-4xl font-bold text-primary">$0</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Zero Investment</h3>
+                    <p class="text-sm text-gray-300">
+                        Start your business risk-free
+                    </p>
+                </div>
+                <div class="stats-card highlighted-card rounded-xl p-6 text-center border border-primary/30">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-4xl font-bold text-white">30</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Days to First Sale</h3>
+                    <p class="text-base text-white/90">
+                        Quick path to revenue
+                    </p>
+                </div>
             </div>
-            <!-- Zero Dollar Method -->
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-            >
-              <div class="flex items-start gap-8">
+            </div>
+        </section>
+        <!-- The Problem Section -->
+        <section id="problems" class="relative z-10 px-4 sm:px-8 py-12 sm:py-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-8 sm:mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">
+                        Why 9 Out of 10 People Never Start Their AI Business
+                    </h2>
+                    <p class="text-lg sm:text-xl text-gray-300">
+                        We understand your challenges and we're here to help you overcome
+                        them
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all">
+                        <div class="flex items-start gap-3 sm:gap-6 mb-4 sm:mb-6">
+                            <div
+                                class="w-12 sm:w-16 h-12 sm:h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="ri-money-dollar-circle-line text-2xl sm:text-3xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">
+                                    Problem #1: "I Don't Have Money to Start"
+                                </h3>
+                                <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
+                                    You don't need thousands to start. Our students begin with
+                                    free AI tools and scale up as they earn. Start with $0 and
+                                    reinvest your profits.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div
+                                class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="ri-code-box-line text-3xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">
+                                    Problem #2: "AI is Too Complicated for Me"
+                                </h3>
+                                <p class="text-lg text-gray-300 leading-relaxed">
+                                    No coding or technical skills needed. We break down complex
+                                    AI concepts into simple, actionable steps anyone can follow.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div
+                                class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="ri-compass-3-line text-3xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">
+                                    Problem #3: "I Don't Know Which Business to Start"
+                                </h3>
+                                <p class="text-lg text-gray-300 leading-relaxed">
+                                    We provide 6 proven AI business models. Pick the one that
+                                    matches your skills and goals. Each comes with step-by-step
+                                    implementation guides.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div
+                                class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="ri-time-line text-3xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">
+                                    Problem #4: "I'll Waste Months Learning the Wrong Things"
+                                </h3>
+                                <p class="text-lg text-gray-300 leading-relaxed">
+                                    Follow our proven 90-day roadmap. Focus only on what works,
+                                    skip what doesn't. Get your first client in 30 days or less.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Services Section -->
+        <section id="services" class="relative z-10 px-8 pb-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">What You'll Get</h2>
+                    <p class="text-xl text-gray-300">
+                        Everything you need to start your AI business journey (7-figure blueprint by Vince Tan)
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 gap-8 mb-24">
+                    <!-- Business Models -->
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                        <div class="flex items-start gap-8">
+                            <div
+                                class="w-20 h-20 flex-shrink-0 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <i class="ri-layout-grid-line text-4xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">
+                                    6 "Copy & Paste" Business Models
+                                </h3>
+                                <p class="text-lg text-gray-300 mb-6">
+                                    Choose from proven AI business models that are already
+                                    making money for our students. Each model comes with:
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="flex items-start gap-3">
+                                        <i class="ri-check-line text-primary mt-1"></i>
+                                        <p class="text-gray-300">
+                                            Step-by-step implementation guides
+                                        </p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="ri-check-line text-primary mt-1"></i>
+                                        <p class="text-gray-300">Ready-to-use templates</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="ri-check-line text-primary mt-1"></i>
+                                        <p class="text-gray-300">Pricing strategies</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="ri-check-line text-primary mt-1"></i>
+                                        <p class="text-gray-300">Marketing materials</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Zero Dollar Method -->
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                        <div class="flex items-start gap-8">
+                            <div
+                                class="w-20 h-20 flex-shrink-0 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <i class="ri-money-dollar-circle-line text-4xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">
+                                    The "Zero Dollar" Startup Method
+                                </h3>
+                                <p class="text-lg text-gray-300 mb-6">
+                                    Start your AI business without investing any money upfront:
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="flex items-start gap-3">
+                                        <i class="ri-check-line text-primary mt-1"></i>
+                                        <p class="text-gray-300">Free AI tools to get started</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="ri-check-line text-primary mt-1"></i>
+                                        <p class="text-gray-300">No-cost marketing strategies</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="ri-check-line text-primary mt-1"></i>
+                                        <p class="text-gray-300">Bootstrap growth techniques</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="ri-check-line text-primary mt-1"></i>
+                                        <p class="text-gray-300">Reinvestment framework</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3-Step System -->
+                    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                        <div class="flex items-start gap-8">
+                            <div
+                                class="w-20 h-20 flex-shrink-0 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <i class="ri-numbers-line text-4xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">Simple 3-Step System</h3>
+                                <p class="text-lg text-gray-300 mb-6">
+                                    A proven roadmap to get from zero to profit:
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="bg-white/5 rounded-xl p-6">
+                                        <div class="text-xl font-bold mb-2">Step 1: Choose</div>
+                                        <p class="text-gray-300">
+                                            Pick your perfect AI business model and validate it in
+                                            48 hours
+                                        </p>
+                                    </div>
+                                    <div class="bg-white/5 rounded-xl p-6">
+                                        <div class="text-xl font-bold mb-2">Step 2: Build</div>
+                                        <p class="text-gray-300">
+                                            Set up your business using our templates and systems
+                                        </p>
+                                    </div>
+                                    <div class="bg-white/5 rounded-xl p-6">
+                                        <div class="text-xl font-bold mb-2">Step 3: Launch</div>
+                                        <p class="text-gray-300">
+                                            Get your first paying client in 30 days or less
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Stats Section -->
+        <section class="relative z-10 px-8 pb-24">
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold">Program Success Metrics by Vince Tan</h2>
+                        <p class="text-gray-400">
+                            Track record of helping entrepreneurs succeed
+                        </p>
+                    </div>
+                    <div id="summaryChart" class="w-full h-[400px]"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Process Section -->
+        <section id="process" class="relative z-10 px-8 py-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">
+                        Three Simple Steps to Success
+                    </h2>
+                    <p class="text-gray-300 max-w-2xl mx-auto">
+                        Your roadmap to building a profitable AI business
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all">
+                        <div class="flex items-start gap-6">
+                            <div
+                                class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="ri-lightbulb-line text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">1. Choose Your Path</h3>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Select from proven AI business models and validate your idea
+                                    in just 48 hours
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all">
+                        <div class="flex items-start gap-6">
+                            <div
+                                class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="ri-tools-line text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">2. Build Your Service</h3>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Follow our step-by-step guides and use ready-made templates
+                                    to launch fast
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all">
+                        <div class="flex items-start gap-6">
+                            <div
+                                class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="ri-rocket-line text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">3. Get Customers</h3>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Use our proven system to attract and close your first paying
+                                    clients
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Success Stories Section -->
+        <section id="success" class="relative z-10 px-8 py-24">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span
+                        class="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-4">Success
+                        Stories</span>
+                    <h2 class="text-4xl font-bold mb-4">
+                        Real Results from Real People
+                    </h2>
+                    <p class="text-xl text-gray-300">
+                        See how our students are building successful AI businesses
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div
+                                class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                                <i class="ri-user-smile-line text-3xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary mb-2">
+                                    $12,000 in First 90 Days
+                                </h3>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-2 sm:mb-4">
+                                    <span class="font-semibold">Sarah M.</span>
+                                    <span class="text-gray-400">AI Automation Business</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            "I was a teacher making $40k/year. Now my AI automation business
+                            makes more than my old salary every month. The step-by-step
+                            videos made it so easy."
+                        </p>
+                        <div class="flex items-center gap-1 mt-6">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div
+                                class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                                <i class="ri-user-smile-line text-3xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary mb-2">
+                                    $8,500/Month in 3 Months
+                                </h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <span class="font-semibold">Mike R.</span>
+                                    <span class="text-gray-400">AI Content Agency</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            "I had zero business experience. The 6 business models gave me
+                            exactly what to do. I picked the AI content agency model and got
+                            5 clients in my first month."
+                        </p>
+                        <div class="flex items-center gap-1 mt-6">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div
+                                class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                                <i class="ri-user-smile-line text-3xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary mb-2">
+                                    Finally, a course that actually works
+                                </h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <span class="font-semibold">Lisa T.</span>
+                                    <span class="text-gray-400">AI Consulting</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            "I wasted $3,000 on other courses that taught me nothing. This
+                            gave me a real business in 90 days. I'm making $15k/month
+                            helping local businesses with AI."
+                        </p>
+                        <div class="flex items-center gap-1 mt-6">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all">
+                        <div class="flex items-start gap-6 mb-6">
+                            <div
+                                class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                                <i class="ri-user-smile-line text-3xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary mb-2">
+                                    I quit my job after 6 months
+                                </h3>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <span class="font-semibold">David K.</span>
+                                    <span class="text-gray-400">AI Design Studio</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            "Started as a side hustle, now it's my full-time income. The
+                            community support was incredible. I'm making $22k/month with my
+                            AI design studio."
+                        </p>
+                        <div class="flex items-center gap-1 mt-6">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pricing Section -->
+        <section id="pricing" class="relative z-10 px-8 py-24">
+            <div class="max-w-3xl mx-auto">
                 <div
-                  class="w-20 h-20 flex-shrink-0 bg-primary/10 rounded-xl flex items-center justify-center"
-                >
-                  <i
-                    class="ri-money-dollar-circle-line text-4xl text-primary"
-                  ></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold mb-4">
-                    The "Zero Dollar" Startup Method
-                  </h3>
-                  <p class="text-lg text-gray-300 mb-6">
-                    Start your AI business without investing any money upfront:
-                  </p>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="flex items-start gap-3">
-                      <i class="ri-check-line text-primary mt-1"></i>
-                      <p class="text-gray-300">Free AI tools to get started</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                      <i class="ri-check-line text-primary mt-1"></i>
-                      <p class="text-gray-300">No-cost marketing strategies</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                      <i class="ri-check-line text-primary mt-1"></i>
-                      <p class="text-gray-300">Bootstrap growth techniques</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                      <i class="ri-check-line text-primary mt-1"></i>
-                      <p class="text-gray-300">Reinvestment framework</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 3-Step System -->
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-            >
-              <div class="flex items-start gap-8">
-                <div
-                  class="w-20 h-20 flex-shrink-0 bg-primary/10 rounded-xl flex items-center justify-center"
-                >
-                  <i class="ri-numbers-line text-4xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold mb-4">Simple 3-Step System</h3>
-                  <p class="text-lg text-gray-300 mb-6">
-                    A proven roadmap to get from zero to profit:
-                  </p>
-                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white/5 rounded-xl p-6">
-                      <div class="text-xl font-bold mb-2">Step 1: Choose</div>
-                      <p class="text-gray-300">
-                        Pick your perfect AI business model and validate it in
-                        48 hours
-                      </p>
-                    </div>
-                    <div class="bg-white/5 rounded-xl p-6">
-                      <div class="text-xl font-bold mb-2">Step 2: Build</div>
-                      <p class="text-gray-300">
-                        Set up your business using our templates and systems
-                      </p>
-                    </div>
-                    <div class="bg-white/5 rounded-xl p-6">
-                      <div class="text-xl font-bold mb-2">Step 3: Launch</div>
-                      <p class="text-gray-300">
-                        Get your first paying client in 30 days or less
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Stats Section -->
-      <section class="relative z-10 px-8 pb-24">
-        <div class="max-w-5xl mx-auto">
-          <div
-            class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-          >
-            <div class="text-center mb-8">
-              <h2 class="text-3xl font-bold">Program Success Metrics by Vince Tan</h2>
-              <p class="text-gray-400">
-                Track record of helping entrepreneurs succeed
-              </p>
-            </div>
-            <div id="summaryChart" class="w-full h-[400px]"></div>
-          </div>
-        </div>
-      </section>
-      <!-- Process Section -->
-      <section id="process" class="relative z-10 px-8 py-24">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">
-              Three Simple Steps to Success
-            </h2>
-            <p class="text-gray-300 max-w-2xl mx-auto">
-              Your roadmap to building a profitable AI business
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <div class="flex items-start gap-6">
-                <div
-                  class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-lightbulb-line text-2xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold mb-4">1. Choose Your Path</h3>
-                  <p class="text-gray-300 leading-relaxed">
-                    Select from proven AI business models and validate your idea
-                    in just 48 hours
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <div class="flex items-start gap-6">
-                <div
-                  class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-tools-line text-2xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold mb-4">2. Build Your Service</h3>
-                  <p class="text-gray-300 leading-relaxed">
-                    Follow our step-by-step guides and use ready-made templates
-                    to launch fast
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <div class="flex items-start gap-6">
-                <div
-                  class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-rocket-line text-2xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold mb-4">3. Get Customers</h3>
-                  <p class="text-gray-300 leading-relaxed">
-                    Use our proven system to attract and close your first paying
-                    clients
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Success Stories Section -->
-      <section id="success" class="relative z-10 px-8 py-24">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-16">
-            <span
-              class="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-4"
-              >Success Stories</span
-            >
-            <h2 class="text-4xl font-bold mb-4">
-              Real Results from Real People
-            </h2>
-            <p class="text-xl text-gray-300">
-              See how our students are building successful AI businesses
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <div class="flex items-start gap-6 mb-6">
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-user-smile-line text-3xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold text-primary mb-2">
-                    $12,000 in First 90 Days
-                  </h3>
-                  <div
-                    class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-2 sm:mb-4"
-                  >
-                    <span class="font-semibold">Sarah M.</span>
-                    <span class="text-gray-400">AI Automation Business</span>
-                  </div>
-                </div>
-              </div>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                "I was a teacher making $40k/year. Now my AI automation business
-                makes more than my old salary every month. The step-by-step
-                videos made it so easy."
-              </p>
-              <div class="flex items-center gap-1 mt-6">
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <div class="flex items-start gap-6 mb-6">
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-user-smile-line text-3xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold text-primary mb-2">
-                    $8,500/Month in 3 Months
-                  </h3>
-                  <div class="flex items-center gap-2 mb-4">
-                    <span class="font-semibold">Mike R.</span>
-                    <span class="text-gray-400">AI Content Agency</span>
-                  </div>
-                </div>
-              </div>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                "I had zero business experience. The 6 business models gave me
-                exactly what to do. I picked the AI content agency model and got
-                5 clients in my first month."
-              </p>
-              <div class="flex items-center gap-1 mt-6">
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <div class="flex items-start gap-6 mb-6">
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-user-smile-line text-3xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold text-primary mb-2">
-                    Finally, a course that actually works
-                  </h3>
-                  <div class="flex items-center gap-2 mb-4">
-                    <span class="font-semibold">Lisa T.</span>
-                    <span class="text-gray-400">AI Consulting</span>
-                  </div>
-                </div>
-              </div>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                "I wasted $3,000 on other courses that taught me nothing. This
-                gave me a real business in 90 days. I'm making $15k/month
-                helping local businesses with AI."
-              </p>
-              <div class="flex items-center gap-1 mt-6">
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <div class="flex items-start gap-6 mb-6">
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0"
-                >
-                  <i class="ri-user-smile-line text-3xl text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold text-primary mb-2">
-                    I quit my job after 6 months
-                  </h3>
-                  <div class="flex items-center gap-2 mb-4">
-                    <span class="font-semibold">David K.</span>
-                    <span class="text-gray-400">AI Design Studio</span>
-                  </div>
-                </div>
-              </div>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                "Started as a side hustle, now it's my full-time income. The
-                community support was incredible. I'm making $22k/month with my
-                AI design studio."
-              </p>
-              <div class="flex items-center gap-1 mt-6">
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-                <i class="ri-star-fill text-yellow-400"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Pricing Section -->
-      <section id="pricing" class="relative z-10 px-8 py-24">
-        <div class="max-w-3xl mx-auto">
-          <div
-            class="bg-white/5 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-white/10 hover:border-primary/30 transition-all"
-          >
-            <div class="text-center mb-8">
-              <span
-                class="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-4"
-                >Limited Time Offer</span
-              >
-              <h2 class="text-4xl font-bold mb-4">Join Vince Tan Live To Start Your Business with AI</h2>
-            <div id="workshopSchedule" class="mt-4 text-2xl sm:text-3xl text-gray-100 font-bold leading-tight"></div>
-            <div class="mt-4">
-                <div class="text-xl sm:text-2xl text-gray-300 font-semibold mb-2">Time: <span id="workshopTime" class="text-primary"></span></div>
-                <div class="text-lg sm:text-xl text-gray-400 font-semibold mb-2">Registration Closes In:</div>
-                <div id="countdownTimer" class="flex gap-2 justify-center items-center text-2xl sm:text-3xl font-bold"></div>
-            </div>
-            <script>
-                // Find the next Monday at 8:00pm Malaysia Time (UTC+8)
-                function getNextMondayDate() {
-                    const now = new Date();
-                    // Malaysia Time UTC+8
-                    const malaysiaOffset = 8 * 60; // in minutes
-                    // Get current time in Malaysia
-                    const nowMalaysia = new Date(now.getTime() + (malaysiaOffset - now.getTimezoneOffset()) * 60000);
-                    let day = nowMalaysia.getDay();
-                    let daysToMonday = (8 - day) % 7;
-                    // If today is Monday and before 8pm, use today; else, next Monday
-                    let eventDate = new Date(nowMalaysia);
-                    eventDate.setHours(20, 0, 0, 0); // 8:00pm
-                    if (day === 1 && nowMalaysia < eventDate) {
-                        // today is Monday and before 8pm
-                    } else {
-                        // next Monday
-                        eventDate.setDate(eventDate.getDate() + daysToMonday);
-                    }
-                    // If less than 24 hours to event, skip to next Monday
-                    if ((eventDate - nowMalaysia) / 1000 < 86400) {
-                        eventDate.setDate(eventDate.getDate() + 7);
-                    }
-                    return eventDate;
-                }
+                    class="bg-white/5 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-white/10 hover:border-primary/30 transition-all">
+                    <div class="text-center mb-8">
+                        <span
+                            class="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-4">Limited
+                            Time Offer</span>
+                        <h2 class="text-4xl font-bold mb-4">Join Vince Tan Live To Start Your Business with AI</h2>
+                        <div id="workshopSchedule"
+                            class="mt-4 text-2xl sm:text-3xl text-gray-100 font-bold leading-tight"></div>
+                        <div class="mt-4">
+                            <div class="text-xl sm:text-2xl text-gray-300 font-semibold mb-2">Time: <span
+                                    id="workshopTime" class="text-primary"></span></div>
+                            <div class="text-lg sm:text-xl text-gray-400 font-semibold mb-2">Registration Closes In:
+                            </div>
+                            <div id="countdownTimer"
+                                class="flex gap-2 justify-center items-center text-2xl sm:text-3xl font-bold"></div>
+                        </div>
+                        <script>
+                            // Find the next Monday at 8:00pm Malaysia Time (UTC+8)
+                            function getNextMondayDate() {
+                                const now = new Date();
+                                // Malaysia Time UTC+8
+                                const malaysiaOffset = 8 * 60; // in minutes
+                                // Get current time in Malaysia
+                                const nowMalaysia = new Date(now.getTime() + (malaysiaOffset - now.getTimezoneOffset()) * 60000);
+                                let day = nowMalaysia.getDay();
+                                let daysToMonday = (8 - day) % 7;
+                                // If today is Monday and before 8pm, use today; else, next Monday
+                                let eventDate = new Date(nowMalaysia);
+                                eventDate.setHours(20, 0, 0, 0); // 8:00pm
+                                if (day === 1 && nowMalaysia < eventDate) {
+                                    // today is Monday and before 8pm
+                                } else {
+                                    // next Monday
+                                    eventDate.setDate(eventDate.getDate() + daysToMonday);
+                                }
+                                // If less than 24 hours to event, skip to next Monday
+                                if ((eventDate - nowMalaysia) / 1000 < 86400) {
+                                    eventDate.setDate(eventDate.getDate() + 7);
+                                }
+                                return eventDate;
+                            }
 
-                function formatDateMalaysia(date) {
-                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                    return date.toLocaleDateString('en-MY', options);
-                }
+                            function formatDateMalaysia(date) {
+                                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                                return date.toLocaleDateString('en-MY', options);
+                            }
 
-                function updateScheduleAndTimer() {
-                    const eventDate = getNextMondayDate();
-                    // Malaysia Time UTC+8
-                    const malaysiaOffset = 8 * 60;
-                    const eventDateMY = new Date(eventDate.getTime());
-                    // Show schedule
-                    document.getElementById('workshopSchedule').textContent =
-                        `Date: ${formatDateMalaysia(eventDateMY)}`;
-                    document.getElementById('workshopTime').textContent =
-                        `8:00pm - 10:30pm (Malaysia Time)`;
-                    // Countdown
-                    function updateCountdown() {
-                        const now = new Date();
-                        const nowMY = new Date(now.getTime() + (malaysiaOffset - now.getTimezoneOffset()) * 60000);
-                        let diff = Math.floor((eventDate - nowMY) / 1000);
-                        if (diff < 0) diff = 0;
-                        const days = Math.floor(diff / 86400);
-                        const hours = Math.floor((diff % 86400) / 3600);
-                        const minutes = Math.floor((diff % 3600) / 60);
-                        const seconds = diff % 60;
-                        document.getElementById('countdownTimer').innerHTML =
-                            `<div class="border border-primary rounded-lg px-4 py-2 bg-white/10 text-primary flex flex-col items-center min-w-[70px]">
+                            function updateScheduleAndTimer() {
+                                const eventDate = getNextMondayDate();
+                                // Malaysia Time UTC+8
+                                const malaysiaOffset = 8 * 60;
+                                const eventDateMY = new Date(eventDate.getTime());
+                                // Show schedule
+                                document.getElementById('workshopSchedule').textContent =
+                                    `Date: ${formatDateMalaysia(eventDateMY)}`;
+                                document.getElementById('workshopTime').textContent =
+                                    `8:00pm - 10:30pm (Malaysia Time)`;
+                                // Countdown
+                                function updateCountdown() {
+                                    const now = new Date();
+                                    const nowMY = new Date(now.getTime() + (malaysiaOffset - now.getTimezoneOffset()) * 60000);
+                                    let diff = Math.floor((eventDate - nowMY) / 1000);
+                                    if (diff < 0) diff = 0;
+                                    const days = Math.floor(diff / 86400);
+                                    const hours = Math.floor((diff % 86400) / 3600);
+                                    const minutes = Math.floor((diff % 3600) / 60);
+                                    const seconds = diff % 60;
+                                    document.getElementById('countdownTimer').innerHTML =
+                                        `<div class="border border-primary rounded-lg px-4 py-2 bg-white/10 text-primary flex flex-col items-center min-w-[70px]">
                                     <span>${days}</span>
                                     <span class="text-xs text-gray-200 font-normal">Days</span>
                              </div>
@@ -899,551 +800,507 @@
                                     <span>${seconds}</span>
                                     <span class="text-xs text-gray-200 font-normal">Seconds</span>
                              </div>`;
-                    }
-                    updateCountdown();
-                    setInterval(updateCountdown, 1000);
-                }
-                updateScheduleAndTimer();
-            </script>
-              <div class="flex items-center justify-center gap-4 mt-4">
-                <span class="text-gray-400 line-through text-lg"
-                  >VALUE: $497</span
-                >
-                <span class="text-2xl font-bold text-primary">TODAY: FREE</span>
-              </div>
+                                }
+                                updateCountdown();
+                                setInterval(updateCountdown, 1000);
+                            }
+                            updateScheduleAndTimer();
+                        </script>
+                        <div class="flex items-center justify-center gap-4 mt-4">
+                            <span class="text-gray-400 line-through text-lg">VALUE: $497</span>
+                            <span class="text-2xl font-bold text-primary">TODAY: FREE</span>
+                        </div>
+                    </div>
+                    <div class="space-y-6 mb-8">
+                        <h3 class="text-xl font-semibold mb-4">What You'll Get:</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20 mt-1">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <p class="text-lg">The #1 AI business model for beginners</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20 mt-1">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <p class="text-lg">
+                                    How to get your first customer in 30 days
+                                </p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20 mt-1">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <p class="text-lg">3 AI tools that can make you $5k/month</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20 mt-1">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <p class="text-lg">Live Q&A with successful students</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-primary/10 rounded-xl p-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20">
+                                <i class="ri-fire-line text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">
+                                    BONUS: Get our "AI Tool Cheat Sheet"
+                                </h4>
+                                <p class="text-gray-300">
+                                    The only 3 AI tools you need to start
+                                </p>
+                                <p class="text-primary font-semibold mt-2">
+                                    Worth $97 - Included FREE
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                        class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-8 !rounded-button whitespace-nowrap transition-all text-lg flex items-center justify-center gap-2">
+                        Reserve Your Spot Now
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                    <p class="text-center text-gray-400 mt-4">
+                        Limited spots available. Reserve now!
+                    </p>
+                </div>
             </div>
-            <div class="space-y-6 mb-8">
-              <h3 class="text-xl font-semibold mb-4">What You'll Get:</h3>
-              <div class="space-y-4">
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20 mt-1"
-                  >
-                    <i class="ri-check-line text-primary"></i>
-                  </div>
-                  <p class="text-lg">The #1 AI business model for beginners</p>
-                </div>
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20 mt-1"
-                  >
-                    <i class="ri-check-line text-primary"></i>
-                  </div>
-                  <p class="text-lg">
-                    How to get your first customer in 30 days
-                  </p>
-                </div>
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20 mt-1"
-                  >
-                    <i class="ri-check-line text-primary"></i>
-                  </div>
-                  <p class="text-lg">3 AI tools that can make you $5k/month</p>
-                </div>
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20 mt-1"
-                  >
-                    <i class="ri-check-line text-primary"></i>
-                  </div>
-                  <p class="text-lg">Live Q&A with successful students</p>
-                </div>
-              </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="relative z-10 px-8 py-24 bg-gradient-to-b from-[#0D121F]/80 to-[#0F1525]/80 backdrop-blur-sm">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6">
+                    Ready to Transform Your Business?
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Let's discuss how our mobile app development services can help you
+                    achieve your goals.
+                </p>
+                <a href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                    class="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-8 !rounded-button whitespace-nowrap transition-all text-center">
+                    Schedule a Consultation
+                </a>
             </div>
-            <div class="bg-primary/10 rounded-xl p-6 mb-8">
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/20"
-                >
-                  <i class="ri-fire-line text-2xl text-primary"></i>
+        </section>
+        <!-- FAQ Section -->
+        <section id="faq" class="relative z-10 px-8 py-24">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Your Questions Answered</h2>
+                    <p class="text-xl text-gray-300">
+                        Everything you need to know about starting your AI business
+                    </p>
                 </div>
-                <div>
-                  <h4 class="text-lg font-semibold mb-2">
-                    BONUS: Get our "AI Tool Cheat Sheet"
-                  </h4>
-                  <p class="text-gray-300">
-                    The only 3 AI tools you need to start
-                  </p>
-                  <p class="text-primary font-semibold mt-2">
-                    Worth $97 - Included FREE
-                  </p>
+                <div class="space-y-6" id="faqContainer">
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all">
+                        <button class="faq-button w-full flex items-center justify-between text-left">
+                            <h3 class="text-xl font-semibold">
+                                Do I need to know anything about AI or technology?
+                            </h3>
+                            <div
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform">
+                                <i class="ri-add-line text-primary"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
+                            Nope! If you can use email and Google, you can do this. We start
+                            from the very beginning.
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all">
+                        <button class="faq-button w-full flex items-center justify-between text-left">
+                            <h3 class="text-xl font-semibold">
+                                How is this different from YouTube videos?
+                            </h3>
+                            <div
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform">
+                                <i class="ri-add-line text-primary"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
+                            YouTube gives you random tips. We give you a complete system
+                            that takes you from zero to making money in 90 days.
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all">
+                        <button class="faq-button w-full flex items-center justify-between text-left">
+                            <h3 class="text-xl font-semibold">
+                                How much time do I need each week?
+                            </h3>
+                            <div
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform">
+                                <i class="ri-add-line text-primary"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
+                            Just 5-10 hours per week. Most people do this as a side hustle
+                            while keeping their day job.
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all">
+                        <button class="faq-button w-full flex items-center justify-between text-left">
+                            <h3 class="text-xl font-semibold">
+                                What if I don't have a business idea?
+                            </h3>
+                            <div
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform">
+                                <i class="ri-add-line text-primary"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
+                            Perfect! We give you 6 proven business models to choose from. No
+                            guessing needed.
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all">
+                        <button class="faq-button w-full flex items-center justify-between text-left">
+                            <h3 class="text-xl font-semibold">
+                                Is this another get-rich-quick scheme?
+                            </h3>
+                            <div
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform">
+                                <i class="ri-add-line text-primary"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
+                            No. This requires work. But we give you the exact steps so
+                            you're not guessing what to do.
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all">
+                        <button class="faq-button w-full flex items-center justify-between text-left">
+                            <h3 class="text-xl font-semibold">
+                                What if I try this and it doesn't work?
+                            </h3>
+                            <div
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform">
+                                <i class="ri-add-line text-primary"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
+                            We've helped 847+ people succeed with this system. Follow the
+                            steps, and you'll get results.
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all">
+                        <button class="faq-button w-full flex items-center justify-between text-left">
+                            <h3 class="text-xl font-semibold">
+                                How much money can I really make?
+                            </h3>
+                            <div
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform">
+                                <i class="ri-add-line text-primary"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
+                            Our students average $5k-$15k per month after 6 months. Some
+                            make more, some make less. It depends on how much work you put
+                            in.
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all">
+                        <button class="faq-button w-full flex items-center justify-between text-left">
+                            <h3 class="text-xl font-semibold">
+                                Do I need to quit my job to do this?
+                            </h3>
+                            <div
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform">
+                                <i class="ri-add-line text-primary"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
+                            No! 78% of our students started this as a side hustle. You can
+                            keep your job while you build.
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <a
-              href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
-              class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-8 !rounded-button whitespace-nowrap transition-all text-lg flex items-center justify-center gap-2"
-            >
-              Reserve Your Spot Now
-              <i class="ri-arrow-right-line"></i>
-            </a>
-            <p class="text-center text-gray-400 mt-4">
-              Limited spots available. Reserve now!
-            </p>
-          </div>
-        </div>
-      </section>
-      <!-- CTA Section -->
-      <section
-        class="relative z-10 px-8 py-24 bg-gradient-to-b from-[#0D121F]/80 to-[#0F1525]/80 backdrop-blur-sm"
-      >
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-4xl font-bold mb-6">
-            Ready to Transform Your Business?
-          </h2>
-          <p class="text-xl text-gray-300 mb-8">
-            Let's discuss how our mobile app development services can help you
-            achieve your goals.
-          </p>
-          <a
-            href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
-            class="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-8 !rounded-button whitespace-nowrap transition-all text-center"
-          >
-            Schedule a Consultation
-          </a>
-        </div>
-      </section>
-      <!-- FAQ Section -->
-      <section id="faq" class="relative z-10 px-8 py-24">
-        <div class="max-w-3xl mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">Your Questions Answered</h2>
-            <p class="text-xl text-gray-300">
-              Everything you need to know about starting your AI business
-            </p>
-          </div>
-          <div class="space-y-6" id="faqContainer">
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <button
-                class="faq-button w-full flex items-center justify-between text-left"
-              >
-                <h3 class="text-xl font-semibold">
-                  Do I need to know anything about AI or technology?
-                </h3>
-                <div
-                  class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform"
-                >
-                  <i class="ri-add-line text-primary"></i>
-                </div>
-              </button>
-              <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
-                Nope! If you can use email and Google, you can do this. We start
-                from the very beginning.
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <button
-                class="faq-button w-full flex items-center justify-between text-left"
-              >
-                <h3 class="text-xl font-semibold">
-                  How is this different from YouTube videos?
-                </h3>
-                <div
-                  class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform"
-                >
-                  <i class="ri-add-line text-primary"></i>
-                </div>
-              </button>
-              <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
-                YouTube gives you random tips. We give you a complete system
-                that takes you from zero to making money in 90 days.
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <button
-                class="faq-button w-full flex items-center justify-between text-left"
-              >
-                <h3 class="text-xl font-semibold">
-                  How much time do I need each week?
-                </h3>
-                <div
-                  class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform"
-                >
-                  <i class="ri-add-line text-primary"></i>
-                </div>
-              </button>
-              <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
-                Just 5-10 hours per week. Most people do this as a side hustle
-                while keeping their day job.
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <button
-                class="faq-button w-full flex items-center justify-between text-left"
-              >
-                <h3 class="text-xl font-semibold">
-                  What if I don't have a business idea?
-                </h3>
-                <div
-                  class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform"
-                >
-                  <i class="ri-add-line text-primary"></i>
-                </div>
-              </button>
-              <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
-                Perfect! We give you 6 proven business models to choose from. No
-                guessing needed.
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <button
-                class="faq-button w-full flex items-center justify-between text-left"
-              >
-                <h3 class="text-xl font-semibold">
-                  Is this another get-rich-quick scheme?
-                </h3>
-                <div
-                  class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform"
-                >
-                  <i class="ri-add-line text-primary"></i>
-                </div>
-              </button>
-              <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
-                No. This requires work. But we give you the exact steps so
-                you're not guessing what to do.
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <button
-                class="faq-button w-full flex items-center justify-between text-left"
-              >
-                <h3 class="text-xl font-semibold">
-                  What if I try this and it doesn't work?
-                </h3>
-                <div
-                  class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform"
-                >
-                  <i class="ri-add-line text-primary"></i>
-                </div>
-              </button>
-              <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
-                We've helped 847+ people succeed with this system. Follow the
-                steps, and you'll get results.
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <button
-                class="faq-button w-full flex items-center justify-between text-left"
-              >
-                <h3 class="text-xl font-semibold">
-                  How much money can I really make?
-                </h3>
-                <div
-                  class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform"
-                >
-                  <i class="ri-add-line text-primary"></i>
-                </div>
-              </button>
-              <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
-                Our students average $5k-$15k per month after 6 months. Some
-                make more, some make less. It depends on how much work you put
-                in.
-              </div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-all"
-            >
-              <button
-                class="faq-button w-full flex items-center justify-between text-left"
-              >
-                <h3 class="text-xl font-semibold">
-                  Do I need to quit my job to do this?
-                </h3>
-                <div
-                  class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 flex-shrink-0 transition-transform"
-                >
-                  <i class="ri-add-line text-primary"></i>
-                </div>
-              </button>
-              <div class="faq-answer hidden mt-4 text-gray-300 text-lg">
-                No! 78% of our students started this as a side hustle. You can
-                keep your job while you build.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
     <footer class="bg-[#010204] px-8 py-12">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col items-center">
-          <p class="text-gray-400 text-sm text-center mb-4">
-            Results not typical. Your success depends on your effort and
-            dedication. Past performance doesn't guarantee future results.
-          </p>
-          <p class="text-gray-400 text-sm text-center mb-4">
-            This site is not a part of the Facebook website or Facebook Inc.
-            Additionally, this site is NOT endorsed by Facebook in any way.
-            FACEBOOK is a trademark of FACEBOOK, Inc.
-          </p>
-          <p class="text-gray-400 text-sm"></p>
-            Copyright © 2025 AI Business Masterclass. All rights reserved.
-          </p>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col items-center">
+                <p class="text-gray-400 text-sm text-center mb-4">
+                    Results not typical. Your success depends on your effort and
+                    dedication. Past performance doesn't guarantee future results.
+                </p>
+                <p class="text-gray-400 text-sm text-center mb-4">
+                    This site is not a part of the Facebook website or Facebook Inc.
+                    Additionally, this site is NOT endorsed by Facebook in any way.
+                    FACEBOOK is a trademark of FACEBOOK, Inc.
+                </p>
+                <p class="text-gray-400 text-sm"></p>
+                Copyright © 2025 AI Business Masterclass. All rights reserved.
+                </p>
+            </div>
         </div>
-      </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
     <script id="animationScript">
-      document.addEventListener("DOMContentLoaded", function () {
-        let lastScrollTop = 0;
-        const header = document.getElementById("mainHeader");
-        window.addEventListener("scroll", () => {
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          if (scrollTop > lastScrollTop) {
-            // Scrolling down
-            header.style.transform = "translateY(-100%)";
-          } else {
-            // Scrolling up
-            header.style.transform = "translateY(0)";
-          }
-          lastScrollTop = scrollTop;
+        document.addEventListener("DOMContentLoaded", function () {
+            let lastScrollTop = 0;
+            const header = document.getElementById("mainHeader");
+            window.addEventListener("scroll", () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    header.style.transform = "translateY(-100%)";
+                } else {
+                    // Scrolling up
+                    header.style.transform = "translateY(0)";
+                }
+                lastScrollTop = scrollTop;
+            });
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute("href"));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
+                    }
+                });
+            });
+            const chartDom = document.getElementById("summaryChart");
+            let myChart = null;
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    if (entries[0].isIntersecting) {
+                        if (!myChart) {
+                            myChart = echarts.init(chartDom);
+                            const option = {
+                                animation: true,
+                                tooltip: {
+                                    trigger: "axis",
+                                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                                    borderColor: "rgba(255, 255, 255, 0.2)",
+                                    textStyle: {
+                                        color: "#1f2937",
+                                    },
+                                },
+                                legend: {
+                                    data: [
+                                        "Success Rate",
+                                        "Average Monthly Income",
+                                        "Time to First Client",
+                                    ],
+                                    textStyle: {
+                                        color: "#fff",
+                                    },
+                                    top: 0,
+                                },
+                                grid: {
+                                    left: "3%",
+                                    right: "4%",
+                                    bottom: "3%",
+                                    top: "15%",
+                                    containLabel: true,
+                                },
+                                xAxis: {
+                                    type: "category",
+                                    data: [
+                                        "Month 1",
+                                        "Month 2",
+                                        "Month 3",
+                                        "Month 4",
+                                        "Month 5",
+                                        "Month 6",
+                                    ],
+                                    axisLabel: {
+                                        color: "#fff",
+                                    },
+                                    axisLine: {
+                                        lineStyle: {
+                                            color: "rgba(255, 255, 255, 0.1)",
+                                        },
+                                    },
+                                },
+                                yAxis: [
+                                    {
+                                        type: "value",
+                                        name: "Success Rate (%)",
+                                        nameTextStyle: {
+                                            color: "#fff",
+                                        },
+                                        min: 0,
+                                        max: 100,
+                                        axisLabel: {
+                                            color: "#fff",
+                                            formatter: "{value}%",
+                                        },
+                                        axisLine: {
+                                            lineStyle: {
+                                                color: "rgba(255, 255, 255, 0.1)",
+                                            },
+                                        },
+                                        splitLine: {
+                                            lineStyle: {
+                                                color: "rgba(255, 255, 255, 0.05)",
+                                            },
+                                        },
+                                    },
+                                    {
+                                        type: "value",
+                                        name: "Income ($)",
+                                        nameTextStyle: {
+                                            color: "#fff",
+                                        },
+                                        min: 0,
+                                        max: 15000,
+                                        axisLabel: {
+                                            color: "#fff",
+                                            formatter: "${value}",
+                                        },
+                                        axisLine: {
+                                            lineStyle: {
+                                                color: "rgba(255, 255, 255, 0.1)",
+                                            },
+                                        },
+                                        splitLine: {
+                                            show: false,
+                                        },
+                                    },
+                                ],
+                                series: [
+                                    {
+                                        name: "Success Rate",
+                                        type: "line",
+                                        smooth: true,
+                                        data: [45, 65, 78, 85, 92, 95],
+                                        itemStyle: {
+                                            color: "rgba(87, 181, 231, 1)",
+                                        },
+                                        areaStyle: {
+                                            color: {
+                                                type: "linear",
+                                                x: 0,
+                                                y: 0,
+                                                x2: 0,
+                                                y2: 1,
+                                                colorStops: [
+                                                    {
+                                                        offset: 0,
+                                                        color: "rgba(87, 181, 231, 0.2)",
+                                                    },
+                                                    {
+                                                        offset: 1,
+                                                        color: "rgba(87, 181, 231, 0)",
+                                                    },
+                                                ],
+                                            },
+                                        },
+                                        symbol: "none",
+                                    },
+                                    {
+                                        name: "Average Monthly Income",
+                                        type: "line",
+                                        smooth: true,
+                                        yAxisIndex: 1,
+                                        data: [1200, 3500, 6800, 9500, 12000, 14500],
+                                        itemStyle: {
+                                            color: "rgba(141, 211, 199, 1)",
+                                        },
+                                        areaStyle: {
+                                            color: {
+                                                type: "linear",
+                                                x: 0,
+                                                y: 0,
+                                                x2: 0,
+                                                y2: 1,
+                                                colorStops: [
+                                                    {
+                                                        offset: 0,
+                                                        color: "rgba(141, 211, 199, 0.2)",
+                                                    },
+                                                    {
+                                                        offset: 1,
+                                                        color: "rgba(141, 211, 199, 0)",
+                                                    },
+                                                ],
+                                            },
+                                        },
+                                        symbol: "none",
+                                    },
+                                    {
+                                        name: "Time to First Client",
+                                        type: "bar",
+                                        data: [30, 25, 20, 18, 15, 12],
+                                        itemStyle: {
+                                            color: "rgba(251, 191, 114, 1)",
+                                        },
+                                    },
+                                ],
+                                media: [
+                                    {
+                                        query: {
+                                            maxWidth: 767,
+                                        },
+                                        option: {
+                                            legend: {
+                                                orient: "horizontal",
+                                                top: "auto",
+                                                bottom: 0,
+                                                itemGap: 8,
+                                                textStyle: {
+                                                    fontSize: 10,
+                                                },
+                                            },
+                                            grid: {
+                                                top: "10%",
+                                                bottom: "25%",
+                                            },
+                                        },
+                                    },
+                                ],
+                            };
+                            myChart.setOption(option);
+                        }
+                        observer.unobserve(chartDom);
+                    }
+                },
+                { threshold: 0.1 }
+            );
+            observer.observe(chartDom);
+            window.addEventListener("resize", () => {
+                if (myChart) {
+                    myChart.resize();
+                }
+            });
+            const faqButtons = document.querySelectorAll(".faq-button");
+            faqButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const answer = button.nextElementSibling;
+                    const icon = button.querySelector("i");
+                    const isOpen = answer.classList.contains("hidden");
+                    answer.classList.toggle("hidden");
+                    icon.classList.toggle("ri-add-line", !isOpen);
+                    icon.classList.toggle("ri-subtract-line", isOpen);
+                    button.querySelector(".w-8").classList.toggle("rotate-45", !isOpen);
+                });
+            });
         });
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-              target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }
-          });
-        });
-        const chartDom = document.getElementById("summaryChart");
-        let myChart = null;
-        const observer = new IntersectionObserver(
-          (entries) => {
-            if (entries[0].isIntersecting) {
-              if (!myChart) {
-                myChart = echarts.init(chartDom);
-                const option = {
-                  animation: true,
-                  tooltip: {
-                    trigger: "axis",
-                    backgroundColor: "rgba(255, 255, 255, 0.9)",
-                    borderColor: "rgba(255, 255, 255, 0.2)",
-                    textStyle: {
-                      color: "#1f2937",
-                    },
-                  },
-                  legend: {
-                    data: [
-                      "Success Rate",
-                      "Average Monthly Income",
-                      "Time to First Client",
-                    ],
-                    textStyle: {
-                      color: "#fff",
-                    },
-                    top: 0,
-                  },
-                  grid: {
-                    left: "3%",
-                    right: "4%",
-                    bottom: "3%",
-                    top: "15%",
-                    containLabel: true,
-                  },
-                  xAxis: {
-                    type: "category",
-                    data: [
-                      "Month 1",
-                      "Month 2",
-                      "Month 3",
-                      "Month 4",
-                      "Month 5",
-                      "Month 6",
-                    ],
-                    axisLabel: {
-                      color: "#fff",
-                    },
-                    axisLine: {
-                      lineStyle: {
-                        color: "rgba(255, 255, 255, 0.1)",
-                      },
-                    },
-                  },
-                  yAxis: [
-                    {
-                      type: "value",
-                      name: "Success Rate (%)",
-                      nameTextStyle: {
-                        color: "#fff",
-                      },
-                      min: 0,
-                      max: 100,
-                      axisLabel: {
-                        color: "#fff",
-                        formatter: "{value}%",
-                      },
-                      axisLine: {
-                        lineStyle: {
-                          color: "rgba(255, 255, 255, 0.1)",
-                        },
-                      },
-                      splitLine: {
-                        lineStyle: {
-                          color: "rgba(255, 255, 255, 0.05)",
-                        },
-                      },
-                    },
-                    {
-                      type: "value",
-                      name: "Income ($)",
-                      nameTextStyle: {
-                        color: "#fff",
-                      },
-                      min: 0,
-                      max: 15000,
-                      axisLabel: {
-                        color: "#fff",
-                        formatter: "${value}",
-                      },
-                      axisLine: {
-                        lineStyle: {
-                          color: "rgba(255, 255, 255, 0.1)",
-                        },
-                      },
-                      splitLine: {
-                        show: false,
-                      },
-                    },
-                  ],
-                  series: [
-                    {
-                      name: "Success Rate",
-                      type: "line",
-                      smooth: true,
-                      data: [45, 65, 78, 85, 92, 95],
-                      itemStyle: {
-                        color: "rgba(87, 181, 231, 1)",
-                      },
-                      areaStyle: {
-                        color: {
-                          type: "linear",
-                          x: 0,
-                          y: 0,
-                          x2: 0,
-                          y2: 1,
-                          colorStops: [
-                            {
-                              offset: 0,
-                              color: "rgba(87, 181, 231, 0.2)",
-                            },
-                            {
-                              offset: 1,
-                              color: "rgba(87, 181, 231, 0)",
-                            },
-                          ],
-                        },
-                      },
-                      symbol: "none",
-                    },
-                    {
-                      name: "Average Monthly Income",
-                      type: "line",
-                      smooth: true,
-                      yAxisIndex: 1,
-                      data: [1200, 3500, 6800, 9500, 12000, 14500],
-                      itemStyle: {
-                        color: "rgba(141, 211, 199, 1)",
-                      },
-                      areaStyle: {
-                        color: {
-                          type: "linear",
-                          x: 0,
-                          y: 0,
-                          x2: 0,
-                          y2: 1,
-                          colorStops: [
-                            {
-                              offset: 0,
-                              color: "rgba(141, 211, 199, 0.2)",
-                            },
-                            {
-                              offset: 1,
-                              color: "rgba(141, 211, 199, 0)",
-                            },
-                          ],
-                        },
-                      },
-                      symbol: "none",
-                    },
-                    {
-                      name: "Time to First Client",
-                      type: "bar",
-                      data: [30, 25, 20, 18, 15, 12],
-                      itemStyle: {
-                        color: "rgba(251, 191, 114, 1)",
-                      },
-                    },
-                  ],
-                  media: [
-                    {
-                      query: {
-                        maxWidth: 767,
-                      },
-                      option: {
-                        legend: {
-                          orient: "horizontal",
-                          top: "auto",
-                          bottom: 0,
-                          itemGap: 8,
-                          textStyle: {
-                            fontSize: 10,
-                          },
-                        },
-                        grid: {
-                          top: "10%",
-                          bottom: "25%",
-                        },
-                      },
-                    },
-                  ],
-                };
-                myChart.setOption(option);
-              }
-              observer.unobserve(chartDom);
-            }
-          },
-          { threshold: 0.1 }
-        );
-        observer.observe(chartDom);
-        window.addEventListener("resize", () => {
-          if (myChart) {
-            myChart.resize();
-          }
-        });
-        const faqButtons = document.querySelectorAll(".faq-button");
-        faqButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const answer = button.nextElementSibling;
-            const icon = button.querySelector("i");
-            const isOpen = answer.classList.contains("hidden");
-            answer.classList.toggle("hidden");
-            icon.classList.toggle("ri-add-line", !isOpen);
-            icon.classList.toggle("ri-subtract-line", isOpen);
-            button.querySelector(".w-8").classList.toggle("rotate-45", !isOpen);
-          });
-        });
-      });
     </script>
-  </body>
+</body>
+
 </html>

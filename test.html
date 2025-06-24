@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beams (Single File)</title>
+  <style>
+    html, body, #root {
+      margin: 0;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React and ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Three.js -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+
+  <!-- React Three Fiber -->
+  <script src="https://unpkg.com/@react-three/fiber@8.0.27/dist/react-three-fiber.umd.js"></script>
+
+  <!-- Drei -->
+  <script src="https://unpkg.com/@react-three/drei@9.100.0/dist/drei.umd.js"></script>
+
+  <!-- The App -->
+  <script>
+    const { createElement: h, useRef, useEffect, useMemo } = React;
+    const { createRoot } = ReactDOM;
+    const { Canvas, useFrame } = window['ReactThreeFiber'];
+    const { PerspectiveCamera } = window['drei'];
+
+    const noiseGLSL = `
+float random (in vec2 st) {
+  return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+}
+float noise (in vec2 st) {
+  vec2 i = floor(st);
+  vec2 f = fract(st);
+  float a = random(i);
+  float b = random(i + vec2(1.0, 0.0));
+  float c = random(i + vec2(0.0, 1.0));
+  float d = random(i + vec2(1.0, 1.0));
+  vec2 u = f * f * (3.0 - 2.0 * f);
+  return mix(a, b, u.x) + (c - a)* u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+}
+`;
+
+    function Beams() {
+      const meshRef = useRef();
+
+      const geometry = useMemo(() => {
+        const n = 12;
+        const width = 2;
+        const height = 15;
+        const segments = 100;
+        const geo = new THREE.PlaneGeometry(width, height, 1, segments);
+        geo.translate(0, 0, 0);
+
+        const merged = new THREE.BufferGeometry();
+        const geos = [];
+
+        for (let i = 0; i < n; i++) {
+          const offset = (i - n / 2) * (width + 0.1);
+          const g = geo.clone();
+          g.translate(offset, 0, 0);
+          geos.push(g);
+        }
+
+        merged.copy(THREE.BufferGeometryUtils.mergeBufferGeometries(geos));
+        return merged;
+      }, []);
+
+      const material = useMemo(() => {
+        const baseMat = new THREE.MeshStandardMaterial({ color: 0x000000 });
+        const shader = THREE.ShaderLib.physical;
+        const uniforms = THREE.UniformsUtils.merge([
+          THREE.UniformsLib.common,
+          THREE.UniformsLib.lights,
+          { time: { value: 0 }, uNoiseIntensity: { value: 1.75 } }
+        ]);
+
+        const mat = new THREE.ShaderMaterial({
+          vertexShader: shader.vertexShader.replace(
+            '#include <begin_vertex>',
+            `
+            float random (in vec2 st) {
+              return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+            }
+            transformed.z += random(uv);
+          `
+          ),
+          fragmentShader: shader.fragmentShader.replace(
+            '#include <dithering_fragment>',
+            `
+              float n = noise(gl_FragCoord.xy);
+              gl_FragColor.rgb -= n * 0.1 * uNoiseIntensity;
+            `
+          ) + noiseGLSL,
+          uniforms: uniforms,
+          lights: true,
+          fog: true
+        });
+
+        mat.uniforms.roughness.value = 0.3;
+        mat.uniforms.metalness.value = 0.3;
+
+        return mat;
+      }, []);
+
+      useFrame((_, delta) => {
+        meshRef.current.material.uniforms.time.value += delta;
+      });
+
+      return h('group', { rotation: [0, 0, 0] }, [
+        h('mesh', { ref: meshRef, geometry: geometry, material: material }),
+        h('ambientLight', { intensity: 1 }),
+        h('directionalLight', { position: [0, 3, 10], color: 0xffffff })
+      ]);
+    }
+
+    function App() {
+      return h(Canvas, { dpr: [1, 2], style: { width: '100%', height: '100%' } }, [
+        h(PerspectiveCamera, { makeDefault: true, position: [0, 0, 20], fov: 30 }),
+        h(Beams)
+      ]);
+    }
+
+    createRoot(document.getElementById('root')).render(h(App));
+  </script>
+</body>
+</html>
