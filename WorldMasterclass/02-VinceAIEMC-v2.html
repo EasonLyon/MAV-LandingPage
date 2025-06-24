@@ -1092,188 +1092,210 @@
           });
         });
         const chartDom = document.getElementById("summaryChart");
-        const myChart = echarts.init(chartDom);
-        const option = {
-          animation: false,
-          tooltip: {
-            trigger: "axis",
-            backgroundColor: "rgba(255, 255, 255, 0.9)",
-            borderColor: "rgba(255, 255, 255, 0.2)",
-            textStyle: {
-              color: "#1f2937",
-            },
-          },
-          legend: {
-            data: ["Success Rate", "Average Monthly Income", "Time to First Client"],
-            textStyle: {
-              color: "#fff",
-            },
-            top: 0,
-          },
-          grid: {
-            left: "3%",
-            right: "4%",
-            bottom: "3%",
-            top: "15%",
-            containLabel: true,
-          },
-          xAxis: {
-            type: "category",
-            data: ["Month 1", "Month 2", "Month 3", "Month 4", "Month 5", "Month 6"],
-            axisLabel: {
-              color: "#fff",
-            },
-            axisLine: {
-              lineStyle: {
-                color: "rgba(255, 255, 255, 0.1)",
-              },
-            },
-          },
-          yAxis: [
-            {
-              type: "value",
-              name: "Success Rate (%)",
-              nameTextStyle: {
-                color: "#fff",
-              },
-              min: 0,
-              max: 100,
-              axisLabel: {
-                color: "#fff",
-                formatter: "{value}%",
-              },
-              axisLine: {
-                lineStyle: {
-                  color: "rgba(255, 255, 255, 0.1)",
-                },
-              },
-              splitLine: {
-                lineStyle: {
-                  color: "rgba(255, 255, 255, 0.05)",
-                },
-              },
-            },
-            {
-              type: "value",
-              name: "Income ($)",
-              nameTextStyle: {
-                color: "#fff",
-              },
-              min: 0,
-              max: 15000,
-              axisLabel: {
-                color: "#fff",
-                formatter: "${value}",
-              },
-              axisLine: {
-                lineStyle: {
-                  color: "rgba(255, 255, 255, 0.1)",
-                },
-              },
-              splitLine: {
-                show: false,
-              },
-            },
-          ],
-          series: [
-            {
-              name: "Success Rate",
-              type: "line",
-              smooth: true,
-              data: [45, 65, 78, 85, 92, 95],
-              itemStyle: {
-                color: "rgba(87, 181, 231, 1)",
-              },
-              areaStyle: {
-                color: {
-                  type: "linear",
-                  x: 0,
-                  y: 0,
-                  x2: 0,
-                  y2: 1,
-                  colorStops: [
+        let myChart = null;
+        const observer = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              if (!myChart) {
+                myChart = echarts.init(chartDom);
+                const option = {
+                  animation: true,
+                  tooltip: {
+                    trigger: "axis",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    borderColor: "rgba(255, 255, 255, 0.2)",
+                    textStyle: {
+                      color: "#1f2937",
+                    },
+                  },
+                  legend: {
+                    data: [
+                      "Success Rate",
+                      "Average Monthly Income",
+                      "Time to First Client",
+                    ],
+                    textStyle: {
+                      color: "#fff",
+                    },
+                    top: 0,
+                  },
+                  grid: {
+                    left: "3%",
+                    right: "4%",
+                    bottom: "3%",
+                    top: "15%",
+                    containLabel: true,
+                  },
+                  xAxis: {
+                    type: "category",
+                    data: [
+                      "Month 1",
+                      "Month 2",
+                      "Month 3",
+                      "Month 4",
+                      "Month 5",
+                      "Month 6",
+                    ],
+                    axisLabel: {
+                      color: "#fff",
+                    },
+                    axisLine: {
+                      lineStyle: {
+                        color: "rgba(255, 255, 255, 0.1)",
+                      },
+                    },
+                  },
+                  yAxis: [
                     {
-                      offset: 0,
-                      color: "rgba(87, 181, 231, 0.2)",
+                      type: "value",
+                      name: "Success Rate (%)",
+                      nameTextStyle: {
+                        color: "#fff",
+                      },
+                      min: 0,
+                      max: 100,
+                      axisLabel: {
+                        color: "#fff",
+                        formatter: "{value}%",
+                      },
+                      axisLine: {
+                        lineStyle: {
+                          color: "rgba(255, 255, 255, 0.1)",
+                        },
+                      },
+                      splitLine: {
+                        lineStyle: {
+                          color: "rgba(255, 255, 255, 0.05)",
+                        },
+                      },
                     },
                     {
-                      offset: 1,
-                      color: "rgba(87, 181, 231, 0)",
+                      type: "value",
+                      name: "Income ($)",
+                      nameTextStyle: {
+                        color: "#fff",
+                      },
+                      min: 0,
+                      max: 15000,
+                      axisLabel: {
+                        color: "#fff",
+                        formatter: "${value}",
+                      },
+                      axisLine: {
+                        lineStyle: {
+                          color: "rgba(255, 255, 255, 0.1)",
+                        },
+                      },
+                      splitLine: {
+                        show: false,
+                      },
                     },
                   ],
-                },
-              },
-              symbol: "none",
-            },
-            {
-              name: "Average Monthly Income",
-              type: "line",
-              smooth: true,
-              yAxisIndex: 1,
-              data: [1200, 3500, 6800, 9500, 12000, 14500],
-              itemStyle: {
-                color: "rgba(141, 211, 199, 1)",
-              },
-              areaStyle: {
-                color: {
-                  type: "linear",
-                  x: 0,
-                  y: 0,
-                  x2: 0,
-                  y2: 1,
-                  colorStops: [
+                  series: [
                     {
-                      offset: 0,
-                      color: "rgba(141, 211, 199, 0.2)",
+                      name: "Success Rate",
+                      type: "line",
+                      smooth: true,
+                      data: [45, 65, 78, 85, 92, 95],
+                      itemStyle: {
+                        color: "rgba(87, 181, 231, 1)",
+                      },
+                      areaStyle: {
+                        color: {
+                          type: "linear",
+                          x: 0,
+                          y: 0,
+                          x2: 0,
+                          y2: 1,
+                          colorStops: [
+                            {
+                              offset: 0,
+                              color: "rgba(87, 181, 231, 0.2)",
+                            },
+                            {
+                              offset: 1,
+                              color: "rgba(87, 181, 231, 0)",
+                            },
+                          ],
+                        },
+                      },
+                      symbol: "none",
                     },
                     {
-                      offset: 1,
-                      color: "rgba(141, 211, 199, 0)",
+                      name: "Average Monthly Income",
+                      type: "line",
+                      smooth: true,
+                      yAxisIndex: 1,
+                      data: [1200, 3500, 6800, 9500, 12000, 14500],
+                      itemStyle: {
+                        color: "rgba(141, 211, 199, 1)",
+                      },
+                      areaStyle: {
+                        color: {
+                          type: "linear",
+                          x: 0,
+                          y: 0,
+                          x2: 0,
+                          y2: 1,
+                          colorStops: [
+                            {
+                              offset: 0,
+                              color: "rgba(141, 211, 199, 0.2)",
+                            },
+                            {
+                              offset: 1,
+                              color: "rgba(141, 211, 199, 0)",
+                            },
+                          ],
+                        },
+                      },
+                      symbol: "none",
+                    },
+                    {
+                      name: "Time to First Client",
+                      type: "bar",
+                      data: [30, 25, 20, 18, 15, 12],
+                      itemStyle: {
+                        color: "rgba(251, 191, 114, 1)",
+                      },
                     },
                   ],
-                },
-              },
-              symbol: "none",
-            },
-            {
-              name: "Time to First Client",
-              type: "bar",
-              data: [30, 25, 20, 18, 15, 12],
-              itemStyle: {
-                color: "rgba(251, 191, 114, 1)",
-                borderRadius: [4, 4, 0, 0],
-              },
-            },
-          ],
-        };
-        myChart.setOption(option);
-        window.addEventListener("resize", function () {
-          myChart.resize();
-        });
-        const statsCards = document.querySelectorAll(
-          ".stats-card:not(.highlighted-card)",
+                  media: [
+                    {
+                      query: {
+                        maxWidth: 767,
+                      },
+                      option: {
+                        legend: {
+                          orient: "horizontal",
+                          top: "auto",
+                          bottom: 0,
+                          itemGap: 8,
+                          textStyle: {
+                            fontSize: 10,
+                          },
+                        },
+                        grid: {
+                          top: "10%",
+                          bottom: "25%",
+                        },
+                      },
+                    },
+                  ],
+                };
+                myChart.setOption(option);
+              }
+              observer.unobserve(chartDom);
+            }
+          },
+          { threshold: 0.1 }
         );
-        statsCards.forEach((card) => {
-          card.addEventListener("mouseenter", function () {
-            this.style.backgroundColor = "rgba(30, 36, 48, 0.9)";
-          });
-          card.addEventListener("mouseleave", function () {
-            this.style.backgroundColor = "rgba(20, 24, 33, 0.7)";
-          });
+        observer.observe(chartDom);
+        window.addEventListener("resize", () => {
+          if (myChart) {
+            myChart.resize();
+          }
         });
-        const menuButton = document.querySelector(".ri-menu-line").parentElement;
-        const mobileMenu = document.getElementById("mobileMenu");
-        const closeButton = document.getElementById("closeMenu");
-        menuButton.addEventListener("click", () => {
-          mobileMenu.classList.remove("translate-x-full");
-        });
-        closeButton.addEventListener("click", () => {
-          mobileMenu.classList.add("translate-x-full");
-        });
-      });
-    </script>
-    <script id="faqScript">
-      document.addEventListener("DOMContentLoaded", function () {
         const faqButtons = document.querySelectorAll(".faq-button");
         faqButtons.forEach((button) => {
           button.addEventListener("click", () => {
