@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Entrepreneur Masterclass - Build Your AI Business in 90 Days | Vince Tan</title>
+    <meta name="description" content="Learn how to start a profitable AI business with zero investment. Join Vince Tan's proven system used by 847+ successful entrepreneurs. Free workshop every Monday.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F0RZP7236"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9F0RZP7236');
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        primary: "#FF5722", 
+                        secondary: "#1E293B",
+                        dark: "#0F172A",
+                        light: "#F8FAFC"
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        /* Simplified and optimized styles */
+        .gradient-bg {
+            background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+        }
+        
+        .dark-section {
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+        }
+        
+        .stats-card {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #F3F4F6 100%);
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Optimized mobile menu */
+        .mobile-menu-enter {
+            transform: translateX(100%);
+        }
+        
+        .mobile-menu-enter-active {
+            transform: translateX(0);
+            transition: transform 300ms ease-out;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased">
+    <!-- Simplified Header -->
+    <header id="mainHeader" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">AI</span>
+                    </div>
+                    <span class="text-xl font-semibold text-gray-900 hidden sm:block">
+                        Entrepreneur Masterclass
+                    </span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#benefits" class="text-gray-700 hover:text-primary transition-colors">Benefits</a>
+                    <a href="#how-it-works" class="text-gray-700 hover:text-primary transition-colors">How It Works</a>
+                    <a href="#success-stories" class="text-gray-700 hover:text-primary transition-colors">Success Stories</a>
+                    <a href="#faq" class="text-gray-700 hover:text-primary transition-colors">FAQ</a>
+                    <a href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                        class="bg-primary hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg font-medium transition-all">
+                        Join Free Workshop
+                    </a>
+                </nav>
+                
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="lg:hidden p-2 text-gray-700">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Simplified Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="flex justify-between items-center p-4 border-b">
+            <span class="text-xl font-semibold">Menu</span>
+            <button id="closeMobileMenu" class="p-2 text-gray-700">
+                <i class="ri-close-line ri-lg"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4">
+            <a href="#benefits" class="text-gray-700 hover:text-primary py-2">Benefits</a>
+            <a href="#how-it-works" class="text-gray-700 hover:text-primary py-2">How It Works</a>
+            <a href="#success-stories" class="text-gray-700 hover:text-primary py-2">Success Stories</a>
+            <a href="#faq" class="text-gray-700 hover:text-primary py-2">FAQ</a>
+            <a href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                class="bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium text-center mt-4">
+                Join Free Workshop
+            </a>
+        </nav>
+    </div>
+
+    <!-- Hero Section - Simplified and Cleaner -->
+    <section class="hero-gradient pt-24 pb-12 lg:pt-32 lg:pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                        <i class="ri-rocket-line"></i>
+                        <span>Free Live Workshop Every Monday</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        Build Your AI Business in <span class="text-primary">90 Days</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-600 mb-8">
+                        Join 847+ entrepreneurs who started profitable AI businesses with zero technical skills and zero investment using Vince Tan's proven system.
+                    </p>
+
+                    <!-- Workshop Timer Card -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 mb-8 max-w-md mx-auto lg:mx-0">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Next Live Workshop:</h3>
+                        <div class="space-y-2 text-center">
+                            <div id="workshopDate" class="text-lg font-medium text-gray-800"></div>
+                            <div id="workshopTime" class="text-lg text-gray-600"></div>
+                            <div class="pt-2">
+                                <div class="text-sm text-gray-500 mb-2">Registration closes in:</div>
+                                <div id="countdownTimer" class="flex gap-3 justify-center"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                            class="bg-primary hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all text-lg flex items-center justify-center gap-2">
+                            Reserve Your Free Seat
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                        <a href="#success-stories" 
+                            class="bg-white hover:bg-gray-50 text-gray-700 font-semibold py-4 px-8 rounded-lg transition-all text-lg border border-gray-200">
+                            See Success Stories
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex items-center gap-6 mt-8 justify-center lg:justify-start">
+                        <img src="https://assets.cdn.filesafe.space/gmpqLOOyAOkJv1WOL7uZ/media/d1d27106-528e-4875-bfdc-c6351fb787d5.png" 
+                            alt="Money Back Guarantee" class="h-16 object-contain" />
+                        <div class="text-left">
+                            <div class="flex items-center gap-1">
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                                <i class="ri-star-fill text-yellow-400"></i>
+                            </div>
+                            <p class="text-sm text-gray-600">4.9/5 from 847+ students</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="relative">
+                    <img src="https://bflplaygroundstore.blob.core.windows.net/files/e5b9fb45-2b27-4732-a9b8-e0dc87c4f5e5/generations/ed8ac543-b43b-4ae2-8a03-c8a0b69f5bde/raw?sv=2025-05-05&se=2025-07-01T07%3A56%3A35Z&sr=b&sp=r&sig=wdKtDx9D9qu7hYNoZpXWD1UO%2Bmjz4PYG9DhTege7hHU%3D"
+                        alt="Vince Tan - AI Business Expert" 
+                        class="rounded-2xl shadow-2xl w-full h-auto object-cover"
+                        loading="lazy">
+                    <div class="absolute -bottom-4 -right-4 bg-white rounded-lg shadow-lg p-4 hidden sm:block">
+                        <p class="text-sm font-semibold text-gray-900">Vince Tan</p>
+                        <p class="text-xs text-gray-600">7-Figure AI Entrepreneur</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-16">
+                <div class="stats-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-primary mb-2">847+</div>
+                    <p class="text-gray-700">Successful Students</p>
+                </div>
+                <div class="stats-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-primary mb-2">$0</div>
+                    <p class="text-gray-700">Investment Needed</p>
+                </div>
+                <div class="stats-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-primary mb-2">30 Days</div>
+                    <p class="text-gray-700">To First Client</p>
+                </div>
+                <div class="stats-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-primary mb-2">6</div>
+                    <p class="text-gray-700">Proven Business Models</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credibility Section -->
+    <section class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-8">Featured In</h2>
+                <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                    <div class="text-2xl font-bold text-gray-400">TechCrunch</div>
+                    <div class="text-2xl font-bold text-gray-400">Forbes</div>
+                    <div class="text-2xl font-bold text-gray-400">Entrepreneur</div>
+                    <div class="text-2xl font-bold text-gray-400">Inc.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section (Replaces Problems) -->
+    <section id="benefits" class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Everything You Need to Succeed
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We've removed every barrier between you and your successful AI business
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="ri-money-dollar-circle-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        Start with Zero Investment
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Use free AI tools to begin. Our students average $5k-15k/month within 6 months starting from nothing.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i class="ri-check-line text-green-500 mt-0.5"></i>
+                            <span>Free AI tools list included</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ri-check-line text-green-500 mt-0.5"></i>
+                            <span>Bootstrap growth strategies</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="ri-code-box-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        No Technical Skills Required
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        If you can use email, you can build an AI business. We teach everything in simple, actionable steps.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i class="ri-check-line text-green-500 mt-0.5"></i>
+                            <span>Step-by-step video tutorials</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ri-check-line text-green-500 mt-0.5"></i>
+                            <span>Done-for-you templates</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="ri-compass-3-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        6 Proven Business Models
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Choose from tested models that match your skills. Each includes complete implementation guides.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i class="ri-check-line text-green-500 mt-0.5"></i>
+                            <span>AI content agency</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ri-check-line text-green-500 mt-0.5"></i>
+                            <span>Automation consulting</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (Moved Higher) -->
+    <section id="faq" class="bg-gray-50 py-16 lg:py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Common Questions Answered
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Get clarity before you start your journey
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+                        <h3 class="text-lg font-medium text-gray-900">
+                            Do I need any experience with AI or technology?
+                        </h3>
+                        <i class="ri-add-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">
+                            No experience needed! If you can use basic computer applications like email and web browsers, you have all the technical skills required. We start from the absolute basics and guide you step-by-step.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+                        <h3 class="text-lg font-medium text-gray-900">
+                            How much time do I need to invest?
+                        </h3>
+                        <i class="ri-add-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">
+                            Most successful students invest 5-10 hours per week. You can start this as a side project while keeping your current job. The flexible schedule allows you to work at your own pace.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+                        <h3 class="text-lg font-medium text-gray-900">
+                            What makes this different from other courses?
+                        </h3>
+                        <i class="ri-add-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">
+                            Unlike generic courses, we provide 6 complete business blueprints with proven client acquisition strategies. You get exact templates, scripts, and systems that are actively generating revenue for our students right now.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex items-center justify-between">
+                        <h3 class="text-lg font-medium text-gray-900">
+                            Is there ongoing support after the workshop?
+                        </h3>
+                        <i class="ri-add-line text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">
+                            Yes! Workshop attendees get access to our private community where you can ask questions, share wins, and get feedback from Vince and successful students. You're never alone in your journey.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Your 90-Day Journey to Success
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Follow our proven roadmap to build your profitable AI business
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline line (hidden on mobile) -->
+                <div class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-200"></div>
+
+                <div class="space-y-12 lg:space-y-16">
+                    <!-- Step 1 -->
+                    <div class="relative">
+                        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                            <div class="text-center lg:text-right mb-8 lg:mb-0">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full text-2xl font-bold mb-4">
+                                    1
+                                </div>
+                                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Days 1-30: Foundation</h3>
+                                <p class="text-gray-600">Choose your AI business model, set up your systems, and validate your offer. Get your first paying client within 30 days.</p>
+                            </div>
+                            <div class="hidden lg:block"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative">
+                        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                            <div class="hidden lg:block"></div>
+                            <div class="text-center lg:text-left mb-8 lg:mb-0">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full text-2xl font-bold mb-4">
+                                    2
+                                </div>
+                                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Days 31-60: Growth</h3>
+                                <p class="text-gray-600">Scale your client acquisition, optimize your processes, and increase your pricing. Most students hit $5k/month here.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative">
+                        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                            <div class="text-center lg:text-right mb-8 lg:mb-0">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full text-2xl font-bold mb-4">
+                                    3
+                                </div>
+                                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Days 61-90: Scale</h3>
+                                <p class="text-gray-600">Automate operations, build recurring revenue, and establish your brand. Target $10k+ monthly revenue.</p>
+                            </div>
+                            <div class="hidden lg:block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section id="success-stories" class="dark-section py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                    Real Students, Real Results
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Join hundreds who transformed their lives with AI businesses
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video Testimonial Cards -->
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
+                    <div class="relative mb-4">
+                        <img src="https://i.pravatar.cc/300?img=1" alt="Sarah M." class="w-20 h-20 rounded-full mx-auto mb-4">
+                        <div class="absolute top-0 right-0 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                            Verified
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Sarah M.</h3>
+                    <p class="text-primary font-medium text-center mb-4">$12,000 in First 90 Days</p>
+                    <p class="text-gray-300 text-center mb-4">
+                        "From teacher to AI entrepreneur. Now earning more monthly than my annual teaching salary."
+                    </p>
+                    <div class="flex justify-center gap-1">
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
+                    <div class="relative mb-4">
+                        <img src="https://i.pravatar.cc/300?img=3" alt="Mike R." class="w-20 h-20 rounded-full mx-auto mb-4">
+                        <div class="absolute top-0 right-0 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                            Verified
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Mike R.</h3>
+                    <p class="text-primary font-medium text-center mb-4">$8,500/Month Recurring</p>
+                    <p class="text-gray-300 text-center mb-4">
+                        "Zero business experience to 5 clients in month one. The system just works."
+                    </p>
+                    <div class="flex justify-center gap-1">
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
+                    <div class="relative mb-4">
+                        <img src="https://i.pravatar.cc/300?img=5" alt="Lisa T." class="w-20 h-20 rounded-full mx-auto mb-4">
+                        <div class="absolute top-0 right-0 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                            Verified
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Lisa T.</h3>
+                    <p class="text-primary font-medium text-center mb-4">$15,000/Month After 6 Months</p>
+                    <p class="text-gray-300 text-center mb-4">
+                        "Finally, real actionable steps. Now helping local businesses automate with AI."
+                    </p>
+                    <div class="flex justify-center gap-1">
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#success-videos" class="text-primary hover:text-orange-400 font-medium inline-flex items-center gap-2">
+                    <i class="ri-play-circle-line"></i>
+                    Watch Video Testimonials
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop CTA -->
+    <section class="gradient-bg py-16 lg:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
+                <div class="text-center mb-8">
+                    <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                        <i class="ri-fire-line"></i>
+                        <span>Limited Time: FREE Workshop (Usually $497)</span>
+                    </div>
+                    
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                        Join Vince Tan's Live AI Business Workshop
+                    </h2>
+                    
+                    <div id="workshop-details" class="text-xl text-gray-700 mb-6"></div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h3 class="font-semibold text-gray-900 mb-4">What You'll Discover:</h3>
+                        <div class="grid md:grid-cols-2 gap-4 text-left">
+                            <div class="flex items-start gap-3">
+                                <i class="ri-check-line text-green-500 mt-1"></i>
+                                <span class="text-gray-700">The #1 AI business model for beginners (ready in 48 hours)</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="ri-check-line text-green-500 mt-1"></i>
+                                <span class="text-gray-700">How to get your first client in 30 days or less</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="ri-check-line text-green-500 mt-1"></i>
+                                <span class="text-gray-700">3 AI tools that can generate $5k+/month</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="ri-check-line text-green-500 mt-1"></i>
+                                <span class="text-gray-700">Live Q&A with successful students</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-8">
+                        <p class="text-orange-800 font-medium">
+                            <i class="ri-gift-line"></i>
+                            Bonus: Free "AI Business Starter Kit" for all attendees (Worth $297)
+                        </p>
+                    </div>
+
+                    <a href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                        class="bg-primary hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all text-lg inline-flex items-center gap-2">
+                        Reserve My Free Seat Now
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                    
+                    <p class="text-gray-600 mt-4">
+                        <i class="ri-user-line"></i>
+                        Only 100 spots available. 73 already registered.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Vince -->
+    <section class="py-16 lg:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/3">
+                        <img src="https://bflplaygroundstore.blob.core.windows.net/files/e5b9fb45-2b27-4732-a9b8-e0dc87c4f5e5/generations/ed8ac543-b43b-4ae2-8a03-c8a0b69f5bde/raw?sv=2025-05-05&se=2025-07-01T07%3A56%3A35Z&sr=b&sp=r&sig=wdKtDx9D9qu7hYNoZpXWD1UO%2Bmjz4PYG9DhTege7hHU%3D" 
+                            alt="Vince Tan"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Meet Your Instructor: Vince Tan</h2>
+                        <div class="space-y-4 text-gray-600">
+                            <p>
+                                Vince Tan is a 7-figure AI entrepreneur who went from corporate burnout to building multiple successful AI businesses in just 18 months.
+                            </p>
+                            <p>
+                                After discovering the power of AI tools in 2022, Vince developed a systematic approach to building profitable AI businesses without coding or large investments.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4 pt-4">
+                                <div>
+                                    <div class="text-2xl font-bold text-primary">847+</div>
+                                    <p class="text-sm">Students Taught</p>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-primary">$2.3M+</div>
+                                    <p class="text-sm">Student Revenue Generated</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="dark-section py-16 lg:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Your AI Business Journey Starts Here
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+                Join 847+ entrepreneurs building profitable AI businesses. Free workshop every Monday.
+            </p>
+            <a href="#tally-open=3xE8E9&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave"
+                class="bg-primary hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all text-lg inline-flex items-center gap-2">
+                Reserve Your Free Seat
+                <i class="ri-arrow-right-line"></i>
+            </a>
+            <p class="text-gray-400 mt-6">
+                No credit card required. 100% free workshop.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="mb-4">
+                    © 2025 AI Entrepreneur Masterclass. All rights reserved.
+                </p>
+                <p class="text-sm mb-4">
+                    Results vary based on effort and market conditions. Past performance does not guarantee future results. 
+                    See full earnings disclaimer and terms of service.
+                </p>
+                <p class="text-xs">
+                    This site is not affiliated with or endorsed by any social media platform.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optimized Scripts -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+        
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('ri-add-line');
+                icon.classList.toggle('ri-subtract-line');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Simplified countdown timer
+        function initCountdown() {
+            const now = new Date();
+            const malaysiaOffset = 8 * 60; // UTC+8
+            const nowMalaysia = new Date(now.getTime() + (malaysiaOffset - now.getTimezoneOffset()) * 60000);
+            
+            // Find next Monday at 8PM Malaysia time
+            let targetDate = new Date(nowMalaysia);
+            const dayOfWeek = targetDate.getDay();
+            const daysUntilMonday = (8 - dayOfWeek) % 7 || 7;
+            
+            targetDate.setDate(targetDate.getDate() + daysUntilMonday);
+            targetDate.setHours(20, 0, 0, 0);
+            
+            // If less than 24 hours, move to next Monday
+            if (targetDate - nowMalaysia < 24 * 60 * 60 * 1000) {
+                targetDate.setDate(targetDate.getDate() + 7);
+            }
+            
+            // Display workshop date and time
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('workshopDate').textContent = targetDate.toLocaleDateString('en-MY', options);
+            document.getElementById('workshopTime').textContent = '8:00 PM - 10:30 PM (Malaysia Time)';
+            document.getElementById('workshop-details').textContent = 
+                `Next Workshop: ${targetDate.toLocaleDateString('en-MY', options)} at 8:00 PM Malaysia Time`;
+            
+            // Update countdown
+            function updateCountdown() {
+                const now = new Date();
+                const nowMY = new Date(now.getTime() + (malaysiaOffset - now.getTimezoneOffset()) * 60000);
+                const diff = Math.max(0, Math.floor((targetDate - nowMY) / 1000));
+                
+                const days = Math.floor(diff / 86400);
+                const hours = Math.floor((diff % 86400) / 3600);
+                const minutes = Math.floor((diff % 3600) / 60);
+                const seconds = diff % 60;
+                
+                document.getElementById('countdownTimer').innerHTML = `
+                    <div class="bg-gray-100 rounded px-3 py-2 min-w-[60px]">
+                        <div class="text-2xl font-bold text-gray-900">${days}</div>
+                        <div class="text-xs text-gray-500">Days</div>
+                    </div>
+                    <div class="bg-gray-100 rounded px-3 py-2 min-w-[60px]">
+                        <div class="text-2xl font-bold text-gray-900">${hours}</div>
+                        <div class="text-xs text-gray-500">Hours</div>
+                    </div>
+                    <div class="bg-gray-100 rounded px-3 py-2 min-w-[60px]">
+                        <div class="text-2xl font-bold text-gray-900">${minutes}</div>
+                        <div class="text-xs text-gray-500">Mins</div>
+                    </div>
+                    <div class="bg-gray-100 rounded px-3 py-2 min-w-[60px]">
+                        <div class="text-2xl font-bold text-gray-900">${seconds}</div>
+                        <div class="text-xs text-gray-500">Secs</div>
+                    </div>
+                `;
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+        
+        // Initialize countdown on page load
+        initCountdown();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#' || this.getAttribute('href').includes('tally')) return;
+                
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80; // Header height
+                    const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header hide/show on scroll
+        let lastScrollTop = 0;
+        const header = document.getElementById('mainHeader');
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        }, { passive: true });
+    </script>
+</body>
+</html>
