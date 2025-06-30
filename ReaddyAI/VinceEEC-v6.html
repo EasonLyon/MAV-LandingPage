@@ -157,6 +157,19 @@
             transform: translateY(0);
         }
 
+        /* Fix mobile navigation menu visibility */
+        #mobileMenu {
+            z-index: 9999 !important;
+        }
+
+        #mobileMenu.hidden {
+            display: none !important;
+        }
+
+        #mobileMenu:not(.hidden) {
+            display: flex !important;
+        }
+
         /* Refined live social proof elements */
         .live-counter {
             display: inline-flex;
@@ -613,13 +626,13 @@
         <!-- Refined Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden fixed inset-0 bg-black/95 backdrop-blur-md z-40">
             <div class="flex flex-col items-center justify-center min-h-screen gap-4 px-4">
-                <a href="#hero" class="px-4 py-2 text-base text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full text-center">Home</a>
-                <a href="#challenges" class="px-4 py-2 text-base text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full text-center">Challenges</a>
-                <a href="#solutions" class="px-4 py-2 text-base text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full text-center">Solutions</a>
-                <a href="#authority" class="px-4 py-2 text-base text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full text-center">About Vince</a>
-                <a href="#testimonials" class="px-4 py-2 text-base text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full text-center">Success Stories</a>
-                <button id="closeMenuBtn" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-white hover:bg-warm-gold/10 rounded-full transition-all">
-                    <i class="ri-close-line icon-lg"></i>
+                <a href="#hero" class="px-4 py-3 text-lg text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full max-w-xs text-center">Home</a>
+                <a href="#challenges" class="px-4 py-3 text-lg text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full max-w-xs text-center">Challenges</a>
+                <a href="#solutions" class="px-4 py-3 text-lg text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full max-w-xs text-center">Solutions</a>
+                <a href="#authority" class="px-4 py-3 text-lg text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full max-w-xs text-center">About Vince</a>
+                <a href="#testimonials" class="px-4 py-3 text-lg text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full max-w-xs text-center">Success Stories</a>
+                <button id="closeMenuBtn" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center text-white hover:bg-warm-gold/20 rounded-full transition-all border border-white/20">
+                    <i class="ri-close-line text-2xl"></i>
                 </button>
             </div>
         </div>
@@ -635,20 +648,20 @@
                     <!-- Live social proof notification -->
                     <div class="live-counter mb-4 justify-center lg:justify-start">
                         <div class="pulse-dot"></div>
-                        <span>47 Malaysians from KL viewing this now</span>
+                        <span>73 Malaysians from KL, Selangor & JB viewing this now</span>
                     </div>
                     
                     <h1 class="hero-title text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight md:leading-none mb-4 text-white font-malaysian">
-                        <span class="bg-clip-text text-transparent warm-trust-gradient">Stop the Sunday</span><br>
-                        <span class="text-white">Evening</span> <span class="bg-clip-text text-transparent malaysian-gradient">Dread</span>
+                        <span class="bg-clip-text text-transparent warm-trust-gradient">From RM3,000 Salary</span><br>
+                        <span class="text-white">to</span> <span class="bg-clip-text text-transparent malaysian-gradient">RM15,000+ Monthly</span>
                     </h1>
                     
                     <div class="mb-6 space-y-3">
                         <p class="text-base md:text-lg text-warm-gold font-semibold">
-                            "How many more Monday mornings will you spend dreaming of your own coaching business?"
+                            "What if you could replace your salary in just 90 days?"
                         </p>
                         <p class="text-base md:text-lg text-white/80">
-                            Transform your expertise into <span class="text-warm-gold font-semibold">RM15,000+ monthly income</span> with Malaysia's #1 Business Coach
+                            Get your first <span class="text-warm-gold font-semibold">RM5,000 coaching client in 30 days</span> with Malaysia's #1 Business Coach - guaranteed
                         </p>
                     </div>
                     
@@ -672,7 +685,7 @@
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 mb-6">
                         <button class="cta-enhanced text-white w-full sm:w-auto" 
                             data-tally-open="3jX7k6" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
-                            <span class="relative z-10">Join FREE Session - Next Wednesday 8PM</span>
+                            <span class="relative z-10">Get Your First RM5K Client - FREE Session Wednesday 8PM</span>
                         </button>
                         <div class="text-center sm:text-left">
                             <div class="text-warm-gold font-semibold text-sm">Next Session</div>
@@ -690,7 +703,7 @@
                             <div class="scarcity-fill" style="width: 73%"></div>
                         </div>
                         <div class="text-center text-white/60 text-xs mt-1">
-                            ⚡ Only 27 spots remaining for next session
+                            🔥 Only 27 spots left - 14 Malaysians registered in last hour
                         </div>
                     </div>
                 </div>
@@ -728,12 +741,12 @@
                             - Size: 500x500px, optimized for web
                             - Style: Executive portrait style with depth of field
                             -->
-                            <img src="https://readdy.ai/api/search-image?query=professional%20Malaysian%20business%20mentor%20Vince%20Tan%20confident%20executive%20portrait%20premium%20KL%20business%20setting%20warm%20lighting%20success%20oriented&width=500&height=500&seq=1&orientation=squarish"
+                            <img src="vince-hero-portrait-humble-hustle-smiling.jpg"
                                 alt="Vince Tan - Malaysia's #1 Business Coach" class="w-full h-full object-cover">
                         </div>
                         
                         <!-- Refined floating credentials -->
-                        <div class="absolute -left-3 top-1/2 -translate-y-1/3 emotion-card w-48 hidden lg:block float-animation">
+                        <div class="absolute -left-3 top-2/3 -translate-y-1/4 w-48 hidden lg:block float-animation" style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 16px;">
                             <div class="p-4">
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="w-10 h-10 rounded-full warm-trust-gradient flex items-center justify-center">
@@ -762,7 +775,7 @@
                         </div>
                         
                         <!-- Enhanced countdown timer with prominent display -->
-                        <div class="absolute -top-20 right-0 emotion-card w-40 hidden lg:block float-animation" style="animation-delay: -3s;">
+                        <div class="absolute -top-20 right-0 emotion-card w-56 hidden lg:block float-animation" style="animation-delay: -3s;">
                             <div class="p-4">
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="pulse-dot"></div>
@@ -802,8 +815,9 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-4">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Meet <span class="bg-clip-text text-transparent warm-trust-gradient">Malaysia's #1</span> Business Coach</h2>
-                        <p class="text-lg text-white/80 max-w-3xl mx-auto">With 23+ years of building 7-figure businesses across Malaysia, Vince Tan has become the go-to mentor for ambitious professionals ready to transform their expertise into profitable coaching businesses.</p>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">From <span class="bg-clip-text text-transparent malaysian-gradient">RM2,800 Corporate Slave</span> to <span class="bg-clip-text text-transparent warm-trust-gradient">Malaysia's #1</span> Business Coach</h2>
+                        <p class="text-lg text-warm-gold font-semibold max-w-3xl mx-auto mb-3">"15 years ago, I was trapped in a Kuala Lumpur corporate job, earning RM2,800/month, working 12-hour days, and spending 3 hours daily in KL traffic."</p>
+                        <p class="text-lg text-white/80 max-w-3xl mx-auto">Today, my students generate over RM50M in coaching revenue across Malaysia. I've proven that any Malaysian professional can transform their expertise into a thriving coaching business - regardless of background, English level, or industry experience.</p>
                     </div>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
@@ -864,7 +878,7 @@
                         <!-- Authority image -->
                         <div class="relative">
                             <div class="relative rounded-xl overflow-hidden border border-warm-gold/20">
-                                <img src="https://readdy.ai/api/search-image?query=Vince%20Tan%20speaking%20Malaysian%20business%20conference%20stage%20professional%20audience%20KL%20business%20event%20motivational%20speaker&width=500&height=600&seq=2&orientation=portrait"
+                                <img src="vince-authority-speaking-conference-side-profile.jpg"
                                     alt="Vince Tan Speaking at Malaysian Business Conference" class="w-full h-auto object-cover">
                             </div>
                             
@@ -969,6 +983,52 @@
                             Learn more about this challenge →
                         </button>
                     </div>
+
+                    <!-- Challenge 4 - Malaysian Specific -->
+                    <div class="emotion-card p-4 group">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl malaysian-gradient flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <i class="ri-group-line text-white icon-lg"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Family Pressure</h3>
+                        </div>
+                        <p class="text-white/70 text-base leading-relaxed mb-3">
+                            Your parents keep asking when you'll get a "real job" while you struggle to explain why you want to leave your RM4,000 government position for "uncertain" coaching income.
+                        </p>
+                        <div class="expandable-section" id="challenge4Details">
+                            <div class="bg-warm-gold/8 rounded-lg p-3 border-l-2 border-warm-gold mt-3">
+                                <p class="text-white/80 text-sm">
+                                    <strong class="text-warm-gold">Cultural Reality:</strong> Malaysian families value stability, but they also respect success. Once you show RM8K+ monthly income, conversations change completely.
+                                </p>
+                            </div>
+                        </div>
+                        <button onclick="toggleSection('challenge4Details')" class="text-warm-gold text-sm font-semibold mt-3 hover:text-warm-gold/80 transition-colors">
+                            Learn more about this challenge →
+                        </button>
+                    </div>
+
+                    <!-- Challenge 5 - Malaysian Specific -->
+                    <div class="emotion-card p-4 group">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl trust-blue bg-trust-blue flex items-center justify-center group-hover:scale-105 transition-transform">
+                                <i class="ri-global-line text-white icon-lg"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Western Competition</h3>
+                        </div>
+                        <p class="text-white/70 text-base leading-relaxed mb-3">
+                            Watching foreign coaches charge RM500/hour while you feel guilty asking for RM200, even though you understand Malaysian culture, language, and business environment better.
+                        </p>
+                        <div class="expandable-section" id="challenge5Details">
+                            <div class="bg-warm-gold/8 rounded-lg p-3 border-l-2 border-warm-gold mt-3">
+                                <p class="text-white/80 text-sm">
+                                    <strong class="text-warm-gold">Hidden Advantage:</strong> Malaysian clients prefer local coaches who understand their culture. Your "Malaysian-ness" is actually your biggest competitive advantage.
+                                </p>
+                            </div>
+                        </div>
+                        <button onclick="toggleSection('challenge5Details')" class="text-warm-gold text-sm font-semibold mt-3 hover:text-warm-gold/80 transition-colors">
+                            Learn more about this challenge →
+                        </button>
+                    </div>
                 </div>
                 
                 <!-- Urgency element -->
@@ -1056,15 +1116,16 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="max-w-6xl mx-auto text-center mb-4">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-                        Transform from <span class="bg-clip-text text-transparent malaysian-gradient">Hidden Expert</span> to <span class="bg-clip-text text-transparent warm-trust-gradient">Premium Authority</span>
+                        The <span class="bg-clip-text text-transparent malaysian-gradient">Malaysian Authority System™</span>
                     </h2>
-                    <p class="text-lg text-white/70">Your Expertise. Vince Tan's 7-Figure Blueprint. Premium Results.</p>
+                    <p class="text-lg text-warm-gold font-semibold mb-2">Transform from Hidden Expert to Premium Authority</p>
+                    <p class="text-lg text-white/70">Your Expertise. Malaysian Market. Premium Ringgit.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
                     <div class="relative">
                         <div class="relative rounded-xl overflow-hidden border border-warm-gold/20">
-                            <img src="https://readdy.ai/api/search-image?query=Vince%20Tan%20coaching%20Malaysian%20professionals%20modern%20business%20setting%20confident%20mentor%20upscale%20environment&width=500&height=500&seq=3&orientation=squarish"
+                            <img src="vince-workshop-teaching-engaged-audience.jpg"
                                 alt="Vince Tan Coaching Malaysian Professionals" class="w-full h-full object-cover">
                         </div>
                         
@@ -1185,7 +1246,7 @@
                         <!-- Original Testimonials -->
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
-                                <img src="https://readdy.ai/api/search-image?query=professional%20Malaysian%20Malay%20businessman%2040s%20confident%20smile%20modern%20business%20suit&width=50&height=50&seq=1&orientation=squarish" 
+                                <img src="avatar-malay-businessman.svg" 
                                     alt="Ahmad Razak" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Ahmad Razak</h4>
@@ -1196,7 +1257,7 @@
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "Vince's program helped me transition from corporate to full-time coaching. Now earning <span class="text-warm-gold font-bold">RM18,000/month</span> - got my first 3 premium clients in 25 days!"
+                                "I was a corporate manager earning RM5,200/month, working 12-hour days. My wife kept asking when I'd pursue my coaching dreams. After Vince's program, I'm earning <span class="text-warm-gold font-bold">RM18,000/month</span> and finally have time for my family. My wife says she's proud I took the leap!"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
@@ -1215,7 +1276,7 @@
 
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
-                                <img src="https://readdy.ai/api/search-image?query=professional%20Malaysian%20Chinese%20businesswoman%2030s%20confident%20elegant%20business%20attire&width=50&height=50&seq=2&orientation=squarish" 
+                                <img src="avatar-chinese-businesswoman.svg" 
                                     alt="Michelle Tan" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Michelle Tan</h4>
@@ -1245,7 +1306,7 @@
 
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
-                                <img src="https://readdy.ai/api/search-image?query=professional%20Malaysian%20Indian%20businessman%2035s%20confident%20premium%20business%20attire&width=50&height=50&seq=3&orientation=squarish" 
+                                <img src="avatar-indian-businessman.svg" 
                                     alt="Raj Kumar" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Raj Kumar</h4>
@@ -1256,7 +1317,7 @@
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "Coming from banking in JB, I wasn't sure how to package my expertise. Vince's program gave me the exact blueprint. Now my income grew 5x to <span class="text-warm-gold font-bold">RM25,000/month!</span>"
+                                "I was a bank manager earning RM5,000/month, working 6 days a week. My wife said I was missing our kids growing up. After 6 months with Vince, I went from RM5K to <span class="text-warm-gold font-bold">RM25,000/month</span> coaching income. Now I attend every school event. My wife stopped asking me to 'be realistic' about my dreams!"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
@@ -1275,7 +1336,7 @@
 
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
-                                <img src="https://readdy.ai/api/search-image?query=professional%20Malaysian%20Malay%20businesswoman%20successful%20tech%20entrepreneur&width=50&height=50&seq=4&orientation=squarish" 
+                                <img src="avatar-malay-businesswoman.svg" 
                                     alt="Siti Aishah" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Siti Aishah</h4>
@@ -1305,7 +1366,7 @@
 
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
-                                <img src="https://readdy.ai/api/search-image?query=professional%20Malaysian%20Chinese%20businessman%20healthcare%20expert%20confident&width=50&height=50&seq=5&orientation=squarish" 
+                                <img src="avatar-chinese-businessman.svg" 
                                     alt="Dr. Lim Wei Ming" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Dr. Lim Wei Ming</h4>
@@ -1336,7 +1397,7 @@
                         <!-- Duplicate Set for Seamless Loop -->
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
-                                <img src="https://readdy.ai/api/search-image?query=professional%20Malaysian%20Malay%20businessman%2040s%20confident%20smile%20modern%20business%20suit&width=50&height=50&seq=1&orientation=squarish" 
+                                <img src="avatar-malay-businessman.svg" 
                                     alt="Ahmad Razak" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Ahmad Razak</h4>
@@ -1366,7 +1427,7 @@
 
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
-                                <img src="https://readdy.ai/api/search-image?query=professional%20Malaysian%20Chinese%20businesswoman%2030s%20confident%20elegant%20business%20attire&width=50&height=50&seq=2&orientation=squarish" 
+                                <img src="avatar-chinese-businesswoman.svg" 
                                     alt="Michelle Tan" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Michelle Tan</h4>
@@ -1396,7 +1457,7 @@
 
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
-                                <img src="https://readdy.ai/api/search-image?query=professional%20Malaysian%20Indian%20businessman%2035s%20confident%20premium%20business%20attire&width=50&height=50&seq=3&orientation=squarish" 
+                                <img src="avatar-indian-businessman.svg" 
                                     alt="Raj Kumar" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Raj Kumar</h4>
@@ -1407,7 +1468,7 @@
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "Coming from banking in JB, I wasn't sure how to package my expertise. Vince's program gave me the exact blueprint. Now my income grew 5x to <span class="text-warm-gold font-bold">RM25,000/month!</span>"
+                                "I was a bank manager earning RM5,000/month, working 6 days a week. My wife said I was missing our kids growing up. After 6 months with Vince, I went from RM5K to <span class="text-warm-gold font-bold">RM25,000/month</span> coaching income. Now I attend every school event. My wife stopped asking me to 'be realistic' about my dreams!"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
@@ -1426,7 +1487,7 @@
 
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
-                                <img src="https://readdy.ai/api/search-image?query=professional%20Malaysian%20Malay%20businesswoman%20successful%20tech%20entrepreneur&width=50&height=50&seq=4&orientation=squarish" 
+                                <img src="avatar-malay-businesswoman.svg" 
                                     alt="Siti Aishah" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Siti Aishah</h4>
@@ -1456,7 +1517,7 @@
 
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
-                                <img src="https://readdy.ai/api/search-image?query=professional%20Malaysian%20Chinese%20businessman%20healthcare%20expert%20confident&width=50&height=50&seq=5&orientation=squarish" 
+                                <img src="avatar-chinese-businessman.svg" 
                                     alt="Dr. Lim Wei Ming" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Dr. Lim Wei Ming</h4>
@@ -1558,6 +1619,42 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="emotion-card p-4 faq-item">
+                        <button class="faq-question w-full text-left flex justify-between items-center text-white font-semibold">
+                            <span>What if my English isn't perfect for coaching?</span>
+                            <i class="ri-add-line text-lg transition-transform text-warm-gold faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="pt-4 border-t border-white/8 mt-3">
+                                <p class="text-white/80 leading-relaxed">Most of my successful students coach in a mix of English and Bahasa Malaysia - exactly how real Malaysians communicate! Malaysian clients actually prefer coaches who understand local culture over perfect English speakers. Your authenticity and local understanding are far more valuable than perfect grammar. Many top earners in our program deliver their coaching sessions primarily in Bahasa Malaysia with some English terms, and they charge premium rates because clients connect better with them.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="emotion-card p-4 faq-item">
+                        <button class="faq-question w-full text-left flex justify-between items-center text-white font-semibold">
+                            <span>How do I handle family pressure about leaving my stable job?</span>
+                            <i class="ri-add-line text-lg transition-transform text-warm-gold faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="pt-4 border-t border-white/8 mt-3">
+                                <p class="text-white/80 leading-relaxed">Start part-time while keeping your current job - this is the Malaysian way to reduce family anxiety! When you're earning RM8,000+ monthly from coaching (usually within 3-4 months), the family conversations change completely. I've helped hundreds of students transition from skeptical families to proud supporters. The key is showing results first, then making the transition. Your family wants security for you - once they see the income potential, they become your biggest cheerleaders.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="emotion-card p-4 faq-item">
+                        <button class="faq-question w-full text-left flex justify-between items-center text-white font-semibold">
+                            <span>Is the Malaysian market too small for coaching?</span>
+                            <i class="ri-add-line text-lg transition-transform text-warm-gold faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="pt-4 border-t border-white/8 mt-3">
+                                <p class="text-white/80 leading-relaxed">Malaysia has 32 million people with a rapidly growing middle class, and the coaching industry is still massively underserved! My students serve clients from KL to Kota Kinabalu, Singapore, Brunei, and even Malaysian expats worldwide. The market is huge - most industries have less than 10 qualified Malaysian coaches serving millions of potential clients. Plus, Malaysians prefer working with local coaches who understand our culture, challenges, and business environment over expensive foreign alternatives.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1644,6 +1741,24 @@
                                     <div class="text-white/70 text-xs">2.5 hours of pure value</div>
                                 </div>
                             </div>
+
+                            <!-- Program Investment Transparency -->
+                            <div class="bg-warm-gold/8 rounded-lg p-4 border border-warm-gold/20 mb-6">
+                                <div class="text-center">
+                                    <div class="text-white font-semibold mb-2 text-sm">Full Program Investment</div>
+                                    <div class="text-white/80 text-xs mb-3">After your FREE session, serious participants can join our 90-day Malaysian Authority Program</div>
+                                    <div class="flex items-center justify-center gap-3 mb-3">
+                                        <div class="text-white/40 text-sm line-through">RM12,997</div>
+                                        <div class="text-warm-gold font-bold">From RM1,083/month</div>
+                                    </div>
+                                    <div class="space-y-1 text-xs text-white/70">
+                                        <div>✅ Bank transfer (Maybank, CIMB, Public Bank)</div>
+                                        <div>✅ Credit card payment options</div>
+                                        <div>✅ Flexible payment plans available</div>
+                                        <div>✅ EPF withdrawal consultation provided</div>
+                                    </div>
+                                </div>
+                            </div>
                             
                             <!-- Final scarcity indicator -->
                             <div class="mb-6">
@@ -1710,7 +1825,21 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-3">Follow Vince Tan</h4>
+                    <h4 class="text-white font-semibold mb-3">Contact & Follow</h4>
+                    <div class="space-y-2 mb-3 text-sm">
+                        <p class="text-white/60 flex items-center">
+                            <i class="ri-mail-line mr-2 text-warm-gold"></i>
+                            hello@vincecoach.my
+                        </p>
+                        <p class="text-white/60 flex items-center">
+                            <i class="ri-whatsapp-line mr-2 text-success-green"></i>
+                            +60 12-345 6789
+                        </p>
+                        <p class="text-white/60 flex items-center text-xs">
+                            <i class="ri-building-line mr-2 text-trust-blue"></i>
+                            Registered in Malaysia (SSM: 1234567-A)
+                        </p>
+                    </div>
                     <div class="flex gap-3 mb-3">
                         <a href="#" class="text-white/60 hover:text-warm-gold text-xl transition-colors"><i class="ri-facebook-circle-fill"></i></a>
                         <a href="#" class="text-white/60 hover:text-warm-gold text-xl transition-colors"><i class="ri-instagram-line"></i></a>
@@ -1720,9 +1849,9 @@
                     <div>
                         <p class="text-white/60 text-sm flex items-center">
                             🇲🇾 
-                            Proudly Malaysian
+                            Proudly Malaysian since 2001
                         </p>
-                        <p class="text-white/40 text-xs mt-1">Transforming Malaysian professionals since 2001</p>
+                        <p class="text-white/40 text-xs mt-1">Serving entrepreneurs from KL to Sabah</p>
                     </div>
                 </div>
             </div>
@@ -1735,13 +1864,13 @@
     <!-- Mobile Sticky CTA -->
     <div class="mobile-optimized-cta md:hidden" id="mobileCTA">
         <div class="px-4 py-2 bg-warm-gold/10 border-t border-warm-gold/20">
-            <div class="flex items-center justify-between text-xs text-white/80 mb-2">
-                <span>Next Session:</span>
-                <div class="flex gap-2">
-                    <span id="mobile-days">0</span>d
-                    <span id="mobile-hours">0</span>h 
-                    <span id="mobile-minutes">0</span>m
-                    <span id="mobile-seconds">0</span>s
+            <div class="flex items-center justify-center text-xs text-white/80 mb-2">
+                <span class="mr-3">Next Session:</span>
+                <div class="flex gap-1 items-center justify-center">
+                    <span id="mobile-days" class="font-bold">0</span><span class="text-white/60">d</span>
+                    <span id="mobile-hours" class="font-bold">0</span><span class="text-white/60">h</span>
+                    <span id="mobile-minutes" class="font-bold">0</span><span class="text-white/60">m</span>
+                    <span id="mobile-seconds" class="font-bold">0</span><span class="text-white/60">s</span>
                 </div>
             </div>
         </div>

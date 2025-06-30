@@ -1,0 +1,6 @@
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="25" cy="25" r="25" fill="#DC2626"/>
+  <circle cx="25" cy="20" r="8" fill="white" opacity="0.9"/>
+  <circle cx="25" cy="40" r="12" fill="white" opacity="0.9"/>
+  <text x="25" y="30" text-anchor="middle" fill="#DC2626" font-family="Arial" font-size="10" font-weight="bold">CM</text>
+</svg>
