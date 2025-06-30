@@ -4,7 +4,10 @@
       "Bash(rg:*)",
       "Bash(grep:*)",
       "Bash(mkdir:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(ls:*)",
+      "Bash(cp:*)",
+      "Bash(find:*)"
     ],
     "deny": []
   }

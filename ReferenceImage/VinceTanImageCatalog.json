@@ -1,0 +1,697 @@
+{
+  "catalog_info": {
+    "created_date": "2024-06-30",
+    "total_images": 26,
+    "description": "Comprehensive catalog of Vince Tan's professional images for landing page integration",
+    "categories": ["hero-portrait", "authority-speaking", "workshop-teaching", "brand-specific"]
+  },
+  "landing_page_mapping": {
+    "VinceEEC-v6.html": {
+      "hero_section": {
+        "line": 731,
+        "requirements": "Professional portrait (500x500px), confident, approachable, trustworthy",
+        "recommended_images": [
+          "vince-hero-portrait-humble-hustle-smiling.jpg",
+          "vince-hero-gesturing-humble-hustle.png",
+          "vince-hero-presenting-humble-hustle-closeup.png"
+        ]
+      },
+      "authority_section": {
+        "line": 867,
+        "requirements": "Speaking/conference image (500x600px portrait)",
+        "recommended_images": [
+          "vince-authority-speaking-worldmasterclass-profile.jpg",
+          "vince-authority-speaking-premium-venue-arms-spread.jpg",
+          "vince-authority-speaking-conference-side-profile.jpg"
+        ]
+      },
+      "solutions_section": {
+        "line": 1067,
+        "requirements": "Coaching/mentoring image (500x500px)",
+        "recommended_images": [
+          "vince-workshop-teaching-worldmasterclass-audience.jpg",
+          "vince-workshop-teaching-formal-conference-room.jpg",
+          "vince-workshop-interactive-teaching-audience.jpg"
+        ]
+      }
+    }
+  },
+  "images": [
+    {
+      "filename": "vince-hero-gesturing-humble-hustle.png",
+      "original_filename": "2.png",
+      "category": "hero-portrait",
+      "brand": "Humble Hustle",
+      "description": "Vince Tan making expressive hand gestures while presenting, wearing Humble Hustle branded t-shirt. Dynamic pose perfect for hero sections.",
+      "setting": "Professional presentation stage with professional lighting",
+      "pose": "Standing, dynamic hand gestures, confident expression",
+      "attire": "Black Humble Hustle branded t-shirt, jeans",
+      "lighting": "Professional stage lighting, well-lit subject",
+      "best_use_cases": ["Hero section", "About section", "Brand storytelling"],
+      "technical_specs": {
+        "format": "PNG",
+        "estimated_dimensions": "Professional quality",
+        "file_size": "3.9MB"
+      },
+      "alt_text": "Vince Tan presenting dynamically on stage wearing Humble Hustle t-shirt with confident gestures",
+      "landing_page_fit": {
+        "hero": "excellent",
+        "authority": "good",
+        "solutions": "fair"
+      }
+    },
+    {
+      "filename": "vince-speaking-titanium-mastermind-stage.jpg",
+      "original_filename": "209A2432.jpg",
+      "category": "authority-speaking",
+      "brand": "Titanium Mastermind",
+      "description": "Professional conference speaking shot with Titanium Mastermind branding visible in background. Shows Vince as authority figure.",
+      "setting": "Professional conference stage with branded backdrop",
+      "pose": "Standing at podium, speaking gesture, authoritative stance",
+      "attire": "Smart casual - dark shirt",
+      "lighting": "Professional conference lighting",
+      "best_use_cases": ["Authority section", "Speaking engagements", "Testimonials"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "17MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan speaking authoritatively at Titanium Mastermind conference with professional backdrop",
+      "landing_page_fit": {
+        "hero": "good",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-authority-speaking-worldmasterclass-profile.jpg",
+      "original_filename": "209A2437.jpg",
+      "category": "authority-speaking",
+      "brand": "WorldMasterclass",
+      "description": "Side profile shot of Vince speaking with microphone, WorldMasterclass branding. Professional authority image.",
+      "setting": "WorldMasterclass conference stage",
+      "pose": "Side profile, speaking with microphone, focused expression",
+      "attire": "Black t-shirt, professional casual",
+      "lighting": "Professional stage lighting with purple/blue tones",
+      "best_use_cases": ["Authority section", "Speaker bio", "Professional credibility"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "17.7MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan in profile speaking at WorldMasterclass event with professional microphone",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-workshop-teaching-worldmasterclass-audience.jpg",
+      "original_filename": "209A2740.jpg",
+      "category": "workshop-teaching",
+      "brand": "WorldMasterclass",
+      "description": "Interactive teaching moment with visible audience, showing Vince engaging with participants in casual setting.",
+      "setting": "WorldMasterclass workshop with audience visible",
+      "pose": "Casual standing, interactive speaking, engaging audience",
+      "attire": "Black t-shirt, casual shorts, relaxed professional",
+      "lighting": "Natural conference room lighting",
+      "best_use_cases": ["Solutions section", "Workshop promotion", "Engagement demonstration"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "22MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan teaching interactively at WorldMasterclass workshop with engaged audience",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "good",
+        "solutions": "excellent"
+      }
+    },
+    {
+      "filename": "vince-workshop-teaching-formal-conference-room.jpg",
+      "original_filename": "209A3449.jpg",
+      "category": "workshop-teaching",
+      "brand": "General",
+      "description": "Formal conference room teaching setting with professional audience in business attire.",
+      "setting": "Upscale conference room with professional audience",
+      "pose": "Standing, teaching gesture, professional demeanor",
+      "attire": "Black t-shirt, smart casual",
+      "lighting": "Professional conference room lighting",
+      "best_use_cases": ["Solutions section", "Corporate training", "Business coaching"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "20.4MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan conducting formal business training in professional conference room setting",
+      "landing_page_fit": {
+        "hero": "good",
+        "authority": "excellent",
+        "solutions": "excellent"
+      }
+    },
+    {
+      "filename": "vince-hero-presenting-humble-hustle-closeup.png",
+      "original_filename": "3.png",
+      "category": "hero-portrait",
+      "brand": "Humble Hustle",
+      "description": "Close-up presentation shot with Humble Hustle branding, dynamic speaking gesture. Great for hero sections.",
+      "setting": "Professional presentation with branded backdrop",
+      "pose": "Close-up, speaking gesture, confident expression",
+      "attire": "Black Humble Hustle t-shirt",
+      "lighting": "Professional presentation lighting",
+      "best_use_cases": ["Hero section", "Brand promotion", "Speaker introduction"],
+      "technical_specs": {
+        "format": "PNG",
+        "file_size": "2.2MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Close-up of Vince Tan presenting with Humble Hustle branding and confident gesture",
+      "landing_page_fit": {
+        "hero": "excellent",
+        "authority": "good",
+        "solutions": "fair"
+      }
+    },
+    {
+      "filename": "vince-workshop-teaching-large-venue.jpg",
+      "original_filename": "WMC-510.jpg",
+      "category": "workshop-teaching",
+      "brand": "General",
+      "description": "Large venue workshop teaching with packed audience, showing scale and popularity.",
+      "setting": "Large conference hall with hundreds of attendees",
+      "pose": "Standing on stage, addressing large audience",
+      "attire": "Black Humble Hustle t-shirt, jeans",
+      "lighting": "Professional venue lighting",
+      "best_use_cases": ["Social proof", "Workshop scale", "Popularity demonstration"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "13MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan teaching to large audience in packed conference venue",
+      "landing_page_fit": {
+        "hero": "good",
+        "authority": "excellent",
+        "solutions": "excellent"
+      }
+    },
+    {
+      "filename": "vince-hero-portrait-humble-hustle-blackwhite.jpg",
+      "original_filename": "WMC-549.jpg",
+      "category": "hero-portrait",
+      "brand": "Humble Hustle",
+      "description": "Artistic black and white portrait with Humble Hustle branding, professional headshot style.",
+      "setting": "Studio-style black background",
+      "pose": "Portrait pose, confident expression, hands near face",
+      "attire": "Black Humble Hustle t-shirt",
+      "lighting": "Professional portrait lighting",
+      "best_use_cases": ["Hero section", "About page", "Professional bio"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "2.9MB",
+        "quality": "Professional portrait"
+      },
+      "alt_text": "Professional black and white portrait of Vince Tan in Humble Hustle branded shirt",
+      "landing_page_fit": {
+        "hero": "excellent",
+        "authority": "good",
+        "solutions": "fair"
+      }
+    },
+    {
+      "filename": "vince-hero-portrait-humble-hustle-smiling.jpg",
+      "original_filename": "WMC-615.jpg",
+      "category": "hero-portrait",
+      "brand": "Humble Hustle",
+      "description": "Warm, approachable portrait with genuine smile and Humble Hustle branding. Perfect for hero sections requiring trust and approachability.",
+      "setting": "Professional stage with clean background",
+      "pose": "Standing portrait, genuine smile, approachable stance",
+      "attire": "Black Humble Hustle t-shirt, jeans",
+      "lighting": "Warm professional lighting",
+      "best_use_cases": ["Hero section", "Trust building", "Approachable authority"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "10.8MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan smiling warmly in Humble Hustle shirt, approachable professional portrait",
+      "landing_page_fit": {
+        "hero": "excellent",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-speaking-dramatic-large-audience-gesture.jpg",
+      "original_filename": "TNIC4602.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Dramatic speaking shot from behind showing large audience and dynamic gesture. Great for authority and scale.",
+      "setting": "Large venue with hundreds of attendees",
+      "pose": "Back view, dramatic gesture pointing to audience",
+      "attire": "Black t-shirt, jeans",
+      "lighting": "Dramatic venue lighting",
+      "best_use_cases": ["Authority section", "Scale demonstration", "Audience engagement"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "16.4MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan from behind addressing large audience with dramatic gesture",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-authority-speaking-premium-venue-arms-spread.jpg",
+      "original_filename": "TNIC6130.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Premium venue with arms spread wide, showing confidence and authority. Golden lighting adds prestige.",
+      "setting": "Premium conference hall with elegant architecture",
+      "pose": "Arms spread wide, confident stance, welcoming gesture",
+      "attire": "Black t-shirt, jeans",
+      "lighting": "Warm golden venue lighting",
+      "best_use_cases": ["Authority section", "Confidence display", "Premium positioning"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "6MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan with arms spread wide in premium conference venue with golden lighting",
+      "landing_page_fit": {
+        "hero": "good",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-speaking-dramatic-modern-venue-geometric.jpg",
+      "original_filename": "D1-S1_SNP_6938.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Modern venue with geometric architectural background, professional speaking pose.",
+      "setting": "Modern conference venue with geometric design elements",
+      "pose": "Professional speaking stance, pointing gesture",
+      "attire": "Black t-shirt, jeans",
+      "lighting": "Dramatic modern venue lighting",
+      "best_use_cases": ["Authority section", "Modern professional image", "Architectural sophistication"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "2.5MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Vince Tan speaking in modern venue with geometric architectural background",
+      "landing_page_fit": {
+        "hero": "good",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-workshop-teaching-grand-hall-audience.jpg",
+      "original_filename": "WMC-560.jpg",
+      "category": "workshop-teaching",
+      "brand": "Humble Hustle",
+      "description": "Grand hall setting with visible engaged audience, showing Vince among participants for relatability.",
+      "setting": "Grand hall with classical architecture and packed audience",
+      "pose": "Standing among audience, teaching gesture",
+      "attire": "Black Humble Hustle t-shirt",
+      "lighting": "Natural grand hall lighting",
+      "best_use_cases": ["Solutions section", "Audience engagement", "Accessible teaching"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "7.3MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan teaching in grand hall surrounded by engaged audience",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "good",
+        "solutions": "excellent"
+      }
+    },
+    {
+      "filename": "vince-speaking-with-team-humble-hustle-blackwhite.jpg",
+      "original_filename": "WMC-651.jpg",
+      "category": "authority-speaking",
+      "brand": "Humble Hustle",
+      "description": "Black and white group shot with team members, showing collaborative leadership and Humble Hustle branding.",
+      "setting": "Professional event with team members present",
+      "pose": "Speaking with microphone alongside team members",
+      "attire": "Black Humble Hustle t-shirt",
+      "lighting": "Professional event lighting (black and white)",
+      "best_use_cases": ["Team section", "Collaborative leadership", "Group dynamics"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "3.9MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Black and white photo of Vince Tan speaking with team members in Humble Hustle shirts",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "good",
+        "solutions": "excellent"
+      }
+    },
+    {
+      "filename": "vince-authority-speaking-conference-side-profile.jpg",
+      "original_filename": "209A3451.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Professional side profile speaking shot, showing focus and expertise.",
+      "setting": "Professional conference setting",
+      "pose": "Side profile, speaking with microphone, focused expression",
+      "attire": "Black t-shirt",
+      "lighting": "Professional conference lighting",
+      "best_use_cases": ["Authority section", "Professional expertise", "Focused delivery"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "21.2MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Side profile of Vince Tan speaking professionally with microphone at conference",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-workshop-teaching-intimate-business-setting.jpg",
+      "original_filename": "209A3677.jpg",
+      "category": "workshop-teaching",
+      "brand": "General",
+      "description": "Intimate business workshop setting with close audience interaction.",
+      "setting": "Professional business training room with close audience",
+      "pose": "Teaching stance, engaging with nearby participants",
+      "attire": "Black t-shirt",
+      "lighting": "Professional business lighting",
+      "best_use_cases": ["Solutions section", "Intimate coaching", "Personal attention"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "13.2MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan in intimate business workshop setting engaging closely with participants",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "good",
+        "solutions": "excellent"
+      }
+    },
+    {
+      "filename": "vince-authority-speaking-pointing-gesture.jpg",
+      "original_filename": "D1-A1_SGG07149.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Professional speaking with clear pointing gesture, showing direction and leadership.",
+      "setting": "Professional speaking venue",
+      "pose": "Standing, clear pointing gesture, leadership stance",
+      "attire": "Black t-shirt",
+      "lighting": "Professional venue lighting",
+      "best_use_cases": ["Authority section", "Direction setting", "Leadership demonstration"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "3.7MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Vince Tan speaking with clear pointing gesture demonstrating leadership",
+      "landing_page_fit": {
+        "hero": "good",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-authority-speaking-relaxed-casual.jpg",
+      "original_filename": "D1-A1_SGG07163.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Relaxed, approachable speaking style while maintaining authority.",
+      "setting": "Professional speaking venue",
+      "pose": "Relaxed speaking stance, approachable demeanor",
+      "attire": "Black t-shirt",
+      "lighting": "Professional lighting",
+      "best_use_cases": ["Authority section", "Approachable expertise", "Comfortable speaking"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "3.6MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Vince Tan speaking in relaxed, approachable manner while maintaining professional authority",
+      "landing_page_fit": {
+        "hero": "good",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-speaking-motivational-stage-front.jpg",
+      "original_filename": "D1-S2_SN_P2754.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Front-stage motivational speaking pose with direct audience engagement.",
+      "setting": "Stage front with direct audience access",
+      "pose": "Motivational speaking stance, engaging directly with audience",
+      "attire": "Black t-shirt",
+      "lighting": "Stage lighting",
+      "best_use_cases": ["Motivational content", "Direct engagement", "Front-stage authority"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "3.9MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Vince Tan in motivational speaking pose at front of stage engaging directly with audience",
+      "landing_page_fit": {
+        "hero": "good",
+        "authority": "excellent",
+        "solutions": "excellent"
+      }
+    },
+    {
+      "filename": "vince-speaking-explanatory-pointing.jpg",
+      "original_filename": "D1-S4_SN_P1692.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Clear explanatory speaking with pointing gesture, educational focus.",
+      "setting": "Professional speaking environment",
+      "pose": "Explanatory stance with pointing gesture",
+      "attire": "Black t-shirt",
+      "lighting": "Professional lighting",
+      "best_use_cases": ["Educational content", "Explanation sections", "Teaching authority"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "2.3MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Vince Tan in explanatory speaking pose with clear pointing gesture for educational content",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "good",
+        "solutions": "excellent"
+      }
+    },
+    {
+      "filename": "vince-speaking-professional-microphone-gesture.jpg",
+      "original_filename": "D1-S4_SN_P1742.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Professional speaking with microphone and clear hand gesture.",
+      "setting": "Professional speaking venue",
+      "pose": "Speaking with microphone, professional hand gesture",
+      "attire": "Black t-shirt",
+      "lighting": "Professional venue lighting",
+      "best_use_cases": ["Professional speaking", "Authority demonstration", "Clear communication"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "3.7MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Vince Tan speaking professionally with microphone and clear hand gesture",
+      "landing_page_fit": {
+        "hero": "good",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-speaking-intimate-workshop-setting.jpg",
+      "original_filename": "D1-S4_SN_P1761.jpg",
+      "category": "workshop-teaching",
+      "brand": "General",
+      "description": "Intimate workshop setting with close participant interaction.",
+      "setting": "Small workshop room with close participants",
+      "pose": "Teaching in intimate setting, personal interaction",
+      "attire": "Black t-shirt",
+      "lighting": "Workshop lighting",
+      "best_use_cases": ["Workshop promotion", "Intimate coaching", "Personal touch"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "2.5MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Vince Tan teaching in intimate workshop setting with close participant interaction",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "good",
+        "solutions": "excellent"
+      }
+    },
+    {
+      "filename": "vince-speaking-large-conference-hall.jpg",
+      "original_filename": "D3-S2_SN_P3212.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Large conference hall speaking, showing scale and authority.",
+      "setting": "Large professional conference hall",
+      "pose": "Speaking to large audience, authoritative presence",
+      "attire": "Black t-shirt",
+      "lighting": "Conference hall lighting",
+      "best_use_cases": ["Authority section", "Scale demonstration", "Professional conferences"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "5.2MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Vince Tan speaking authoritatively in large conference hall to significant audience",
+      "landing_page_fit": {
+        "hero": "good",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-workshop-interactive-teaching-audience.jpg",
+      "original_filename": "WMC-581.jpg",
+      "category": "workshop-teaching",
+      "brand": "General",
+      "description": "Interactive teaching moment with visible audience engagement.",
+      "setting": "Workshop venue with engaged audience",
+      "pose": "Interactive teaching, engaging with participants",
+      "attire": "Black t-shirt",
+      "lighting": "Workshop lighting",
+      "best_use_cases": ["Solutions section", "Interactive learning", "Engagement demonstration"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "7.3MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Vince Tan conducting interactive teaching session with engaged audience participation",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "good",
+        "solutions": "excellent"
+      }
+    },
+    {
+      "filename": "vince-authority-speaking-serious-microphone.jpg",
+      "original_filename": "WMC-627.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Serious, focused speaking with microphone, conveying expertise and gravity.",
+      "setting": "Professional speaking venue",
+      "pose": "Serious speaking stance with microphone, focused expression",
+      "attire": "Black t-shirt",
+      "lighting": "Professional lighting",
+      "best_use_cases": ["Authority section", "Serious expertise", "Professional gravity"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "11.5MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan speaking seriously with microphone, conveying expertise and professional gravity",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    },
+    {
+      "filename": "vince-workshop-teaching-engaged-audience.jpg",
+      "original_filename": "WMC-630.jpg",
+      "category": "workshop-teaching",
+      "brand": "General",
+      "description": "Workshop teaching with clearly engaged and attentive audience visible.",
+      "setting": "Workshop with highly engaged audience",
+      "pose": "Teaching with clear audience engagement visible",
+      "attire": "Black t-shirt",
+      "lighting": "Workshop lighting",
+      "best_use_cases": ["Solutions section", "Audience engagement", "Teaching effectiveness"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "11MB",
+        "quality": "High resolution"
+      },
+      "alt_text": "Vince Tan teaching workshop with clearly engaged and attentive audience",
+      "landing_page_fit": {
+        "hero": "fair",
+        "authority": "good",
+        "solutions": "excellent"
+      }
+    },
+    {
+      "filename": "vince-speaking-dynamic-wide-audience-shot.jpg",
+      "original_filename": "WMC_DWMC_December Batch-27.jpg",
+      "category": "authority-speaking",
+      "brand": "General",
+      "description": "Dynamic wide shot showing large audience scale and speaking energy.",
+      "setting": "Large venue with wide audience view",
+      "pose": "Dynamic speaking with large audience visible",
+      "attire": "Black t-shirt",
+      "lighting": "Venue lighting",
+      "best_use_cases": ["Scale demonstration", "Authority section", "Audience size"],
+      "technical_specs": {
+        "format": "JPG",
+        "file_size": "5.9MB",
+        "quality": "Professional"
+      },
+      "alt_text": "Wide shot of Vince Tan speaking dynamically to large audience showing scale and energy",
+      "landing_page_fit": {
+        "hero": "good",
+        "authority": "excellent",
+        "solutions": "good"
+      }
+    }
+  ],
+  "usage_recommendations": {
+    "hero_section_top_choices": [
+      "vince-hero-portrait-humble-hustle-smiling.jpg",
+      "vince-hero-gesturing-humble-hustle.png",
+      "vince-hero-portrait-humble-hustle-blackwhite.jpg"
+    ],
+    "authority_section_top_choices": [
+      "vince-authority-speaking-worldmasterclass-profile.jpg",
+      "vince-authority-speaking-premium-venue-arms-spread.jpg",
+      "vince-speaking-titanium-mastermind-stage.jpg"
+    ],
+    "solutions_section_top_choices": [
+      "vince-workshop-teaching-worldmasterclass-audience.jpg",
+      "vince-workshop-teaching-formal-conference-room.jpg",
+      "vince-workshop-interactive-teaching-audience.jpg"
+    ],
+    "brand_specific_usage": {
+      "humble_hustle": [
+        "vince-hero-gesturing-humble-hustle.png",
+        "vince-hero-presenting-humble-hustle-closeup.png",
+        "vince-hero-portrait-humble-hustle-blackwhite.jpg",
+        "vince-hero-portrait-humble-hustle-smiling.jpg",
+        "vince-workshop-teaching-large-venue.jpg",
+        "vince-workshop-teaching-grand-hall-audience.jpg",
+        "vince-speaking-with-team-humble-hustle-blackwhite.jpg"
+      ],
+      "titanium_mastermind": [
+        "vince-speaking-titanium-mastermind-stage.jpg"
+      ],
+      "worldmasterclass": [
+        "vince-authority-speaking-worldmasterclass-profile.jpg",
+        "vince-workshop-teaching-worldmasterclass-audience.jpg"
+      ]
+    }
+  }
+}
