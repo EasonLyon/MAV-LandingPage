@@ -1,0 +1,335 @@
+{
+  "editing_workflows": {
+    "brand_consistency": {
+      "name": "Brand Consistency Application",
+      "description": "Apply consistent branding across all landing page images",
+      "steps": [
+        {
+          "step": 1,
+          "command": "edit-template",
+          "template": "brand_colors",
+          "parameters": {
+            "elements": "buttons, headers, and key elements",
+            "brand_color_scheme": "blue and orange corporate theme"
+          },
+          "description": "Apply brand color scheme"
+        },
+        {
+          "step": 2,
+          "command": "edit-template", 
+          "template": "logo_addition",
+          "parameters": {
+            "logo_description": "professional tech company",
+            "position": "top right"
+          },
+          "description": "Add brand logo"
+        },
+        {
+          "step": 3,
+          "command": "edit-template",
+          "template": "professional_enhancement",
+          "parameters": {
+            "specific_changes": "clean layout, consistent typography"
+          },
+          "description": "Professional polish"
+        }
+      ]
+    },
+    "cta_optimization": {
+      "name": "CTA Optimization Sequence",
+      "description": "Optimize call-to-action elements for better conversion",
+      "steps": [
+        {
+          "step": 1,
+          "command": "replace-text",
+          "parameters": {
+            "original_text": "Contact Us",
+            "new_text": "Start Free Trial"
+          },
+          "description": "Update CTA text"
+        },
+        {
+          "step": 2,
+          "command": "edit-template",
+          "template": "cta_enhancement", 
+          "parameters": {
+            "new_cta": "Start Free Trial with bold, prominent style and high contrast background"
+          },
+          "description": "Enhance CTA visibility"
+        },
+        {
+          "step": 3,
+          "command": "edit",
+          "prompt": "Add 'No Credit Card Required' text below the button in smaller, reassuring font",
+          "description": "Add trust reducer"
+        }
+      ]
+    },
+    "professional_upgrade": {
+      "name": "Professional Image Enhancement",
+      "description": "Transform casual images into professional business photos",
+      "steps": [
+        {
+          "step": 1,
+          "command": "edit-template",
+          "template": "lighting_improvement",
+          "parameters": {
+            "lighting_style": "bright and professional"
+          },
+          "description": "Improve lighting quality"
+        },
+        {
+          "step": 2,
+          "command": "edit-template",
+          "template": "background_replacement",
+          "parameters": {
+            "new_background": "clean, modern office environment"
+          },
+          "description": "Professional background"
+        },
+        {
+          "step": 3,
+          "command": "edit-template",
+          "template": "professional_enhancement",
+          "parameters": {
+            "specific_changes": "formal attire, clean composition, business accessories"
+          },
+          "description": "Professional styling"
+        },
+        {
+          "step": 4,
+          "command": "edit-template",
+          "template": "resolution_enhancement",
+          "parameters": {},
+          "description": "Enhance image quality"
+        }
+      ]
+    },
+    "trust_building": {
+      "name": "Trust and Credibility Enhancement",
+      "description": "Add trust signals and credibility indicators",
+      "steps": [
+        {
+          "step": 1,
+          "command": "edit-template",
+          "template": "trust_building",
+          "parameters": {
+            "trust_elements": "security badges, SSL certification"
+          },
+          "description": "Add security indicators"
+        },
+        {
+          "step": 2,
+          "command": "edit",
+          "prompt": "Add '5-star rating' with small stars icon in a subtle corner location",
+          "description": "Add social proof rating"
+        },
+        {
+          "step": 3,
+          "command": "edit",
+          "prompt": "Add 'Trusted by 10,000+ customers' text in professional, understated font",
+          "description": "Add customer count"
+        }
+      ]
+    },
+    "product_showcase": {
+      "name": "Product Showcase Enhancement",
+      "description": "Optimize product images for e-commerce and sales",
+      "steps": [
+        {
+          "step": 1,
+          "command": "edit-template",
+          "template": "lighting_improvement",
+          "parameters": {
+            "lighting_style": "bright and clear for product visibility"
+          },
+          "description": "Optimal product lighting"
+        },
+        {
+          "step": 2,
+          "command": "edit-template",
+          "template": "background_replacement",
+          "parameters": {
+            "new_background": "clean white studio background"
+          },
+          "description": "Clean product background"
+        },
+        {
+          "step": 3,
+          "command": "edit",
+          "prompt": "Add price tag showing '$99' with 'Limited Time' text in corner",
+          "description": "Add pricing information"
+        },
+        {
+          "step": 4,
+          "command": "edit-template",
+          "template": "resolution_enhancement",
+          "parameters": {},
+          "description": "Enhance product detail clarity"
+        }
+      ]
+    }
+  },
+  "batch_editing_templates": {
+    "ab_testing_cta": {
+      "name": "A/B Testing CTA Variations",
+      "description": "Create multiple CTA variations for testing",
+      "edits": [
+        "Change the call-to-action button to green with 'Get Started' text",
+        "Change the call-to-action button to red with 'Start Free Trial' text",
+        "Change the call-to-action button to blue with 'Join Now' text",
+        "Make the call-to-action button orange with 'Try It Free' text",
+        "Create a large, prominent CTA button with 'Sign Up Today' text"
+      ]
+    },
+    "color_scheme_testing": {
+      "name": "Color Scheme Variations",
+      "description": "Test different color schemes for brand alignment",
+      "edits": [
+        "Apply blue and orange corporate color scheme to key elements",
+        "Apply green and white healthcare color scheme to key elements", 
+        "Apply red and black bold color scheme to key elements",
+        "Apply purple and yellow creative color scheme to key elements",
+        "Apply grey and cyan professional color scheme to key elements"
+      ]
+    },
+    "trust_indicators": {
+      "name": "Trust Signal Variations",
+      "description": "Test different trust-building elements",
+      "edits": [
+        "Add security badges and SSL certification logos",
+        "Add customer testimonial quote with 5-star rating",
+        "Add 'Money Back Guarantee' badge with shield icon",
+        "Add 'Trusted by 50,000+ users' text with customer logos",
+        "Add industry certification badges and award symbols"
+      ]
+    },
+    "professional_levels": {
+      "name": "Professional Enhancement Levels",
+      "description": "Create different levels of professional enhancement", 
+      "edits": [
+        "Basic professional enhancement: improve lighting and background",
+        "Moderate professional enhancement: add formal attire and clean composition",
+        "High professional enhancement: corporate setting with business accessories",
+        "Premium professional enhancement: executive-level styling with luxury elements",
+        "Ultra professional enhancement: high-end corporate photography style"
+      ]
+    }
+  },
+  "iterative_sequences": {
+    "character_development": {
+      "name": "Character Consistency Sequence",
+      "description": "Iterative edits maintaining character consistency",
+      "sequence": [
+        "Remove any accessories from the person's face. Maintain character appearance and facial features for consistency in future edits.",
+        "The person is now in a modern office setting taking a professional headshot. Keep the same character appearance and style as previous image.",
+        "Add a business suit and professional styling. Keep the same character appearance and style as previous image.",
+        "The setting is now a conference room with the person presenting. Keep the same character appearance and style as previous image."
+      ]
+    },
+    "product_evolution": {
+      "name": "Product Enhancement Sequence", 
+      "description": "Progressive product image enhancement",
+      "sequence": [
+        "Improve the product lighting to be bright and professional",
+        "Replace the background with a clean, modern studio setting",
+        "Add subtle branding elements that complement the product",
+        "Enhance the product details and add premium finishing touches",
+        "Add contextual elements showing the product in use"
+      ]
+    },
+    "landing_page_optimization": {
+      "name": "Complete Landing Page Image Optimization",
+      "description": "Full optimization sequence for landing page images",
+      "sequence": [
+        "Improve overall image quality and lighting for professional appearance",
+        "Apply brand colors to relevant elements while maintaining visual harmony",
+        "Add or enhance call-to-action elements with high contrast and visibility",
+        "Include trust signals and credibility indicators in strategic locations",
+        "Final polish: enhance resolution and ensure all elements are balanced"
+      ]
+    }
+  },
+  "industry_specific_templates": {
+    "healthcare": {
+      "color_scheme": "sky blue, navy, white",
+      "trust_elements": "medical certifications, patient safety badges, HIPAA compliance",
+      "professional_style": "clean medical environment, professional healthcare attire",
+      "common_edits": [
+        "Replace background with clean medical facility",
+        "Add medical certification badges",
+        "Apply healthcare color scheme (blue and white)",
+        "Enhance professional medical appearance"
+      ]
+    },
+    "technology": {
+      "color_scheme": "cyan, magenta, electric blue",
+      "trust_elements": "security badges, uptime guarantees, user statistics",
+      "professional_style": "modern tech environment, innovative styling",
+      "common_edits": [
+        "Apply tech color scheme (cyan and magenta)",
+        "Add innovation and technology elements",
+        "Replace background with modern tech office",
+        "Enhance digital and futuristic styling"
+      ]
+    },
+    "finance": {
+      "color_scheme": "dark blue, gold, white",
+      "trust_elements": "financial certifications, security badges, regulatory compliance",
+      "professional_style": "executive business environment, formal attire",
+      "common_edits": [
+        "Apply financial color scheme (dark blue and gold)",
+        "Add financial certifications and trust badges",
+        "Replace background with executive office setting",
+        "Enhance formal, trustworthy appearance"
+      ]
+    },
+    "education": {
+      "color_scheme": "orange, teal, cream",
+      "trust_elements": "accreditation badges, student success statistics, instructor credentials",
+      "professional_style": "educational environment, approachable expertise",
+      "common_edits": [
+        "Apply educational color scheme (orange and teal)",
+        "Add accreditation and certification badges",
+        "Replace background with learning environment",
+        "Enhance approachable, expert appearance"
+      ]
+    },
+    "real_estate": {
+      "color_scheme": "emerald, ivory, gold",
+      "trust_elements": "real estate licenses, customer satisfaction ratings, market statistics",
+      "professional_style": "upscale, trustworthy, professional realtor appearance",
+      "common_edits": [
+        "Apply real estate color scheme (emerald and gold)",
+        "Add real estate certifications and awards",
+        "Replace background with upscale property setting",
+        "Enhance professional, trustworthy realtor appearance"
+      ]
+    }
+  },
+  "automation_scripts": {
+    "full_optimization_pipeline": {
+      "name": "Complete Image Optimization Pipeline",
+      "description": "Automated full optimization based on advertising copy",
+      "steps": [
+        "Analyze advertising copy for industry and intent",
+        "Apply smart-edit with all suggestions",
+        "Apply industry-specific color scheme",
+        "Add appropriate trust indicators",
+        "Final professional enhancement",
+        "Quality validation and optimization"
+      ]
+    },
+    "brand_consistency_batch": {
+      "name": "Batch Brand Consistency Application", 
+      "description": "Apply consistent branding across multiple images",
+      "steps": [
+        "Define brand parameters (colors, logo, style)",
+        "Apply brand colors to all images",
+        "Add logo to all images in consistent position",
+        "Apply professional enhancement uniformly",
+        "Validate brand consistency across all outputs"
+      ]
+    }
+  }
+}

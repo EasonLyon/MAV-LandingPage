@@ -1,0 +1,219 @@
+{
+  "batch_generation_examples": [
+    {
+      "name": "Business Solutions Suite",
+      "description": "Professional business-focused images for B2B landing pages",
+      "prompts": [
+        {
+          "prompt": "Executive team collaborating on digital strategy",
+          "style": "high_contrast",
+          "palette": "deep_blue_orange",
+          "aspect_ratio": "16:9"
+        },
+        {
+          "prompt": "Modern office with AI automation displays",
+          "style": "high_contrast", 
+          "palette": "cyan_magenta",
+          "aspect_ratio": "1:1"
+        },
+        {
+          "prompt": "Professional presenting growth analytics",
+          "style": "eye_contact",
+          "palette": "navy_bright_coral",
+          "aspect_ratio": "4:3"
+        }
+      ]
+    },
+    {
+      "name": "Creative Agency Portfolio",
+      "description": "Artistic and creative images for design agencies",
+      "prompts": [
+        {
+          "prompt": "Designer working on brand identity concepts",
+          "style": "hand_drawn",
+          "palette": "purple_neon_yellow",
+          "aspect_ratio": "1:1"
+        },
+        {
+          "prompt": "Creative workspace with artistic tools and inspiration",
+          "style": "incongruous",
+          "palette": "hot_pink_lime",
+          "aspect_ratio": "16:9"
+        },
+        {
+          "prompt": "Artist's hands creating digital masterpiece",
+          "style": "negative_space",
+          "palette": "dark_teal_peach",
+          "aspect_ratio": "3:4"
+        }
+      ]
+    },
+    {
+      "name": "Health & Wellness",
+      "description": "Calming and trustworthy images for healthcare",
+      "prompts": [
+        {
+          "prompt": "Peaceful meditation session in natural setting",
+          "style": "negative_space",
+          "palette": "sky_navy_white",
+          "aspect_ratio": "1:1"
+        },
+        {
+          "prompt": "Healthcare professional with caring expression",
+          "style": "eye_contact",
+          "palette": "emerald_ivory_gold",
+          "aspect_ratio": "3:4"
+        },
+        {
+          "prompt": "Modern medical technology helping patients",
+          "style": "high_contrast",
+          "palette": "dark_teal_peach",
+          "aspect_ratio": "16:9"
+        }
+      ]
+    },
+    {
+      "name": "E-commerce Products",
+      "description": "Product-focused images for online stores",
+      "prompts": [
+        {
+          "prompt": "Premium smartphone with sleek design showcase",
+          "style": "high_contrast",
+          "palette": "black_yellow",
+          "aspect_ratio": "1:1"
+        },
+        {
+          "prompt": "Luxury watch on elegant display stand",
+          "style": "negative_space",
+          "palette": "crimson_charcoal_silver",
+          "aspect_ratio": "1:1"
+        },
+        {
+          "prompt": "Fitness equipment in modern home gym",
+          "style": "high_contrast",
+          "palette": "red_white",
+          "aspect_ratio": "4:3"
+        }
+      ]
+    }
+  ],
+  "advertising_copy_examples": [
+    {
+      "industry": "SaaS/Technology",
+      "copy": "Transform your business operations with our AI-powered automation platform. Reduce manual work by 80%, eliminate errors, and scale effortlessly. Trusted by 50,000+ companies worldwide. Start your free trial today and see results in 24 hours.",
+      "expected_analysis": {
+        "target_audience": "business",
+        "offering_type": "software",
+        "emotional_tone": "trust",
+        "image_purpose": "end_result"
+      }
+    },
+    {
+      "industry": "E-commerce",
+      "copy": "Limited time offer! Get our best-selling wireless earbuds for 60% off. Premium sound quality, 24-hour battery life, noise cancellation. Only 48 hours left! Free shipping included.",
+      "expected_analysis": {
+        "target_audience": "personal",
+        "offering_type": "product", 
+        "emotional_tone": "urgent",
+        "image_purpose": "product_pricing"
+      }
+    },
+    {
+      "industry": "Education/Courses",
+      "copy": "Master digital marketing in 30 days with our comprehensive course. Learn from industry experts who've generated millions in revenue. Get certified, build your portfolio, and land your dream job. Limited enrollment - only 50 spots remaining.",
+      "expected_analysis": {
+        "target_audience": "students",
+        "offering_type": "course",
+        "emotional_tone": "aspirational", 
+        "image_purpose": "end_result"
+      }
+    },
+    {
+      "industry": "Health/Fitness",
+      "copy": "Struggling with chronic back pain? Our revolutionary therapy method has helped 10,000+ patients find relief naturally. No surgery, no medication, just proven results. Book your consultation and start your pain-free journey today.",
+      "expected_analysis": {
+        "target_audience": "health",
+        "offering_type": "service",
+        "emotional_tone": "fear",
+        "image_purpose": "pain_attention"
+      }
+    }
+  ],
+  "style_combinations": {
+    "high_impact_sales": {
+      "styles": ["high_contrast", "eye_contact"],
+      "palettes": ["red_white", "black_yellow", "cyan_magenta"],
+      "use_case": "Urgent offers, product launches, CTAs"
+    },
+    "luxury_premium": {
+      "styles": ["negative_space", "high_contrast"],
+      "palettes": ["crimson_charcoal_silver", "emerald_ivory_gold", "navy_bright_coral"],
+      "use_case": "High-end products, professional services"
+    },
+    "creative_innovative": {
+      "styles": ["incongruous", "cute_creepy", "hand_drawn"],
+      "palettes": ["purple_neon_yellow", "hot_pink_lime", "cyan_magenta"],
+      "use_case": "Creative agencies, innovative products, entertainment"
+    },
+    "trustworthy_professional": {
+      "styles": ["eye_contact", "negative_space"],
+      "palettes": ["sky_navy_white", "deep_blue_orange", "dark_teal_peach"],
+      "use_case": "Healthcare, finance, consulting, B2B services"
+    },
+    "friendly_approachable": {
+      "styles": ["hand_drawn", "negative_space"],
+      "palettes": ["orange_teal_cream", "dark_teal_peach", "emerald_ivory_gold"],
+      "use_case": "Family services, education, lifestyle brands"
+    }
+  },
+  "optimization_settings": {
+    "production": {
+      "aspect_ratio": "1:1",
+      "output_format": "jpeg",
+      "safety_tolerance": 2,
+      "prompt_upsampling": false
+    },
+    "high_quality": {
+      "aspect_ratio": "1:1", 
+      "output_format": "png",
+      "safety_tolerance": 1,
+      "prompt_upsampling": true
+    },
+    "social_media": {
+      "variations": [
+        {"aspect_ratio": "1:1", "platform": "Instagram"},
+        {"aspect_ratio": "16:9", "platform": "Facebook"},
+        {"aspect_ratio": "9:16", "platform": "Stories"}
+      ]
+    }
+  },
+  "workflow_examples": {
+    "new_landing_page": {
+      "steps": [
+        "1. Extract content: python image_generator.py from-html landing-page.html --section hero",
+        "2. Test styles: python image_generator.py multi-style 'extracted content' --styles high_contrast --styles negative_space",
+        "3. Refine best option: python image_generator.py from-copy 'refined copy' --style chosen_style --palette chosen_palette",
+        "4. Generate variations: Create batch file with different aspect ratios",
+        "5. Validate: python image_generator.py validate-image final_image.jpg"
+      ]
+    },
+    "brand_consistency": {
+      "steps": [
+        "1. Define brand palette: Choose 2-3 consistent color palettes",
+        "2. Select brand styles: Pick 1-2 visual styles that match brand personality", 
+        "3. Create style guide: Document chosen combinations in config file",
+        "4. Batch generate: Use consistent settings across all brand images",
+        "5. Quality control: Validate all images meet brand standards"
+      ]
+    },
+    "a_b_testing": {
+      "steps": [
+        "1. Generate variants: python image_generator.py multi-style 'base prompt'",
+        "2. Create test batches: Different styles/palettes for same content",
+        "3. Implement tracking: Use different filenames for each variant",
+        "4. Measure performance: Track conversion rates by image variant",
+        "5. Optimize: Use best-performing style/palette for future images"
+      ]
+    }
+  }
+}
