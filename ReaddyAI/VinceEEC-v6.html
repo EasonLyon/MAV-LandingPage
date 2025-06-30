@@ -15,6 +15,9 @@
     <!-- Tally Form Integration -->
     <script async src="https://tally.so/widgets/embed.js"></script>
     
+    <!-- Preload critical images for faster initial render -->
+    <link rel="preload" as="image" href="vince-hero-portrait-humble-hustle-smiling.jpg">
+    
     <style>
         /* Enhanced Color Palette with Malaysian Cultural Elements */
         :root {
@@ -742,7 +745,9 @@
                             - Style: Executive portrait style with depth of field
                             -->
                             <img src="vince-hero-portrait-humble-hustle-smiling.jpg"
-                                alt="Vince Tan - Malaysia's #1 Business Coach" class="w-full h-full object-cover">
+                                alt="Vince Tan - Malaysia's #1 Business Coach" 
+                                class="w-full h-full object-cover"
+                                width="600" height="600">
                         </div>
                         
                         <!-- Refined floating credentials -->
@@ -879,7 +884,10 @@
                         <div class="relative">
                             <div class="relative rounded-xl overflow-hidden border border-warm-gold/20">
                                 <img src="vince-authority-speaking-conference-side-profile.jpg"
-                                    alt="Vince Tan Speaking at Malaysian Business Conference" class="w-full h-auto object-cover">
+                                    alt="Vince Tan Speaking at Malaysian Business Conference" 
+                                    class="w-full h-auto object-cover"
+                                    width="800" height="600"
+                                    loading="lazy">
                             </div>
                             
                             <!-- Floating achievement badge -->
@@ -1126,7 +1134,10 @@
                     <div class="relative">
                         <div class="relative rounded-xl overflow-hidden border border-warm-gold/20">
                             <img src="vince-workshop-teaching-engaged-audience.jpg"
-                                alt="Vince Tan Coaching Malaysian Professionals" class="w-full h-full object-cover">
+                                alt="Vince Tan Coaching Malaysian Professionals" 
+                                class="w-full h-full object-cover"
+                                width="800" height="600"
+                                loading="lazy">
                         </div>
                         
                         <!-- Enhanced verification badge -->
@@ -1662,7 +1673,7 @@
         <!-- Final Enhanced CTA Section with Prominent Timer -->
         <section class="py-8 relative">
             <div class="container mx-auto px-4 md:px-6">
-                <div class="max-w-5xl mx-auto">
+                <div class="max-w-3xl mx-auto">
                     <div class="text-center mb-4">
                         <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">
                             Your <span class="bg-clip-text text-transparent warm-trust-gradient">Freedom Business</span> Starts <span class="bg-clip-text text-transparent malaysian-gradient">Wednesday</span>
@@ -1721,6 +1732,17 @@
                                         <div class="text-2xl md:text-3xl font-black bg-clip-text text-transparent warm-trust-gradient animate-pulse">FREE</div>
                                     </div>
                                 </div>
+                                
+                                <!-- CTA Button - Moved here -->
+                                <div class="text-center mb-6">
+                                    <button class="cta-enhanced text-white text-lg px-6 py-4 mb-4" 
+                                        data-tally-open="3jX7k6" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+                                        <span class="relative z-10">👉 RESERVE MY FREE SPOT NOW - Wednesday 8PM!</span>
+                                    </button>
+                                    <div class="text-center mt-2">
+                                        <p class="text-white/90 text-sm font-semibold">⚡ Click above to instantly secure your seat</p>
+                                    </div>
+                                </div>
                             </div>
                             
                             <!-- Value proposition grid -->
@@ -1746,15 +1768,17 @@
                             <div class="bg-warm-gold/8 rounded-lg p-4 border border-warm-gold/20 mb-6">
                                 <div class="text-center">
                                     <div class="text-white font-semibold mb-2 text-sm">Full Program Investment</div>
-                                    <div class="text-white/80 text-xs mb-3">After your FREE session, serious participants can join our 90-day Malaysian Authority Program</div>
+                                    <div class="text-white/80 text-xs mb-3">After your FREE session, serious participants can join our Malaysian Expert Elite Program Program</div>
                                     <div class="flex items-center justify-center gap-3 mb-3">
                                         <div class="text-white/40 text-sm line-through">RM12,997</div>
-                                        <div class="text-warm-gold font-bold">From RM1,083/month</div>
+                                        <div class="text-warm-gold font-bold">One-time payment RM850</div>
+                                    </div>
+                                    <div class="text-center mb-3">
+                                        <div class="text-warm-gold/80 text-sm font-semibold">2 Years Full Access Included</div>
                                     </div>
                                     <div class="space-y-1 text-xs text-white/70">
                                         <div>✅ Bank transfer (Maybank, CIMB, Public Bank)</div>
                                         <div>✅ Credit card payment options</div>
-                                        <div>✅ Flexible payment plans available</div>
                                         <div>✅ EPF withdrawal consultation provided</div>
                                     </div>
                                 </div>
@@ -1771,12 +1795,7 @@
                                 </div>
                             </div>
                             
-                            <!-- Final CTA -->
-                            <div class="text-center">
-                                <button class="cta-enhanced text-white text-sm px-4 py-2 mb-4" 
-                                    data-tally-open="3jX7k6" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
-                                    <span class="relative z-10">Secure Your FREE Spot - Next Wednesday 8PM MYT!</span>
-                                </button>
+                            <!-- CTA moved above -->
                                 
                                 <!-- Trust indicators -->
                                 <div class="flex flex-wrap items-center justify-center gap-4 text-white/60 text-xs">
@@ -1824,34 +1843,12 @@
                         <li><a href="#faq" class="text-white/60 hover:text-warm-gold transition-colors">FAQ</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-3">Contact & Follow</h4>
-                    <div class="space-y-2 mb-3 text-sm">
-                        <p class="text-white/60 flex items-center">
-                            <i class="ri-mail-line mr-2 text-warm-gold"></i>
-                            hello@vincecoach.my
-                        </p>
-                        <p class="text-white/60 flex items-center">
-                            <i class="ri-whatsapp-line mr-2 text-success-green"></i>
-                            +60 12-345 6789
-                        </p>
-                        <p class="text-white/60 flex items-center text-xs">
-                            <i class="ri-building-line mr-2 text-trust-blue"></i>
-                            Registered in Malaysia (SSM: 1234567-A)
-                        </p>
-                    </div>
-                    <div class="flex gap-3 mb-3">
-                        <a href="#" class="text-white/60 hover:text-warm-gold text-xl transition-colors"><i class="ri-facebook-circle-fill"></i></a>
-                        <a href="#" class="text-white/60 hover:text-warm-gold text-xl transition-colors"><i class="ri-instagram-line"></i></a>
-                        <a href="#" class="text-white/60 hover:text-warm-gold text-xl transition-colors"><i class="ri-linkedin-box-fill"></i></a>
-                        <a href="#" class="text-white/60 hover:text-warm-gold text-xl transition-colors"><i class="ri-youtube-line"></i></a>
-                    </div>
                     <div>
                         <p class="text-white/60 text-sm flex items-center">
                             🇲🇾 
                             Proudly Malaysian since 2001
                         </p>
-                        <p class="text-white/40 text-xs mt-1">Serving entrepreneurs from KL to Sabah</p>
+                        <p class="text-white/40 text-xs mt-1">Serving entrepreneurs from KL to Worldwide</p>
                     </div>
                 </div>
             </div>
