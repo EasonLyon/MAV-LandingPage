@@ -358,7 +358,7 @@
 
         .scarcity-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--malaysian-red), var(--warm-orange));
+            background: linear-gradient(90deg, var(--primary-purple), var(--secondary-purple));
             border-radius: 3px;
             animation: fillAnimation 2s ease-out;
         }
@@ -457,7 +457,7 @@
 
         /* Enhanced CTA buttons - refined */
         .cta-enhanced {
-            background: linear-gradient(135deg, var(--warm-gold), var(--primary-purple));
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
             border: none;
             border-radius: 24px;
             padding: 12px 24px;
@@ -468,6 +468,7 @@
             position: relative;
             overflow: hidden;
             min-height: 44px; /* Touch-friendly */
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
         }
 
         .cta-enhanced::before {
@@ -490,7 +491,7 @@
 
         .cta-enhanced:hover {
             transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 8px 24px rgba(168, 85, 247, 0.4);
         }
 
         /* Enhanced FAQ styles */
@@ -543,23 +544,15 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#8B5CF6",
-                        secondary: "#A855F7",
-                        "warm-gold": "#F59E0B",
-                        "trust-blue": "#3B82F6",
-                        "success-green": "#10B981",
-                        "malaysian-red": "#DC2626",
-                        "warm-orange": "#F97316",
-                        "rich-navy": "#1E3A8A",
-                        "cream-white": "#FEF7ED",
+                        primary: "#A855F7",
+                        secondary: "#8B5CF6",
                     },
                     fontFamily: {
                         'malaysian': ['Inter', 'system-ui', 'sans-serif'],
                     },
                     animation: {
                         'float': 'gentleFloat 12s ease-in-out infinite',
-                        'warm-glow': 'warmGlow 3s infinite',
-                        'flag-wave': 'malaysianFlag 6s infinite',
+                        'subtle-glow': 'subtleGlow 3s infinite',
                     }
                 },
             },
@@ -574,7 +567,7 @@
     <!-- Enhanced background with Malaysian cultural elements -->
     <div class="fixed inset-0 bg-black">
         <div class="absolute inset-0 bg-[radial-gradient(70%_70%_at_center,_var(--tw-gradient-stops))] from-[#A855F7]/8 via-primary/4 to-transparent"></div>
-        <div class="absolute top-20 right-20 w-16 h-16 malaysian-gradient rounded-full blur-3xl opacity-15 float-animation"></div>
+        <div class="absolute top-20 right-20 w-16 h-16 primary-gradient rounded-full blur-3xl opacity-15 float-animation"></div>
         <div class="absolute bottom-40 left-10 w-12 h-12 success-gradient rounded-full blur-2xl opacity-20 float-animation" style="animation-delay: -2s;"></div>
     </div>
 
@@ -584,12 +577,12 @@
             <div class="flex items-center gap-4 md:gap-4">
                 <a href="#hero" class="text-xl font-malaysian font-black tracking-tight text-white flex items-center">
                     🇲🇾 
-                    Expert <span class="bg-clip-text text-transparent warm-trust-gradient">Elite Class</span>
+                    Expert <span class="bg-clip-text text-transparent primary-gradient">Elite Class</span>
                 </a>
                 <!-- Refined trust indicator -->
                 <div class="hidden md:flex items-center gap-1 trust-indicator">
                     <div class="pulse-dot"></div>
-                    <span>1,247 Malaysians joined this month</span>
+                    <span class="text-white/80">1,247 Malaysians joined this month</span>
                 </div>
             </div>
             
@@ -643,12 +636,12 @@
                     <!-- Live social proof notification -->
                     <div class="live-counter mb-4 justify-center lg:justify-start">
                         <div class="pulse-dot"></div>
-                        <span>73 Malaysians from KL, Selangor & JB viewing this now</span>
+                        <span class="text-white/80">73 Malaysians from KL, Selangor & JB viewing this now</span>
                     </div>
                     
                     <h1 class="hero-title text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight md:leading-none mb-4 text-white font-malaysian">
-                        <span class="bg-clip-text text-transparent warm-trust-gradient">From RM3,000 Salary</span><br>
-                        <span class="text-white">to</span> <span class="bg-clip-text text-transparent malaysian-gradient">RM15,000+ Monthly</span>
+                        <span class="text-white">From RM3,000 Salary</span><br>
+                        <span class="text-white">to</span> <span class="text-white">RM15,000+ Monthly</span>
                     </h1>
                     
                     <div class="mb-6 space-y-3">
@@ -660,47 +653,44 @@
                         </p>
                     </div>
                     
-                    <!-- Refined trust indicators -->
-                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-6">
-                        <div class="trust-indicator">
-                            <i class="ri-shield-check-line text-[#A855F7] icon-sm"></i>
-                            <span>1,000+ Malaysian Success Stories</span>
-                        </div>
-                        <div class="trust-indicator">
-                            <i class="ri-time-line text-[#A855F7] icon-sm"></i>
-                            <span>23+ Years Experience</span>
-                        </div>
-                        <div class="trust-indicator">
-                            <i class="ri-award-line text-white icon-sm"></i>
-                            <span>Malaysia's #1 Coach</span>
-                        </div>
-                    </div>
-                    
                     <!-- Enhanced CTAs with countdown -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 mb-6">
+                    <div class="flex flex-col items-center justify-center gap-4 mb-6">
                         <button class="cta-enhanced text-white w-full sm:w-auto" 
                             data-tally-open="3jX7k6" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
-                            <span class="relative z-10">Get Your First RM5K Client - FREE Session Wednesday 8PM</span>
+                            <span class="relative z-10 text-white">Get Your First RM5K Client - FREE Session Wednesday 8PM</span>
                         </button>
-                        <div class="text-center sm:text-left">
-                            <div class="text-[#A855F7] font-semibold text-sm">Next Session</div>
-                            <div class="text-white/80 text-sm" id="next-session-display">Loading...</div>
+                        
+                        <!-- Next Session timer moved below CTA -->
+                        <div class="text-center">
+                            <div class="flex items-center justify-center gap-2 mb-3">
+                                <div class="pulse-dot"></div>
+                                <span class="text-white font-semibold text-sm">Next FREE Session</span>
+                            </div>
+                            <div class="text-center mb-3">
+                                <p class="text-[#A855F7] font-bold text-sm" id="next-session-display">Wednesday</p>
+                                <p class="text-white/80 text-xs">8:00 PM - 10:30 PM (MYT)</p>
+                            </div>
+                            <div class="grid grid-cols-4 gap-2 max-w-xs mx-auto">
+                                <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
+                                    <div class="text-lg font-bold text-white" id="days">00</div>
+                                    <div class="text-xs text-white/70">Days</div>
+                                </div>
+                                <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
+                                    <div class="text-lg font-bold text-white" id="hours">00</div>
+                                    <div class="text-xs text-white/70">Hours</div>
+                                </div>
+                                <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
+                                    <div class="text-lg font-bold text-white" id="minutes">00</div>
+                                    <div class="text-xs text-white/70">Mins</div>
+                                </div>
+                                <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
+                                    <div class="text-lg font-bold text-white" id="seconds">00</div>
+                                    <div class="text-xs text-white/70">Secs</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Refined scarcity indicator -->
-                    <div class="bg-gradient-to-r from-black/30 to-[#A855F7]/8 rounded-lg p-3 border border-[#A855F7]/60">
-                        <div class="flex items-center justify-between text-sm mb-1">
-                            <span class="text-white/80">Session Capacity</span>
-                            <span class="text-[#A855F7] font-semibold">73/100 registered</span>
-                        </div>
-                        <div class="scarcity-bar">
-                            <div class="scarcity-fill" style="width: 73%"></div>
-                        </div>
-                        <div class="text-center text-white/60 text-xs mt-1">
-                            🔥 Only 27 spots left - 14 Malaysians registered in last hour
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Right Content - Refined Hero Image -->
@@ -743,18 +733,18 @@
                         </div>
                         
                         <!-- Refined floating credentials -->
-                        <div class="absolute -left-3 top-2/3 -translate-y-1/4 w-48 hidden lg:block float-animation" style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(245, 158, 11, 0.6); border-radius: 16px;">
-                            <div class="p-4">
+                        <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-40 lg:w-48 block float-animation" style="background: rgba(168, 85, 247, 0.15); backdrop-filter: blur(16px); border: 1px solid rgba(168, 85, 247, 0.6); border-radius: 16px; box-shadow: 0 8px 32px rgba(168, 85, 247, 0.3);">
+                            <div class="p-3 lg:p-4">
                                 <div class="flex items-center gap-2 mb-3">
-                                    <div class="w-10 h-10 rounded-full warm-trust-gradient flex items-center justify-center">
+                                    <div class="w-10 h-10 rounded-full primary-gradient flex items-center justify-center">
                                         <i class="ri-trophy-line text-white icon-md"></i>
                                     </div>
                                     <div>
-                                        <div class="text-white font-bold text-base">Vince Tan</div>
-                                        <div class="text-[#A855F7] text-xs font-semibold">Malaysia's #1 Business Coach</div>
+                                        <div class="text-white font-bold text-sm lg:text-base">Vince Tan</div>
+                                        <div class="text-[#A855F7] text-xs lg:text-xs font-semibold">Malaysia's #1 Business Coach</div>
                                     </div>
                                 </div>
-                                <div class="space-y-1 text-xs">
+                                <div class="space-y-1 text-xs lg:text-xs">
                                     <div class="flex justify-between items-center">
                                         <span class="text-white/70">Experience</span>
                                         <span class="text-white font-semibold">23+ Years</span>
@@ -771,36 +761,21 @@
                             </div>
                         </div>
                         
-                        <!-- Enhanced countdown timer with prominent display -->
-                        <div class="absolute -top-20 right-0 emotion-card w-56 hidden lg:block float-animation" style="animation-delay: -3s;">
-                            <div class="p-4">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <div class="pulse-dot"></div>
-                                    <span class="text-white font-semibold text-sm">Next FREE Session</span>
-                                </div>
-                                <div class="text-center mb-3">
-                                    <p class="text-[#A855F7] font-bold text-sm">Every Wednesday</p>
-                                    <p class="text-white/80 text-xs">8:00 PM - 10:30 PM (MYT)</p>
-                                </div>
-                                <div class="grid grid-cols-4 gap-1">
-                                    <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
-                                        <div class="text-lg font-bold text-white" id="days">00</div>
-                                        <div class="text-xs text-white/70">Days</div>
-                                    </div>
-                                    <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
-                                        <div class="text-lg font-bold text-white" id="hours">00</div>
-                                        <div class="text-xs text-white/70">Hours</div>
-                                    </div>
-                                    <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
-                                        <div class="text-lg font-bold text-white" id="minutes">00</div>
-                                        <div class="text-xs text-white/70">Mins</div>
-                                    </div>
-                                    <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
-                                        <div class="text-lg font-bold text-white" id="seconds">00</div>
-                                        <div class="text-xs text-white/70">Secs</div>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <!-- Trust indicators moved below hero content -->
+                    <div class="flex flex-wrap gap-2 justify-center mt-6 mb-4">
+                        <div class="trust-indicator">
+                            <i class="ri-shield-check-line text-white icon-sm"></i>
+                            <span class="text-white">1,000+ Malaysian Success Stories</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <i class="ri-time-line text-white icon-sm"></i>
+                            <span class="text-white">23+ Years Experience</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <i class="ri-award-line text-white icon-sm"></i>
+                            <span class="text-white">Malaysia's #1 Coach</span>
                         </div>
                     </div>
                 </div>
@@ -812,7 +787,7 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-4">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">From <span class="bg-clip-text text-transparent malaysian-gradient">RM2,800 Corporate Slave</span> to <span class="bg-clip-text text-transparent warm-trust-gradient">Malaysia's #1</span> Business Coach</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">From <span class="bg-clip-text text-transparent primary-gradient">RM2,800 Corporate Slave</span> to <span class="bg-clip-text text-transparent primary-gradient">Malaysia's #1</span> Business Coach</h2>
                         <p class="text-lg text-[#A855F7] font-semibold max-w-3xl mx-auto mb-3">"15 years ago, I was trapped in a Kuala Lumpur corporate job, earning RM2,800/month, working 12-hour days, and spending 3 hours daily in KL traffic."</p>
                         <p class="text-lg text-white/80 max-w-3xl mx-auto">Today, my students generate over RM50M in coaching revenue across Malaysia. I've proven that any Malaysian professional can transform their expertise into a thriving coaching business - regardless of background, English level, or industry experience.</p>
                     </div>
@@ -885,7 +860,7 @@
                             <!-- Floating achievement badge -->
                             <div class="absolute -bottom-4 -right-4 emotion-card p-4 w-40">
                                 <div class="text-center">
-                                    <div class="w-12 h-12 mx-auto mb-2 rounded-full warm-trust-gradient flex items-center justify-center">
+                                    <div class="w-12 h-12 mx-auto mb-2 rounded-full primary-gradient flex items-center justify-center">
                                         <i class="ri-medal-line text-white icon-lg"></i>
                                     </div>
                                     <div class="text-white font-bold text-sm">Top Business Mentor</div>
@@ -903,7 +878,7 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="max-w-6xl mx-auto text-center mb-4">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-                        Are You <span class="bg-clip-text text-transparent malaysian-gradient">Drowning</span> in These Challenges?
+                        Are You <span class="bg-clip-text text-transparent primary-gradient">Drowning</span> in These Challenges?
                     </h2>
                     <p class="text-lg text-white/70 mb-6 max-w-4xl mx-auto italic">
                         "I've bought so many courses, downloaded endless guides, but I'm still stuck! I just need someone to tell me exactly what to do, step-by-step."
@@ -918,7 +893,7 @@
                     <!-- Challenge 1 -->
                     <div class="emotion-card p-4 group">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 rounded-xl success-gradient flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <div class="w-12 h-12 rounded-xl primary-gradient flex items-center justify-center group-hover:scale-105 transition-transform">
                                 <i class="ri-book-open-line text-white icon-lg"></i>
                             </div>
                             <h3 class="text-lg font-bold text-white">Information Overload</h3>
@@ -941,7 +916,7 @@
                     <!-- Challenge 2 -->
                     <div class="emotion-card p-4 group">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 rounded-xl warm-trust-gradient flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <div class="w-12 h-12 rounded-xl primary-gradient flex items-center justify-center group-hover:scale-105 transition-transform">
                                 <i class="ri-eye-off-line text-white icon-lg"></i>
                             </div>
                             <h3 class="text-lg font-bold text-white">Feeling Invisible</h3>
@@ -964,7 +939,7 @@
                     <!-- Challenge 3 -->
                     <div class="emotion-card p-4 group">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 rounded-xl malaysian-gradient flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <div class="w-12 h-12 rounded-xl primary-gradient flex items-center justify-center group-hover:scale-105 transition-transform">
                                 <i class="ri-money-dollar-circle-line text-white icon-lg"></i>
                             </div>
                             <h3 class="text-lg font-bold text-white">Undercharging & Self-Doubt</h3>
@@ -987,7 +962,7 @@
                     <!-- Challenge 4 - Malaysian Specific -->
                     <div class="emotion-card p-4 group">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 rounded-xl malaysian-gradient flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <div class="w-12 h-12 rounded-xl primary-gradient flex items-center justify-center group-hover:scale-105 transition-transform">
                                 <i class="ri-group-line text-white icon-lg"></i>
                             </div>
                             <h3 class="text-lg font-bold text-white">Family Pressure</h3>
@@ -1046,7 +1021,7 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="max-w-4xl mx-auto">
                     <div class="text-center mb-10">
-                        <h2 class="text-3xl font-bold mb-4 text-white">Calculate Your <span class="bg-clip-text text-transparent warm-trust-gradient">Potential ROI</span></h2>
+                        <h2 class="text-3xl font-bold mb-4 text-white">Calculate Your <span class="bg-clip-text text-transparent primary-gradient">Potential ROI</span></h2>
                         <p class="text-white/70">See how much you could earn in your first year as a Malaysian coach</p>
                     </div>
                     
@@ -1103,7 +1078,7 @@
                         <div class="mt-6 text-center">
                             <button class="cta-enhanced text-white" 
                                 data-tally-open="3jX7k6" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
-                                <span class="relative z-10">Start Building This Income - Join FREE Session</span>
+                                <span class="relative z-10 text-white">Start Building This Income - Join FREE Session</span>
                             </button>
                         </div>
                     </div>
@@ -1116,7 +1091,7 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="max-w-6xl mx-auto text-center mb-4">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-                        The <span class="bg-clip-text text-transparent malaysian-gradient">Malaysian Authority System™</span>
+                        The <span class="bg-clip-text text-transparent primary-gradient">Malaysian Authority System™</span>
                     </h2>
                     <p class="text-lg text-[#A855F7] font-semibold mb-2">Transform from Hidden Expert to Premium Authority</p>
                     <p class="text-lg text-white/70">Your Expertise. Malaysian Market. Premium Ringgit.</p>
@@ -1170,7 +1145,7 @@
                             <div class="flex flex-col sm:flex-row gap-3">
                                 <button class="cta-enhanced text-white flex-1" 
                                     data-tally-open="3jX7k6" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
-                                    <span class="relative z-10">Reserve Your Seat - FREE</span>
+                                    <span class="relative z-10 text-white">Reserve Your Seat - FREE</span>
                                 </button>
                                 <div class="text-center sm:text-left text-sm text-white/60">
                                     <div class="text-[#A855F7] font-semibold">Next session:</div>
@@ -1182,7 +1157,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="emotion-card p-4">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <i class="ri-roadmap-line text-[#A855F7] icon-md"></i>
+                                    <i class="ri-calendar-line text-[#A855F7] icon-md"></i>
                                     <span class="text-white font-semibold text-sm">30-Day Blueprint</span>
                                 </div>
                                 <p class="text-white/70 text-xs">Step-by-step roadmap to get your first 3 Malaysian clients</p>
@@ -1222,7 +1197,7 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="max-w-6xl mx-auto text-center mb-6">
                     <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white">
-                        Real <span class="bg-clip-text text-transparent malaysian-gradient">Malaysian Success Stories</span>
+                        Real <span class="bg-clip-text text-transparent primary-gradient">Malaysian Success Stories</span>
                     </h2>
                     <p class="text-base text-white/70 mb-4">From KL to Sabah - Malaysian professionals transforming their expertise into thriving businesses</p>
                     
@@ -1557,7 +1532,7 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="max-w-4xl mx-auto text-center mb-4">
                     <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">
-                        Frequently Asked <span class="bg-clip-text text-transparent warm-trust-gradient">Questions</span>
+                        Frequently Asked <span class="bg-clip-text text-transparent primary-gradient">Questions</span>
                     </h2>
                     <p class="text-lg text-white/70">Everything you need to know about launching your coaching business in Malaysia</p>
                 </div>
@@ -1668,7 +1643,7 @@
                 <div class="max-w-3xl mx-auto">
                     <div class="text-center mb-4">
                         <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">
-                            Your <span class="bg-clip-text text-transparent warm-trust-gradient">Freedom Business</span> Starts <span class="bg-clip-text text-transparent malaysian-gradient">Wednesday</span>
+                            Your <span class="bg-clip-text text-transparent primary-gradient">Freedom Business</span> Starts <span class="bg-clip-text text-transparent primary-gradient">Wednesday</span>
                         </h2>
                         <p class="text-lg text-white/80 mb-6 max-w-3xl mx-auto">
                             Stop the Sunday evening dread. Start building the coaching business that gives you time freedom, financial independence, and the satisfaction of helping others.
@@ -1677,8 +1652,8 @@
                     
                     <div class="emotion-card p-4 md:p-4 relative overflow-hidden">
                         <!-- Refined animated background elements -->
-                        <div class="absolute top-0 right-0 w-32 h-32 warm-trust-gradient rounded-full blur-3xl opacity-10 float-animation"></div>
-                        <div class="absolute bottom-0 left-0 w-32 h-32 malaysian-gradient rounded-full blur-3xl opacity-10 float-animation" style="animation-delay: -3s;"></div>
+                        <div class="absolute top-0 right-0 w-32 h-32 primary-gradient rounded-full blur-3xl opacity-10 float-animation"></div>
+                        <div class="absolute bottom-0 left-0 w-32 h-32 primary-gradient rounded-full blur-3xl opacity-10 float-animation" style="animation-delay: -3s;"></div>
                         
                         <div class="relative z-10">
                             <div class="text-center mb-4">
@@ -1688,7 +1663,7 @@
                                 </div>
                                 
                                 <h3 class="text-xl md:text-2xl font-bold text-white mb-4">
-                                    Join <span class="bg-clip-text text-transparent warm-trust-gradient">FREE</span> Strategy Session
+                                    Join <span class="bg-clip-text text-transparent primary-gradient">FREE</span> Strategy Session
                                 </h3>
                                 
                                 <!-- Prominent Countdown Timer -->
@@ -1696,7 +1671,7 @@
                                     <div class="text-center mb-4">
                                         <h4 class="text-white font-bold text-lg mb-2">Next Session Starts In:</h4>
                                         <div class="text-[#A855F7] font-semibold" id="main-session-date">Loading...</div>
-                                        <div class="text-white/70 text-sm">Every Wednesday 8:00 PM - 10:30 PM (MYT)</div>
+                                        <div class="text-white/70 text-sm"><span id="main-session-date">Wednesday</span> 8:00 PM - 10:30 PM (MYT)</div>
                                     </div>
                                     <div class="grid grid-cols-4 gap-3">
                                         <div class="text-center bg-[#A855F7]/10 rounded-lg p-4 border border-[#A855F7]/60">
@@ -1721,7 +1696,7 @@
                                 <div class="flex items-center justify-center gap-4 mb-6">
                                     <div class="text-center">
                                         <div class="text-white/40 text-xl line-through font-medium">RM799</div>
-                                        <div class="text-2xl md:text-3xl font-black bg-clip-text text-transparent warm-trust-gradient animate-pulse">FREE</div>
+                                        <div class="text-2xl md:text-3xl font-black bg-clip-text text-transparent primary-gradient animate-pulse">FREE</div>
                                     </div>
                                 </div>
                                 
@@ -1729,7 +1704,7 @@
                                 <div class="text-center mb-6">
                                     <button class="cta-enhanced text-white text-lg px-6 py-4 mb-4" 
                                         data-tally-open="3jX7k6" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
-                                        <span class="relative z-10">👉 RESERVE MY FREE SPOT NOW - Wednesday 8PM!</span>
+                                        <span class="relative z-10 text-white">👉 RESERVE MY FREE SPOT NOW - Wednesday 8PM!</span>
                                     </button>
                                     <div class="text-center mt-2">
                                         <p class="text-white/90 text-sm font-semibold">⚡ Click above to instantly secure your seat</p>
@@ -1742,7 +1717,7 @@
                                 <div class="text-center p-4 bg-white/5 rounded-lg border border-[#A855F7]/50">
                                     <i class="ri-calendar-check-line text-lg text-[#A855F7] mb-2"></i>
                                     <div class="text-white font-semibold mb-1 text-sm">Next Session</div>
-                                    <div class="text-white/70 text-xs" id="final-session-date">Every Wednesday 8PM MYT</div>
+                                    <div class="text-white/70 text-xs"><span id="final-session-date">Wednesday</span> 8PM MYT</div>
                                 </div>
                                 <div class="text-center p-4 bg-white/5 rounded-lg border border-[#A855F7]/50">
                                     <i class="ri-group-line text-lg text-[#A855F7] mb-2"></i>
@@ -1819,7 +1794,7 @@
                 <div>
                     <a href="#hero" class="text-lg font-malaysian font-black tracking-tight text-white flex items-center mb-3">
                         🇲🇾 
-                        Expert <span class="bg-clip-text text-transparent warm-trust-gradient">Elite Class</span>
+                        Expert <span class="bg-clip-text text-transparent primary-gradient">Elite Class</span>
                     </a>
                     <p class="text-white/60 mb-3 text-sm">Turn your expertise into a high-ticket coaching business in Malaysia.</p>
                     <p class="text-[#A855F7] font-semibold text-xs">Led by Malaysia's #1 Business Coach - Vince Tan</p>
@@ -1854,7 +1829,7 @@
     <div class="mobile-optimized-cta md:hidden" id="mobileCTA">
         <div class="px-4 py-2 bg-[#A855F7]/10 border-t border-[#A855F7]/60">
             <div class="flex items-center justify-center text-xs text-white/80 mb-2">
-                <span class="mr-3">Next Session:</span>
+                <span class="mr-3 text-white/80">Next Session:</span>
                 <div class="flex gap-1 items-center justify-center">
                     <span id="mobile-days" class="font-bold">0</span><span class="text-white/60">d</span>
                     <span id="mobile-hours" class="font-bold">0</span><span class="text-white/60">h</span>
@@ -1863,7 +1838,7 @@
                 </div>
             </div>
         </div>
-        <button class="w-full py-3 text-white font-bold" 
+        <button class="w-full py-3 text-white font-bold bg-gradient-to-r from-[#A855F7] to-[#8B5CF6] rounded-lg" 
             data-tally-open="3jX7k6" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
             Join FREE Session - Next Wednesday 8PM!
         </button>
@@ -1886,21 +1861,22 @@
                 let nextWednesday = new Date(malaysiaTime);
                 const daysUntilWednesday = (3 - malaysiaTime.getDay() + 7) % 7;
                 
+                // Calculate the upcoming Wednesday
                 if (daysUntilWednesday === 0) {
-                    const todaySession = new Date(malaysiaTime);
-                    todaySession.setHours(20, 0, 0, 0);
-                    
-                    const hoursUntilSession = (todaySession - malaysiaTime) / (1000 * 60 * 60);
-                    
-                    if (hoursUntilSession < 24 && hoursUntilSession > 0) {
-                        nextWednesday = todaySession;
-                    } else {
-                        nextWednesday.setDate(nextWednesday.getDate() + 7);
-                        nextWednesday.setHours(20, 0, 0, 0);
-                    }
+                    // Today is Wednesday
+                    nextWednesday.setHours(20, 0, 0, 0);
                 } else {
+                    // Find the next Wednesday
                     nextWednesday.setDate(nextWednesday.getDate() + daysUntilWednesday);
                     nextWednesday.setHours(20, 0, 0, 0);
+                }
+                
+                // Check if the upcoming session is less than 24 hours away
+                const hoursUntilSession = (nextWednesday - malaysiaTime) / (1000 * 60 * 60);
+                
+                // If less than 24 hours to the upcoming session, move to the following week
+                if (hoursUntilSession < 24 && hoursUntilSession > 0) {
+                    nextWednesday.setDate(nextWednesday.getDate() + 7);
                 }
                 
                 const distance = nextWednesday - malaysiaTime;
@@ -1940,8 +1916,7 @@
                     
                     // Update session date displays
                     const options = { 
-                        weekday: 'long', 
-                        year: 'numeric', 
+                        weekday: 'long',
                         month: 'long', 
                         day: 'numeric',
                         timeZone: 'Asia/Kuala_Lumpur'
