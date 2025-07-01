@@ -19,18 +19,14 @@
     <link rel="preload" as="image" href="vince-hero-portrait-humble-hustle-smiling.jpg">
     
     <style>
-        /* Enhanced Color Palette with Malaysian Cultural Elements */
+        /* Clean Minimalist Color Palette */
         :root {
-            --primary-purple: #8B5CF6;
-            --secondary-purple: #A855F7;
-            --warm-gold: #F59E0B;
-            --trust-blue: #3B82F6;
-            --success-green: #10B981;
-            --malaysian-red: #DC2626;
-            --warm-orange: #F97316;
-            --rich-navy: #1E3A8A;
-            --cream-white: #FEF7ED;
-            --warm-gray: #6B7280;
+            --primary-purple: #A855F7;
+            --secondary-purple: #8B5CF6;
+            --text-white: #FFFFFF;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --border-subtle: rgba(255, 255, 255, 0.1);
+            --background-card: rgba(168, 85, 247, 0.1);
         }
 
         /* Advanced animations and micro-interactions - refined */
@@ -45,14 +41,14 @@
             50% { transform: translateY(-3px); }
         }
 
-        @keyframes warmGlow {
-            0%, 100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.2); }
-            50% { box-shadow: 0 0 25px rgba(245, 158, 11, 0.4); }
+        @keyframes subtleGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(168, 85, 247, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(168, 85, 247, 0.3); }
         }
 
-        @keyframes trustPulse {
-            0%, 100% { background: linear-gradient(135deg, var(--trust-blue), var(--primary-purple)); }
-            50% { background: linear-gradient(135deg, var(--primary-purple), var(--trust-blue)); }
+        @keyframes subtlePulse {
+            0%, 100% { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); }
+            50% { background: linear-gradient(135deg, var(--secondary-purple), var(--primary-purple)); }
         }
 
         @keyframes slideInfinite {
@@ -60,22 +56,18 @@
             100% { transform: translateX(-100%); }
         }
 
-        .malaysian-gradient {
-            background: linear-gradient(135deg, var(--malaysian-red) 0%, var(--warm-gold) 50%, var(--trust-blue) 100%);
+        .primary-gradient {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
         }
 
-        .warm-trust-gradient {
-            background: linear-gradient(135deg, var(--warm-gold) 0%, var(--primary-purple) 100%);
+        .subtle-gradient {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
         }
 
-        .success-gradient {
-            background: linear-gradient(135deg, var(--success-green) 0%, var(--trust-blue) 100%);
-        }
-
-        /* Enhanced card design with refined emotional connection */
+        /* Clean card design */
         .emotion-card {
-            background: linear-gradient(145deg, rgba(254, 247, 237, 0.08), rgba(245, 158, 11, 0.04));
-            border: 1px solid rgba(245, 158, 11, 0.5);
+            background: linear-gradient(145deg, rgba(168, 85, 247, 0.08), rgba(139, 92, 246, 0.04));
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             backdrop-filter: blur(16px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -90,7 +82,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.08), transparent);
+            background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.08), transparent);
             transition: left 0.5s;
         }
 
@@ -100,23 +92,23 @@
 
         .emotion-card:hover {
             transform: translateY(-4px) scale(1.01);
-            border-color: rgba(245, 158, 11, 0.3);
-            box-shadow: 0 12px 32px rgba(245, 158, 11, 0.15);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 32px rgba(168, 85, 247, 0.15);
         }
 
-        /* Refined trust-building elements */
+        /* Clean trust indicators */
         .trust-indicator {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(59, 130, 246, 0.08));
-            border: 1px solid rgba(16, 185, 129, 0.6);
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(139, 92, 246, 0.08));
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 24px;
             padding: 6px 12px;
             font-size: 12px;
             font-weight: 600;
             color: white;
-            animation: trustPulse 4s infinite;
+            animation: subtlePulse 4s infinite;
         }
 
         /* Malaysian cultural elements - refined */
@@ -142,13 +134,13 @@
             max-height: 500px;
         }
 
-        /* Enhanced mobile experience */
+        /* Clean mobile experience */
         .mobile-optimized-cta {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(135deg, var(--warm-gold), var(--primary-purple));
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
             padding: 12px;
             transform: translateY(100%);
             transition: transform 0.3s ease;
@@ -173,33 +165,33 @@
             display: flex !important;
         }
 
-        /* Refined live social proof elements */
+        /* Clean live social proof elements */
         .live-counter {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(139, 92, 246, 0.15));
-            border: 1px solid rgba(245, 158, 11, 0.7);
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
             padding: 4px 10px;
             font-size: 11px;
             font-weight: 600;
             color: white;
-            animation: warmGlow 3s infinite;
+            animation: subtleGlow 3s infinite;
         }
 
         .pulse-dot {
             width: 6px;
             height: 6px;
-            background: var(--success-green);
+            background: var(--primary-purple);
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
 
-        /* ROI Calculator styles - refined */
+        /* Clean ROI Calculator styles */
         .roi-calculator {
-            background: linear-gradient(145deg, rgba(254, 247, 237, 0.08), rgba(245, 158, 11, 0.04));
-            border: 1px solid rgba(245, 158, 11, 0.6);
+            background: linear-gradient(145deg, rgba(168, 85, 247, 0.08), rgba(139, 92, 246, 0.04));
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             padding: 20px;
             backdrop-filter: blur(16px);
@@ -209,7 +201,7 @@
             width: 100%;
             height: 6px;
             border-radius: 3px;
-            background: linear-gradient(to right, var(--warm-gold), var(--primary-purple));
+            background: linear-gradient(to right, var(--primary-purple), var(--secondary-purple));
             outline: none;
             -webkit-appearance: none;
             margin: 12px 0;
@@ -220,15 +212,15 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: var(--warm-gold);
+            background: var(--primary-purple);
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 2px 8px rgba(168, 85, 247, 0.3);
         }
 
-        /* Enhanced testimonial design - refined */
+        /* Clean testimonial design */
         .testimonial-enhanced {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(245, 158, 11, 0.04));
-            border: 1px solid rgba(245, 158, 11, 0.5);
+            background: linear-gradient(145deg, rgba(168, 85, 247, 0.08), rgba(139, 92, 246, 0.04));
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             padding: 20px;
             backdrop-filter: blur(16px);
@@ -243,7 +235,7 @@
             top: -15px;
             left: 16px;
             font-size: 80px;
-            color: rgba(245, 158, 11, 0.08);
+            color: rgba(168, 85, 247, 0.08);
             font-family: serif;
             line-height: 1;
         }
@@ -278,8 +270,8 @@
         }
 
         .testimonial-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(245, 158, 11, 0.04));
-            border: 1px solid rgba(245, 158, 11, 0.5);
+            background: linear-gradient(145deg, rgba(168, 85, 247, 0.08), rgba(139, 92, 246, 0.04));
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             padding: 20px;
             backdrop-filter: blur(16px);
@@ -581,13 +573,13 @@
     
     <!-- Enhanced background with Malaysian cultural elements -->
     <div class="fixed inset-0 bg-black">
-        <div class="absolute inset-0 bg-[radial-gradient(70%_70%_at_center,_var(--tw-gradient-stops))] from-warm-gold/8 via-primary/4 to-transparent"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(70%_70%_at_center,_var(--tw-gradient-stops))] from-[#A855F7]/8 via-primary/4 to-transparent"></div>
         <div class="absolute top-20 right-20 w-16 h-16 malaysian-gradient rounded-full blur-3xl opacity-15 float-animation"></div>
         <div class="absolute bottom-40 left-10 w-12 h-12 success-gradient rounded-full blur-2xl opacity-20 float-animation" style="animation-delay: -2s;"></div>
     </div>
 
     <!-- Enhanced Header with refined trust indicators -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-warm-gold/15">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-[#A855F7]/15">
         <nav class="flex flex-row items-center justify-between h-16 px-4 md:px-8 max-w-7xl mx-auto">
             <div class="flex items-center gap-4 md:gap-4">
                 <a href="#hero" class="text-xl font-malaysian font-black tracking-tight text-white flex items-center">
@@ -602,16 +594,16 @@
             </div>
             
             <div class="hidden md:flex items-center gap-2">
-                <a href="#hero" class="px-3 py-1.5 text-sm text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium">Home</a>
-                <a href="#challenges" class="px-3 py-1.5 text-sm text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium">Challenges</a>
-                <a href="#solutions" class="px-3 py-1.5 text-sm text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium">Solutions</a>
-                <a href="#authority" class="px-3 py-1.5 text-sm text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium">About Vince</a>
-                <a href="#testimonials" class="px-3 py-1.5 text-sm text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium">Success Stories</a>
+                <a href="#hero" class="px-3 py-1.5 text-sm text-white hover:text-[#A855F7] transition-all rounded-full border border-white/15 hover:border-[#A855F7]/30 font-medium">Home</a>
+                <a href="#challenges" class="px-3 py-1.5 text-sm text-white hover:text-[#A855F7] transition-all rounded-full border border-white/15 hover:border-[#A855F7]/30 font-medium">Challenges</a>
+                <a href="#solutions" class="px-3 py-1.5 text-sm text-white hover:text-[#A855F7] transition-all rounded-full border border-white/15 hover:border-[#A855F7]/30 font-medium">Solutions</a>
+                <a href="#authority" class="px-3 py-1.5 text-sm text-white hover:text-[#A855F7] transition-all rounded-full border border-white/15 hover:border-[#A855F7]/30 font-medium">About Vince</a>
+                <a href="#testimonials" class="px-3 py-1.5 text-sm text-white hover:text-[#A855F7] transition-all rounded-full border border-white/15 hover:border-[#A855F7]/30 font-medium">Success Stories</a>
             </div>
             
             <div class="flex items-center gap-3">
                 <div class="hidden md:flex flex-col items-center gap-1">
-                    <div class="text-xs text-warm-gold font-semibold">Next Session</div>
+                    <div class="text-xs text-[#A855F7] font-semibold">Next Session</div>
                     <div class="flex gap-1 text-xs text-white/70">
                         <span id="nav-days">0</span>d <span id="nav-hours">0</span>h <span id="nav-minutes">0</span>m
                     </div>
@@ -620,7 +612,7 @@
                     data-tally-open="3jX7k6" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
                     Join Free Session
                 </button>
-                <button id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center text-white hover:bg-warm-gold/10 rounded-full transition-all">
+                <button id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center text-white hover:bg-[#A855F7]/10 rounded-full transition-all">
                     <i class="ri-menu-line icon-lg"></i>
                 </button>
             </div>
@@ -629,12 +621,12 @@
         <!-- Refined Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden fixed inset-0 bg-black/95 backdrop-blur-md z-40">
             <div class="flex flex-col items-center justify-center min-h-screen gap-4 px-4">
-                <a href="#hero" class="px-4 py-3 text-lg text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full max-w-xs text-center">Home</a>
-                <a href="#challenges" class="px-4 py-3 text-lg text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full max-w-xs text-center">Challenges</a>
-                <a href="#solutions" class="px-4 py-3 text-lg text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full max-w-xs text-center">Solutions</a>
-                <a href="#authority" class="px-4 py-3 text-lg text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full max-w-xs text-center">About Vince</a>
-                <a href="#testimonials" class="px-4 py-3 text-lg text-white hover:text-warm-gold transition-all rounded-full border border-white/15 hover:border-warm-gold/30 font-medium w-full max-w-xs text-center">Success Stories</a>
-                <button id="closeMenuBtn" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center text-white hover:bg-warm-gold/20 rounded-full transition-all border border-white/20">
+                <a href="#hero" class="px-4 py-3 text-lg text-white hover:text-[#A855F7] transition-all rounded-full border border-white/15 hover:border-[#A855F7]/30 font-medium w-full max-w-xs text-center">Home</a>
+                <a href="#challenges" class="px-4 py-3 text-lg text-white hover:text-[#A855F7] transition-all rounded-full border border-white/15 hover:border-[#A855F7]/30 font-medium w-full max-w-xs text-center">Challenges</a>
+                <a href="#solutions" class="px-4 py-3 text-lg text-white hover:text-[#A855F7] transition-all rounded-full border border-white/15 hover:border-[#A855F7]/30 font-medium w-full max-w-xs text-center">Solutions</a>
+                <a href="#authority" class="px-4 py-3 text-lg text-white hover:text-[#A855F7] transition-all rounded-full border border-white/15 hover:border-[#A855F7]/30 font-medium w-full max-w-xs text-center">About Vince</a>
+                <a href="#testimonials" class="px-4 py-3 text-lg text-white hover:text-[#A855F7] transition-all rounded-full border border-white/15 hover:border-[#A855F7]/30 font-medium w-full max-w-xs text-center">Success Stories</a>
+                <button id="closeMenuBtn" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center text-white hover:bg-[#A855F7]/20 rounded-full transition-all border border-white/20">
                     <i class="ri-close-line text-2xl"></i>
                 </button>
             </div>
@@ -660,22 +652,22 @@
                     </h1>
                     
                     <div class="mb-6 space-y-3">
-                        <p class="text-base md:text-lg text-warm-gold font-semibold">
+                        <p class="text-base md:text-lg text-[#A855F7] font-semibold">
                             "What if you could replace your salary in just 90 days?"
                         </p>
                         <p class="text-base md:text-lg text-white/80">
-                            Get your first <span class="text-warm-gold font-semibold">RM5,000 coaching client in 30 days</span> with Malaysia's #1 Business Coach - guaranteed
+                            Get your first <span class="text-[#A855F7] font-semibold">RM5,000 coaching client in 30 days</span> with Malaysia's #1 Business Coach - guaranteed
                         </p>
                     </div>
                     
                     <!-- Refined trust indicators -->
                     <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-6">
                         <div class="trust-indicator">
-                            <i class="ri-shield-check-line text-success-green icon-sm"></i>
+                            <i class="ri-shield-check-line text-[#A855F7] icon-sm"></i>
                             <span>1,000+ Malaysian Success Stories</span>
                         </div>
                         <div class="trust-indicator">
-                            <i class="ri-time-line text-warm-gold icon-sm"></i>
+                            <i class="ri-time-line text-[#A855F7] icon-sm"></i>
                             <span>23+ Years Experience</span>
                         </div>
                         <div class="trust-indicator">
@@ -691,16 +683,16 @@
                             <span class="relative z-10">Get Your First RM5K Client - FREE Session Wednesday 8PM</span>
                         </button>
                         <div class="text-center sm:text-left">
-                            <div class="text-warm-gold font-semibold text-sm">Next Session</div>
+                            <div class="text-[#A855F7] font-semibold text-sm">Next Session</div>
                             <div class="text-white/80 text-sm" id="next-session-display">Loading...</div>
                         </div>
                     </div>
                     
                     <!-- Refined scarcity indicator -->
-                    <div class="bg-gradient-to-r from-black/30 to-warm-gold/8 rounded-lg p-3 border border-warm-gold/60">
+                    <div class="bg-gradient-to-r from-black/30 to-[#A855F7]/8 rounded-lg p-3 border border-[#A855F7]/60">
                         <div class="flex items-center justify-between text-sm mb-1">
                             <span class="text-white/80">Session Capacity</span>
-                            <span class="text-warm-gold font-semibold">73/100 registered</span>
+                            <span class="text-[#A855F7] font-semibold">73/100 registered</span>
                         </div>
                         <div class="scarcity-bar">
                             <div class="scarcity-fill" style="width: 73%"></div>
@@ -733,7 +725,7 @@
                             </svg>
                         </div>
                         
-                        <div class="relative w-full aspect-square rounded-full overflow-hidden border-2 border-warm-gold/20">
+                        <div class="relative w-full aspect-square rounded-full overflow-hidden border-2 border-[#A855F7]/20">
                             <!-- 
                             IMAGE REQUIREMENT: Enhanced professional photo of Vince Tan
                             - Standing confidently in premium Malaysian business setting
@@ -759,7 +751,7 @@
                                     </div>
                                     <div>
                                         <div class="text-white font-bold text-base">Vince Tan</div>
-                                        <div class="text-warm-gold text-xs font-semibold">Malaysia's #1 Business Coach</div>
+                                        <div class="text-[#A855F7] text-xs font-semibold">Malaysia's #1 Business Coach</div>
                                     </div>
                                 </div>
                                 <div class="space-y-1 text-xs">
@@ -769,11 +761,11 @@
                                     </div>
                                     <div class="flex justify-between items-center">
                                         <span class="text-white/70">7-Figure Businesses</span>
-                                        <span class="text-warm-gold font-semibold">47+</span>
+                                        <span class="text-[#A855F7] font-semibold">47+</span>
                                     </div>
                                     <div class="flex justify-between items-center">
                                         <span class="text-white/70">Malaysian Students</span>
-                                        <span class="text-success-green font-semibold">1,000+</span>
+                                        <span class="text-[#A855F7] font-semibold">1,000+</span>
                                     </div>
                                 </div>
                             </div>
@@ -787,23 +779,23 @@
                                     <span class="text-white font-semibold text-sm">Next FREE Session</span>
                                 </div>
                                 <div class="text-center mb-3">
-                                    <p class="text-warm-gold font-bold text-sm">Every Wednesday</p>
+                                    <p class="text-[#A855F7] font-bold text-sm">Every Wednesday</p>
                                     <p class="text-white/80 text-xs">8:00 PM - 10:30 PM (MYT)</p>
                                 </div>
                                 <div class="grid grid-cols-4 gap-1">
-                                    <div class="text-center bg-warm-gold/8 rounded-lg p-2 border border-warm-gold/50">
+                                    <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
                                         <div class="text-lg font-bold text-white" id="days">00</div>
                                         <div class="text-xs text-white/70">Days</div>
                                     </div>
-                                    <div class="text-center bg-warm-gold/8 rounded-lg p-2 border border-warm-gold/50">
+                                    <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
                                         <div class="text-lg font-bold text-white" id="hours">00</div>
                                         <div class="text-xs text-white/70">Hours</div>
                                     </div>
-                                    <div class="text-center bg-warm-gold/8 rounded-lg p-2 border border-warm-gold/50">
+                                    <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
                                         <div class="text-lg font-bold text-white" id="minutes">00</div>
                                         <div class="text-xs text-white/70">Mins</div>
                                     </div>
-                                    <div class="text-center bg-warm-gold/8 rounded-lg p-2 border border-warm-gold/50">
+                                    <div class="text-center bg-[#A855F7]/8 rounded-lg p-2 border border-[#A855F7]/50">
                                         <div class="text-lg font-bold text-white" id="seconds">00</div>
                                         <div class="text-xs text-white/70">Secs</div>
                                     </div>
@@ -821,7 +813,7 @@
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-4">
                         <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">From <span class="bg-clip-text text-transparent malaysian-gradient">RM2,800 Corporate Slave</span> to <span class="bg-clip-text text-transparent warm-trust-gradient">Malaysia's #1</span> Business Coach</h2>
-                        <p class="text-lg text-warm-gold font-semibold max-w-3xl mx-auto mb-3">"15 years ago, I was trapped in a Kuala Lumpur corporate job, earning RM2,800/month, working 12-hour days, and spending 3 hours daily in KL traffic."</p>
+                        <p class="text-lg text-[#A855F7] font-semibold max-w-3xl mx-auto mb-3">"15 years ago, I was trapped in a Kuala Lumpur corporate job, earning RM2,800/month, working 12-hour days, and spending 3 hours daily in KL traffic."</p>
                         <p class="text-lg text-white/80 max-w-3xl mx-auto">Today, my students generate over RM50M in coaching revenue across Malaysia. I've proven that any Malaysian professional can transform their expertise into a thriving coaching business - regardless of background, English level, or industry experience.</p>
                     </div>
                     
@@ -830,24 +822,24 @@
                         <div class="space-y-6">
                             <div class="emotion-card p-4">
                                 <h3 class="text-xl font-bold text-white mb-4 flex items-center">
-                                    <i class="ri-award-line text-warm-gold icon-lg mr-2"></i>
+                                    <i class="ri-award-line text-[#A855F7] icon-lg mr-2"></i>
                                     Proven Track Record
                                 </h3>
                                 <div class="grid grid-cols-2 gap-4">
                                     <div class="text-center">
-                                        <div class="text-xl font-bold text-warm-gold mb-1">47+</div>
+                                        <div class="text-xl font-bold text-[#A855F7] mb-1">47+</div>
                                         <div class="text-white/70 text-sm">7-Figure Businesses Built</div>
                                     </div>
                                     <div class="text-center">
-                                        <div class="text-xl font-bold text-success-green mb-1">1,000+</div>
+                                        <div class="text-xl font-bold text-[#A855F7] mb-1">1,000+</div>
                                         <div class="text-white/70 text-sm">Malaysian Professionals Coached</div>
                                     </div>
                                     <div class="text-center">
-                                        <div class="text-xl font-bold text-trust-blue mb-1">RM50M+</div>
+                                        <div class="text-xl font-bold text-[#A855F7] mb-1">RM50M+</div>
                                         <div class="text-white/70 text-sm">Revenue Generated by Students</div>
                                     </div>
                                     <div class="text-center">
-                                        <div class="text-xl font-bold text-malaysian-red mb-1">23+</div>
+                                        <div class="text-xl font-bold text-[#A855F7] mb-1">23+</div>
                                         <div class="text-white/70 text-sm">Years in Business</div>
                                     </div>
                                 </div>
@@ -856,7 +848,7 @@
                             <!-- Media mentions -->
                             <div class="emotion-card p-4">
                                 <h3 class="text-lg font-bold text-white mb-3 flex items-center">
-                                    <i class="ri-newspaper-line text-warm-gold icon-md mr-2"></i>
+                                    <i class="ri-newspaper-line text-[#A855F7] icon-md mr-2"></i>
                                     Featured In
                                 </h3>
                                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 items-center">
@@ -882,7 +874,7 @@
                         
                         <!-- Authority image -->
                         <div class="relative">
-                            <div class="relative rounded-xl overflow-hidden border border-warm-gold/20">
+                            <div class="relative rounded-xl overflow-hidden border border-[#A855F7]/20">
                                 <img src="vince-authority-speaking-conference-side-profile.jpg"
                                     alt="Vince Tan Speaking at Malaysian Business Conference" 
                                     class="w-full h-auto object-cover"
@@ -897,7 +889,7 @@
                                         <i class="ri-medal-line text-white icon-lg"></i>
                                     </div>
                                     <div class="text-white font-bold text-sm">Top Business Mentor</div>
-                                    <div class="text-warm-gold text-xs">Malaysia 2024</div>
+                                    <div class="text-[#A855F7] text-xs">Malaysia 2024</div>
                                 </div>
                             </div>
                         </div>
@@ -916,8 +908,8 @@
                     <p class="text-lg text-white/70 mb-6 max-w-4xl mx-auto italic">
                         "I've bought so many courses, downloaded endless guides, but I'm still stuck! I just need someone to tell me exactly what to do, step-by-step."
                     </p>
-                    <div class="inline-flex items-center gap-2 bg-malaysian-red/15 border border-malaysian-red/30 rounded-full px-3 py-1.5">
-                        <i class="ri-error-warning-line text-malaysian-red icon-sm"></i>
+                    <div class="inline-flex items-center gap-2 bg-[#A855F7]/15 border border-[#A855F7]/30 rounded-full px-3 py-1.5">
+                        <i class="ri-error-warning-line text-[#A855F7] icon-sm"></i>
                         <span class="text-white text-sm font-semibold">Sound familiar? You're not alone.</span>
                     </div>
                 </div>
@@ -935,13 +927,13 @@
                             Stuck in endless "research mode" - buying course after course but never getting clear, actionable steps to actually launch your Malaysian coaching business.
                         </p>
                         <div class="expandable-section" id="challenge1Details">
-                            <div class="bg-warm-gold/8 rounded-lg p-3 border-l-2 border-warm-gold mt-3">
+                            <div class="bg-[#A855F7]/8 rounded-lg p-3 border-l-2 border-[#A855F7] mt-3">
                                 <p class="text-white/80 text-sm">
-                                    <strong class="text-warm-gold">The Hidden Cost:</strong> While you're "learning," competitors are already serving clients and building their reputation in the Malaysian market.
+                                    <strong class="text-[#A855F7]">The Hidden Cost:</strong> While you're "learning," competitors are already serving clients and building their reputation in the Malaysian market.
                                 </p>
                             </div>
                         </div>
-                        <button onclick="toggleSection('challenge1Details')" class="text-warm-gold text-sm font-semibold mt-3 hover:text-warm-gold/80 transition-colors">
+                        <button onclick="toggleSection('challenge1Details')" class="text-[#A855F7] text-sm font-semibold mt-3 hover:text-[#A855F7]/80 transition-colors">
                             Learn more about this challenge →
                         </button>
                     </div>
@@ -958,13 +950,13 @@
                             You know you can help people, but finding and converting your first 3 clients in the Malaysian market seems impossible.
                         </p>
                         <div class="expandable-section" id="challenge2Details">
-                            <div class="bg-trust-blue/8 rounded-lg p-3 border-l-2 border-trust-blue mt-3">
+                            <div class="bg-[#A855F7]/8 rounded-lg p-3 border-l-2 border-[#A855F7] mt-3">
                                 <p class="text-white/80 text-sm">
-                                    <strong class="text-trust-blue">Reality Check:</strong> There are thousands of potential clients in Malaysia right now searching for exactly what you offer, but they can't find you.
+                                    <strong class="text-[#A855F7]">Reality Check:</strong> There are thousands of potential clients in Malaysia right now searching for exactly what you offer, but they can't find you.
                                 </p>
                             </div>
                         </div>
-                        <button onclick="toggleSection('challenge2Details')" class="text-trust-blue text-sm font-semibold mt-3 hover:text-trust-blue/80 transition-colors">
+                        <button onclick="toggleSection('challenge2Details')" class="text-[#A855F7] text-sm font-semibold mt-3 hover:text-[#A855F7]/80 transition-colors">
                             Learn more about this challenge →
                         </button>
                     </div>
@@ -981,13 +973,13 @@
                             Your income doesn't reflect your expertise. You see others commanding RM5,000+ fees while you doubt if you're worthy of premium pricing.
                         </p>
                         <div class="expandable-section" id="challenge3Details">
-                            <div class="bg-malaysian-red/8 rounded-lg p-3 border-l-2 border-malaysian-red mt-3">
+                            <div class="bg-[#A855F7]/8 rounded-lg p-3 border-l-2 border-[#A855F7] mt-3">
                                 <p class="text-white/80 text-sm">
-                                    <strong class="text-malaysian-red">The Trap:</strong> Undercharging attracts price-sensitive clients who don't value your expertise, creating a downward spiral of low confidence and low fees.
+                                    <strong class="text-[#A855F7]">The Trap:</strong> Undercharging attracts price-sensitive clients who don't value your expertise, creating a downward spiral of low confidence and low fees.
                                 </p>
                             </div>
                         </div>
-                        <button onclick="toggleSection('challenge3Details')" class="text-malaysian-red text-sm font-semibold mt-3 hover:text-malaysian-red/80 transition-colors">
+                        <button onclick="toggleSection('challenge3Details')" class="text-[#A855F7] text-sm font-semibold mt-3 hover:text-[#A855F7]/80 transition-colors">
                             Learn more about this challenge →
                         </button>
                     </div>
@@ -1004,13 +996,13 @@
                             Your parents keep asking when you'll get a "real job" while you struggle to explain why you want to leave your RM4,000 government position for "uncertain" coaching income.
                         </p>
                         <div class="expandable-section" id="challenge4Details">
-                            <div class="bg-warm-gold/8 rounded-lg p-3 border-l-2 border-warm-gold mt-3">
+                            <div class="bg-[#A855F7]/8 rounded-lg p-3 border-l-2 border-[#A855F7] mt-3">
                                 <p class="text-white/80 text-sm">
-                                    <strong class="text-warm-gold">Cultural Reality:</strong> Malaysian families value stability, but they also respect success. Once you show RM8K+ monthly income, conversations change completely.
+                                    <strong class="text-[#A855F7]">Cultural Reality:</strong> Malaysian families value stability, but they also respect success. Once you show RM8K+ monthly income, conversations change completely.
                                 </p>
                             </div>
                         </div>
-                        <button onclick="toggleSection('challenge4Details')" class="text-warm-gold text-sm font-semibold mt-3 hover:text-warm-gold/80 transition-colors">
+                        <button onclick="toggleSection('challenge4Details')" class="text-[#A855F7] text-sm font-semibold mt-3 hover:text-[#A855F7]/80 transition-colors">
                             Learn more about this challenge →
                         </button>
                     </div>
@@ -1018,7 +1010,7 @@
                     <!-- Challenge 5 - Malaysian Specific -->
                     <div class="emotion-card p-4 group">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 rounded-xl trust-blue bg-trust-blue flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <div class="w-12 h-12 rounded-xl trust-blue bg-[#A855F7] flex items-center justify-center group-hover:scale-105 transition-transform">
                                 <i class="ri-global-line text-white icon-lg"></i>
                             </div>
                             <h3 class="text-lg font-bold text-white">Western Competition</h3>
@@ -1027,13 +1019,13 @@
                             Watching foreign coaches charge RM500/hour while you feel guilty asking for RM200, even though you understand Malaysian culture, language, and business environment better.
                         </p>
                         <div class="expandable-section" id="challenge5Details">
-                            <div class="bg-warm-gold/8 rounded-lg p-3 border-l-2 border-warm-gold mt-3">
+                            <div class="bg-[#A855F7]/8 rounded-lg p-3 border-l-2 border-[#A855F7] mt-3">
                                 <p class="text-white/80 text-sm">
-                                    <strong class="text-warm-gold">Hidden Advantage:</strong> Malaysian clients prefer local coaches who understand their culture. Your "Malaysian-ness" is actually your biggest competitive advantage.
+                                    <strong class="text-[#A855F7]">Hidden Advantage:</strong> Malaysian clients prefer local coaches who understand their culture. Your "Malaysian-ness" is actually your biggest competitive advantage.
                                 </p>
                             </div>
                         </div>
-                        <button onclick="toggleSection('challenge5Details')" class="text-warm-gold text-sm font-semibold mt-3 hover:text-warm-gold/80 transition-colors">
+                        <button onclick="toggleSection('challenge5Details')" class="text-[#A855F7] text-sm font-semibold mt-3 hover:text-[#A855F7]/80 transition-colors">
                             Learn more about this challenge →
                         </button>
                     </div>
@@ -1042,7 +1034,7 @@
                 <!-- Urgency element -->
                 <div class="mt-8 text-center">
                     <div class="inline-flex items-center gap-2 emotion-card px-6 py-3">
-                        <i class="ri-time-line text-malaysian-red icon-lg animate-pulse"></i>
+                        <i class="ri-time-line text-[#A855F7] icon-lg animate-pulse"></i>
                         <span class="text-white font-semibold">How many more weeks will you stay stuck in this cycle?</span>
                     </div>
                 </div>
@@ -1064,7 +1056,7 @@
                                 <label class="block text-white font-semibold mb-3 text-sm">How many hours per week can you dedicate to coaching?</label>
                                 <input type="range" min="5" max="40" value="20" class="slider-input" id="hoursSlider">
                                 <div class="text-center mt-2">
-                                    <span class="text-xl font-bold text-warm-gold" id="hoursValue">20</span>
+                                    <span class="text-xl font-bold text-[#A855F7]" id="hoursValue">20</span>
                                     <span class="text-white/70 text-sm"> hours/week</span>
                                 </div>
                             </div>
@@ -1073,20 +1065,20 @@
                                 <label class="block text-white font-semibold mb-3 text-sm">Desired hourly rate (RM)</label>
                                 <input type="range" min="100" max="1000" value="300" step="50" class="slider-input" id="rateSlider">
                                 <div class="text-center mt-2">
-                                    <span class="text-xl font-bold text-warm-gold">RM</span>
-                                    <span class="text-xl font-bold text-warm-gold" id="rateValue">300</span>
+                                    <span class="text-xl font-bold text-[#A855F7]">RM</span>
+                                    <span class="text-xl font-bold text-[#A855F7]" id="rateValue">300</span>
                                     <span class="text-white/70 text-sm">/hour</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="mt-8 p-4 bg-gradient-to-r from-warm-gold/15 to-primary/15 rounded-xl border border-warm-gold/60">
+                        <div class="mt-8 p-4 bg-gradient-to-r from-[#A855F7]/15 to-primary/15 rounded-xl border border-[#A855F7]/60">
                             <div class="text-center">
-                                <div class="text-3xl md:text-5xl font-bold text-warm-gold mb-3">
+                                <div class="text-3xl md:text-5xl font-bold text-[#A855F7] mb-3">
                                     RM<span id="monthlyIncome">24,000</span>
                                 </div>
                                 <div class="text-white/80 mb-2">Potential Monthly Income</div>
-                                <div class="text-2xl font-bold text-success-green">
+                                <div class="text-2xl font-bold text-[#A855F7]">
                                     RM<span id="yearlyIncome">288,000</span> per year
                                 </div>
                                 <div class="mt-4 text-white/70 text-sm">
@@ -1097,11 +1089,11 @@
                         
                         <!-- Urgency countdown for ROI section -->
                         <div class="mt-4 text-center">
-                            <div class="inline-flex items-center gap-3 bg-malaysian-red/15 border border-malaysian-red/30 rounded-lg px-4 py-3">
-                                <i class="ri-time-line text-malaysian-red icon-md animate-pulse"></i>
+                            <div class="inline-flex items-center gap-3 bg-[#A855F7]/15 border border-[#A855F7]/30 rounded-lg px-4 py-3">
+                                <i class="ri-time-line text-[#A855F7] icon-md animate-pulse"></i>
                                 <div class="text-white">
                                     <div class="font-bold text-sm">Start earning in:</div>
-                                    <div class="flex gap-2 text-xs text-warm-gold font-semibold">
+                                    <div class="flex gap-2 text-xs text-[#A855F7] font-semibold">
                                         <span id="roi-days">0</span>d <span id="roi-hours">0</span>h <span id="roi-minutes">0</span>m
                                     </div>
                                 </div>
@@ -1126,13 +1118,13 @@
                     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
                         The <span class="bg-clip-text text-transparent malaysian-gradient">Malaysian Authority System™</span>
                     </h2>
-                    <p class="text-lg text-warm-gold font-semibold mb-2">Transform from Hidden Expert to Premium Authority</p>
+                    <p class="text-lg text-[#A855F7] font-semibold mb-2">Transform from Hidden Expert to Premium Authority</p>
                     <p class="text-lg text-white/70">Your Expertise. Malaysian Market. Premium Ringgit.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
                     <div class="relative">
-                        <div class="relative rounded-xl overflow-hidden border border-warm-gold/20">
+                        <div class="relative rounded-xl overflow-hidden border border-[#A855F7]/20">
                             <img src="vince-workshop-teaching-engaged-audience.jpg"
                                 alt="Vince Tan Coaching Malaysian Professionals" 
                                 class="w-full h-full object-cover"
@@ -1145,21 +1137,21 @@
                         Enhanced verification badge with Malaysian expert stats
                         <div class="absolute -right-4 -bottom-4 emotion-card p-4 w-56">
                             <div class="flex items-center gap-2 mb-3">
-                                <i class="ri-verified-badge-fill text-success-green icon-lg"></i>
+                                <i class="ri-verified-badge-fill text-[#A855F7] icon-lg"></i>
                                 <span class="text-white font-semibold text-sm">Verified Malaysian Expert</span>
                             </div>
                             <div class="space-y-1 text-xs">
                                 <div class="flex justify-between">
                                     <span class="text-white/70">Success Rate</span>
-                                    <span class="text-success-green font-bold">98%</span>
+                                    <span class="text-[#A855F7] font-bold">98%</span>
                                 </div>
                                 <div class="flex justify-between">
                                     <span class="text-white/70">Avg. Student Income</span>
-                                    <span class="text-warm-gold font-bold">RM18K/month</span>
+                                    <span class="text-[#A855F7] font-bold">RM18K/month</span>
                                 </div>
                                 <div class="flex justify-between">
                                     <span class="text-white/70">Time to First Client</span>
-                                    <span class="text-trust-blue font-bold">22 days</span>
+                                    <span class="text-[#A855F7] font-bold">22 days</span>
                                 </div>
                             </div>
                         </div>
@@ -1169,7 +1161,7 @@
                     <div class="space-y-6">
                         <div class="emotion-card p-4">
                             <h3 class="text-xl font-bold text-white mb-3 flex items-center">
-                                <i class="ri-user-star-line text-warm-gold icon-lg mr-2"></i>
+                                <i class="ri-user-star-line text-[#A855F7] icon-lg mr-2"></i>
                                 Direct Mentorship with Malaysia's #1 Coach
                             </h3>
                             <p class="text-white/70 mb-4">
@@ -1181,7 +1173,7 @@
                                     <span class="relative z-10">Reserve Your Seat - FREE</span>
                                 </button>
                                 <div class="text-center sm:text-left text-sm text-white/60">
-                                    <div class="text-warm-gold font-semibold">Next session:</div>
+                                    <div class="text-[#A855F7] font-semibold">Next session:</div>
                                     <div>Wednesday 8PM MYT</div>
                                 </div>
                             </div>
@@ -1190,7 +1182,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="emotion-card p-4">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <i class="ri-roadmap-line text-warm-gold icon-md"></i>
+                                    <i class="ri-roadmap-line text-[#A855F7] icon-md"></i>
                                     <span class="text-white font-semibold text-sm">30-Day Blueprint</span>
                                 </div>
                                 <p class="text-white/70 text-xs">Step-by-step roadmap to get your first 3 Malaysian clients</p>
@@ -1198,7 +1190,7 @@
                             
                             <div class="emotion-card p-4">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <i class="ri-money-dollar-box-line text-success-green icon-md"></i>
+                                    <i class="ri-money-dollar-box-line text-[#A855F7] icon-md"></i>
                                     <span class="text-white font-semibold text-sm">Premium Pricing</span>
                                 </div>
                                 <p class="text-white/70 text-xs">Learn to package expertise for RM5,000+ client fees</p>
@@ -1206,7 +1198,7 @@
                             
                             <div class="emotion-card p-4">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <i class="ri-focus-2-line text-trust-blue icon-md"></i>
+                                    <i class="ri-focus-2-line text-[#A855F7] icon-md"></i>
                                     <span class="text-white font-semibold text-sm">Personal Guidance</span>
                                 </div>
                                 <p class="text-white/70 text-xs">1:1 advice for your unique Malaysian market challenges</p>
@@ -1214,7 +1206,7 @@
                             
                             <div class="emotion-card p-4">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <i class="ri-map-pin-line text-malaysian-red icon-md"></i>
+                                    <i class="ri-map-pin-line text-[#A855F7] icon-md"></i>
                                     <span class="text-white font-semibold text-sm">Malaysia-Focused</span>
                                 </div>
                                 <p class="text-white/70 text-xs">Strategies designed specifically for Malaysian market</p>
@@ -1241,11 +1233,11 @@
                             <span>1,247 joined this month</span>
                         </div>
                         <div class="live-counter">
-                            <i class="ri-star-fill text-warm-gold icon-sm"></i>
+                            <i class="ri-star-fill text-[#A855F7] icon-sm"></i>
                             <span>4.9/5 average rating</span>
                         </div>
                         <div class="live-counter">
-                            <i class="ri-money-dollar-circle-line text-success-green icon-sm"></i>
+                            <i class="ri-money-dollar-circle-line text-[#A855F7] icon-sm"></i>
                             <span>RM18K average monthly income</span>
                         </div>
                     </div>
@@ -1258,29 +1250,29 @@
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
                                 <img src="avatar-malay-businessman.svg" 
-                                    alt="Ahmad Razak" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
+                                    alt="Ahmad Razak" class="w-10 h-10 rounded-full object-cover border border-[#A855F7]/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Ahmad Razak</h4>
-                                    <p class="text-warm-gold font-semibold text-xs">Business Strategy Coach</p>
+                                    <p class="text-[#A855F7] font-semibold text-xs">Business Strategy Coach</p>
                                     <p class="text-white/60 text-xs flex items-center">
                                         <i class="ri-map-pin-line mr-1 icon-sm"></i>Kuala Lumpur
                                     </p>
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "I was a corporate manager earning RM5,200/month, working 12-hour days. My wife kept asking when I'd pursue my coaching dreams. After Vince's program, I'm earning <span class="text-warm-gold font-bold">RM18,000/month</span> and finally have time for my family. My wife says she's proud I took the leap!"
+                                "I was a corporate manager earning RM5,200/month, working 12-hour days. My wife kept asking when I'd pursue my coaching dreams. After Vince's program, I'm earning <span class="text-[#A855F7] font-bold">RM18,000/month</span> and finally have time for my family. My wife says she's proud I took the leap!"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
                                     <span class="text-white/60">Income Increase:</span>
-                                    <span class="text-success-green font-bold">340%</span>
+                                    <span class="text-[#A855F7] font-bold">340%</span>
                                 </div>
                             </div>
                         </div>
@@ -1288,29 +1280,29 @@
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
                                 <img src="avatar-chinese-businesswoman.svg" 
-                                    alt="Michelle Tan" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
+                                    alt="Michelle Tan" class="w-10 h-10 rounded-full object-cover border border-[#A855F7]/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Michelle Tan</h4>
-                                    <p class="text-warm-gold font-semibold text-xs">Wellness Coach</p>
+                                    <p class="text-[#A855F7] font-semibold text-xs">Wellness Coach</p>
                                     <p class="text-white/60 text-xs flex items-center">
                                         <i class="ri-map-pin-line mr-1 icon-sm"></i>Penang
                                     </p>
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "As a wellness coach in Penang, I struggled to stand out. Vince's framework helped me create unique positioning. Now fully booked 3 months ahead with <span class="text-warm-gold font-bold">RM8,000+ clients!</span>"
+                                "As a wellness coach in Penang, I struggled to stand out. Vince's framework helped me create unique positioning. Now fully booked 3 months ahead with <span class="text-[#A855F7] font-bold">RM8,000+ clients!</span>"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
                                     <span class="text-white/60">Booking Rate:</span>
-                                    <span class="text-success-green font-bold">100%</span>
+                                    <span class="text-[#A855F7] font-bold">100%</span>
                                 </div>
                             </div>
                         </div>
@@ -1318,29 +1310,29 @@
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
                                 <img src="avatar-indian-businessman.svg" 
-                                    alt="Raj Kumar" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
+                                    alt="Raj Kumar" class="w-10 h-10 rounded-full object-cover border border-[#A855F7]/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Raj Kumar</h4>
-                                    <p class="text-warm-gold font-semibold text-xs">Financial Coach</p>
+                                    <p class="text-[#A855F7] font-semibold text-xs">Financial Coach</p>
                                     <p class="text-white/60 text-xs flex items-center">
                                         <i class="ri-map-pin-line mr-1 icon-sm"></i>Johor Bahru
                                     </p>
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "I was a bank manager earning RM5,000/month, working 6 days a week. My wife said I was missing our kids growing up. After 6 months with Vince, I went from RM5K to <span class="text-warm-gold font-bold">RM25,000/month</span> coaching income. Now I attend every school event. My wife stopped asking me to 'be realistic' about my dreams!"
+                                "I was a bank manager earning RM5,000/month, working 6 days a week. My wife said I was missing our kids growing up. After 6 months with Vince, I went from RM5K to <span class="text-[#A855F7] font-bold">RM25,000/month</span> coaching income. Now I attend every school event. My wife stopped asking me to 'be realistic' about my dreams!"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
                                     <span class="text-white/60">Growth:</span>
-                                    <span class="text-success-green font-bold">500%</span>
+                                    <span class="text-[#A855F7] font-bold">500%</span>
                                 </div>
                             </div>
                         </div>
@@ -1348,29 +1340,29 @@
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
                                 <img src="avatar-malay-businesswoman.svg" 
-                                    alt="Siti Aishah" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
+                                    alt="Siti Aishah" class="w-10 h-10 rounded-full object-cover border border-[#A855F7]/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Siti Aishah</h4>
-                                    <p class="text-warm-gold font-semibold text-xs">Tech Strategy Coach</p>
+                                    <p class="text-[#A855F7] font-semibold text-xs">Tech Strategy Coach</p>
                                     <p class="text-white/60 text-xs flex items-center">
                                         <i class="ri-map-pin-line mr-1 icon-sm"></i>Kota Kinabalu
                                     </p>
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "Working remotely from Sabah, I thought location would limit me. Vince showed me how to leverage my tech background. Now I coach entrepreneurs across ASEAN with <span class="text-warm-gold font-bold">RM12,000/month</span> income!"
+                                "Working remotely from Sabah, I thought location would limit me. Vince showed me how to leverage my tech background. Now I coach entrepreneurs across ASEAN with <span class="text-[#A855F7] font-bold">RM12,000/month</span> income!"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
                                     <span class="text-white/60">Client Reach:</span>
-                                    <span class="text-success-green font-bold">ASEAN-wide</span>
+                                    <span class="text-[#A855F7] font-bold">ASEAN-wide</span>
                                 </div>
                             </div>
                         </div>
@@ -1378,29 +1370,29 @@
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
                                 <img src="avatar-chinese-businessman.svg" 
-                                    alt="Dr. Lim Wei Ming" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
+                                    alt="Dr. Lim Wei Ming" class="w-10 h-10 rounded-full object-cover border border-[#A855F7]/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Dr. Lim Wei Ming</h4>
-                                    <p class="text-warm-gold font-semibold text-xs">Health & Productivity Coach</p>
+                                    <p class="text-[#A855F7] font-semibold text-xs">Health & Productivity Coach</p>
                                     <p class="text-white/60 text-xs flex items-center">
                                         <i class="ri-map-pin-line mr-1 icon-sm"></i>Kuching
                                     </p>
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "As a doctor in Kuching, I wanted to impact more lives beyond clinical practice. Vince's coaching helped me scale my expertise. Now earning <span class="text-warm-gold font-bold">RM22,000/month</span> helping executives optimize health!"
+                                "As a doctor in Kuching, I wanted to impact more lives beyond clinical practice. Vince's coaching helped me scale my expertise. Now earning <span class="text-[#A855F7] font-bold">RM22,000/month</span> helping executives optimize health!"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
                                     <span class="text-white/60">Impact:</span>
-                                    <span class="text-success-green font-bold">200+ Executives</span>
+                                    <span class="text-[#A855F7] font-bold">200+ Executives</span>
                                 </div>
                             </div>
                         </div>
@@ -1409,29 +1401,29 @@
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
                                 <img src="avatar-malay-businessman.svg" 
-                                    alt="Ahmad Razak" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
+                                    alt="Ahmad Razak" class="w-10 h-10 rounded-full object-cover border border-[#A855F7]/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Ahmad Razak</h4>
-                                    <p class="text-warm-gold font-semibold text-xs">Business Strategy Coach</p>
+                                    <p class="text-[#A855F7] font-semibold text-xs">Business Strategy Coach</p>
                                     <p class="text-white/60 text-xs flex items-center">
                                         <i class="ri-map-pin-line mr-1 icon-sm"></i>Kuala Lumpur
                                     </p>
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "Vince's program helped me transition from corporate to full-time coaching. Now earning <span class="text-warm-gold font-bold">RM18,000/month</span> - got my first 3 premium clients in 25 days!"
+                                "Vince's program helped me transition from corporate to full-time coaching. Now earning <span class="text-[#A855F7] font-bold">RM18,000/month</span> - got my first 3 premium clients in 25 days!"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
                                     <span class="text-white/60">Income Increase:</span>
-                                    <span class="text-success-green font-bold">340%</span>
+                                    <span class="text-[#A855F7] font-bold">340%</span>
                                 </div>
                             </div>
                         </div>
@@ -1439,29 +1431,29 @@
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
                                 <img src="avatar-chinese-businesswoman.svg" 
-                                    alt="Michelle Tan" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
+                                    alt="Michelle Tan" class="w-10 h-10 rounded-full object-cover border border-[#A855F7]/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Michelle Tan</h4>
-                                    <p class="text-warm-gold font-semibold text-xs">Wellness Coach</p>
+                                    <p class="text-[#A855F7] font-semibold text-xs">Wellness Coach</p>
                                     <p class="text-white/60 text-xs flex items-center">
                                         <i class="ri-map-pin-line mr-1 icon-sm"></i>Penang
                                     </p>
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "As a wellness coach in Penang, I struggled to stand out. Vince's framework helped me create unique positioning. Now fully booked 3 months ahead with <span class="text-warm-gold font-bold">RM8,000+ clients!</span>"
+                                "As a wellness coach in Penang, I struggled to stand out. Vince's framework helped me create unique positioning. Now fully booked 3 months ahead with <span class="text-[#A855F7] font-bold">RM8,000+ clients!</span>"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
                                     <span class="text-white/60">Booking Rate:</span>
-                                    <span class="text-success-green font-bold">100%</span>
+                                    <span class="text-[#A855F7] font-bold">100%</span>
                                 </div>
                             </div>
                         </div>
@@ -1469,29 +1461,29 @@
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
                                 <img src="avatar-indian-businessman.svg" 
-                                    alt="Raj Kumar" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
+                                    alt="Raj Kumar" class="w-10 h-10 rounded-full object-cover border border-[#A855F7]/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Raj Kumar</h4>
-                                    <p class="text-warm-gold font-semibold text-xs">Financial Coach</p>
+                                    <p class="text-[#A855F7] font-semibold text-xs">Financial Coach</p>
                                     <p class="text-white/60 text-xs flex items-center">
                                         <i class="ri-map-pin-line mr-1 icon-sm"></i>Johor Bahru
                                     </p>
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "I was a bank manager earning RM5,000/month, working 6 days a week. My wife said I was missing our kids growing up. After 6 months with Vince, I went from RM5K to <span class="text-warm-gold font-bold">RM25,000/month</span> coaching income. Now I attend every school event. My wife stopped asking me to 'be realistic' about my dreams!"
+                                "I was a bank manager earning RM5,000/month, working 6 days a week. My wife said I was missing our kids growing up. After 6 months with Vince, I went from RM5K to <span class="text-[#A855F7] font-bold">RM25,000/month</span> coaching income. Now I attend every school event. My wife stopped asking me to 'be realistic' about my dreams!"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
                                     <i class="ri-star-fill text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
                                     <span class="text-white/60">Growth:</span>
-                                    <span class="text-success-green font-bold">500%</span>
+                                    <span class="text-[#A855F7] font-bold">500%</span>
                                 </div>
                             </div>
                         </div>
@@ -1499,29 +1491,29 @@
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
                                 <img src="avatar-malay-businesswoman.svg" 
-                                    alt="Siti Aishah" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
+                                    alt="Siti Aishah" class="w-10 h-10 rounded-full object-cover border border-[#A855F7]/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Siti Aishah</h4>
-                                    <p class="text-warm-gold font-semibold text-xs">Tech Strategy Coach</p>
+                                    <p class="text-[#A855F7] font-semibold text-xs">Tech Strategy Coach</p>
                                     <p class="text-white/60 text-xs flex items-center">
                                         <i class="ri-map-pin-line mr-1 icon-sm"></i>Kota Kinabalu
                                     </p>
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "Working remotely from Sabah, I thought location would limit me. Vince showed me how to leverage my tech background. Now I coach entrepreneurs across ASEAN with <span class="text-warm-gold font-bold">RM12,000/month</span> income!"
+                                "Working remotely from Sabah, I thought location would limit me. Vince showed me how to leverage my tech background. Now I coach entrepreneurs across ASEAN with <span class="text-[#A855F7] font-bold">RM12,000/month</span> income!"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
                                     <span class="text-white/60">Client Reach:</span>
-                                    <span class="text-success-green font-bold">ASEAN-wide</span>
+                                    <span class="text-[#A855F7] font-bold">ASEAN-wide</span>
                                 </div>
                             </div>
                         </div>
@@ -1529,29 +1521,29 @@
                         <div class="testimonial-card">
                             <div class="flex items-center gap-3 mb-3">
                                 <img src="avatar-chinese-businessman.svg" 
-                                    alt="Dr. Lim Wei Ming" class="w-10 h-10 rounded-full object-cover border border-warm-gold/20">
+                                    alt="Dr. Lim Wei Ming" class="w-10 h-10 rounded-full object-cover border border-[#A855F7]/20">
                                 <div>
                                     <h4 class="text-white font-bold text-sm">Dr. Lim Wei Ming</h4>
-                                    <p class="text-warm-gold font-semibold text-xs">Health & Productivity Coach</p>
+                                    <p class="text-[#A855F7] font-semibold text-xs">Health & Productivity Coach</p>
                                     <p class="text-white/60 text-xs flex items-center">
                                         <i class="ri-map-pin-line mr-1 icon-sm"></i>Kuching
                                     </p>
                                 </div>
                             </div>
                             <p class="text-white/80 flex-grow text-sm italic leading-relaxed">
-                                "As a doctor in Kuching, I wanted to impact more lives beyond clinical practice. Vince's coaching helped me scale my expertise. Now earning <span class="text-warm-gold font-bold">RM22,000/month</span> helping executives optimize health!"
+                                "As a doctor in Kuching, I wanted to impact more lives beyond clinical practice. Vince's coaching helped me scale my expertise. Now earning <span class="text-[#A855F7] font-bold">RM22,000/month</span> helping executives optimize health!"
                             </p>
                             <div class="mt-3">
                                 <div class="flex items-center gap-1 mb-1">
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
-                                    <i class="ri-star-fill text-warm-gold text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
+                                    <i class="ri-star-fill text-[#A855F7] text-xs"></i>
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
                                     <span class="text-white/60">Impact:</span>
-                                    <span class="text-success-green font-bold">200+ Executives</span>
+                                    <span class="text-[#A855F7] font-bold">200+ Executives</span>
                                 </div>
                             </div>
                         </div>
@@ -1574,7 +1566,7 @@
                     <div class="emotion-card p-4 faq-item">
                         <button class="faq-question w-full text-left flex justify-between items-center text-white font-semibold">
                             <span>What exactly is the Expert Elite Class?</span>
-                            <i class="ri-add-line text-lg transition-transform text-warm-gold faq-icon"></i>
+                            <i class="ri-add-line text-lg transition-transform text-[#A855F7] faq-icon"></i>
                         </button>
                         <div class="faq-answer">
                             <div class="pt-4 border-t border-white/8 mt-3">
@@ -1586,7 +1578,7 @@
                     <div class="emotion-card p-4 faq-item">
                         <button class="faq-question w-full text-left flex justify-between items-center text-white font-semibold">
                             <span>How can I be sure this will work for my situation in Malaysia?</span>
-                            <i class="ri-add-line text-lg transition-transform text-warm-gold faq-icon"></i>
+                            <i class="ri-add-line text-lg transition-transform text-[#A855F7] faq-icon"></i>
                         </button>
                         <div class="faq-answer">
                             <div class="pt-4 border-t border-white/8 mt-3">
@@ -1598,7 +1590,7 @@
                     <div class="emotion-card p-4 faq-item">
                         <button class="faq-question w-full text-left flex justify-between items-center text-white font-semibold">
                             <span>What if I'm starting from zero with no existing clients?</span>
-                            <i class="ri-add-line text-lg transition-transform text-warm-gold faq-icon"></i>
+                            <i class="ri-add-line text-lg transition-transform text-[#A855F7] faq-icon"></i>
                         </button>
                         <div class="faq-answer">
                             <div class="pt-4 border-t border-white/8 mt-3">
@@ -1610,7 +1602,7 @@
                     <div class="emotion-card p-4 faq-item">
                         <button class="faq-question w-full text-left flex justify-between items-center text-white font-semibold">
                             <span>How much time do I need to invest to see results?</span>
-                            <i class="ri-add-line text-lg transition-transform text-warm-gold faq-icon"></i>
+                            <i class="ri-add-line text-lg transition-transform text-[#A855F7] faq-icon"></i>
                         </button>
                         <div class="faq-answer">
                             <div class="pt-4 border-t border-white/8 mt-3">
@@ -1622,7 +1614,7 @@
                     <div class="emotion-card p-4 faq-item">
                         <button class="faq-question w-full text-left flex justify-between items-center text-white font-semibold">
                             <span>Why is this session completely FREE?</span>
-                            <i class="ri-add-line text-lg transition-transform text-warm-gold faq-icon"></i>
+                            <i class="ri-add-line text-lg transition-transform text-[#A855F7] faq-icon"></i>
                         </button>
                         <div class="faq-answer">
                             <div class="pt-4 border-t border-white/8 mt-3">
@@ -1634,7 +1626,7 @@
                     <div class="emotion-card p-4 faq-item">
                         <button class="faq-question w-full text-left flex justify-between items-center text-white font-semibold">
                             <span>What if my English isn't perfect for coaching?</span>
-                            <i class="ri-add-line text-lg transition-transform text-warm-gold faq-icon"></i>
+                            <i class="ri-add-line text-lg transition-transform text-[#A855F7] faq-icon"></i>
                         </button>
                         <div class="faq-answer">
                             <div class="pt-4 border-t border-white/8 mt-3">
@@ -1646,7 +1638,7 @@
                     <div class="emotion-card p-4 faq-item">
                         <button class="faq-question w-full text-left flex justify-between items-center text-white font-semibold">
                             <span>How do I handle family pressure about leaving my stable job?</span>
-                            <i class="ri-add-line text-lg transition-transform text-warm-gold faq-icon"></i>
+                            <i class="ri-add-line text-lg transition-transform text-[#A855F7] faq-icon"></i>
                         </button>
                         <div class="faq-answer">
                             <div class="pt-4 border-t border-white/8 mt-3">
@@ -1658,7 +1650,7 @@
                     <div class="emotion-card p-4 faq-item">
                         <button class="faq-question w-full text-left flex justify-between items-center text-white font-semibold">
                             <span>Is the Malaysian market too small for coaching?</span>
-                            <i class="ri-add-line text-lg transition-transform text-warm-gold faq-icon"></i>
+                            <i class="ri-add-line text-lg transition-transform text-[#A855F7] faq-icon"></i>
                         </button>
                         <div class="faq-answer">
                             <div class="pt-4 border-t border-white/8 mt-3">
@@ -1690,8 +1682,8 @@
                         
                         <div class="relative z-10">
                             <div class="text-center mb-4">
-                                <div class="inline-flex items-center gap-2 bg-malaysian-red/15 border border-malaysian-red/30 rounded-full px-4 py-2 mb-3">
-                                    <i class="ri-fire-fill text-malaysian-red icon-md animate-pulse"></i>
+                                <div class="inline-flex items-center gap-2 bg-[#A855F7]/15 border border-[#A855F7]/30 rounded-full px-4 py-2 mb-3">
+                                    <i class="ri-fire-fill text-[#A855F7] icon-md animate-pulse"></i>
                                     <span class="text-white font-bold">Limited Time - Malaysian Professionals Only</span>
                                 </div>
                                 
@@ -1700,26 +1692,26 @@
                                 </h3>
                                 
                                 <!-- Prominent Countdown Timer -->
-                                <div class="bg-gradient-to-r from-warm-gold/20 to-primary/20 rounded-xl p-4 mb-6 border border-warm-gold/70">
+                                <div class="bg-gradient-to-r from-[#A855F7]/20 to-primary/20 rounded-xl p-4 mb-6 border border-[#A855F7]/70">
                                     <div class="text-center mb-4">
                                         <h4 class="text-white font-bold text-lg mb-2">Next Session Starts In:</h4>
-                                        <div class="text-warm-gold font-semibold" id="main-session-date">Loading...</div>
+                                        <div class="text-[#A855F7] font-semibold" id="main-session-date">Loading...</div>
                                         <div class="text-white/70 text-sm">Every Wednesday 8:00 PM - 10:30 PM (MYT)</div>
                                     </div>
                                     <div class="grid grid-cols-4 gap-3">
-                                        <div class="text-center bg-warm-gold/10 rounded-lg p-4 border border-warm-gold/60">
+                                        <div class="text-center bg-[#A855F7]/10 rounded-lg p-4 border border-[#A855F7]/60">
                                             <div class="text-lg font-bold text-white" id="final-days">00</div>
                                             <div class="text-xs text-white/70">Days</div>
                                         </div>
-                                        <div class="text-center bg-warm-gold/10 rounded-lg p-4 border border-warm-gold/60">
+                                        <div class="text-center bg-[#A855F7]/10 rounded-lg p-4 border border-[#A855F7]/60">
                                             <div class="text-lg font-bold text-white" id="final-hours">00</div>
                                             <div class="text-xs text-white/70">Hours</div>
                                         </div>
-                                        <div class="text-center bg-warm-gold/10 rounded-lg p-4 border border-warm-gold/60">
+                                        <div class="text-center bg-[#A855F7]/10 rounded-lg p-4 border border-[#A855F7]/60">
                                             <div class="text-lg font-bold text-white" id="final-minutes">00</div>
                                             <div class="text-xs text-white/70">Mins</div>
                                         </div>
-                                        <div class="text-center bg-warm-gold/10 rounded-lg p-4 border border-warm-gold/60">
+                                        <div class="text-center bg-[#A855F7]/10 rounded-lg p-4 border border-[#A855F7]/60">
                                             <div class="text-lg font-bold text-white" id="final-seconds">00</div>
                                             <div class="text-xs text-white/70">Secs</div>
                                         </div>
@@ -1747,34 +1739,34 @@
                             
                             <!-- Value proposition grid -->
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                                <div class="text-center p-4 bg-white/5 rounded-lg border border-warm-gold/50">
-                                    <i class="ri-calendar-check-line text-lg text-warm-gold mb-2"></i>
+                                <div class="text-center p-4 bg-white/5 rounded-lg border border-[#A855F7]/50">
+                                    <i class="ri-calendar-check-line text-lg text-[#A855F7] mb-2"></i>
                                     <div class="text-white font-semibold mb-1 text-sm">Next Session</div>
                                     <div class="text-white/70 text-xs" id="final-session-date">Every Wednesday 8PM MYT</div>
                                 </div>
-                                <div class="text-center p-4 bg-white/5 rounded-lg border border-success-green/50">
-                                    <i class="ri-group-line text-lg text-success-green mb-2"></i>
+                                <div class="text-center p-4 bg-white/5 rounded-lg border border-[#A855F7]/50">
+                                    <i class="ri-group-line text-lg text-[#A855F7] mb-2"></i>
                                     <div class="text-white font-semibold mb-1 text-sm">Limited Seats</div>
                                     <div class="text-white/70 text-xs">Only 100 Malaysian professionals</div>
                                 </div>
-                                <div class="text-center p-4 bg-white/5 rounded-lg border border-trust-blue/50">
-                                    <i class="ri-time-line text-lg text-trust-blue mb-2"></i>
+                                <div class="text-center p-4 bg-white/5 rounded-lg border border-[#A855F7]/50">
+                                    <i class="ri-time-line text-lg text-[#A855F7] mb-2"></i>
                                     <div class="text-white font-semibold mb-1 text-sm">Duration</div>
                                     <div class="text-white/70 text-xs">2.5 hours of pure value</div>
                                 </div>
                             </div>
 
                             <!-- Program Investment Transparency -->
-                            <div class="bg-warm-gold/8 rounded-lg p-4 border border-warm-gold/60 mb-6">
+                            <div class="bg-[#A855F7]/8 rounded-lg p-4 border border-[#A855F7]/60 mb-6">
                                 <div class="text-center">
                                     <div class="text-white font-semibold mb-2 text-sm">Full Program Investment</div>
                                     <div class="text-white/80 text-xs mb-3">After your FREE session, serious participants can join our Malaysian Expert Elite Program</div>
                                     <div class="flex items-center justify-center gap-3 mb-3">
                                         <div class="text-white/40 text-sm line-through">RM12,997</div>
-                                        <div class="text-warm-gold font-bold">One-time payment RM850</div>
+                                        <div class="text-[#A855F7] font-bold">One-time payment RM850</div>
                                     </div>
                                     <div class="text-center mb-3">
-                                        <div class="text-warm-gold/80 text-sm font-semibold">2 Years Full Access Included</div>
+                                        <div class="text-[#A855F7]/80 text-sm font-semibold">2 Years Full Access Included</div>
                                     </div>
                                     <div class="space-y-1 text-xs text-white/70">
                                         <div>✅ Bank transfer (Maybank, CIMB, Public Bank)</div>
@@ -1788,7 +1780,7 @@
                             <div class="mb-6">
                                 <div class="flex items-center justify-between text-sm mb-2">
                                     <span class="text-white/80">Seats Remaining</span>
-                                    <span class="text-malaysian-red font-bold">27/100 available</span>
+                                    <span class="text-[#A855F7] font-bold">27/100 available</span>
                                 </div>
                                 <div class="scarcity-bar">
                                     <div class="scarcity-fill" style="width: 73%"></div>
@@ -1800,15 +1792,15 @@
                                 <!-- Trust indicators -->
                                 <div class="flex flex-wrap items-center justify-center gap-4 text-white/60 text-xs">
                                     <div class="flex items-center gap-1">
-                                        <i class="ri-shield-check-line text-success-green icon-sm"></i>
+                                        <i class="ri-shield-check-line text-[#A855F7] icon-sm"></i>
                                         <span>100% FREE Session</span>
                                     </div>
                                     <div class="flex items-center gap-1">
-                                        <i class="ri-medal-line text-warm-gold icon-sm"></i>
+                                        <i class="ri-medal-line text-[#A855F7] icon-sm"></i>
                                         <span>23+ Years Experience</span>
                                     </div>
                                     <div class="flex items-center gap-1">
-                                        <i class="ri-heart-line text-malaysian-red icon-sm"></i>
+                                        <i class="ri-heart-line text-[#A855F7] icon-sm"></i>
                                         <span>1,000+ Malaysian Success Stories</span>
                                     </div>
                                 </div>
@@ -1821,7 +1813,7 @@
     </main>
 
     <!-- Refined Footer -->
-    <footer class="bg-black/80 backdrop-blur-sm border-t border-warm-gold/15 py-8">
+    <footer class="bg-black/80 backdrop-blur-sm border-t border-[#A855F7]/15 py-8">
         <div class="container mx-auto px-4 md:px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div>
@@ -1830,17 +1822,17 @@
                         Expert <span class="bg-clip-text text-transparent warm-trust-gradient">Elite Class</span>
                     </a>
                     <p class="text-white/60 mb-3 text-sm">Turn your expertise into a high-ticket coaching business in Malaysia.</p>
-                    <p class="text-warm-gold font-semibold text-xs">Led by Malaysia's #1 Business Coach - Vince Tan</p>
+                    <p class="text-[#A855F7] font-semibold text-xs">Led by Malaysia's #1 Business Coach - Vince Tan</p>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-3">Quick Links</h4>
                     <ul class="space-y-1 text-sm">
-                        <li><a href="#hero" class="text-white/60 hover:text-warm-gold transition-colors">Home</a></li>
-                        <li><a href="#challenges" class="text-white/60 hover:text-warm-gold transition-colors">Challenges</a></li>
-                        <li><a href="#solutions" class="text-white/60 hover:text-warm-gold transition-colors">Solutions</a></li>
-                        <li><a href="#authority" class="text-white/60 hover:text-warm-gold transition-colors">About Vince</a></li>
-                        <li><a href="#testimonials" class="text-white/60 hover:text-warm-gold transition-colors">Success Stories</a></li>
-                        <li><a href="#faq" class="text-white/60 hover:text-warm-gold transition-colors">FAQ</a></li>
+                        <li><a href="#hero" class="text-white/60 hover:text-[#A855F7] transition-colors">Home</a></li>
+                        <li><a href="#challenges" class="text-white/60 hover:text-[#A855F7] transition-colors">Challenges</a></li>
+                        <li><a href="#solutions" class="text-white/60 hover:text-[#A855F7] transition-colors">Solutions</a></li>
+                        <li><a href="#authority" class="text-white/60 hover:text-[#A855F7] transition-colors">About Vince</a></li>
+                        <li><a href="#testimonials" class="text-white/60 hover:text-[#A855F7] transition-colors">Success Stories</a></li>
+                        <li><a href="#faq" class="text-white/60 hover:text-[#A855F7] transition-colors">FAQ</a></li>
                     </ul>
                 </div>
                     <div>
@@ -1860,7 +1852,7 @@
 
     <!-- Mobile Sticky CTA -->
     <div class="mobile-optimized-cta md:hidden" id="mobileCTA">
-        <div class="px-4 py-2 bg-warm-gold/10 border-t border-warm-gold/60">
+        <div class="px-4 py-2 bg-[#A855F7]/10 border-t border-[#A855F7]/60">
             <div class="flex items-center justify-center text-xs text-white/80 mb-2">
                 <span class="mr-3">Next Session:</span>
                 <div class="flex gap-1 items-center justify-center">
