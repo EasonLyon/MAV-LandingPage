@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Ads Vantage (MAV) 2.0 - Investment Proposal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9FAFB;
+        }
+        /* International Klein Blue */
+        .ikb-blue { color: #002FA7; }
+        .bg-ikb-blue { background-color: #002FA7; }
+        .border-ikb-blue { border-color: #002FA7; }
+
+        .section-alt {
+            background-color: #FFFFFF;
+        }
+        
+        /* Tooltip styles */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #6b7280;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 280px;
+            background-color: #1f2937;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -140px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.875rem;
+            line-height: 1.4;
+            font-weight: 400;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1f2937 transparent transparent transparent;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#hero" class="text-2xl font-bold ikb-blue">MAV 2.0</a>
+                <div class="hidden md:flex items-center space-x-4 text-sm font-medium">
+                    <a href="#market" class="text-gray-600 hover:ikb-blue transition">Market</a>
+                    <a href="#product" class="text-gray-600 hover:ikb-blue transition">Product</a>
+                    <a href="#financials" class="text-gray-600 hover:ikb-blue transition">Financials</a>
+                    <a href="#funding" class="text-gray-600 hover:ikb-blue transition">Funding</a>
+                    <a href="#gomarket" class="text-gray-600 hover:ikb-blue transition">GTM</a>
+                    <a href="#rl-framework" class="text-gray-600 hover:ikb-blue transition">Tech</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:ikb-blue focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+             <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#market" class="block text-gray-600 hover:ikb-blue transition">Market</a>
+                <a href="#product" class="block text-gray-600 hover:ikb-blue transition">Product</a>
+                <a href="#financials" class="block text-gray-600 hover:ikb-blue transition">Financials</a>
+                <a href="#funding" class="block text-gray-600 hover:ikb-blue transition">Funding</a>
+                <a href="#gomarket" class="block text-gray-600 hover:ikb-blue transition">Go-to-Market</a>
+                <a href="#rl-framework" class="block text-gray-600 hover:ikb-blue transition">Tech Framework</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold ikb-blue leading-tight">My Ads Vantage (MAV) 2.0</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">An AI-driven, end-to-end ad creation and automated placement platform, poised to revolutionize SME advertising in Southeast Asia.</p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h3 class="text-3xl font-bold ikb-blue">RM 3,300</h3>
+                        <p class="text-gray-500 mt-1 tooltip">Current MRR
+                            <span class="tooltiptext">Monthly Recurring Revenue from 11 paying beta testers at RM 300 each. Annualized (ARR), this is ~RM 39,600.</span>
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h3 class="text-3xl font-bold ikb-blue">60%</h3>
+                        <p class="text-gray-500 mt-1 tooltip">Target COGS
+                             <span class="tooltiptext">Cost of Goods Sold. We aim to reduce this from 85% to 60% of revenue, significantly improving our gross margin and unit economics.</span>
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h3 class="text-3xl font-bold ikb-blue">RM 1.5M</h3>
+                        <p class="text-gray-500 mt-1 tooltip">Funding Ask
+                            <span class="tooltiptext">Seeking RM 1.5M in our Growth Equity option to fund a 24+ month runway for marketing, development, and operations.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Opportunity -->
+        <section id="market" class="py-20 section-alt">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">A Multi-Billion Ringgit Opportunity</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Targeting a massive and growing digital ads market, starting with underserved SMEs in Malaysia and Singapore.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="p-6 bg-white rounded-lg shadow-md border border-blue-100">
+                            <p class="text-sm font-semibold ikb-blue tooltip">Total Addressable Market (TAM)
+                                <span class="tooltiptext">The total market demand for digital advertising in Southeast Asia. This represents the overall revenue opportunity available.</span>
+                            </p>
+                            <p class="text-3xl font-bold text-gray-800 mt-1">RM 5.4 Billion</p>
+                            <p class="text-sm text-gray-500">SEA Digital Ads (15% CAGR)</p>
+                        </div>
+                        <div class="p-6 bg-white rounded-lg shadow-md border border-blue-100">
+                            <p class="text-sm font-semibold ikb-blue tooltip">Serviceable Addressable Market (SAM)
+                                <span class="tooltiptext">The segment of the TAM targeted by our products and services, which is SMEs in Malaysia & Singapore.</span>
+                            </p>
+                            <p class="text-3xl font-bold text-gray-800 mt-1">RM 720 Million</p>
+                            <p class="text-sm text-gray-500">MY + SG SMEs (11% CAGR)</p>
+                        </div>
+                        <div class="p-6 bg-white rounded-lg shadow-md border border-blue-100">
+                            <p class="text-sm font-semibold ikb-blue tooltip">Serviceable Obtainable Market (SOM)
+                                <span class="tooltiptext">The portion of SAM we can realistically capture in the next 5 years (our target), representing RM 12M in Annual Recurring Revenue.</span>
+                            </p>
+                            <p class="text-3xl font-bold text-gray-800 mt-1">RM 12 Million <span class="text-lg font-medium text-gray-600">ARR</span></p>
+                            <p class="text-sm text-gray-500">5-Year Goal (2% of SAM)</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl mb-4 ikb-blue">Competitive Landscape</h3>
+                        <p class="text-gray-600 text-sm mb-4">While many tools handle parts of the ad process, MAV is unique in its full-funnel automation and localization for the SEA market.</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="p-2">Competitor</th>
+                                        <th class="p-2 tooltip">PS Multiple
+                                            <span class="tooltiptext">Price-to-Sales Multiple: A valuation metric comparing the company's stock price to its revenues. Higher multiples often indicate higher growth expectations.</span>
+                                        </th>
+                                        <th class="p-2">Key Gaps vs. MAV</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-semibold">Jasper.ai</td>
+                                        <td class="p-2">20x</td>
+                                        <td class="p-2">Long-form content focus, no ad placement</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-semibold">AdCreative.ai</td>
+                                        <td class="p-2">15x</td>
+                                        <td class="p-2">Creative generation only, no placement layer</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-semibold">Predis.ai</td>
+                                        <td class="p-2">10x</td>
+                                        <td class="p-2">Limited localized (SEA) creative capabilities</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 font-bold ikb-blue">MAV (Proposed)</td>
+                                        <td class="p-2 font-bold ikb-blue">5x</td>
+                                        <td class="p-2 font-bold ikb-blue">Full-funnel, localized, API-first, RL optimization</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product & Tech -->
+        <section id="product" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">The Full-Funnel Advantage</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Our detailed roadmap transforms MAV from an ad tool into a complete commerce suite for SMEs.</p>
+                </div>
+                <!-- Timeline -->
+                <div class="relative max-w-2xl mx-auto mt-12">
+                    <div class="absolute left-4 top-4 h-full w-0.5 bg-blue-200" aria-hidden="true"></div>
+                    <div class="space-y-12">
+                        <!-- Item 1 -->
+                        <div class="relative pl-12">
+                            <div class="absolute left-0 top-2 z-10 flex items-center justify-center w-8 h-8 bg-ikb-blue rounded-full text-white font-bold">1</div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <p class="font-bold text-ikb-blue">Phase 0: MVP Stabilization (Q3 2025)</p>
+                                <p class="text-sm text-gray-600 mt-1 tooltip">Deploy lightweight RL engine to auto-tune CTR > 3% & cap CPM < RM 150.
+                                    <span class="tooltiptext">Focus on stabilizing core features (copy/image gen) and proving the Reinforcement Learning concept with clear performance targets.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="relative pl-12">
+                            <div class="absolute left-0 top-2 z-10 flex items-center justify-center w-8 h-8 bg-ikb-blue rounded-full text-white font-bold">2</div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <p class="font-bold text-ikb-blue">Phase 1: RL Engine Launch (Q4 '25 - Q1 '26)</p>
+                                <p class="text-sm text-gray-600 mt-1 tooltip">Deploy full 5-stage RL agent and add cross-platform placement (Meta/TikTok/RedNote) with light CRM.
+                                    <span class="tooltiptext">Roll out the complete optimization engine and expand platform support, demonstrating a clear A/B test uplift of ≥ 15% versus baseline.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="relative pl-12">
+                            <div class="absolute left-0 top-2 z-10 flex items-center justify-center w-8 h-8 bg-ikb-blue rounded-full text-white font-bold">3</div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <p class="font-bold text-ikb-blue">Phase 2: Video & Analytics (Q2 2026)</p>
+                                <p class="text-sm text-gray-600 mt-1 tooltip">Introduce 5-60 sec AI video ads and a unified cross-platform analytics dashboard.
+                                    <span class="tooltiptext">Add high-value features like automated video creation and a central dashboard for users to track performance across all connected ad platforms.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="relative pl-12">
+                            <div class="absolute left-0 top-2 z-10 flex items-center justify-center w-8 h-8 bg-ikb-blue rounded-full text-white font-bold">4</div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <p class="font-bold text-ikb-blue">Phase 3: Platform Expansion (Q3-Q4 2026)</p>
+                                <p class="text-sm text-gray-600 mt-1 tooltip">Launch white-label portal for agencies, public API, and one-click Figma landing page generator.
+                                    <span class="tooltiptext">Evolve MAV into a platform by enabling agency resellers and developer integrations. The landing page generator closes the conversion loop.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="relative pl-12">
+                            <div class="absolute left-0 top-2 z-10 flex items-center justify-center w-8 h-8 bg-ikb-blue rounded-full text-white font-bold">5</div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <p class="font-bold text-ikb-blue">Phase 4: Commerce Tools (H1 2027)</p>
+                                <p class="text-sm text-gray-600 mt-1 tooltip">Enhance landing page builder and integrate basic e-commerce checkout flows.
+                                    <span class="tooltiptext">Begin the transition from an ad-tech tool to a full commerce solution, allowing users to not only generate leads but also process sales directly.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financials -->
+        <section id="financials" class="py-20 section-alt">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Path to Profitability</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">A clear financial roadmap showing strong revenue growth, disciplined cost management, and positive EBITDA by 2027.</p>
+                </div>
+                <div class="bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg">
+                    <canvas id="financialsChart"></canvas>
+                </div>
+                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="font-bold text-lg mb-4 tooltip">OPEX Breakdown (2026E)
+                            <span class="tooltiptext">Projected Operating Expenses for 2026. The focus is on Growth & BD (Marketing) and Backend Development to scale the product.</span>
+                        </h3>
+                        <canvas id="opexChart"></canvas>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="font-bold text-lg mb-4 tooltip">COGS Reduction Plan
+                             <span class="tooltiptext">Our strategy to reduce Cost of Goods Sold from 85% to 60% by Q1 2026 through prompt engineering, model optimization, and negotiating volume discounts for APIs.</span>
+                        </h3>
+                         <canvas id="cogsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funding -->
+        <section id="funding" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Funding Proposals</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Two strategic options to fuel our growth, providing a 24+ month runway for expansion and technology development.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="border-2 border-ikb-blue bg-blue-50/30 p-8 rounded-2xl flex flex-col">
+                        <h3 class="text-2xl font-bold ikb-blue">Option A: Growth Equity</h3>
+                        <p class="mt-2 text-gray-600 flex-grow">A straightforward equity investment for a significant stake and governance rights.</p>
+                        <div class="my-6 text-center">
+                            <p class="text-lg text-gray-700">Investment</p>
+                            <p class="text-5xl font-extrabold ikb-blue">RM 1.5M</p>
+                            <p class="text-lg text-gray-700 mt-2">for</p>
+                            <p class="text-5xl font-extrabold ikb-blue">16.7%</p>
+                            <p class="text-sm text-gray-500 mt-1 tooltip">(RM 7.5M Pre-Money)
+                                <span class="tooltiptext">Pre-Money Valuation is the company's value before receiving the investment. Post-Money valuation would be RM 9M (7.5M + 1.5M).</span>
+                            </p>
+                        </div>
+                        <ul class="space-y-3 text-gray-700 text-sm">
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Governance:</strong> 1 Board Seat</li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Protection:</strong> Weighted-average anti-dilution</li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Alignment:</strong> Direct alignment with founder for rapid growth</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-300 bg-white p-8 rounded-2xl flex flex-col">
+                        <h3 class="text-2xl font-bold text-gray-800">Option B: License + SAFE</h3>
+                        <p class="mt-2 text-gray-600 flex-grow">A hybrid model minimizing immediate dilution while providing revenue and future equity upside.</p>
+                        <div class="my-6 text-center">
+                            <p class="text-lg text-gray-700">Up-front License + SAFE</p>
+                            <p class="text-5xl font-extrabold text-gray-900">RM 1.0M</p>
+                            <p class="text-sm text-gray-500 mt-1">(RM 500k License + RM 500k SAFE)</p>
+                        </div>
+                        <ul class="space-y-3 text-gray-700 text-sm">
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Flexibility:</strong> Founder retains 100% ownership until conversion</li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Rights:</strong> 1-year exclusive license + 2% royalty</li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong class="tooltip">SAFE Terms
+                                <span class="tooltiptext">A Simple Agreement for Future Equity (SAFE) converts to equity in a future priced round. The Valuation Cap (RM 7M) sets the maximum valuation for conversion, and the Discount (20%) gives a price reduction.</span>
+                            </strong>: RM 7M Cap, 20% Discount</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Go to Market -->
+        <section id="gomarket" class="py-20 section-alt">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Go-to-Market Strategy</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">A phased approach to build momentum, establish partnerships, and scale customer acquisition efficiently.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
+                        <div class="mx-auto w-16 h-16 mb-4 bg-blue-100 rounded-full flex items-center justify-center"><p class="text-2xl font-bold ikb-blue">1</p></div>
+                        <h4 class="font-bold text-lg">Phase 1: Seeding</h4>
+                        <p class="ikb-blue text-sm font-semibold mb-2">(H2 2025)</p>
+                        <p class="text-sm text-gray-600 tooltip">Utilize social media and influencer marketing to generate initial buzz and user feedback.
+                             <span class="tooltiptext">Focus on demonstrating the product's value through demos and case studies with Key Opinion Leaders (KOLs) in the digital marketing space.</span>
+                        </p>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
+                        <div class="mx-auto w-16 h-16 mb-4 bg-blue-100 rounded-full flex items-center justify-center"><p class="text-2xl font-bold ikb-blue">2</p></div>
+                        <h4 class="font-bold text-lg">Phase 2: Partnerships</h4>
+                        <p class="ikb-blue text-sm font-semibold mb-2">(Q1 2026)</p>
+                        <p class="text-sm text-gray-600 tooltip">Establish partnerships with marketing agencies to integrate MAV into their workflow.
+                             <span class="tooltiptext">Offer agencies a powerful tool to serve their SME clients more efficiently. Pilot LOIs (Letters of Intent) are already in discussion.</span>
+                        </p>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
+                        <div class="mx-auto w-16 h-16 mb-4 bg-blue-100 rounded-full flex items-center justify-center"><p class="text-2xl font-bold ikb-blue">3</p></div>
+                        <h4 class="font-bold text-lg">Phase 3: Scale</h4>
+                        <p class="ikb-blue text-sm font-semibold mb-2">(Q2 2026)</p>
+                        <p class="text-sm text-gray-600 tooltip">Roll out Telco white-label bundles to reach a massive SME customer base.
+                            <span class="tooltiptext">Partner with telecommunication companies to offer MAV as a value-added service to their existing business customers, enabling rapid scaling.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RL Framework -->
+        <section id="rl-framework" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Proprietary RL Optimization</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Our core IP: a five-stage Reinforcement Learning framework that optimizes ad spend by impression volume, not just time, for faster, smarter scaling.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 text-center">
+                    <!-- Stage 1 -->
+                    <div class="p-4">
+                        <div class="bg-gray-100 p-4 rounded-lg h-full">
+                            <p class="font-bold ikb-blue">1. Test</p>
+                            <p class="text-sm text-gray-600 mt-2 tooltip">Rapidly sample various ad creatives and targeting to gather initial CTR signals.
+                                <span class="tooltiptext">Uses a multi-arm bandit approach to quickly identify promising ad variants with minimal initial spend.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Stage 2 -->
+                    <div class="p-4">
+                        <div class="bg-gray-100 p-4 rounded-lg h-full">
+                            <p class="font-bold ikb-blue">2. Scale</p>
+                            <p class="text-sm text-gray-600 mt-2 tooltip">Allocate more budget to the winning variants from the test phase.
+                                <span class="tooltiptext">Employs Thompson Sampling to intelligently balance exploiting known winners and exploring potentially new high-performers.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Stage 3 -->
+                    <div class="p-4">
+                        <div class="bg-gray-100 p-4 rounded-lg h-full">
+                            <p class="font-bold ikb-blue">3. Evergreen</p>
+                            <p class="text-sm text-gray-600 mt-2 tooltip">Maintain a set of "always-on" high-ROI ads while pruning underperformers.
+                                <span class="tooltiptext">This stage ensures a consistent baseline of performance and prevents ad fatigue by rotating creatives.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Stage 4 -->
+                    <div class="p-4">
+                        <div class="bg-gray-100 p-4 rounded-lg h-full">
+                            <p class="font-bold ikb-blue">4. Look-alike</p>
+                            <p class="text-sm text-gray-600 mt-2 tooltip">Expand reach by targeting new audiences similar to high-value converters.
+                                <span class="tooltiptext">Identifies top-performing audience segments and uses platform tools to find similar users, scaling reach effectively.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Stage 5 -->
+                    <div class="p-4">
+                        <div class="bg-gray-100 p-4 rounded-lg h-full">
+                            <p class="font-bold ikb-blue">5. Broad</p>
+                            <p class="text-sm text-gray-600 mt-2 tooltip">Gradually relax targeting to capture a wider, still-profitable audience.
+                                <span class="tooltiptext">Widens the audience net while using performance guardrails (CTR > 3%, CPM < RM 150) to ensure continued profitability.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-10 text-center">
+            <h3 class="text-2xl font-bold">Ready to Invest in the Future of SME Advertising?</h3>
+            <p class="mt-2 max-w-lg mx-auto text-gray-400">Contact Eason Leong to receive the full term sheet and begin due diligence.</p>
+            <div class="mt-6">
+                <a href="mailto:eason.leong@example.com" class="bg-ikb-blue text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-transform duration-200 ease-in-out transform hover:scale-105">Contact Us</a>
+            </div>
+            <p class="text-xs text-gray-500 mt-8">&copy; 2025 AI Driven Tech Sdn Bhd. All Rights Reserved. This document is confidential.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Chart.register(ChartDataLabels);
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if(mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Financials Chart
+            const financialsCtx = document.getElementById('financialsChart');
+            if (financialsCtx) {
+                new Chart(financialsCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['2025E', '2026E', '2027E'],
+                        datasets: [
+                            {
+                                label: 'Revenue',
+                                data: [0.04, 0.90, 3.00],
+                                backgroundColor: 'rgba(0, 47, 167, 0.6)',
+                                yAxisID: 'y',
+                                order: 2
+                            },
+                            {
+                                label: 'COGS',
+                                data: [0.03, 0.54, 1.80],
+                                backgroundColor: 'rgba(255, 159, 64, 0.6)',
+                                yAxisID: 'y',
+                                order: 2
+                            },
+                             {
+                                label: 'EBITDA',
+                                data: [-0.51, -0.15, 0.05],
+                                borderColor: '#10B981',
+                                backgroundColor: '#10B981',
+                                type: 'line',
+                                yAxisID: 'y2',
+                                tension: 0.1,
+                                order: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: { display: true, text: 'Financial Projections (in Millions RM)', font: { size: 16 } },
+                            tooltip: { 
+                                mode: 'index', 
+                                intersect: false,
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.y !== null) {
+                                            label += 'RM ' + context.parsed.y.toFixed(2) + 'm';
+                                        }
+                                        return label;
+                                    }
+                                }
+                            },
+                            datalabels: { display: false }
+                        },
+                        scales: {
+                            x: { stacked: true },
+                            y: {
+                                stacked: true, position: 'left',
+                                title: { display: true, text: 'Revenue & COGS (RM m)' }
+                            },
+                            y2: {
+                                stacked: false, position: 'right',
+                                title: { display: true, text: 'EBITDA (RM m)' },
+                                grid: { drawOnChartArea: false }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // OPEX Chart
+            const opexCtx = document.getElementById('opexChart');
+            if(opexCtx) {
+                new Chart(opexCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Growth & BD', 'Backend Dev', 'G&A', 'Creative Agency'],
+                        datasets: [{
+                            data: [0.30, 0.29, 0.20, 0.10],
+                            backgroundColor: ['rgba(0, 47, 167, 0.8)', 'rgba(0, 47, 167, 0.6)', 'rgba(0, 47, 167, 0.4)', 'rgba(0, 47, 167, 0.2)'],
+                            borderColor: '#ffffff',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { boxWidth: 12 } },
+                            tooltip: {
+                                callbacks: {
+                                    label: (context) => ` ${context.label}: RM ${context.parsed.toFixed(2)}m`
+                                }
+                            },
+                            datalabels: {
+                                formatter: (value, ctx) => {
+                                    const sum = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                    const percentage = (value / sum * 100).toFixed(0) + '%';
+                                    return percentage;
+                                },
+                                color: '#fff',
+                                font: { weight: 'bold' }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // COGS Chart
+            const cogsCtx = document.getElementById('cogsChart');
+            if(cogsCtx) {
+                new Chart(cogsCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Current', 'Q3 2025', 'Q4 2025', 'Q1 2026 (Target)'],
+                        datasets: [{
+                            label: 'COGS as % of Revenue',
+                            data: [85, 70, 65, 60],
+                            fill: true,
+                            borderColor: 'rgb(0, 47, 167)',
+                            backgroundColor: 'rgba(0, 47, 167, 0.1)',
+                            tension: 0.2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                ticks: { callback: (value) => value + '%' }
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: { label: (context) => `COGS: ${context.parsed.y}%` }
+                            },
+                            datalabels: { display: false }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

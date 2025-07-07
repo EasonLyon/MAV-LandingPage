@@ -11,5 +11,8 @@
       "Bash(sed:*)"
     ],
     "deny": []
+  },
+  "env": {
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "60000"
   }
 }

@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Ads Vantage (MAV) 2.0 - Investment Proposal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9FAFB;
+        }
+        /* International Klein Blue */
+        .ikb-blue { color: #002FA7; }
+        .bg-ikb-blue { background-color: #002FA7; }
+        .border-ikb-blue { border-color: #002FA7; }
+
+        .section-alt {
+            background-color: #FFFFFF;
+        }
+        
+        /* Tooltip styles */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #6b7280;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 280px;
+            background-color: #1f2937;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -140px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.875rem;
+            line-height: 1.4;
+            font-weight: 400;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1f2937 transparent transparent transparent;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Progress indicator */
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+            transition: all 0.3s;
+        }
+        .progress-dot.active {
+            background-color: #002FA7;
+            transform: scale(1.5);
+        }
+        
+        /* Expandable content */
+        .expandable {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .expandable.expanded {
+            max-height: 2000px;
+            transition: max-height 0.5s ease-in;
+        }
+        
+        /* Calculator styles */
+        .calculator-input {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            padding: 0.5rem 0.75rem;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+        .calculator-input:focus {
+            outline: none;
+            border-color: #002FA7;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#hero" class="text-2xl font-bold ikb-blue">MAV 2.0</a>
+                <div class="hidden md:flex items-center space-x-4 text-sm font-medium">
+                    <a href="#market" class="text-gray-600 hover:ikb-blue transition">Market</a>
+                    <a href="#team" class="text-gray-600 hover:ikb-blue transition">Team</a>
+                    <a href="#traction" class="text-gray-600 hover:ikb-blue transition">Traction</a>
+                    <a href="#product" class="text-gray-600 hover:ikb-blue transition">Product</a>
+                    <a href="#pricing" class="text-gray-600 hover:ikb-blue transition">Pricing</a>
+                    <a href="#financials" class="text-gray-600 hover:ikb-blue transition">Financials</a>
+                    <a href="#funding" class="text-gray-600 hover:ikb-blue transition">Funding</a>
+                    <a href="#risks" class="text-gray-600 hover:ikb-blue transition">Risks</a>
+                    <a href="#exit" class="text-gray-600 hover:ikb-blue transition">Exit</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:ikb-blue focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+             <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#market" class="block text-gray-600 hover:ikb-blue transition">Market</a>
+                <a href="#team" class="block text-gray-600 hover:ikb-blue transition">Team</a>
+                <a href="#traction" class="block text-gray-600 hover:ikb-blue transition">Traction</a>
+                <a href="#product" class="block text-gray-600 hover:ikb-blue transition">Product</a>
+                <a href="#pricing" class="block text-gray-600 hover:ikb-blue transition">Pricing</a>
+                <a href="#financials" class="block text-gray-600 hover:ikb-blue transition">Financials</a>
+                <a href="#funding" class="block text-gray-600 hover:ikb-blue transition">Funding</a>
+                <a href="#risks" class="block text-gray-600 hover:ikb-blue transition">Risks</a>
+                <a href="#exit" class="block text-gray-600 hover:ikb-blue transition">Exit Strategy</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Progress Indicator -->
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:flex flex-col space-y-3">
+        <div class="progress-dot" data-section="hero"></div>
+        <div class="progress-dot" data-section="market"></div>
+        <div class="progress-dot" data-section="team"></div>
+        <div class="progress-dot" data-section="traction"></div>
+        <div class="progress-dot" data-section="product"></div>
+        <div class="progress-dot" data-section="pricing"></div>
+        <div class="progress-dot" data-section="financials"></div>
+        <div class="progress-dot" data-section="funding"></div>
+        <div class="progress-dot" data-section="risks"></div>
+        <div class="progress-dot" data-section="exit"></div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <div class="mb-6 inline-flex items-center bg-blue-50 px-4 py-2 rounded-full">
+                    <span class="text-sm font-semibold ikb-blue">Why Now: SEA Digital Ad Spend Growing 15% CAGR</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold ikb-blue leading-tight">My Ads Vantage (MAV) 2.0</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">An AI-driven, end-to-end ad creation and automated placement platform, poised to revolutionize SME advertising in Southeast Asia.</p>
+                
+                <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm">
+                    <div class="flex items-center bg-green-50 px-3 py-1 rounded-full">
+                        <svg class="w-4 h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span class="text-green-700 font-medium">11 Paying Beta Users</span>
+                    </div>
+                    <div class="flex items-center bg-green-50 px-3 py-1 rounded-full">
+                        <svg class="w-4 h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span class="text-green-700 font-medium">RM 5.4B TAM</span>
+                    </div>
+                    <div class="flex items-center bg-green-50 px-3 py-1 rounded-full">
+                        <svg class="w-4 h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span class="text-green-700 font-medium">2.67x ROI Improvement Target</span>
+                    </div>
+                </div>
+                
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h3 class="text-3xl font-bold ikb-blue">RM 3,300</h3>
+                        <p class="text-gray-500 mt-1 tooltip">Current MRR
+                            <span class="tooltiptext">Monthly Recurring Revenue from 11 paying beta testers at RM 300 each. Annualized (ARR), this is ~RM 39,600.</span>
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h3 class="text-3xl font-bold ikb-blue">60%</h3>
+                        <p class="text-gray-500 mt-1 tooltip">Target COGS
+                             <span class="tooltiptext">Cost of Goods Sold. We aim to reduce this from 85% to 60% of revenue, significantly improving our gross margin and unit economics.</span>
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h3 class="text-3xl font-bold ikb-blue">RM 1.5M</h3>
+                        <p class="text-gray-500 mt-1 tooltip">Funding Ask
+                            <span class="tooltiptext">Seeking RM 1.5M in our Growth Equity option to fund a 24+ month runway for marketing, development, and operations.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Opportunity -->
+        <section id="market" class="py-20 section-alt">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">A Multi-Billion Ringgit Opportunity</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Targeting a massive and growing digital ads market, starting with underserved SMEs in Malaysia and Singapore.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="p-6 bg-white rounded-lg shadow-md border border-blue-100">
+                            <p class="text-sm font-semibold ikb-blue tooltip">Total Addressable Market (TAM)
+                                <span class="tooltiptext">The total market demand for digital advertising in Southeast Asia. This represents the overall revenue opportunity available.</span>
+                            </p>
+                            <p class="text-3xl font-bold text-gray-800 mt-1">RM 5.4 Billion</p>
+                            <p class="text-sm text-gray-500">SEA Digital Ads (15% CAGR)</p>
+                        </div>
+                        <div class="p-6 bg-white rounded-lg shadow-md border border-blue-100">
+                            <p class="text-sm font-semibold ikb-blue tooltip">Serviceable Addressable Market (SAM)
+                                <span class="tooltiptext">The segment of the TAM targeted by our products and services, which is SMEs in Malaysia & Singapore.</span>
+                            </p>
+                            <p class="text-3xl font-bold text-gray-800 mt-1">RM 720 Million</p>
+                            <p class="text-sm text-gray-500">MY + SG SMEs (11% CAGR)</p>
+                        </div>
+                        <div class="p-6 bg-white rounded-lg shadow-md border border-blue-100">
+                            <p class="text-sm font-semibold ikb-blue tooltip">Serviceable Obtainable Market (SOM)
+                                <span class="tooltiptext">The portion of SAM we can realistically capture in the next 5 years (our target), representing RM 12M in Annual Recurring Revenue.</span>
+                            </p>
+                            <p class="text-3xl font-bold text-gray-800 mt-1">RM 12 Million <span class="text-lg font-medium text-gray-600">ARR</span></p>
+                            <p class="text-sm text-gray-500">5-Year Goal (2% of SAM)</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl mb-4 ikb-blue">Competitive Landscape</h3>
+                        <p class="text-gray-600 text-sm mb-4">While many tools handle parts of the ad process, MAV is unique in its full-funnel automation and localization for the SEA market.</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="p-2">Competitor</th>
+                                        <th class="p-2 tooltip">PS Multiple
+                                            <span class="tooltiptext">Price-to-Sales Multiple: A valuation metric comparing the company's stock price to its revenues. Higher multiples often indicate higher growth expectations.</span>
+                                        </th>
+                                        <th class="p-2">Key Gaps vs. MAV</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-semibold">Jasper.ai</td>
+                                        <td class="p-2">20x</td>
+                                        <td class="p-2">Long-form content focus, no ad placement</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-semibold">AdCreative.ai</td>
+                                        <td class="p-2">15x</td>
+                                        <td class="p-2">Creative generation only, no placement layer</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-semibold">Predis.ai</td>
+                                        <td class="p-2">10x</td>
+                                        <td class="p-2">Limited localized (SEA) creative capabilities</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 font-bold ikb-blue">MAV (Proposed)</td>
+                                        <td class="p-2 font-bold ikb-blue">5x</td>
+                                        <td class="p-2 font-bold ikb-blue">Full-funnel, localized, API-first, RL optimization</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Proven Team with Deep Domain Expertise</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Led by a successful entrepreneur with a track record in digital marketing and algorithmic optimization.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Founder -->
+                    <div class="bg-gray-50 p-6 rounded-xl text-center">
+                        <div class="w-24 h-24 bg-ikb-blue rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold">EL</span>
+                        </div>
+                        <h3 class="text-xl font-bold">Eason Leong</h3>
+                        <p class="text-sm ikb-blue font-semibold">Founder & Product Owner</p>
+                        <div class="mt-4 space-y-2 text-sm text-gray-600 text-left">
+                            <p class="flex items-start">
+                                <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                Alpha Masterclass Founder
+                            </p>
+                            <p class="flex items-start">
+                                <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                RM 2.5M Annual Revenue
+                            </p>
+                            <p class="flex items-start">
+                                <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                $4.9M AUM Managed
+                            </p>
+                            <p class="flex items-start">
+                                <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                Statistical & Algorithmic Trading Background
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Solution Architect -->
+                    <div class="bg-gray-50 p-6 rounded-xl text-center">
+                        <div class="w-24 h-24 bg-gray-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold">C</span>
+                        </div>
+                        <h3 class="text-xl font-bold">Chin</h3>
+                        <p class="text-sm ikb-blue font-semibold">Solution Architect</p>
+                        <div class="mt-4 space-y-2 text-sm text-gray-600 text-left">
+                            <p class="flex items-start">
+                                <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                Former News Aggregator Architect
+                            </p>
+                            <p class="flex items-start">
+                                <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                10+ Years Tech Experience
+                            </p>
+                            <p class="flex items-start">
+                                <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                AI/ML Infrastructure Expert
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Open Position -->
+                    <div class="bg-gray-50 p-6 rounded-xl text-center border-2 border-dashed border-gray-300">
+                        <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Growth BD Lead</h3>
+                        <p class="text-sm ikb-blue font-semibold">Open Position</p>
+                        <div class="mt-4 space-y-2 text-sm text-gray-600 text-left">
+                            <p>Requirements:</p>
+                            <p class="flex items-start">
+                                <svg class="w-4 h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                Ex-Telco BD Experience
+                            </p>
+                            <p class="flex items-start">
+                                <svg class="w-4 h-4 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                SME Market Knowledge
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <p class="text-sm text-gray-500">+ Backend development team (1-year contract) + Creative agency for UI/UX sprints</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Traction Section -->
+        <section id="traction" class="py-20 section-alt">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Early Traction & Validation</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Strong early adoption from beta users validates our product-market fit and unit economics.</p>
+                </div>
+                
+                <!-- Traction Metrics -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                    <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                        <div class="mb-4">
+                            <div class="text-sm text-gray-600 mb-2">June 2025</div>
+                            <div class="text-4xl font-bold ikb-blue mb-2">11</div>
+                        </div>
+                        <h4 class="font-bold text-lg">User Growth</h4>
+                        <p class="text-sm text-gray-500">11 paying users in first month</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                        <div class="text-4xl font-bold ikb-blue mb-2">95%</div>
+                        <h4 class="font-bold text-lg">Retention Rate</h4>
+                        <p class="text-sm text-gray-500">Month-over-month</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                        <div class="text-4xl font-bold ikb-blue mb-2">3.8%</div>
+                        <h4 class="font-bold text-lg">Avg CTR</h4>
+                        <p class="text-sm text-gray-500">vs 2.1% industry average</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                        <div class="text-4xl font-bold ikb-blue mb-2">RM 125</div>
+                        <h4 class="font-bold text-lg">Avg CPM</h4>
+                        <p class="text-sm text-gray-500">vs RM 180 industry average</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Product & Tech -->
+        <section id="product" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">The Full-Funnel Advantage</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Our detailed roadmap transforms MAV from an ad tool into a complete commerce suite for SMEs.</p>
+                </div>
+                <!-- Timeline -->
+                <div class="relative max-w-2xl mx-auto mt-12">
+                    <div class="absolute left-4 top-4 h-full w-0.5 bg-blue-200" aria-hidden="true"></div>
+                    <div class="space-y-12">
+                        <!-- Item 1 -->
+                        <div class="relative pl-12">
+                            <div class="absolute left-0 top-2 z-10 flex items-center justify-center w-8 h-8 bg-ikb-blue rounded-full text-white font-bold">1</div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <p class="font-bold text-ikb-blue">Phase 0: MVP Stabilization (Q3 2025)</p>
+                                <p class="text-sm text-gray-600 mt-1">Deploy lightweight RL engine to auto-tune CTR > 3% & cap CPM < RM 150.</p>
+                                <div class="mt-2 flex items-center text-xs text-green-600">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    Success Metric: Error rate < 2%
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="relative pl-12">
+                            <div class="absolute left-0 top-2 z-10 flex items-center justify-center w-8 h-8 bg-ikb-blue rounded-full text-white font-bold">2</div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <p class="font-bold text-ikb-blue">Phase 1: RL Engine Launch (Q4 '25 - Q1 '26)</p>
+                                <p class="text-sm text-gray-600 mt-1">Deploy full 5-stage RL agent and add cross-platform placement (Meta/TikTok/RedNote) with light CRM.</p>
+                                <div class="mt-2 flex items-center text-xs text-green-600">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    Success Metric: A/B test uplift ≥ 15%
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="relative pl-12">
+                            <div class="absolute left-0 top-2 z-10 flex items-center justify-center w-8 h-8 bg-ikb-blue rounded-full text-white font-bold">3</div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <p class="font-bold text-ikb-blue">Phase 2: Video & Analytics (Q2 2026)</p>
+                                <p class="text-sm text-gray-600 mt-1">Introduce 5-60 sec AI video ads and a unified cross-platform analytics dashboard.</p>
+                                <div class="mt-2 flex items-center text-xs text-green-600">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    Success Metric: +25% engagement vs static
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="relative pl-12">
+                            <div class="absolute left-0 top-2 z-10 flex items-center justify-center w-8 h-8 bg-ikb-blue rounded-full text-white font-bold">4</div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <p class="font-bold text-ikb-blue">Phase 3: Platform Expansion (Q3-Q4 2026)</p>
+                                <p class="text-sm text-gray-600 mt-1">Launch white-label portal for agencies, public API, and one-click Figma landing page generator.</p>
+                                <div class="mt-2 space-y-1">
+                                    <div class="flex items-center text-xs text-green-600">
+                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                        Success: 2 telco pilots, 3 agencies
+                                    </div>
+                                    <div class="flex items-center text-xs text-orange-600">
+                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                        Patent filing: Q4 2026
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="relative pl-12">
+                            <div class="absolute left-0 top-2 z-10 flex items-center justify-center w-8 h-8 bg-ikb-blue rounded-full text-white font-bold">5</div>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <p class="font-bold text-ikb-blue">Phase 4: Commerce Tools (H1 2027)</p>
+                                <p class="text-sm text-gray-600 mt-1">Enhance landing page builder and integrate basic e-commerce checkout flows.</p>
+                                <div class="mt-2 flex items-center text-xs text-green-600">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    Success: 50 sites with checkout
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SaaS Pricing Strategy -->
+        <section id="pricing" class="py-20 section-alt">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">SaaS Pricing Strategy</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Flexible pricing tiers designed to scale with our customers' growth, from startups to agencies.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-8">
+                    <!-- Free Tier -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Free</h3>
+                        <div class="mb-4">
+                            <span class="text-4xl font-bold text-gray-800">$0</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <p class="text-sm text-gray-600"><strong>5 ads</strong> per month</p>
+                            <p class="text-sm text-gray-600">Basic templates</p>
+                            <p class="text-sm text-gray-600">Community support</p>
+                            <p class="text-sm text-gray-600">Manual placement</p>
+                        </div>
+                        <button class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-lg font-semibold">Get Started</button>
+                    </div>
+                    
+                    <!-- Startup Tier -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Startup</h3>
+                        <div class="mb-4">
+                            <span class="text-4xl font-bold ikb-blue">$20</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <p class="text-sm text-gray-600"><strong>20 ads</strong> per month</p>
+                            <p class="text-sm text-gray-600">Advanced templates</p>
+                            <p class="text-sm text-gray-600">Email support</p>
+                            <p class="text-sm text-gray-600">Basic automation</p>
+                        </div>
+                        <button class="w-full bg-ikb-blue text-white py-2 px-4 rounded-lg font-semibold hover:opacity-90">Choose Plan</button>
+                    </div>
+                    
+                    <!-- SME Tier -->
+                    <div class="bg-white border-2 border-ikb-blue rounded-2xl p-6 text-center relative mt-4">
+                        <div class="absolute -top-2 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-ikb-blue text-white px-2 py-1 rounded-full text-xs font-medium">Most Popular</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">SME</h3>
+                        <div class="mb-4">
+                            <span class="text-4xl font-bold ikb-blue">$35</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <p class="text-sm text-gray-600"><strong>35 ads</strong> per month</p>
+                            <p class="text-sm text-gray-600">Full template library</p>
+                            <p class="text-sm text-gray-600">Priority support</p>
+                            <p class="text-sm text-gray-600">RL optimization</p>
+                        </div>
+                        <button class="w-full bg-ikb-blue text-white py-2 px-4 rounded-lg font-semibold hover:opacity-90">Choose Plan</button>
+                    </div>
+                    
+                    <!-- Agency Tier -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Agency</h3>
+                        <div class="mb-4">
+                            <span class="text-4xl font-bold ikb-blue">$70</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <div class="space-y-3 mb-6">
+                            <p class="text-sm text-gray-600"><strong>100 ads</strong> per month</p>
+                            <p class="text-sm text-gray-600">White-label portal</p>
+                            <p class="text-sm text-gray-600">Dedicated support</p>
+                            <p class="text-sm text-gray-600">Multi-client management</p>
+                        </div>
+                        <button class="w-full bg-ikb-blue text-white py-2 px-4 rounded-lg font-semibold hover:opacity-90">Choose Plan</button>
+                    </div>
+                </div>
+                
+                <!-- Enterprise/API Tier -->
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-200 rounded-2xl p-8 text-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Enterprise API</h3>
+                        <p class="text-gray-600 mb-4">Pay-as-you-go API endpoints for high-volume usage and custom integrations</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-sm">
+                            <div class="bg-white p-3 rounded-lg">
+                                <p class="font-semibold">Unlimited ads</p>
+                                <p class="text-gray-500">No monthly limits</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg">
+                                <p class="font-semibold">Custom pricing</p>
+                                <p class="text-gray-500">Volume discounts</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg">
+                                <p class="font-semibold">Full API access</p>
+                                <p class="text-gray-500">Complete integration</p>
+                            </div>
+                        </div>
+                        <button class="bg-gray-800 text-white py-3 px-8 rounded-lg font-semibold hover:bg-gray-700">Contact for Pricing</button>
+                    </div>
+                </div>
+                
+                <!-- Pricing Insights -->
+                <div class="mt-12 bg-white p-6 rounded-2xl shadow-sm max-w-4xl mx-auto">
+                    <h3 class="text-lg font-bold mb-4 ikb-blue text-center">Pricing Strategy Insights</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold ikb-blue mb-2">$1.75</div>
+                            <p class="text-gray-600">Cost per ad (SME tier)</p>
+                            <p class="text-xs text-gray-500 mt-1">vs $5-15 agency rates</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold ikb-blue mb-2">70%</div>
+                            <p class="text-gray-600">Target gross margin</p>
+                            <p class="text-xs text-gray-500 mt-1">After COGS optimization</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold ikb-blue mb-2">2.5x</div>
+                            <p class="text-gray-600">Price elasticity room</p>
+                            <p class="text-xs text-gray-500 mt-1">Before hitting market ceiling</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financials with Unit Economics -->
+        <section id="financials" class="py-20 section-alt">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Path to Profitability</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">A clear financial roadmap showing strong revenue growth, disciplined cost management, and positive EBITDA by 2027.</p>
+                </div>
+                
+                <!-- Unit Economics Section -->
+                <div class="mb-12 bg-white p-6 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 ikb-blue">Unit Economics Deep Dive</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <h4 class="font-semibold text-gray-700 mb-3">Cost Per Copy</h4>
+                            <div class="flex items-center justify-center space-x-4">
+                                <div class="bg-red-50 px-4 py-2 rounded-lg">
+                                    <p class="text-2xl font-bold text-red-600">$0.08</p>
+                                    <p class="text-xs text-gray-500">Current</p>
+                                </div>
+                                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                <div class="bg-green-50 px-4 py-2 rounded-lg">
+                                    <p class="text-2xl font-bold text-green-600">$0.05</p>
+                                    <p class="text-xs text-gray-500">Target</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="font-semibold text-gray-700 mb-3">Cost Per Image</h4>
+                            <div class="flex items-center justify-center space-x-4">
+                                <div class="bg-red-50 px-4 py-2 rounded-lg">
+                                    <p class="text-2xl font-bold text-red-600">$0.20</p>
+                                    <p class="text-xs text-gray-500">Current</p>
+                                </div>
+                                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                <div class="bg-green-50 px-4 py-2 rounded-lg">
+                                    <p class="text-2xl font-bold text-green-600">$0.08</p>
+                                    <p class="text-xs text-gray-500">Target</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="font-semibold text-gray-700 mb-3">CAC : LTV Ratio</h4>
+                            <div class="flex items-center justify-center">
+                                <div class="bg-blue-50 px-6 py-4 rounded-lg">
+                                    <p class="text-3xl font-bold ikb-blue">1:3.2</p>
+                                    <p class="text-xs text-gray-500">Post-funding target</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <button id="expandUnitEcon" class="text-sm ikb-blue font-semibold hover:underline">
+                            Show detailed calculations →
+                        </button>
+                    </div>
+                    <div id="unitEconDetails" class="expandable mt-4">
+                        <div class="border-t pt-4 space-y-3 text-sm">
+                            <p><strong>CAC Calculation:</strong> RM 600 pre-funding → RM 420 post-funding (30% reduction via channel partnerships)</p>
+                            <p><strong>LTV Calculation:</strong> RM 300 MRR × 14 months average retention = RM 4,200 LTV</p>
+                            <p><strong>Payback Period:</strong> 1.4 months (RM 420 CAC ÷ RM 300 MRR)</p>
+                            <p><strong>Gross Margin Evolution:</strong> 15% (2025) → 40% (2026) → 40% (2027)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg">
+                    <canvas id="financialsChart"></canvas>
+                </div>
+                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="font-bold text-lg mb-4 tooltip">OPEX Breakdown (2026E)
+                            <span class="tooltiptext">Projected Operating Expenses for 2026. The focus is on Growth & BD (Marketing) and Backend Development to scale the product.</span>
+                        </h3>
+                        <canvas id="opexChart"></canvas>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="font-bold text-lg mb-4 tooltip">COGS Reduction Plan
+                             <span class="tooltiptext">Our strategy to reduce Cost of Goods Sold from 85% to 60% by Q1 2026 through prompt engineering, model optimization, and negotiating volume discounts for APIs.</span>
+                        </h3>
+                         <canvas id="cogsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funding with Use of Funds -->
+        <section id="funding" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Funding Proposals</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Two strategic options to fuel our growth, providing a 24+ month runway for expansion and technology development.</p>
+                </div>
+                
+                <!-- Use of Funds Visualization -->
+                <div class="mb-12 bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-6 text-center">Use of Funds (RM 1.5M)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <canvas id="useOfFundsChart"></canvas>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-4 h-4 bg-blue-600 rounded mt-0.5 mr-3 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-semibold">40% - Marketing & BD (RM 600k)</p>
+                                    <p class="text-sm text-gray-600">Telco partnerships, social media campaigns, KOL demos</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-4 h-4 bg-blue-500 rounded mt-0.5 mr-3 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-semibold">30% - Development (RM 450k)</p>
+                                    <p class="text-sm text-gray-600">RL engine, GPU infrastructure, API integrations</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-4 h-4 bg-blue-400 rounded mt-0.5 mr-3 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-semibold">20% - Creative & UI/UX (RM 300k)</p>
+                                    <p class="text-sm text-gray-600">Agency retainer, Eason-led UI sprints</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-4 h-4 bg-blue-300 rounded mt-0.5 mr-3 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-semibold">10% - Operations (RM 150k)</p>
+                                    <p class="text-sm text-gray-600">Legal, accounting, admin, buffer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="border-2 border-ikb-blue bg-blue-50/30 p-8 rounded-2xl flex flex-col">
+                        <h3 class="text-2xl font-bold ikb-blue">Option A: Growth Equity</h3>
+                        <p class="mt-2 text-gray-600 flex-grow">A straightforward equity investment for a significant stake and governance rights.</p>
+                        <div class="my-6 text-center">
+                            <p class="text-lg text-gray-700">Investment</p>
+                            <p class="text-5xl font-extrabold ikb-blue">RM 1.5M</p>
+                            <p class="text-lg text-gray-700 mt-2">for</p>
+                            <p class="text-5xl font-extrabold ikb-blue">16.7%</p>
+                            <p class="text-sm text-gray-500 mt-1 tooltip">(RM 7.5M Pre-Money)
+                                <span class="tooltiptext">Pre-Money Valuation is the company's value before receiving the investment. Post-Money valuation would be RM 9M (7.5M + 1.5M).</span>
+                            </p>
+                        </div>
+                        <ul class="space-y-3 text-gray-700 text-sm">
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Governance:</strong> 1 Board Seat</li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Protection:</strong> Weighted-average anti-dilution</li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Alignment:</strong> Direct alignment with founder for rapid growth</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-300 bg-white p-8 rounded-2xl flex flex-col">
+                        <h3 class="text-2xl font-bold text-gray-800">Option B: License + SAFE</h3>
+                        <p class="mt-2 text-gray-600 flex-grow">A hybrid model minimizing immediate dilution while providing revenue and future equity upside.</p>
+                        <div class="my-6 text-center">
+                            <p class="text-lg text-gray-700">Up-front License + SAFE</p>
+                            <p class="text-5xl font-extrabold text-gray-900">RM 1.0M</p>
+                            <p class="text-sm text-gray-500 mt-1">(RM 500k License + RM 500k SAFE)</p>
+                        </div>
+                        <ul class="space-y-3 text-gray-700 text-sm">
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Flexibility:</strong> Founder retains 100% ownership until conversion</li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong>Rights:</strong> 1-year exclusive license + 2% royalty</li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-ikb-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <strong class="tooltip">SAFE Terms
+                                <span class="tooltiptext">A Simple Agreement for Future Equity (SAFE) converts to equity in a future priced round. The Valuation Cap (RM 7M) sets the maximum valuation for conversion, and the Discount (20%) gives a price reduction.</span>
+                            </strong>: RM 7M Cap, 20% Discount</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Risk Mitigation -->
+        <section id="risks" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Risk Analysis & Mitigation</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">We've identified key risks and developed comprehensive mitigation strategies.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gray-50 rounded-2xl p-8">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-gray-200">
+                                    <th class="text-left pb-4 font-semibold">Risk Factor</th>
+                                    <th class="text-left pb-4 font-semibold">Impact</th>
+                                    <th class="text-left pb-4 font-semibold">Mitigation Strategy</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="py-4 pr-4 align-top">
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-yellow-400 rounded-full mr-2"></div>
+                                            <span class="font-medium">API Dependency</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 pr-4 text-sm text-gray-600 align-top">Medium</td>
+                                    <td class="py-4 text-sm text-gray-600">
+                                        Multi-provider strategy with OpenAI, Anthropic, and open-source models. Migration plan to self-hosted infrastructure at scale.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 pr-4 align-top">
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-orange-400 rounded-full mr-2"></div>
+                                            <span class="font-medium">Competition from Tech Giants</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 pr-4 text-sm text-gray-600 align-top">High</td>
+                                    <td class="py-4 text-sm text-gray-600">
+                                        Focus on SEA localization moat, SME-specific features, and white-label partnerships. Build defensible IP around RL optimization.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 pr-4 align-top">
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-yellow-400 rounded-full mr-2"></div>
+                                            <span class="font-medium">Customer Acquisition Costs</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 pr-4 text-sm text-gray-600 align-top">Medium</td>
+                                    <td class="py-4 text-sm text-gray-600">
+                                        Channel partnerships (telcos, agencies) for lower CAC. Viral features and referral programs. Content marketing strategy.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 pr-4 align-top">
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
+                                            <span class="font-medium">Technology Obsolescence</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 pr-4 text-sm text-gray-600 align-top">Low</td>
+                                    <td class="py-4 text-sm text-gray-600">
+                                        Continuous R&D investment. Modular architecture for easy updates. Strong partnerships with AI providers.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 pr-4 align-top">
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
+                                            <span class="font-medium">Regulatory Changes</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4 pr-4 text-sm text-gray-600 align-top">Low</td>
+                                    <td class="py-4 text-sm text-gray-600">
+                                        Compliance framework in place. Regular legal reviews. Adaptable platform for new requirements.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Go to Market -->
+        <section id="gomarket" class="py-20 section-alt">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Go-to-Market Strategy</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">A phased approach to build momentum, establish partnerships, and scale customer acquisition efficiently.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
+                        <div class="mx-auto w-16 h-16 mb-4 bg-blue-100 rounded-full flex items-center justify-center"><p class="text-2xl font-bold ikb-blue">1</p></div>
+                        <h4 class="font-bold text-lg">Phase 1: Seeding</h4>
+                        <p class="ikb-blue text-sm font-semibold mb-2">(H2 2025)</p>
+                        <p class="text-sm text-gray-600 tooltip">Utilize social media and influencer marketing to generate initial buzz and user feedback.
+                             <span class="tooltiptext">Focus on demonstrating the product's value through demos and case studies with Key Opinion Leaders (KOLs) in the digital marketing space.</span>
+                        </p>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
+                        <div class="mx-auto w-16 h-16 mb-4 bg-blue-100 rounded-full flex items-center justify-center"><p class="text-2xl font-bold ikb-blue">2</p></div>
+                        <h4 class="font-bold text-lg">Phase 2: Partnerships</h4>
+                        <p class="ikb-blue text-sm font-semibold mb-2">(Q1 2026)</p>
+                        <p class="text-sm text-gray-600 tooltip">Establish partnerships with marketing agencies to integrate MAV into their workflow.
+                             <span class="tooltiptext">Offer agencies a powerful tool to serve their SME clients more efficiently. Pilot LOIs (Letters of Intent) are already in discussion.</span>
+                        </p>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
+                        <div class="mx-auto w-16 h-16 mb-4 bg-blue-100 rounded-full flex items-center justify-center"><p class="text-2xl font-bold ikb-blue">3</p></div>
+                        <h4 class="font-bold text-lg">Phase 3: Scale</h4>
+                        <p class="ikb-blue text-sm font-semibold mb-2">(Q2 2026)</p>
+                        <p class="text-sm text-gray-600 tooltip">Roll out Telco white-label bundles to reach a massive SME customer base.
+                            <span class="tooltiptext">Partner with telecommunication companies to offer MAV as a value-added service to their existing business customers, enabling rapid scaling.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RL Framework -->
+        <section id="rl-framework" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Proprietary RL Optimization</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Our core IP: a five-stage Reinforcement Learning framework that optimizes ad spend by impression volume, not just time, for faster, smarter scaling.</p>
+                </div>
+                
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 text-center">
+                    <!-- Stage 1 -->
+                    <div class="p-4">
+                        <div class="bg-gray-100 p-4 rounded-lg h-full">
+                            <p class="font-bold ikb-blue">1. Test</p>
+                            <p class="text-sm text-gray-600 mt-2 tooltip">Rapidly sample various ad creatives and targeting to gather initial CTR signals.
+                                <span class="tooltiptext">Uses a multi-arm bandit approach to quickly identify promising ad variants with minimal initial spend.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Stage 2 -->
+                    <div class="p-4">
+                        <div class="bg-gray-100 p-4 rounded-lg h-full">
+                            <p class="font-bold ikb-blue">2. Scale</p>
+                            <p class="text-sm text-gray-600 mt-2 tooltip">Allocate more budget to the winning variants from the test phase.
+                                <span class="tooltiptext">Employs Thompson Sampling to intelligently balance exploiting known winners and exploring potentially new high-performers.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Stage 3 -->
+                    <div class="p-4">
+                        <div class="bg-gray-100 p-4 rounded-lg h-full">
+                            <p class="font-bold ikb-blue">3. Evergreen</p>
+                            <p class="text-sm text-gray-600 mt-2 tooltip">Maintain a set of "always-on" high-ROI ads while pruning underperformers.
+                                <span class="tooltiptext">This stage ensures a consistent baseline of performance and prevents ad fatigue by rotating creatives.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Stage 4 -->
+                    <div class="p-4">
+                        <div class="bg-gray-100 p-4 rounded-lg h-full">
+                            <p class="font-bold ikb-blue">4. Look-alike</p>
+                            <p class="text-sm text-gray-600 mt-2 tooltip">Expand reach by targeting new audiences similar to high-value converters.
+                                <span class="tooltiptext">Identifies top-performing audience segments and uses platform tools to find similar users, scaling reach effectively.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Stage 5 -->
+                    <div class="p-4">
+                        <div class="bg-gray-100 p-4 rounded-lg h-full">
+                            <p class="font-bold ikb-blue">5. Broad</p>
+                            <p class="text-sm text-gray-600 mt-2 tooltip">Gradually relax targeting to capture a wider, still-profitable audience.
+                                <span class="tooltiptext">Widens the audience net while using performance guardrails (CTR > 3%, CPM < RM 150) to ensure continued profitability.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exit Strategy -->
+        <section id="exit" class="py-20 section-alt">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">Exit Strategy & Returns</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Clear paths to liquidity with attractive returns based on conservative multiples.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Exit Scenarios -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 ikb-blue">Exit Scenarios</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold">Trade Sale to Regional Player</h4>
+                                <p class="text-sm text-gray-600 mt-1">Timeline: 3-4 years</p>
+                                <p class="text-sm text-gray-600">Valuation: 8x ARR (RM 24M on RM 3M ARR)</p>
+                                <p class="text-sm font-semibold text-green-600 mt-1">Investor Return: 5x (45% IRR)</p>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold">Strategic Acquisition</h4>
+                                <p class="text-sm text-gray-600 mt-1">Timeline: 4-5 years</p>
+                                <p class="text-sm text-gray-600">Valuation: 10x ARR (RM 30M on RM 3M ARR)</p>
+                                <p class="text-sm font-semibold text-green-600 mt-1">Investor Return: 6.7x (55% IRR)</p>
+                            </div>
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-semibold">IPO (Bursa/ACE Market)</h4>
+                                <p class="text-sm text-gray-600 mt-1">Timeline: 5-7 years</p>
+                                <p class="text-sm text-gray-600">Valuation: 12x ARR (RM 144M on RM 12M ARR)</p>
+                                <p class="text-sm font-semibold text-green-600 mt-1">Investor Return: 20x+ (65% IRR)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comparable Exits -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 ikb-blue">Recent Comparable Exits</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="p-2 text-left">Company</th>
+                                        <th class="p-2 text-left">Exit Value</th>
+                                        <th class="p-2 text-left">Multiple</th>
+                                        <th class="p-2 text-left">Acquirer</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y">
+                                    <tr>
+                                        <td class="p-2">Socialbakers</td>
+                                        <td class="p-2">$110M</td>
+                                        <td class="p-2">11x</td>
+                                        <td class="p-2">Emplifi</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2">Sizmek</td>
+                                        <td class="p-2">$36M</td>
+                                        <td class="p-2">8x</td>
+                                        <td class="p-2">Amazon</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2">Kenshoo</td>
+                                        <td class="p-2">$150M</td>
+                                        <td class="p-2">15x</td>
+                                        <td class="p-2">Skai</td>
+                                    </tr>
+                                    <tr class="font-semibold bg-blue-50">
+                                        <td class="p-2">MAV Target</td>
+                                        <td class="p-2">RM 24-30M</td>
+                                        <td class="p-2">8-10x</td>
+                                        <td class="p-2">Regional Telco/Tech</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-3">*Based on SEA market comparables and conservative multiples</p>
+                    </div>
+                </div>
+                
+                <!-- Strategic Buyers -->
+                <div class="mt-12 bg-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto">
+                    <h3 class="text-xl font-bold mb-6 ikb-blue text-center">Potential Strategic Buyers</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        <div>
+                            <div class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                            </div>
+                            <p class="font-semibold text-sm">Regional Telcos</p>
+                            <p class="text-xs text-gray-500">Singtel, Axiata, TM</p>
+                        </div>
+                        <div>
+                            <div class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            </div>
+                            <p class="font-semibold text-sm">Ad Tech Giants</p>
+                            <p class="text-xs text-gray-500">Google, Meta, ByteDance</p>
+                        </div>
+                        <div>
+                            <div class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                            </div>
+                            <p class="font-semibold text-sm">E-commerce</p>
+                            <p class="text-xs text-gray-500">Shopee, Lazada, Grab</p>
+                        </div>
+                        <div>
+                            <div class="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-2 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <p class="font-semibold text-sm">PE/Strategic</p>
+                            <p class="text-xs text-gray-500">KKR, Temasek, GIC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-10 text-center">
+            <h3 class="text-2xl font-bold">Ready to Invest in the Future of SME Advertising?</h3>
+            <p class="mt-2 max-w-lg mx-auto text-gray-400">Contact Eason Leong to receive the full term sheet and begin due diligence.</p>
+            <p class="mt-4 max-w-xl mx-auto text-gray-300 text-sm">Detailed briefings for each section are available upon face-to-face meetup.</p>
+            <p class="text-xs text-gray-500 mt-8">&copy; 2025 AI Driven Tech Sdn Bhd. All Rights Reserved. This document is confidential.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Chart.register(ChartDataLabels);
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if(mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Progress indicator
+            const sections = document.querySelectorAll('section[id]');
+            const progressDots = document.querySelectorAll('.progress-dot');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                progressDots.forEach(dot => {
+                    dot.classList.remove('active');
+                    if (dot.getAttribute('data-section') === current) {
+                        dot.classList.add('active');
+                    }
+                });
+            });
+            
+            // Expandable content
+            const expandBtn = document.getElementById('expandUnitEcon');
+            const expandContent = document.getElementById('unitEconDetails');
+            if (expandBtn && expandContent) {
+                expandBtn.addEventListener('click', () => {
+                    expandContent.classList.toggle('expanded');
+                    expandBtn.textContent = expandContent.classList.contains('expanded') 
+                        ? 'Hide calculations ↑' 
+                        : 'Show detailed calculations →';
+                });
+            }
+            
+            
+
+            // Financials Chart
+            const financialsCtx = document.getElementById('financialsChart');
+            if (financialsCtx) {
+                new Chart(financialsCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['2025E', '2026E', '2027E'],
+                        datasets: [
+                            {
+                                label: 'Revenue',
+                                data: [0.04, 0.90, 3.00],
+                                backgroundColor: 'rgba(0, 47, 167, 0.6)',
+                                yAxisID: 'y',
+                                order: 2
+                            },
+                            {
+                                label: 'COGS',
+                                data: [0.03, 0.54, 1.80],
+                                backgroundColor: 'rgba(255, 159, 64, 0.6)',
+                                yAxisID: 'y',
+                                order: 2
+                            },
+                             {
+                                label: 'EBITDA',
+                                data: [-0.51, -0.15, 0.05],
+                                borderColor: '#10B981',
+                                backgroundColor: '#10B981',
+                                type: 'line',
+                                yAxisID: 'y2',
+                                tension: 0.1,
+                                order: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: { display: true, text: 'Financial Projections (in Millions RM)', font: { size: 16 } },
+                            tooltip: { 
+                                mode: 'index', 
+                                intersect: false,
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.y !== null) {
+                                            label += 'RM ' + context.parsed.y.toFixed(2) + 'm';
+                                        }
+                                        return label;
+                                    }
+                                }
+                            },
+                            datalabels: { display: false }
+                        },
+                        scales: {
+                            x: { stacked: true },
+                            y: {
+                                stacked: true, position: 'left',
+                                title: { display: true, text: 'Revenue & COGS (RM m)' }
+                            },
+                            y2: {
+                                stacked: false, position: 'right',
+                                title: { display: true, text: 'EBITDA (RM m)' },
+                                grid: { drawOnChartArea: false }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // OPEX Chart
+            const opexCtx = document.getElementById('opexChart');
+            if(opexCtx) {
+                new Chart(opexCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Growth & BD', 'Backend Dev', 'G&A', 'Creative Agency'],
+                        datasets: [{
+                            data: [0.30, 0.29, 0.20, 0.10],
+                            backgroundColor: ['rgba(0, 47, 167, 0.8)', 'rgba(0, 47, 167, 0.6)', 'rgba(0, 47, 167, 0.4)', 'rgba(0, 47, 167, 0.2)'],
+                            borderColor: '#ffffff',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { boxWidth: 12 } },
+                            tooltip: {
+                                callbacks: {
+                                    label: (context) => ` ${context.label}: RM ${context.parsed.toFixed(2)}m`
+                                }
+                            },
+                            datalabels: {
+                                formatter: (value, ctx) => {
+                                    const sum = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                    const percentage = (value / sum * 100).toFixed(0) + '%';
+                                    return percentage;
+                                },
+                                color: '#fff',
+                                font: { weight: 'bold' }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // COGS Chart
+            const cogsCtx = document.getElementById('cogsChart');
+            if(cogsCtx) {
+                new Chart(cogsCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Current', 'Q3 2025', 'Q4 2025', 'Q1 2026 (Target)'],
+                        datasets: [{
+                            label: 'COGS as % of Revenue',
+                            data: [85, 70, 65, 60],
+                            fill: true,
+                            borderColor: 'rgb(0, 47, 167)',
+                            backgroundColor: 'rgba(0, 47, 167, 0.1)',
+                            tension: 0.2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                ticks: { callback: (value) => value + '%' }
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: { label: (context) => `COGS: ${context.parsed.y}%` }
+                            },
+                            datalabels: { display: false }
+                        }
+                    }
+                });
+            }
+            
+            // Use of Funds Chart
+            const useOfFundsCtx = document.getElementById('useOfFundsChart');
+            if(useOfFundsCtx) {
+                new Chart(useOfFundsCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Marketing & BD', 'Development', 'Creative & UI/UX', 'Operations'],
+                        datasets: [{
+                            data: [40, 30, 20, 10],
+                            backgroundColor: [
+                                'rgba(0, 47, 167, 0.8)',
+                                'rgba(0, 47, 167, 0.6)',
+                                'rgba(0, 47, 167, 0.4)',
+                                'rgba(0, 47, 167, 0.2)'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: (context) => {
+                                        const label = context.label || '';
+                                        const value = context.parsed;
+                                        const amount = (value / 100 * 1.5).toFixed(2);
+                                        return `${label}: ${value}% (RM ${amount}M)`;
+                                    }
+                                }
+                            },
+                            datalabels: {
+                                formatter: (value) => value + '%',
+                                color: '#fff',
+                                font: { weight: 'bold', size: 14 }
+                            }
+                        }
+                    }
+                });
+            }
+            
+        });
+    </script>
+</body>
+</html>
