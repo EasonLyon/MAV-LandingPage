@@ -22,12 +22,91 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '742035228207500');
-    fbq('track', 'PageView');
+    // Extract UTM parameters and user data from URL
+    function getUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+            utm_source: params.get('utm_source') || 'direct',
+            utm_medium: params.get('utm_medium') || 'none',
+            utm_campaign: params.get('utm_campaign') || 'none',
+            utm_content: params.get('utm_content') || 'none',
+            formname: params.get('formname') || 'unknown',
+            email: params.get('email') || 'unknown',
+            phone: params.get('phone') || 'unknown',
+            respondentid: params.get('respondentid') || 'unknown'
+        };
+    }
+    
+    const urlData = getUrlParams();
+    
+    // Prepare Advanced Matching data
+    const advancedMatchingData = {};
+    
+    // Add email if available
+    if (urlData.email && urlData.email !== 'unknown') {
+        advancedMatchingData.em = urlData.email.toLowerCase();
+    }
+    
+    // Add phone if available (remove all non-digits)
+    if (urlData.phone && urlData.phone !== 'unknown') {
+        advancedMatchingData.ph = urlData.phone.replace(/\D/g, '');
+    }
+    
+    // Add respondent ID as external ID if available
+    if (urlData.respondentid && urlData.respondentid !== 'unknown') {
+        advancedMatchingData.external_id = urlData.respondentid;
+    }
+    
+    // Initialize Facebook Pixel with Advanced Matching
+    fbq('init', '742035228207500', advancedMatchingData);
+    fbq('track', 'Lead', {
+        content_name: 'Expert Elite Class Registration',
+        content_category: 'Coaching Program Registration',
+        utm_source: urlData.utm_source,
+        utm_medium: urlData.utm_medium,
+        utm_campaign: urlData.utm_campaign,
+        utm_content: urlData.utm_content,
+        form_name: urlData.formname,
+        respondent_id: urlData.respondentid
+    });
+    fbq('trackCustom', 'ThankYouPageView', {
+        event_category: 'Lead Generation',
+        page_type: 'thank_you',
+        utm_source: urlData.utm_source,
+        utm_medium: urlData.utm_medium,
+        utm_campaign: urlData.utm_campaign,
+        utm_content: urlData.utm_content,
+        form_name: urlData.formname,
+        respondent_id: urlData.respondentid
+    });
+    
+    // Update noscript img tags with advanced matching parameters
+    document.addEventListener('DOMContentLoaded', function() {
+        const noscriptTags = document.querySelectorAll('noscript img');
+        noscriptTags.forEach(img => {
+            let src = img.getAttribute('src');
+            
+            // Add advanced matching parameters to noscript img tags
+            if (urlData.email && urlData.email !== 'unknown') {
+                src += `&ud[em]=${encodeURIComponent(urlData.email.toLowerCase())}`;
+            }
+            if (urlData.phone && urlData.phone !== 'unknown') {
+                src += `&ud[ph]=${encodeURIComponent(urlData.phone.replace(/\D/g, ''))}`;
+            }
+            if (urlData.respondentid && urlData.respondentid !== 'unknown') {
+                src += `&ud[external_id]=${encodeURIComponent(urlData.respondentid)}`;
+            }
+            
+            img.setAttribute('src', src);
+        });
+    });
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=742035228207500&ev=PageView&noscript=1"
-    /></noscript>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=742035228207500&ev=PageView&noscript=1" />
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=742035228207500&ev=Lead&noscript=1" />
+    </noscript>
     <!-- End Meta Pixel Code -->
      
     <!-- Preload critical images for faster initial render -->
