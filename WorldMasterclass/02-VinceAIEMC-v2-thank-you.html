@@ -327,7 +327,51 @@
                     }
                     
                     updateWorkshopDetails();
+                    
+                    // Also update the reminder date
+                    document.getElementById('reminderDate').textContent = formatDateMalaysia(eventDateMY);
                 </script>
+            </div>
+        </section>
+
+        <!-- Important Reminder Section -->
+        <section class="relative z-10 px-4 sm:px-8 py-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="success-card rounded-2xl p-6 border border-yellow-500/30 bg-yellow-500/5">
+                    <div class="text-center">
+                        <h2 class="text-2xl font-bold text-yellow-400 mb-4">⏰ Important Reminder</h2>
+                        <div class="text-lg text-white mb-4">
+                            <div class="mb-2">📅 Workshop Date: <span id="reminderDate" class="font-bold text-yellow-400"></span></div>
+                            <div class="mb-4">🕒 Time: <span class="font-bold text-yellow-400">8:00pm - 10:30pm (Malaysia Time)</span></div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="text-gray-300 mb-4">Have more questions? Click WhatsApp below:</p>
+                            <a href="http://wa.me/60177188144" 
+                               class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 !rounded-button transition-all">
+                                💬 WhatsApp Support
+                            </a>
+                        </div>
+                        
+                        <div class="border-t border-white/20 pt-4">
+                            <h3 class="text-lg font-bold text-white mb-3">📝 Quick Instructions:</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                                <div class="bg-white/10 rounded-lg p-3">
+                                    <div class="font-bold text-green-400">1. Check Email</div>
+                                    <div class="text-gray-300">Confirmation & bonus materials</div>
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-3">
+                                    <div class="font-bold text-blue-400">2. Set Reminder</div>
+                                    <div class="text-gray-300">Add to your calendar now</div>
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-3">
+                                    <div class="font-bold text-purple-400">3. Get Zoom Link</div>
+                                    <div class="text-gray-300">Sent 24hrs before workshop</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
