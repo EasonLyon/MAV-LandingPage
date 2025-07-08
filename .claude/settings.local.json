@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "60000"
+  },
   "permissions": {
     "allow": [
       "Bash(rg:*)",
@@ -8,11 +11,12 @@
       "Bash(ls:*)",
       "Bash(cp:*)",
       "Bash(find:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(python3:*)",
+      "Bash(pip install:*)",
+      "Bash(sudo apt:*)",
+      "Bash(sudo apt install:*)"
     ],
     "deny": []
-  },
-  "env": {
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "60000"
   }
 }

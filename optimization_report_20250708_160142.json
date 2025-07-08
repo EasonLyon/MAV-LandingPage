@@ -1,0 +1,465 @@
+{
+  "total_files": 58,
+  "processed_files": 57,
+  "skipped_files": 1,
+  "original_size": 496.2165575027466,
+  "compressed_size": 25.047687530517578,
+  "files_processed": [
+    {
+      "file": ".\\ReaddyAI-VinceEEC\\vince-authority-speaking-conference-side-profile.jpg",
+      "original_size_mb": 20.241453170776367,
+      "compressed_size_mb": 0.13611316680908203,
+      "compression_ratio": 99.32755239625979,
+      "tier": "high",
+      "backup_path": "backup_images\\ReaddyAI-VinceEEC\\vince-authority-speaking-conference-side-profile.jpg"
+    },
+    {
+      "file": ".\\ReaddyAI-VinceEEC\\vince-hero-portrait-humble-hustle-smiling.jpg",
+      "original_size_mb": 6.570285797119141,
+      "compressed_size_mb": 0.25876903533935547,
+      "compression_ratio": 96.06152542933798,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReaddyAI-VinceEEC\\vince-hero-portrait-humble-hustle-smiling.jpg"
+    },
+    {
+      "file": ".\\ReaddyAI-VinceEEC\\vince-workshop-teaching-engaged-audience.jpg",
+      "original_size_mb": 10.454472541809082,
+      "compressed_size_mb": 0.4521160125732422,
+      "compression_ratio": 95.67538189262864,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReaddyAI-VinceEEC\\vince-workshop-teaching-engaged-audience.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\2.png",
+      "original_size_mb": 3.6875123977661133,
+      "compressed_size_mb": 0.2543935775756836,
+      "compression_ratio": 93.10121431104083,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\2.png"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\209A2432.jpg",
+      "original_size_mb": 16.191837310791016,
+      "compressed_size_mb": 0.12527751922607422,
+      "compression_ratio": 99.2262921321314,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\209A2432.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\209A2437.jpg",
+      "original_size_mb": 16.8762845993042,
+      "compressed_size_mb": 0.06167030334472656,
+      "compression_ratio": 99.63457416837312,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\209A2437.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\209A2740.jpg",
+      "original_size_mb": 20.942875862121582,
+      "compressed_size_mb": 0.08611106872558594,
+      "compression_ratio": 99.58882882516946,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\209A2740.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\209A3449.jpg",
+      "original_size_mb": 19.500843048095703,
+      "compressed_size_mb": 0.13623905181884766,
+      "compression_ratio": 99.3013683999054,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\209A3449.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\209A3451.jpg",
+      "original_size_mb": 20.241453170776367,
+      "compressed_size_mb": 0.13611316680908203,
+      "compression_ratio": 99.32755239625979,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\209A3451.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\209A3677.jpg",
+      "original_size_mb": 12.584988594055176,
+      "compressed_size_mb": 0.27583980560302734,
+      "compression_ratio": 97.80818390464552,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\209A3677.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\3.png",
+      "original_size_mb": 2.0842981338500977,
+      "compressed_size_mb": 0.1638345718383789,
+      "compression_ratio": 92.13958074530609,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\3.png"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\D1-A1_SGG07149.jpg",
+      "original_size_mb": 3.5136919021606445,
+      "compressed_size_mb": 0.41922760009765625,
+      "compression_ratio": 88.06874331127712,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\D1-A1_SGG07149.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\D1-A1_SGG07163.jpg",
+      "original_size_mb": 3.4052915573120117,
+      "compressed_size_mb": 0.8544282913208008,
+      "compression_ratio": 74.90880657528048,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\D1-A1_SGG07163.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\D1-S1_SNP_6938.jpg",
+      "original_size_mb": 2.39285945892334,
+      "compressed_size_mb": 0.33782386779785156,
+      "compression_ratio": 85.88200127934574,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\D1-S1_SNP_6938.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\D1-S2_SN_P2754.jpg",
+      "original_size_mb": 3.761324882507324,
+      "compressed_size_mb": 0.44787120819091797,
+      "compression_ratio": 88.09272737184128,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\D1-S2_SN_P2754.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\D1-S4_SN_P1692.jpg",
+      "original_size_mb": 2.1692466735839844,
+      "compressed_size_mb": 0.6777839660644531,
+      "compression_ratio": 68.75486894514249,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\D1-S4_SN_P1692.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\D1-S4_SN_P1742.jpg",
+      "original_size_mb": 3.5601797103881836,
+      "compressed_size_mb": 0.8472766876220703,
+      "compression_ratio": 76.20129441359892,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\D1-S4_SN_P1742.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\D1-S4_SN_P1761.jpg",
+      "original_size_mb": 2.4234275817871094,
+      "compressed_size_mb": 0.8038387298583984,
+      "compression_ratio": 66.83050337878785,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\D1-S4_SN_P1761.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\D3-S2_SN_P3212.jpg",
+      "original_size_mb": 4.93199348449707,
+      "compressed_size_mb": 1.3262767791748047,
+      "compression_ratio": 73.10870780053253,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\D3-S2_SN_P3212.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\TNIC4602.jpg",
+      "original_size_mb": 15.684646606445312,
+      "compressed_size_mb": 0.2814054489135742,
+      "compression_ratio": 98.20585406879403,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\TNIC4602.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\TNIC6130.jpg",
+      "original_size_mb": 5.750732421875,
+      "compressed_size_mb": 0.3892841339111328,
+      "compression_ratio": 93.23070340691999,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\TNIC6130.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\WMC-510.jpg",
+      "original_size_mb": 12.457233428955078,
+      "compressed_size_mb": 0.5094833374023438,
+      "compression_ratio": 95.91014055963565,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\WMC-510.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\WMC-549.jpg",
+      "original_size_mb": 2.7536134719848633,
+      "compressed_size_mb": 0.36016178131103516,
+      "compression_ratio": 86.9203944208109,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\WMC-549.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\WMC-560.jpg",
+      "original_size_mb": 10.31459903717041,
+      "compressed_size_mb": 0.5614166259765625,
+      "compression_ratio": 94.55706786125761,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\WMC-560.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\WMC-581.jpg",
+      "original_size_mb": 6.954793930053711,
+      "compressed_size_mb": 0.6215038299560547,
+      "compression_ratio": 91.0636629035067,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\WMC-581.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\WMC-615.jpg",
+      "original_size_mb": 6.570285797119141,
+      "compressed_size_mb": 0.25876903533935547,
+      "compression_ratio": 96.06152542933798,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\WMC-615.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\WMC-627.jpg",
+      "original_size_mb": 10.935394287109375,
+      "compressed_size_mb": 0.5870161056518555,
+      "compression_ratio": 94.6319621383581,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\WMC-627.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\WMC-630.jpg",
+      "original_size_mb": 10.454472541809082,
+      "compressed_size_mb": 0.4521160125732422,
+      "compression_ratio": 95.67538189262864,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\WMC-630.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\WMC-651.jpg",
+      "original_size_mb": 3.697031021118164,
+      "compressed_size_mb": 0.6713943481445312,
+      "compression_ratio": 81.83963444425012,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\WMC-651.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\WMC_DWMC_December Batch-27.jpg",
+      "original_size_mb": 5.6342620849609375,
+      "compressed_size_mb": 0.45378780364990234,
+      "compression_ratio": 91.94592305421574,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\WMC_DWMC_December Batch-27.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-conference-side-profile.jpg",
+      "original_size_mb": 20.241453170776367,
+      "compressed_size_mb": 0.13611316680908203,
+      "compression_ratio": 99.32755239625979,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-conference-side-profile.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-pointing-gesture.jpg",
+      "original_size_mb": 3.5136919021606445,
+      "compressed_size_mb": 0.41922760009765625,
+      "compression_ratio": 88.06874331127712,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-pointing-gesture.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-premium-venue-arms-spread.jpg",
+      "original_size_mb": 5.750732421875,
+      "compressed_size_mb": 0.3892841339111328,
+      "compression_ratio": 93.23070340691999,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-premium-venue-arms-spread.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-relaxed-casual.jpg",
+      "original_size_mb": 3.4052915573120117,
+      "compressed_size_mb": 0.8544282913208008,
+      "compression_ratio": 74.90880657528048,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-relaxed-casual.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-serious-microphone.jpg",
+      "original_size_mb": 10.935394287109375,
+      "compressed_size_mb": 0.5870161056518555,
+      "compression_ratio": 94.6319621383581,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-serious-microphone.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-worldmasterclass-profile.jpg",
+      "original_size_mb": 16.8762845993042,
+      "compressed_size_mb": 0.06167030334472656,
+      "compression_ratio": 99.63457416837312,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-authority-speaking-worldmasterclass-profile.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-hero-gesturing-humble-hustle.png",
+      "original_size_mb": 3.6875123977661133,
+      "compressed_size_mb": 0.2543935775756836,
+      "compression_ratio": 93.10121431104083,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-hero-gesturing-humble-hustle.png"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-hero-portrait-humble-hustle-blackwhite.jpg",
+      "original_size_mb": 2.7536134719848633,
+      "compressed_size_mb": 0.36016178131103516,
+      "compression_ratio": 86.9203944208109,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-hero-portrait-humble-hustle-blackwhite.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-hero-portrait-humble-hustle-smiling.jpg",
+      "original_size_mb": 6.570285797119141,
+      "compressed_size_mb": 0.25876903533935547,
+      "compression_ratio": 96.06152542933798,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-hero-portrait-humble-hustle-smiling.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-hero-presenting-humble-hustle-closeup.png",
+      "original_size_mb": 2.0842981338500977,
+      "compressed_size_mb": 0.1638345718383789,
+      "compression_ratio": 92.13958074530609,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-hero-presenting-humble-hustle-closeup.png"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-speaking-dramatic-large-audience-gesture.jpg",
+      "original_size_mb": 15.684646606445312,
+      "compressed_size_mb": 0.2814054489135742,
+      "compression_ratio": 98.20585406879403,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-speaking-dramatic-large-audience-gesture.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-speaking-dramatic-modern-venue-geometric.jpg",
+      "original_size_mb": 2.39285945892334,
+      "compressed_size_mb": 0.33782386779785156,
+      "compression_ratio": 85.88200127934574,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-speaking-dramatic-modern-venue-geometric.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-speaking-dynamic-wide-audience-shot.jpg",
+      "original_size_mb": 5.6342620849609375,
+      "compressed_size_mb": 0.45378780364990234,
+      "compression_ratio": 91.94592305421574,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-speaking-dynamic-wide-audience-shot.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-speaking-explanatory-pointing.jpg",
+      "original_size_mb": 2.1692466735839844,
+      "compressed_size_mb": 0.6777839660644531,
+      "compression_ratio": 68.75486894514249,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-speaking-explanatory-pointing.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-speaking-intimate-workshop-setting.jpg",
+      "original_size_mb": 2.4234275817871094,
+      "compressed_size_mb": 0.8038387298583984,
+      "compression_ratio": 66.83050337878785,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-speaking-intimate-workshop-setting.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-speaking-large-conference-hall.jpg",
+      "original_size_mb": 4.93199348449707,
+      "compressed_size_mb": 1.3262767791748047,
+      "compression_ratio": 73.10870780053253,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-speaking-large-conference-hall.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-speaking-motivational-stage-front.jpg",
+      "original_size_mb": 3.761324882507324,
+      "compressed_size_mb": 0.44787120819091797,
+      "compression_ratio": 88.09272737184128,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-speaking-motivational-stage-front.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-speaking-professional-microphone-gesture.jpg",
+      "original_size_mb": 3.5601797103881836,
+      "compressed_size_mb": 0.8472766876220703,
+      "compression_ratio": 76.20129441359892,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-speaking-professional-microphone-gesture.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-speaking-titanium-mastermind-stage.jpg",
+      "original_size_mb": 16.191837310791016,
+      "compressed_size_mb": 0.12527751922607422,
+      "compression_ratio": 99.2262921321314,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-speaking-titanium-mastermind-stage.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-speaking-with-team-humble-hustle-blackwhite.jpg",
+      "original_size_mb": 3.697031021118164,
+      "compressed_size_mb": 0.6713943481445312,
+      "compression_ratio": 81.83963444425012,
+      "tier": "light",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-speaking-with-team-humble-hustle-blackwhite.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-workshop-interactive-teaching-audience.jpg",
+      "original_size_mb": 6.954793930053711,
+      "compressed_size_mb": 0.6215038299560547,
+      "compression_ratio": 91.0636629035067,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-workshop-interactive-teaching-audience.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-engaged-audience.jpg",
+      "original_size_mb": 10.454472541809082,
+      "compressed_size_mb": 0.4521160125732422,
+      "compression_ratio": 95.67538189262864,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-engaged-audience.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-formal-conference-room.jpg",
+      "original_size_mb": 19.500843048095703,
+      "compressed_size_mb": 0.13623905181884766,
+      "compression_ratio": 99.3013683999054,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-formal-conference-room.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-grand-hall-audience.jpg",
+      "original_size_mb": 10.31459903717041,
+      "compressed_size_mb": 0.5614166259765625,
+      "compression_ratio": 94.55706786125761,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-grand-hall-audience.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-intimate-business-setting.jpg",
+      "original_size_mb": 12.584988594055176,
+      "compressed_size_mb": 0.27583980560302734,
+      "compression_ratio": 97.80818390464552,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-intimate-business-setting.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-large-venue.jpg",
+      "original_size_mb": 12.457233428955078,
+      "compressed_size_mb": 0.5094833374023438,
+      "compression_ratio": 95.91014055963565,
+      "tier": "medium",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-large-venue.jpg"
+    },
+    {
+      "file": ".\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-worldmasterclass-audience.jpg",
+      "original_size_mb": 20.942875862121582,
+      "compressed_size_mb": 0.08611106872558594,
+      "compression_ratio": 99.58882882516946,
+      "tier": "high",
+      "backup_path": "backup_images\\ReferenceImage\\VinceTanStage\\vince-workshop-teaching-worldmasterclass-audience.jpg"
+    }
+  ]
+}
